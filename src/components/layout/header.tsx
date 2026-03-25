@@ -62,7 +62,7 @@ export function Header() {
             <div key={item.label} className="relative group py-6 -my-6">
               <Link
                 href={item.href}
-                className="flex items-center gap-1 hover:text-blue-700 transition"
+                className="flex items-center gap-1 font-bold hover:text-blue-700 transition"
               >
                 {item.label}{" "}
                 {item.children && <ChevronDown className="w-4 h-4" />}
@@ -87,7 +87,7 @@ export function Header() {
               )}
             </div>
           ))}
-          <Link href="/" className="hover:text-blue-700 transition">
+          <Link href="/" className="hover:text-blue-700 font-bold transition">
             Liên hệ
           </Link>
         </nav>
