@@ -7,20 +7,20 @@ import { useState } from "react";
 const navItems = [
   {
     label: "Giới thiệu",
-    href: "/",
+    href: "/gioi-thieu",
     children: [
-      { label: "Về K-EDU", href: "/" },
-      { label: "Dịch vụ chính", href: "/" },
-      { label: "Thư viện hình ảnh", href: "/" },
-      { label: "Tuyển dụng", href: "/" },
-      { label: "Cảm nhận học viên", href: "/" },
-      { label: "Chính sách và quyền riêng tư", href: "/" },
+      { label: "Về HCM-MIRAI", href: "/gioi-thieu" },
+      { label: "Dịch vụ chính", href: "/dich-vu-chinh" },
+      { label: "Thư viện hình ảnh", href: "/thu-vien-hinh-anh" },
+      { label: "Cảm nhận học viên", href: "/cam-nhan-hoc-vien" },
     ],
   },
-  { label: "Du học Hàn Quốc", href: "/" },
-  { label: "Đào tạo tiếng Hàn", href: "/" },
-  { label: "Đơn hàng", href: "/" },
-  { label: "Tin tức & sự kiện", href: "/" },
+  { label: "Đào tạo ngoại ngữ", href: "/dao-tao-ngoai-ngu" },
+  { label: "Cung ứng LĐ trong nước", href: "/cung-ung-ld-trong-nuoc" },
+  { label: "Cung ứng LĐ nước ngoài", href: "/cung-ung-ld-nuoc-ngoai" },
+  { label: "Đào tạo nghề", href: "/dao-tao-nghe" },
+  { label: "Tin tức & Sự kiện", href: "/tin-tuc" },
+  { label: "Đơn hàng", href: "/don-hang" },
 ];
 
 export function Header() {
@@ -31,11 +31,11 @@ export function Header() {
       {/* Top Bar */}
       <div className="bg-[#1c2559] text-white text-sm py-2 px-6 flex justify-between items-center">
         <Link
-          href="tel:+0983439381"
+          href="tel:+0973460999"
           className="flex items-center gap-2 hover:text-gray-300 transition-colors"
         >
           <Phone className="w-4 h-4" />
-          <span>+09 8343 9381</span>
+          <span>+0973 460 999</span>
         </Link>
         <div className="hidden md:block font-medium">
           TUYỂN SINH LỚP DU HỌC HÀN BAY KÌ THÁNG 4-12/2026
