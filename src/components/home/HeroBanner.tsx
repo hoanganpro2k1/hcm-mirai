@@ -62,7 +62,7 @@ export default function HeroBanner() {
 
   return (
     <div
-      className="relative h-[468px] w-full overflow-hidden select-none"
+      className="relative h-[80vh] w-full overflow-hidden select-none"
       ref={emblaRef}
     >
       {slides.map((slide, i) => (
