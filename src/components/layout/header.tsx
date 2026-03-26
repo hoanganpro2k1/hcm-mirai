@@ -7,7 +7,7 @@ import { useState } from "react";
 const navItems = [
   {
     label: "Giới thiệu",
-    href: "/gioi-thieu",
+    href: "#",
     children: [
       { label: "Về HCM-MIRAI", href: "/gioi-thieu" },
       { label: "Dịch vụ chính", href: "/dich-vu-chinh" },
@@ -16,8 +16,14 @@ const navItems = [
     ],
   },
   { label: "Đào tạo ngoại ngữ", href: "/dao-tao-ngoai-ngu" },
-  { label: "Cung ứng LĐ trong nước", href: "/cung-ung-ld-trong-nuoc" },
-  { label: "Cung ứng LĐ nước ngoài", href: "/cung-ung-ld-nuoc-ngoai" },
+  {
+    label: "Cung ứng lao động",
+    href: "#",
+    children: [
+      { label: "Trong nước", href: "/cung-ung-ld-trong-nuoc" },
+      { label: "Nước ngoài", href: "/cung-ung-ld-nuoc-ngoai" },
+    ],
+  },
   { label: "Đào tạo nghề", href: "/dao-tao-nghe" },
   { label: "Tin tức & Sự kiện", href: "/tin-tuc" },
   { label: "Đơn hàng", href: "/don-hang" },
@@ -70,7 +76,7 @@ export function Header() {
             <div key={item.label} className="relative group py-6 -my-6">
               <Link
                 href={item.href}
-                className="flex items-center gap-1 font-bold hover:text-blue-700 transition"
+                className="flex text-sm items-center gap-1 font-bold hover:text-blue-700 transition"
               >
                 {item.label}{" "}
                 {item.children && <ChevronDown className="w-4 h-4" />}
