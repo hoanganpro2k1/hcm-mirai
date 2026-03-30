@@ -1,5 +1,3 @@
-import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Mulish } from "next/font/google";
@@ -51,9 +49,7 @@ export default function RootLayout({
       )}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-1 min-h-screen">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
