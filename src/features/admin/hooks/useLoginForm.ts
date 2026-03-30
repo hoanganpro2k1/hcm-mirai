@@ -13,7 +13,7 @@ export const useLoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<LoginFormValues>({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(loginSchema) as any,
     defaultValues: { username: "", password: "" },
   });
 
