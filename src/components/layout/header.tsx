@@ -15,7 +15,7 @@ const navItems = [
       { label: "Cảm nhận học viên", href: "/cam-nhan-hoc-vien" },
     ],
   },
-  { label: "Đào tạo ngoại ngữ", href: "/dao-tao-ngoai-ngu" },
+  { label: "Du học và XKLĐ", href: "/du-hoc-xklđ" },
   {
     label: "Cung ứng lao động",
     href: "#",
