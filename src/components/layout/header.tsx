@@ -1,41 +1,51 @@
 "use client";
 
+import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { BookOpen, ChevronDown, Menu, Phone, Search, X } from "lucide-react";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
-
-const navItems = [
-  {
-    label: "Giới thiệu",
-    href: "#",
-    children: [
-      { label: "Về HCM-MIRAI", href: "/gioi-thieu" },
-      { label: "Dịch vụ chính", href: "/dich-vu-chinh" },
-      { label: "Thư viện hình ảnh", href: "/thu-vien-hinh-anh" },
-      { label: "Cảm nhận học viên", href: "/cam-nhan-hoc-vien" },
-    ],
-  },
-  { label: "Du học và XKLĐ", href: "/du-hoc-xklđ" },
-  {
-    label: "Cung ứng lao động",
-    href: "#",
-    children: [
-      { label: "Trong nước", href: "/cung-ung-ld-trong-nuoc" },
-      { label: "Nước ngoài", href: "/cung-ung-ld-nuoc-ngoai" },
-    ],
-  },
-  { label: "Đào tạo nghề", href: "/dao-tao-nghe" },
-  { label: "Tin tức & Sự kiện", href: "/tin-tuc" },
-  { label: "Đơn hàng", href: "/don-hang" },
-];
+import { ModeToggle } from "./mode-toggle";
 
 export function Header() {
+  const t = useTranslations("Header");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLocaleChange = (newLocale: "vi" | "en") => {
+    router.replace(pathname, { locale: newLocale });
+  };
+
+  const navItems = [
+    {
+      label: t("nav.gioithieu"),
+      href: "#",
+      children: [
+        { label: t("nav.about_mirai"), href: "/gioi-thieu" },
+        { label: t("nav.services"), href: "/dich-vu-chinh" },
+        { label: t("nav.gallery"), href: "/thu-vien-hinh-anh" },
+        { label: t("nav.testimonials"), href: "/cam-nhan-hoc-vien" },
+      ],
+    },
+    { label: t("nav.daotao"), href: "/dao-tao-ngoai-ngu" },
+    {
+      label: t("nav.cungung"),
+      href: "#",
+      children: [
+        { label: t("nav.domestic"), href: "/cung-ung-ld-trong-nuoc" },
+        { label: t("nav.overseas"), href: "/cung-ung-ld-nuoc-ngoai" },
+      ],
+    },
+    { label: t("nav.duhoc"), href: "/du-hoc-xklđ" },
+    { label: t("nav.tintuc"), href: "/tin-tuc" },
+    { label: t("nav.donhang"), href: "/don-hang" },
+  ];
 
   return (
-    <header className="w-full flex flex-col font-sans">
+    <header className="w-full flex flex-col font-sans sticky top-0 z-50 transition-colors">
       {/* Top Bar */}
-      <div className="bg-[#1c2559] text-white text-sm py-2 px-6 flex justify-between items-center">
+      <div className="bg-primary text-primary-foreground text-sm py-2 px-6 flex justify-between items-center transition-colors">
         <Link
           href="tel:+0973460999"
           className="flex items-center gap-2 hover:text-gray-300 transition-colors"
@@ -43,25 +53,43 @@ export function Header() {
           <Phone className="w-4 h-4" />
           <span>+0973 460 999</span>
         </Link>
-        <div className="hidden md:block font-medium">
-          TUYỂN SINH LỚP DU HỌC HÀN BAY KÌ THÁNG 4-12/2026
+        <div className="hidden uppercase md:block font-medium">
+          {t("topbar.tuyensinh")}
         </div>
         <div className="flex items-center gap-1 font-semibold">
-          <button className="hover:text-gray-300">VN</button>
+          <button
+            onClick={() => handleLocaleChange("vi")}
+            className={`cursor-pointer hover:text-gray-300 transition-colors ${
+              locale === "vi"
+                ? "text-white underline underline-offset-4"
+                : "text-white/70"
+            }`}
+          >
+            VN
+          </button>
           <span>|</span>
-          <button className="hover:text-gray-300">EN</button>
+          <button
+            onClick={() => handleLocaleChange("en")}
+            className={`cursor-pointer hover:text-gray-300 transition-colors ${
+              locale === "en"
+                ? "text-white underline underline-offset-4"
+                : "text-white/70"
+            }`}
+          >
+            EN
+          </button>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <div className="bg-white px-6 py-4 flex items-center justify-between border-b shadow-sm z-50">
+      <div className="bg-background/95 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b shadow-sm transition-colors">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-          <div className="text-[#1c2559]">
+          <div className="text-primary">
             <BookOpen className="w-6 h-6 sm:w-8 sm:h-8" />
           </div>
           <div className="flex flex-col">
-            <span className="text-base sm:text-xl font-bold text-[#1c2559] leading-tight">
+            <span className="text-base sm:text-xl font-bold text-primary leading-tight">
               HCM - MIRAI
             </span>
             <span className="text-[8px] sm:text-[10px] font-semibold text-red-600 leading-none">
@@ -71,12 +99,12 @@ export function Header() {
         </Link>
 
         {/* Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6 text-[#1c2559] font-medium text-[15px]">
+        <nav className="hidden lg:flex items-center gap-6 text-primary font-medium text-[15px]">
           {navItems.map((item) => (
             <div key={item.label} className="relative group py-6 -my-6">
               <Link
                 href={item.href}
-                className="flex text-sm items-center gap-1 font-bold hover:text-blue-700 transition"
+                className="flex text-sm items-center gap-1 font-bold hover:brightness-150 transition"
               >
                 {item.label}{" "}
                 {item.children && <ChevronDown className="w-4 h-4" />}
@@ -91,7 +119,7 @@ export function Header() {
                         <Link
                           key={idx}
                           href={child.href}
-                          className="px-6 py-3.5 font-semibold text-[15px] hover:text-blue-700 hover:bg-blue-50/50 transition-colors"
+                          className="px-6 py-3.5 font-semibold text-[15px] hover:text-primary hover:bg-muted transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -101,28 +129,32 @@ export function Header() {
               )}
             </div>
           ))}
-          <Link href="/" className="hover:text-blue-700 font-bold transition">
-            Liên hệ
+          <Link
+            href="/lien-he"
+            className="hover:text-primary font-bold transition"
+          >
+            {t("nav.lienhe")}
           </Link>
         </nav>
 
         {/* Actions Context Group */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <div className="relative hidden md:flex items-center">
-            <Search className="w-4 h-4 absolute left-3 text-gray-500" />
+            <Search className="w-4 h-4 absolute left-3 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Tìm kiếm"
-              className="bg-gray-100 text-sm text-gray-700 placeholder:text-gray-500 rounded-md pl-9 pr-4 py-2 w-48 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              placeholder={t("actions.timkiem")}
+              className="bg-muted text-sm text-foreground placeholder:text-muted-foreground rounded-md pl-9 pr-4 py-2 w-48 focus:outline-none focus:ring-1 focus:ring-primary"
             />
           </div>
-          <button className="hidden sm:block bg-[#1c2559] hover:bg-[#161d46] text-white px-4 py-2 sm:px-6 rounded uppercase text-xs sm:text-sm font-semibold transition shrink-0">
-            Tư vấn ngay
+          <ModeToggle />
+          <button className="hidden sm:block bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 sm:px-6 rounded uppercase text-xs sm:text-sm font-semibold transition shrink-0">
+            {t("actions.tuvan")}
           </button>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden p-1.5 sm:p-2 -mr-2 text-[#1c2559] hover:bg-gray-100 rounded-md transition-colors shrink-0"
+            className="lg:hidden p-1.5 sm:p-2 -mr-2 text-foreground hover:bg-muted rounded-md transition-colors shrink-0"
             onClick={() => setIsMobileMenuOpen(true)}
           >
             <Menu className="w-6 h-6" />
@@ -140,14 +172,14 @@ export function Header() {
           />
 
           {/* Drawer */}
-          <div className="fixed right-0 top-0 bottom-0 w-[280px] bg-white shadow-xl flex flex-col z-[101] overflow-y-auto animate-in slide-in-from-right duration-300">
+          <div className="fixed right-0 top-0 bottom-0 w-[280px] bg-background shadow-xl flex flex-col z-[101] overflow-y-auto animate-in slide-in-from-right duration-300">
             <div className="flex items-center justify-between p-4 border-b">
-              <div className="font-bold text-[#1c2559] text-lg uppercase">
+              <div className="font-bold text-foreground text-lg uppercase">
                 Menu
               </div>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 text-gray-500 hover:bg-gray-100 rounded-md transition"
+                className="p-2 text-muted-foreground hover:bg-muted rounded-md transition"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -162,7 +194,7 @@ export function Header() {
                   <div className="px-4 py-3">
                     <Link
                       href={item.href}
-                      className="font-bold text-[#1c2559] text-[15px] flex justify-between items-center"
+                      className="font-bold text-foreground text-[15px] flex justify-between items-center"
                       onClick={() =>
                         !item.children && setIsMobileMenuOpen(false)
                       }
@@ -176,7 +208,7 @@ export function Header() {
                           <Link
                             key={idx}
                             href={child.href}
-                            className="py-1.5 text-[14px] hover:text-blue-700 text-gray-600 font-medium transition-colors"
+                            className="py-1.5 text-[14px] hover:text-primary text-muted-foreground font-medium transition-colors"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {child.label}
@@ -187,20 +219,20 @@ export function Header() {
                   </div>
                 </div>
               ))}
-              <div className="px-4 py-3 border-t border-gray-100">
+              <div className="px-4 py-3 border-t border-muted">
                 <Link
-                  href="/"
-                  className="font-bold text-[#1c2559] text-[15px] hover:text-blue-700 transition"
+                  href="/lien-he"
+                  className="font-bold text-foreground text-[15px] hover:text-primary transition"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Liên hệ
+                  {t("nav.lienhe")}
                 </Link>
               </div>
             </div>
 
             <div className="p-4 mt-auto">
-              <button className="w-full bg-[#1c2559] hover:bg-[#161d46] transition-colors text-white py-3 rounded-md uppercase text-sm font-semibold">
-                Tư vấn ngay
+              <button className="w-full bg-primary hover:bg-primary/90 transition-colors text-primary-foreground py-3 rounded-md uppercase text-sm font-semibold">
+                {t("actions.tuvan")}
               </button>
             </div>
           </div>
