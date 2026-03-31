@@ -1,0 +1,42 @@
+{
+  "Header": {
+    "nav": {
+      "gioithieu": "Giới thiệu",
+      "daotao": "Đào tạo ngoại ngữ",
+      "cungung": "Cung ứng lao động",
+      "duhoc": "Du học & XKLĐ",
+      "tintuc": "Tin tức & Sự kiện",
+      "donhang": "Đơn hàng",
+      "lienhe": "Liên hệ",
+      "about_mirai": "Về HCM-MIRAI",
+      "services": "Dịch vụ chính",
+      "gallery": "Thư viện hình ảnh",
+      "testimonials": "Cảm nhận học viên",
+      "domestic": "Trong nước",
+      "overseas": "Nước ngoài"
+    },
+    "actions": {
+      "timkiem": "Tìm kiếm",
+      "tuvan": "Tư vấn ngay"
+    },
+    "topbar": {
+      "tuyensinh": "ĐƠN HÀNG MỚI NHẤT THÁNG 4/2026"
+    }
+  },
+  "Introduction": {
+    "title": "Chắp cánh ước mơ du học cùng HCM-MIRAI",
+    "subtitle": "Chúng tôi là ai?",
+    "whyChooseUs": "Tại sao bạn nên lựa chọn HCM-MIRAI?",
+    "cta": "Liên hệ tư vấn ngay",
+    "mission": "Du học HCM-MIRAI, cùng mạng lưới đối tác giáo dục hàng đầu, là một trong những đơn vị tư vấn và đào tạo uy tín, hoạt động lâu năm tại Việt Nam. Với sứ mệnh \"Tận tâm - Chuyên nghiệp - Minh bạch\", chúng tôi đã là cầu nối giúp hàng nghìn học viên chinh phục tri thức quốc tế.",
+    "desc1": "Chúng tôi không chỉ là một trung tâm tư vấn, mà còn là người bạn đồng hành tin cậy, giúp bạn chuẩn bị mọi hành trang cần thiết từ ngôn ngữ, kỹ năng sống đến các thủ tục pháp lý phức tạp.",
+    "desc2": "Với 19 năm kinh nghiệm đào tạo và mạng lưới đối tác hơn 200 trường đại học tại Nhật Bản, Hàn Quốc, Úc, chúng tôi cam kết mang lại lộ trình học tập an toàn và hiệu quả nhất."
+  },
+  "Stats": {
+    "students": "Học viên",
+    "schools": "Trường liên kết",
+    "visa": "Tỉ lệ đậu visa",
+    "experience": "Kinh nghiệm",
+    "years": "năm"
+  }
+}

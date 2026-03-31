@@ -1,0 +1,42 @@
+{
+  "Header": {
+    "nav": {
+      "gioithieu": "About Us",
+      "daotao": "Language Training",
+      "cungung": "Labor Supply",
+      "duhoc": "Study Abroad & SSW",
+      "tintuc": "News & Events",
+      "donhang": "Job Orders",
+      "lienhe": "Contact",
+      "about_mirai": "About HCM-MIRAI",
+      "services": "Main Services",
+      "gallery": "Gallery",
+      "testimonials": "Testimonials",
+      "domestic": "Domestic",
+      "overseas": "Overseas"
+    },
+    "actions": {
+      "timkiem": "Search",
+      "tuvan": "Consult Now"
+    },
+    "topbar": {
+      "tuyensinh": "LATEST JOB ORDERS - APRIL 2026"
+    }
+  },
+  "Introduction": {
+    "title": "Spread your dreams of studying abroad with HCM-MIRAI",
+    "subtitle": "Who We Are",
+    "whyChooseUs": "Why Should You Choose HCM-MIRAI?",
+    "cta": "Consult Now",
+    "mission": "HCM-MIRAI Study Abroad, along with a leading network of educational partners, is one of the reputable and long-standing consulting and training units in Vietnam. With the mission of \"Dedication - Professionalism - Transparency\", we have been the bridge helping thousands of students conquer international knowledge.",
+    "desc1": "We are not just a consulting center, but also a reliable companion, helping you prepare all necessary baggage from language, life skills to complex legal procedures.",
+    "desc2": "With 19 years of training experience and a network of over 200 partner universities in Japan, Korea, Australia, we are committed to bringing the safest and most effective learning path."
+  },
+  "Stats": {
+    "students": "Students",
+    "schools": "Partner Schools",
+    "visa": "Visa Success Rate",
+    "experience": "Experience",
+    "years": "years"
+  }
+}
