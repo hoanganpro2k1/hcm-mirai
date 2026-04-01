@@ -6,6 +6,8 @@ import {
 } from "@/lib/auth";
 import dbConnect from "@/lib/mongoose";
 import Admin from "@/models/admin";
+import Role from "@/models/role";
+import Permission from "@/models/permission";
 import RefreshToken from "@/models/refreshToken";
 import { IPopulatedAdmin } from "@/types/auth.type";
 import { NextRequest, NextResponse } from "next/server";
@@ -26,9 +28,10 @@ export async function POST(req: NextRequest) {
     // 1. Kiểm tra Admin theo username và populate Role cùng Permissions
     const admin = (await Admin.findOne({ username }).populate({
       path: "role",
+      model: Role,
       populate: {
         path: "permissions",
-        model: "Permission",
+        model: Permission,
       },
     })) as IPopulatedAdmin | null;
 

@@ -9,6 +9,10 @@ const adminSchema = new Schema<IAdmin>(
       unique: true,
       trim: true,
     },
+    avatar: {
+      type: String,
+      default: null,
+    },
     password: {
       type: String,
       required: true,

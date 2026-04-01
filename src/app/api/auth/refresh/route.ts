@@ -6,6 +6,8 @@ import {
 } from "@/lib/auth";
 import dbConnect from "@/lib/mongoose";
 import Admin from "@/models/admin";
+import Role from "@/models/role";
+import Permission from "@/models/permission";
 import RefreshToken from "@/models/refreshToken";
 import { IPopulatedAdmin } from "@/types/auth.type";
 import { NextRequest, NextResponse } from "next/server";
@@ -27,6 +29,10 @@ export async function POST(req: NextRequest) {
     // 1. Kiểm tra tính hợp lệ của token trong Database
     const tokenDoc = await RefreshToken.findOne({ token: refreshTokenCookie });
     if (!tokenDoc || tokenDoc.expiresAt < new Date()) {
+      console.error("RefreshToken API 403: Token not found or expired in DB", { 
+        found: !!tokenDoc, 
+        expired: tokenDoc ? tokenDoc.expiresAt < new Date() : null 
+      });
       if (tokenDoc) await RefreshToken.deleteOne({ _id: tokenDoc._id });
       return NextResponse.json(
         { message: "Refresh token không hợp lệ hoặc đã hết hạn." },
@@ -37,6 +43,7 @@ export async function POST(req: NextRequest) {
     // 2. Giải mã token để lấy payload (chỉ để kiểm tra cấu trúc nếu cần, nhưng quan trọng là ID)
     const decoded = await verifyToken(refreshTokenCookie, "refresh");
     if (!decoded) {
+      console.error("RefreshToken API 403: JWT verify failed (Invalid signature or structural error)");
       await RefreshToken.deleteOne({ _id: tokenDoc._id });
       return NextResponse.json(
         { message: "Refresh token không hợp lệ (mã hóa sai)." },
@@ -47,13 +54,15 @@ export async function POST(req: NextRequest) {
     // 3. Tìm admin và populate Role/Permissions
     const admin = (await Admin.findById(tokenDoc.adminId).populate({
       path: "role",
+      model: Role,
       populate: {
         path: "permissions",
-        model: "Permission",
+        model: Permission,
       },
     })) as IPopulatedAdmin | null;
 
     if (!admin) {
+      console.error("RefreshToken API 403: Admin not found for id", tokenDoc.adminId);
       await RefreshToken.deleteOne({ _id: tokenDoc._id });
       return NextResponse.json(
         { message: "Tài khoản không tồn tại." },

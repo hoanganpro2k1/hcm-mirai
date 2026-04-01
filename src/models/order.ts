@@ -5,7 +5,7 @@ const OrderSchema: Schema = new Schema(
   {
     title: { type: String, required: true },
     status: { type: String, required: true, default: "pending" },
-    image: { type: String },
+    coverImage: { type: String },
     salary: { type: String },
     date: { type: String },
     location: { type: String },

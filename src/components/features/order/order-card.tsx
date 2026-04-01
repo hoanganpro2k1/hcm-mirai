@@ -11,6 +11,7 @@ import { JobOrder } from "@/types/order.type";
 import { Calendar, DollarSign, Info, MapPin, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import DOMPurify from "isomorphic-dompurify";
 
 interface OrderCardProps {
   order: JobOrder;
@@ -24,7 +25,7 @@ export function OrderCard({ order }: OrderCardProps) {
       {/* Header with Image */}
       <CardHeader className="p-0 relative h-64 overflow-hidden">
         <Image
-          src={order.image}
+          src={order.coverImage || "/logo.png"}
           alt={order.title}
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -50,7 +51,7 @@ export function OrderCard({ order }: OrderCardProps) {
                 {t("labels.salary")}
               </span>
               <p className="text-gray-700 dark:text-gray-300 font-medium">
-                {order.salary}
+                {order.salary || "N/A"}
               </p>
             </div>
           </div>
@@ -65,7 +66,7 @@ export function OrderCard({ order }: OrderCardProps) {
                 {t("labels.date")}
               </span>
               <p className="text-gray-700 dark:text-gray-300 font-medium">
-                {order.date}
+                {order.date || "N/A"}
               </p>
             </div>
           </div>
@@ -80,7 +81,7 @@ export function OrderCard({ order }: OrderCardProps) {
                 {t("labels.location")}
               </span>
               <p className="text-gray-700 dark:text-gray-300 font-medium line-clamp-1">
-                {order.location}
+                {order.location || "N/A"}
               </p>
             </div>
           </div>
@@ -95,7 +96,7 @@ export function OrderCard({ order }: OrderCardProps) {
                 {t("labels.age")}
               </span>
               <p className="text-gray-700 dark:text-gray-300 font-medium leading-tight">
-                {order.age}
+                {order.age || "N/A"}
               </p>
             </div>
           </div>
@@ -105,7 +106,12 @@ export function OrderCard({ order }: OrderCardProps) {
         <div className="pt-4 border-t border-gray-50 dark:border-gray-800">
           <div className="flex items-start gap-2 text-[13px] text-gray-600 dark:text-gray-400 italic">
             <Info className="w-4 h-4 mt-0.5 shrink-0" />
-            <p className="line-clamp-3">{order.description}</p>
+            <div 
+              className="line-clamp-3 text-[13px] text-gray-600 dark:text-gray-400 italic"
+              dangerouslySetInnerHTML={{ 
+                __html: DOMPurify.sanitize(order.description || "") 
+              }} 
+            />
           </div>
         </div>
       </CardContent>

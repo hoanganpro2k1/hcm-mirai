@@ -24,6 +24,8 @@ const envSchema = z.object({
   NODE_ENV: z
     .enum(["development", "production", "test"])
     .default("development"),
+  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: z.string().min(1),
+  NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET: z.string().min(1),
 });
 
 const envServer = envSchema.safeParse(process.env);

@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 export interface IOrder extends mongoose.Document {
   title: string;
   status: string;
-  image?: string;
+  coverImage?: string;
   salary?: string;
   date?: string;
   location?: string;
@@ -25,16 +25,17 @@ export interface JobOrder {
   id: string;
   _id?: string;
   title: string;
-  image: string;
-  salary: string;
-  date: string;
-  location: string;
-  age: string;
-  description: string;
-  content: string;
-  category: string;
-  country: string;
-  gender: "male" | "female" | "both";
+  status: string;
+  coverImage?: string;
+  salary?: string;
+  date?: string;
+  location?: string;
+  age?: string;
+  description?: string;
+  content?: string;
+  category?: string;
+  country?: string;
+  gender?: "male" | "female" | "both";
   createdBy?: {
     _id: string;
     username: string;

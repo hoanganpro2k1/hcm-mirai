@@ -27,7 +27,7 @@ export async function authorize(
   errorResponse: NextResponse | null;
 }> {
   const authHeader = req.headers.get("authorization");
-  console.log("authHeader", authHeader);
+
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return {
       payload: null,
