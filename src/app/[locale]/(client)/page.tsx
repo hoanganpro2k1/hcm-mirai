@@ -1,13 +1,13 @@
-import BlogSection from "@/features/home/BlogSection";
-import ConsultationForm from "@/features/home/ConsultationForm";
-import GallerySection from "@/features/home/GallerySection";
-import HeroBanner from "@/features/home/HeroBanner";
-import Introduction from "@/features/home/Introduction";
-import PartnerMarquee from "@/features/home/PartnerMarquee";
-import ProgramSection from "@/features/home/ProgramSection";
-import SchoolHighlights from "@/features/home/SchoolHighlights";
-import StatsSection from "@/features/home/StatsSection";
-import TestimonialsSection from "@/features/home/TestimonialsSection";
+import BlogSection from "@/components/features/home/BlogSection";
+import ConsultationForm from "@/components/features/home/ConsultationForm";
+import GallerySection from "@/components/features/home/GallerySection";
+import HeroBanner from "@/components/features/home/HeroBanner";
+import Introduction from "@/components/features/home/Introduction";
+import PartnerMarquee from "@/components/features/home/PartnerMarquee";
+import ProgramSection from "@/components/features/home/ProgramSection";
+import SchoolHighlights from "@/components/features/home/SchoolHighlights";
+import StatsSection from "@/components/features/home/StatsSection";
+import TestimonialsSection from "@/components/features/home/TestimonialsSection";
 
 export default function Home() {
   return (
