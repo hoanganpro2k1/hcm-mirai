@@ -1,5 +1,29 @@
+import mongoose from "mongoose";
+
+export interface IOrder extends mongoose.Document {
+  title: string;
+  status: string;
+  image?: string;
+  salary?: string;
+  date?: string;
+  location?: string;
+  age?: string;
+  description?: string;
+  content?: string;
+  category?: string;
+  country?: string;
+  gender?: "male" | "female" | "both";
+  createdBy?: mongoose.Types.ObjectId;
+  updatedBy?: mongoose.Types.ObjectId;
+  deletedBy?: mongoose.Types.ObjectId;
+  deletedAt?: Date | null;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export interface JobOrder {
   id: string;
+  _id?: string;
   title: string;
   image: string;
   salary: string;
@@ -7,10 +31,16 @@ export interface JobOrder {
   location: string;
   age: string;
   description: string;
+  content: string;
   category: string;
   country: string;
   gender: "male" | "female" | "both";
-  testLocation: string;
+  createdBy?: {
+    _id: string;
+    username: string;
+  };
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface OrderFilterParams {

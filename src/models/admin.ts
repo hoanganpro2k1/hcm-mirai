@@ -1,12 +1,5 @@
-import mongoose, { Schema, Document, Model } from "mongoose";
-
-export interface IAdmin extends Document {
-  username: string;
-  password?: string;
-  refreshToken?: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
+import mongoose, { Schema, Model } from "mongoose";
+import { IAdmin } from "@/types/auth.type";
 
 const adminSchema = new Schema<IAdmin>(
   {
@@ -24,13 +17,16 @@ const adminSchema = new Schema<IAdmin>(
       type: String,
       default: null,
     },
+    role: {
+      type: Schema.Types.ObjectId,
+      ref: "Role",
+    },
   },
   {
     timestamps: true,
   }
 );
 
-// Tránh lỗi overwrite model khi Next.js compile lại (Hot Reloading trong dev)
 const Admin: Model<IAdmin> =
   mongoose.models.Admin || mongoose.model<IAdmin>("Admin", adminSchema);
 
