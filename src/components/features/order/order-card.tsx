@@ -110,7 +110,7 @@ export function OrderCard({ order }: OrderCardProps) {
         </div>
       </CardContent>
 
-      <CardFooter className="p-6 pt-0 flex justify-end">
+      <CardFooter className="px-6 py-3 flex justify-end">
         <Button
           variant="outline"
           className="rounded-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-all text-xs font-bold px-6"

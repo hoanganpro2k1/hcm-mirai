@@ -35,6 +35,7 @@ export default function OrderPage() {
   };
 
   const handleSearch = () => {
+    console.log("localFilters", localFilters);
     // Apply local filters to the search params triggering the useOrders fetch
     updateParams({ ...localFilters, page: 1 });
     console.log("Triggering API call with filters:", localFilters);
