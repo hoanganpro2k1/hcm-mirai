@@ -38,5 +38,26 @@
     "visa": "Visa Success Rate",
     "experience": "Experience",
     "years": "years"
+  },
+  "Orders": {
+    "title": "LABOR EXPORT ORDERS",
+    "labels": {
+      "salary": "Salary",
+      "date": "Date",
+      "location": "Location",
+      "age": "Age",
+      "note": "Note",
+      "details": "Details"
+    },
+    "empty": "No matching job orders found."
+  },
+  "Filters": {
+    "country": "Country",
+    "category": "Category",
+    "location": "Test Location",
+    "gender": "Gender",
+    "birthYear": "Recruitment Date",
+    "search": "Search job orders",
+    "all": "All"
   }
 }

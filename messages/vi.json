@@ -38,5 +38,25 @@
     "visa": "Tỉ lệ đậu visa",
     "experience": "Kinh nghiệm",
     "years": "năm"
+  },
+  "Orders": {
+    "title": "ĐƠN HÀNG XUẤT KHẨU LAO ĐỘNG",
+    "labels": {
+      "salary": "Lương",
+      "date": "Ngày tuyển",
+      "location": "Địa điểm",
+      "age": "Độ tuổi",
+      "note": "Ghi chú",
+      "details": "Chi tiết"
+    },
+    "empty": "Không tìm thấy đơn hàng nào phù hợp."
+  },
+  "Filters": {
+    "country": "Quốc gia",
+    "category": "Ngành nghề",
+    "gender": "Giới tính",
+    "birthYear": "Ngày tuyển",
+    "search": "Tìm kiếm đơn hàng",
+    "all": "Tất cả"
   }
 }
