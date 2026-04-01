@@ -31,6 +31,10 @@ const slides: SlideType[] = [
     id: 3,
     image: IMAGES.HOME.HERO.slide3,
   },
+  // {
+  //   id: 4,
+  //   image: IMAGES.HOME.HERO.slide4,
+  // },
 ];
 
 export default function HeroBanner() {
@@ -66,24 +70,19 @@ export default function HeroBanner() {
       plugins={[Fade()]}
       setApi={setApi}
       className={cn(
-        "relative h-[70vh] w-full overflow-hidden select-none",
+        "relative h-[690px] w-screen overflow-hidden select-none",
         "**:data-[slot=carousel-content]:h-full",
       )}
     >
       <CarouselContent className="h-full ml-0">
         {slides.map((slide, i) => (
           <CarouselItem key={slide.id} className="relative h-full pl-0">
-            {/* Background Image */}
             <Image
               src={slide.image}
               alt={`Slide ${i + 1}`}
-              fill
-              quality={100}
-              sizes="100vw"
-              className={cn(
-                "object-cover h-full w-full transition-opacity duration-1000",
-                i === index ? "opacity-100" : "opacity-0",
-              )}
+              width={1920}
+              height={690}
+              className={cn("object-contain h-full w-full")}
               priority={i === 0}
             />
           </CarouselItem>

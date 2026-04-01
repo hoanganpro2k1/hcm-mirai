@@ -1,10 +1,9 @@
 export const IMAGES = {
   HOME: {
     HERO: {
-      slide1: "/assets/pages/home/hero-slide-1.png",
-      slide2: "/assets/pages/home/hero-slide-2.png",
-      slide3: "/assets/pages/home/hero-slide-3.png",
+      slide1: "/assets/pages/home/hero-slide-11.png",
+      slide2: "/assets/pages/home/hero-slide-21.png",
+      slide3: "/assets/pages/home/hero-slide-31.png",
     },
   },
 };
-
