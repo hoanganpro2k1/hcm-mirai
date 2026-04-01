@@ -29,7 +29,6 @@ const processQueue = (error: any, token: string | null = null) => {
   failedQueue = [];
 };
 
-// Request Interceptor: Luôn luôn gắn Access Token từ trạng thái Zustand
 apiClient.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     // Không ném header auth vào các route liên quan login/refresh/setup để tránh lỗi logic
@@ -39,7 +38,10 @@ apiClient.interceptors.request.use(
 
     const { accessToken } = useAuthStore.getState();
     if (accessToken) {
-      config.headers['Authorization'] = `Bearer ${accessToken}`;
+      // Sử dụng .set để đảm bảo tính tương thích với AxiosHeaders
+      config.headers.set('Authorization', `Bearer ${accessToken}`);
+    } else {
+      console.warn("Axios Interceptor: Access Token is missing for request to", config.url);
     }
     return config;
   },
@@ -64,12 +66,11 @@ apiClient.interceptors.response.use(
       }
 
       if (isRefreshing) {
-        // Đang refresh -> Đợi đến khi nào refresh xong mới retry
         return new Promise(function (resolve, reject) {
           failedQueue.push({ resolve, reject });
         })
           .then((token) => {
-            originalRequest.headers['Authorization'] = 'Bearer ' + token;
+            originalRequest.headers.set('Authorization', 'Bearer ' + token);
             return apiClient(originalRequest);
           })
           .catch((err) => {

@@ -10,9 +10,10 @@ if (typeof window !== "undefined") {
   console.error = (...args: any[]) => {
     if (
       typeof args[0] === "string" &&
-      args[0].includes(
+      (args[0].includes(
         "Encountered a script tag while rendering React component",
-      )
+      ) ||
+        args[0].includes("bis_skin_checked"))
     ) {
       return;
     }

@@ -1,15 +1,10 @@
+import envConfig from "@/config";
 import mongoose from "mongoose";
 import dns from "node:dns/promises";
 
 dns.setServers(["1.1.1.1"]);
 
-const MONGODB_URI = process.env.MONGODB_URI;
-
-if (!MONGODB_URI) {
-  throw new Error(
-    "Please define the MONGODB_URI environment variable inside .env.local",
-  );
-}
+const MONGODB_URI = envConfig.MONGODB_URI;
 
 /**
  * Global is used here to maintain a cached connection across hot reloads
@@ -33,7 +28,7 @@ async function dbConnect() {
       family: 4, // Force IPv4 to prevent ECONNREFUSED issues on some Windows systems
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       return mongoose;
     });
   }

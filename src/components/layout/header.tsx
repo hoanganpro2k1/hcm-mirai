@@ -1,7 +1,8 @@
 "use client";
 
+import NextImage from "next/image";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
-import { BookOpen, ChevronDown, Menu, Phone, Search, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, Search, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { ModeToggle } from "./mode-toggle";
@@ -85,17 +86,14 @@ export function Header() {
       <div className="bg-background/95 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b shadow-sm transition-colors">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-          <div className="text-primary">
-            <BookOpen className="w-6 h-6 sm:w-8 sm:h-8" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-base sm:text-xl font-bold text-primary leading-tight">
-              HCM - MIRAI
-            </span>
-            <span className="text-[8px] sm:text-[10px] font-semibold text-red-600 leading-none">
-              CHẮP CÁNH ƯỚC MƠ
-            </span>
-          </div>
+          <NextImage 
+            src="/logo.png" 
+            alt="HCM - MIRAI Logo" 
+            width={180} 
+            height={60} 
+            className="w-auto h-10 sm:h-12 object-contain"
+            priority
+          />
         </Link>
 
         {/* Navigation Links */}

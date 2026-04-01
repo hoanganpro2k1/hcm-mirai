@@ -35,6 +35,7 @@ export default function OrderPage() {
   };
 
   const handleSearch = () => {
+    console.log("localFilters", localFilters);
     // Apply local filters to the search params triggering the useOrders fetch
     updateParams({ ...localFilters, page: 1 });
     console.log("Triggering API call with filters:", localFilters);
@@ -64,9 +65,9 @@ export default function OrderPage() {
         ) : orders.length > 0 ? (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {orders.map((order) => (
+              {orders.map((order, index) => (
                 <div
-                  key={order.id}
+                  key={index}
                   className="animate-fade-in transition-all"
                   style={{ animationDelay: `${orders.indexOf(order) * 100}ms` }}
                 >

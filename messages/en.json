@@ -54,9 +54,7 @@
   "Filters": {
     "country": "Country",
     "category": "Category",
-    "location": "Test Location",
     "gender": "Gender",
-    "birthYear": "Recruitment Date",
     "search": "Search job orders",
     "all": "All"
   }
