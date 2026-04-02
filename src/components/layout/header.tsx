@@ -1,9 +1,10 @@
 "use client";
 
-import NextImage from "next/image";
+import SearchTrigger from "@/components/features/search/SearchTrigger";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
-import { ChevronDown, Menu, Phone, Search, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import NextImage from "next/image";
 import { useState } from "react";
 import { ModeToggle } from "./mode-toggle";
 
@@ -54,9 +55,12 @@ export function Header() {
           <Phone className="w-4 h-4" />
           <span>+0973 460 999</span>
         </Link>
-        <div className="hidden uppercase md:block font-medium">
+        <Link
+          href="/don-hang"
+          className="hidden uppercase md:block font-medium hover:text-white/80 transition-colors hover:underline"
+        >
           {t("topbar.tuyensinh")}
-        </div>
+        </Link>
         <div className="flex items-center gap-1 font-semibold">
           <button
             onClick={() => handleLocaleChange("vi")}
@@ -86,12 +90,12 @@ export function Header() {
       <div className="bg-background/95 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b shadow-sm transition-colors">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-          <NextImage 
-            src="/logo.png" 
-            alt="HCM - MIRAI Logo" 
-            width={180} 
-            height={60} 
-            className="w-auto h-10 sm:h-12 object-contain"
+          <NextImage
+            src="/logo.png"
+            alt="HCM - MIRAI Logo"
+            width={160}
+            height={50}
+            className="w-auto h-8 sm:h-10 object-contain"
             priority
           />
         </Link>
@@ -138,12 +142,7 @@ export function Header() {
         {/* Actions Context Group */}
         <div className="flex items-center gap-2 sm:gap-4">
           <div className="relative hidden md:flex items-center">
-            <Search className="w-4 h-4 absolute left-3 text-muted-foreground" />
-            <input
-              type="text"
-              placeholder={t("actions.timkiem")}
-              className="bg-muted text-sm text-foreground placeholder:text-muted-foreground rounded-md pl-9 pr-4 py-2 w-48 focus:outline-none focus:ring-1 focus:ring-primary"
-            />
+            <SearchTrigger />
           </div>
           <ModeToggle />
           <button className="hidden sm:block bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 sm:px-6 rounded uppercase text-xs sm:text-sm font-semibold transition shrink-0">

@@ -1,10 +1,10 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/section-header";
-import { Briefcase, FileText, GraduationCap, Landmark } from "lucide-react";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { Briefcase, FileText, GraduationCap, Landmark } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 const features = [
   {
@@ -45,7 +45,7 @@ export default function Introduction() {
   const t = useTranslations("Introduction");
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-950 transition-colors">
+    <section className="py-10 md:py-20 bg-white dark:bg-gray-950 transition-colors">
       <div className="container mx-auto px-6">
         <SectionHeader title={t("title")} align="center" />
 

@@ -1,5 +1,5 @@
-import { OrderFilterParams, OrderResponse, IOrder } from "@/types/order.type";
 import { apiClient } from "@/lib/axios";
+import { IOrder, OrderFilterParams, OrderResponse } from "@/types/order.type";
 
 export const orderService = {
   getOrders: async (params: OrderFilterParams): Promise<OrderResponse> => {
@@ -24,6 +24,15 @@ export const orderService = {
 
   deleteOrder: async (id: string): Promise<{ message: string }> => {
     const res = await apiClient.delete<{ message: string }>(`/orders/${id}`);
+    return res.data;
+  },
+
+  searchOrders: async (params: {
+    s: string;
+    page?: number;
+    limit?: number;
+  }): Promise<OrderResponse> => {
+    const res = await apiClient.get<OrderResponse>("/search", { params });
     return res.data;
   },
 };
