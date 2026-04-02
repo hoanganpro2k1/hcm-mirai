@@ -52,6 +52,7 @@ export interface OrderFilterParams {
   testLocation?: string;
   gender?: string;
   birthYear?: string;
+  s?: string;
 }
 
 export interface OrderResponse {

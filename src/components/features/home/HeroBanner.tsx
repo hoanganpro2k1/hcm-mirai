@@ -1,5 +1,6 @@
 "use client";
 
+import AutoHeight from "embla-carousel-auto-height";
 import Fade from "embla-carousel-fade";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -16,25 +17,29 @@ import { cn } from "@/lib/utils";
 type SlideType = {
   id: number;
   image: string;
+  width: number;
+  height: number;
 };
 
 const slides: SlideType[] = [
   {
     id: 1,
     image: IMAGES.HOME.HERO.slide1,
+    width: 1920,
+    height: 690,
   },
   {
     id: 2,
     image: IMAGES.HOME.HERO.slide2,
+    width: 1920,
+    height: 690,
   },
   {
     id: 3,
     image: IMAGES.HOME.HERO.slide3,
+    width: 1920,
+    height: 690,
   },
-  // {
-  //   id: 4,
-  //   image: IMAGES.HOME.HERO.slide4,
-  // },
 ];
 
 export default function HeroBanner() {
@@ -67,22 +72,22 @@ export default function HeroBanner() {
   return (
     <Carousel
       opts={{ loop: true }}
-      plugins={[Fade()]}
+      plugins={[Fade(), AutoHeight()]}
       setApi={setApi}
       className={cn(
-        "relative h-[690px] w-screen overflow-hidden select-none",
+        "relative w-full overflow-hidden select-none",
         "**:data-[slot=carousel-content]:h-full",
       )}
     >
       <CarouselContent className="h-full ml-0">
         {slides.map((slide, i) => (
-          <CarouselItem key={slide.id} className="relative h-full pl-0">
+          <CarouselItem key={slide.id} className="pl-0">
             <Image
               src={slide.image}
               alt={`Slide ${i + 1}`}
-              width={1920}
-              height={690}
-              className={cn("object-contain h-full w-full")}
+              width={slide.width}
+              height={slide.height}
+              className={cn("w-full h-auto object-contain")}
               priority={i === 0}
             />
           </CarouselItem>
