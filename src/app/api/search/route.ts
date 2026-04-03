@@ -28,6 +28,7 @@ export async function GET(req: NextRequest) {
 
     const [orders, total] = await Promise.all([
       Order.find(query)
+        .select("coverImage title salary location createdBy createdAt description")
         .sort({ createdAt: -1 })
         .skip(skip)
         .limit(limit)
@@ -37,7 +38,21 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(
       {
-        data: orders,
+        data: orders.map((order: any) => ({
+          id: order._id,
+          coverImage: order.coverImage,
+          title: order.title,
+          salary: order.salary,
+          location: order.location,
+          createdBy: order.createdBy
+            ? {
+                id: order.createdBy._id,
+                username: order.createdBy.username,
+              }
+            : null,
+          createdAt: order.createdAt,
+          description: order.description,
+        })),
         total,
         page,
         totalPages: Math.ceil(total / limit),

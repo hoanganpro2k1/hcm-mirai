@@ -8,6 +8,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  CATEGORY_OPTIONS,
+  COUNTRY_OPTIONS,
+  GENDER_OPTIONS,
+} from "@/constants/order.constant";
 import { OrderFilterParams } from "@/types/order.type";
 import { Search } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -31,8 +36,8 @@ const FilterSelect = ({
 }) => (
   <div className="flex-1 min-w-[140px]">
     <Select
-      value={value || undefined}
-      onValueChange={() => onChange(value === "all" ? null : value)}
+      value={value || "all"}
+      onValueChange={(val) => onChange(val)}
       items={options}
     >
       <SelectTrigger className="w-full h-auto p-0 pb-2 bg-transparent border-0 border-b border-gray-200 dark:border-gray-800 rounded-none shadow-none focus:ring-0 focus:border-primary transition-colors text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -56,70 +61,20 @@ export function OrderFilter({
 }: OrderFilterProps) {
   const t = useTranslations("Filters");
 
-  const filterOptions = {
-    country: [
-      {
-        value: "all",
-        label: "Quốc gia",
-      },
-      {
-        value: "japan",
-        label: "Nhật Bản",
-      },
-      {
-        value: "korea",
-        label: "Hàn Quốc",
-      },
-      {
-        value: "taiwan",
-        label: "Đài Loan",
-      },
-      {
-        value: "australia",
-        label: "Úc",
-      },
-    ],
-    category: [
-      {
-        value: "all",
-        label: "Ngành nghề",
-      },
-      {
-        value: "linh-kien-o-to",
-        label: "Linh kiện ô tô",
-      },
-      {
-        value: "che-bien-thuc-pham",
-        label: "Chế biến thực phẩm",
-      },
-      {
-        value: "bao-duong-o-to",
-        label: "Bảo dưỡng ô tô",
-      },
-      {
-        value: "cong-xuong",
-        label: "Công xưởng",
-      },
-      {
-        value: "dong-goi",
-        label: "Đóng gói",
-      },
-    ],
-    gender: [
-      {
-        value: "all",
-        label: "Giới tính",
-      },
-      {
-        value: "male",
-        label: "Nam",
-      },
-      {
-        value: "female",
-        label: "Nữ",
-      },
-    ],
-  };
+  const countryOptions = [
+    { value: "all", label: t("country") || "Quốc gia" },
+    ...COUNTRY_OPTIONS,
+  ];
+
+  const categoryOptions = [
+    { value: "all", label: t("category") || "Ngành nghề" },
+    ...CATEGORY_OPTIONS,
+  ];
+
+  const genderOptions = [
+    { value: "all", label: t("gender") || "Giới tính" },
+    ...GENDER_OPTIONS.filter((opt) => opt.value !== "both"), // Search usually filters by Nam/Nữ
+  ];
 
   return (
     <div className="bg-white dark:bg-gray-950 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-900 mb-10">
@@ -127,19 +82,19 @@ export function OrderFilter({
         <FilterSelect
           label={t("country")}
           value={filters.country || null}
-          options={filterOptions.country}
+          options={countryOptions}
           onChange={(val) => onFilterChange("country", val)}
         />
         <FilterSelect
           label={t("category")}
           value={filters.category || null}
-          options={filterOptions.category}
+          options={categoryOptions}
           onChange={(val) => onFilterChange("category", val)}
         />
         <FilterSelect
           label={t("gender")}
           value={filters.gender || null}
-          options={filterOptions.gender}
+          options={genderOptions}
           onChange={(val) => onFilterChange("gender", val)}
         />
         <Button
