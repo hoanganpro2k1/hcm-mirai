@@ -35,27 +35,20 @@ export default function OrderPage() {
   };
 
   const handleSearch = () => {
-    console.log("localFilters", localFilters);
-    // Apply local filters to the search params triggering the useOrders fetch
     updateParams({ ...localFilters, page: 1 });
-    console.log("Triggering API call with filters:", localFilters);
   };
 
   return (
     <div className="py-12 bg-gray-50/50 dark:bg-black transition-colors min-h-screen">
       <div className="container mx-auto px-6 max-w-7xl">
-        {/* Title Section */}
         <SectionHeader title={t("title")} align="center" className="mb-12" />
 
-        {/* Filter Section */}
         <OrderFilter
-          // Display the local selections in the UI
           filters={{ ...params, ...localFilters }}
           onFilterChange={handleFilterChange}
           onSearch={handleSearch}
         />
 
-        {/* Orders Grid */}
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[600px]">
             {Array.from({ length: 6 }).map((_, i) => (

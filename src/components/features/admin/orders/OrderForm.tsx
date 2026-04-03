@@ -1,8 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { ImageUpload } from "@/components/ui/image-upload";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { RichTextEditor } from "@/components/ui/rich-text-editor";
 import {
   Select,
   SelectContent,
@@ -10,14 +12,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { RichTextEditor } from "@/components/ui/rich-text-editor";
-import { ImageUpload } from "@/components/ui/image-upload";
+import {
+  COUNTRY_OPTIONS,
+  GENDER_OPTIONS,
+  STATUS_OPTIONS,
+} from "@/constants/order.constant";
 import { orderService } from "@/services/order.service";
 import { JobOrder } from "@/types/order.type";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft, Loader2 } from "lucide-react";
 import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
 
@@ -128,15 +133,17 @@ export const OrderForm = ({
               onValueChange={(val: string | null) => {
                 if (val) setValue("country", val);
               }}
+              items={COUNTRY_OPTIONS}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Chọn quốc gia" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="Nhật Bản">Nhật Bản</SelectItem>
-                <SelectItem value="Hàn Quốc">Hàn Quốc</SelectItem>
-                <SelectItem value="Đài Loan">Đài Loan</SelectItem>
-                <SelectItem value="Đức">Đức</SelectItem>
+                {COUNTRY_OPTIONS.map((opt) => (
+                  <SelectItem key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
             {errors.country && (
@@ -171,21 +178,21 @@ export const OrderForm = ({
           <div className="space-y-2">
             <Label htmlFor="gender">Giới tính</Label>
             <Select
-              items={[
-                { value: "male", label: "Nam" },
-                { value: "female", label: "Nữ" },
-                { value: "both", label: "Nam/Nữ" },
-              ]}
               value={genderValue}
-              onValueChange={(val) => setValue("gender", val as any)}
+              onValueChange={(val: string | null) => {
+                if (val) setValue("gender", val as any);
+              }}
+              items={GENDER_OPTIONS}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Chọn giới tính" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="male">Nam</SelectItem>
-                <SelectItem value="female">Nữ</SelectItem>
-                <SelectItem value="both">Nam/Nữ</SelectItem>
+                {GENDER_OPTIONS.map((opt) => (
+                  <SelectItem key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
@@ -227,21 +234,21 @@ export const OrderForm = ({
           <div className="space-y-2">
             <Label htmlFor="status">Trạng thái</Label>
             <Select
-              items={[
-                { value: "active", label: "Hoạt động" },
-                { value: "inactive", label: "Tạm dừng" },
-              ]}
               value={watch("status") || "active"}
               onValueChange={(val: string | null) => {
                 if (val) setValue("status", val);
               }}
+              items={STATUS_OPTIONS}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Chọn trạng thái" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="active">Hoạt động</SelectItem>
-                <SelectItem value="inactive">Tạm dừng</SelectItem>
+                {STATUS_OPTIONS.map((opt) => (
+                  <SelectItem key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>

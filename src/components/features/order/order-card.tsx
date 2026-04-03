@@ -8,10 +8,10 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { JobOrder } from "@/types/order.type";
+import DOMPurify from "isomorphic-dompurify";
 import { Calendar, DollarSign, Info, MapPin, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import DOMPurify from "isomorphic-dompurify";
 
 interface OrderCardProps {
   order: JobOrder;
@@ -35,7 +35,7 @@ export function OrderCard({ order }: OrderCardProps) {
 
       <CardContent className="flex-1 p-6 space-y-4">
         {/* Title */}
-        <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight line-clamp-2 min-h-[56px] group-hover:text-primary transition-colors">
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight line-clamp-3 h-auto group-hover:text-primary transition-colors">
           {order.title}
         </h3>
 
@@ -106,11 +106,11 @@ export function OrderCard({ order }: OrderCardProps) {
         <div className="pt-4 border-t border-gray-50 dark:border-gray-800">
           <div className="flex items-start gap-2 text-[13px] text-gray-600 dark:text-gray-400 italic">
             <Info className="w-4 h-4 mt-0.5 shrink-0" />
-            <div 
+            <div
               className="line-clamp-3 text-[13px] text-gray-600 dark:text-gray-400 italic"
-              dangerouslySetInnerHTML={{ 
-                __html: DOMPurify.sanitize(order.description || "") 
-              }} 
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(order.description || ""),
+              }}
             />
           </div>
         </div>

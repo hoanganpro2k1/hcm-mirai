@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
   try {
     await dbConnect();
     // Đảm bảo Admin model được nạp (tránh lỗi Schema hasn't been registered)
-    const _ForceAdmin = Admin.modelName; 
+    void Admin.modelName; 
 
     const { searchParams } = new URL(req.url);
     const country = searchParams.get("country");
