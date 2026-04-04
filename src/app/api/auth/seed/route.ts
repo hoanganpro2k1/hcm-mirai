@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/mongoose";
 import Permission from "@/models/permission";
 import Role from "@/models/role";
-import Admin from "@/models/admin";
+import User from "@/models/user";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
   try {
@@ -10,9 +10,27 @@ export async function GET(req: NextRequest) {
 
     // 1. Khởi tạo Permissions
     const permissionsData = [
-      { name: "orders:create", description: "Quyền tạo đơn hàng mới", path: "/api/orders", method: "POST", module: "ORDERS" },
-      { name: "orders:edit", description: "Quyền chỉnh sửa đơn hàng", path: "/api/orders/[id]", method: "PUT", module: "ORDERS" },
-      { name: "orders:delete", description: "Quyền xóa đơn hàng", path: "/api/orders/[id]", method: "DELETE", module: "ORDERS" },
+      {
+        name: "orders:create",
+        description: "Quyền tạo đơn hàng mới",
+        path: "/api/orders",
+        method: "POST",
+        module: "ORDERS",
+      },
+      {
+        name: "orders:edit",
+        description: "Quyền chỉnh sửa đơn hàng",
+        path: "/api/orders/[id]",
+        method: "PUT",
+        module: "ORDERS",
+      },
+      {
+        name: "orders:delete",
+        description: "Quyền xóa đơn hàng",
+        path: "/api/orders/[id]",
+        method: "DELETE",
+        module: "ORDERS",
+      },
     ];
 
     const permissions = [];
@@ -32,7 +50,7 @@ export async function GET(req: NextRequest) {
       adminRole = await Role.create({
         name: "admin",
         description: "Quản trị viên toàn quyền",
-        permissions: permissions.map((p) => p._id),
+        permissions: permissions.map((p) => p.id as any),
         isActive: true,
       });
     }
@@ -42,8 +60,8 @@ export async function GET(req: NextRequest) {
     if (!editorRole) {
       const editorPermissions = permissions
         .filter((p) => ["orders:create", "orders:edit"].includes(p.name))
-        .map((p) => p._id);
-        
+        .map((p) => p.id as any);
+
       editorRole = await Role.create({
         name: "editor",
         description: "Biên tập viên",
@@ -52,11 +70,11 @@ export async function GET(req: NextRequest) {
       });
     }
 
-    // 3. Gán Role Admin cho tài khoản Admin đầu tiên tìm thấy (nếu có)
-    const firstAdmin = await Admin.findOne();
-    if (firstAdmin && !firstAdmin.role) {
-      firstAdmin.role = adminRole._id;
-      await firstAdmin.save();
+    // 3. Gán Role Admin cho tài khoản User đầu tiên tìm thấy (nếu có)
+    const firstUser = await User.findOne();
+    if (firstUser && !firstUser.role) {
+      firstUser.role = adminRole.id as any;
+      await firstUser.save();
     }
 
     return NextResponse.json({
@@ -64,10 +82,9 @@ export async function GET(req: NextRequest) {
       stats: {
         permissionsCreated: permissions.length,
         rolesCreated: 2,
-        adminUpdated: firstAdmin ? firstAdmin.username : "Không tìm thấy admin nào",
-      }
+        userUpdated: firstUser ? firstUser.username : "Không tìm thấy user nào",
+      },
     });
-
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

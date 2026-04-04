@@ -17,6 +17,34 @@ if (!cached) {
   cached = (global as any).mongoose = { conn: null, promise: null };
 }
 
+// Cấu hình chuyển đổi _id sang id cho toàn bộ schemas (với bảo vệ tránh đăng ký nhiều lần)
+if (!(mongoose as any)._idPluginRegistered) {
+  mongoose.plugin((schema: any) => {
+    schema.set("toJSON", {
+      virtuals: true,
+      versionKey: false,
+      transform: function (doc: any, ret: any) {
+        ret.id = ret._id ? ret._id.toString() : ret.id;
+        delete ret._id;
+        delete ret.__v;
+        return ret;
+      },
+    });
+
+    schema.set("toObject", {
+      virtuals: true,
+      versionKey: false,
+      transform: function (doc: any, ret: any) {
+        ret.id = ret._id ? ret._id.toString() : ret._id;
+        delete ret._id;
+        delete ret.__v;
+        return ret;
+      },
+    });
+  });
+  (mongoose as any)._idPluginRegistered = true;
+}
+
 async function dbConnect() {
   if (cached.conn) {
     return cached.conn;

@@ -1,14 +1,15 @@
 import dbConnect from "@/lib/mongoose";
-import Order from "@/models/order";
-import Admin from "@/models/admin"; // Phải import Admin để Mongoose đăng ký model này cho populate
 import { authorize } from "@/lib/rbac";
+import Order from "@/models/order";
+import User from "@/models/user"; // Phải import User để Mongoose đăng ký model này cho populate
+import { formatDocument } from "@/lib/format-document";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
   try {
     await dbConnect();
-    // Đảm bảo Admin model được nạp (tránh lỗi Schema hasn't been registered)
-    void Admin.modelName; 
+    // Đảm bảo User model được nạp (tránh lỗi Schema hasn't been registered)
+    void User.modelName;
 
     const { searchParams } = new URL(req.url);
     const country = searchParams.get("country");
@@ -35,12 +36,12 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(
       {
-        data: orders,
+        data: formatDocument(orders),
         total,
         page,
         totalPages: Math.ceil(total / limit),
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: unknown) {
     return NextResponse.json(
@@ -48,7 +49,7 @@ export async function GET(req: NextRequest) {
         error: "Failed to fetch orders",
         details: error instanceof Error ? error.message : String(error),
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -70,18 +71,18 @@ export async function POST(req: NextRequest) {
 
     const order = await Order.create({
       ...body,
-      createdBy: payload?.adminId,
+      createdBy: payload?.userId,
       deletedAt: null,
     });
 
-    return NextResponse.json(order, { status: 201 });
+    return NextResponse.json(formatDocument(order), { status: 201 });
   } catch (error: unknown) {
     return NextResponse.json(
       {
         error: "Failed to create order",
         details: error instanceof Error ? error.message : String(error),
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

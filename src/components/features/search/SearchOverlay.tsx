@@ -1,3 +1,5 @@
+"use client";
+
 import SearchCard from "@/components/features/search/SearchCard";
 import { InputGroup, InputGroupInput } from "@/components/ui/input-group";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -167,7 +169,7 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
                           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
                             {results.data.map((order, index) => (
                               <SearchCard
-                                key={order.id || order._id || index}
+                                key={order.id || index}
                                 type="order"
                                 title={order.title ?? ""}
                                 image={order.coverImage ?? ""}

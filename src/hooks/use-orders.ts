@@ -1,46 +1,22 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
 import { orderService } from "@/services/order.service";
-import { JobOrder, OrderFilterParams } from "@/types/order.type";
+import { OrderFilterParams } from "@/types/order.type";
+import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 
 export function useOrders(initialParams: OrderFilterParams = {}) {
-  const [data, setData] = useState<JobOrder[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [pagination, setPagination] = useState({
-    page: 1,
-    totalPages: 1,
-    total: 0,
-  });
   const [params, setParams] = useState<OrderFilterParams>({
     page: 1,
     limit: 6,
     ...initialParams,
   });
 
-  const fetchOrders = useCallback(async (currentParams: OrderFilterParams) => {
-    setLoading(true);
-    try {
-      const response = await orderService.getOrders(currentParams);
-      setData(response.data);
-      setPagination({
-        page: response.page,
-        totalPages: response.totalPages,
-        total: response.total,
-      });
-      setError(null);
-    } catch (err) {
-      setError("Failed to fetch orders. Please try again later.");
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchOrders(params);
-  }, [params, fetchOrders]);
+  const { data, isLoading, isPlaceholderData, error, refetch } = useQuery({
+    queryKey: ["orders", params],
+    queryFn: () => orderService.getOrders(params),
+    placeholderData: (previousData) => previousData,
+  });
 
   const updateParams = (newParams: Partial<OrderFilterParams>) => {
     setParams((prev) => ({ ...prev, ...newParams }));
@@ -53,13 +29,17 @@ export function useOrders(initialParams: OrderFilterParams = {}) {
   };
 
   return {
-    orders: data,
-    loading,
-    error,
-    pagination,
+    orders: data?.data || [],
+    loading: isLoading || (isPlaceholderData && !data), // Show loading when fetching first time or no data
+    error: error ? "Failed to fetch orders. Please try again later." : null,
+    pagination: {
+      page: data?.page || (params.page as number),
+      totalPages: data?.totalPages || 1,
+      total: data?.total || 0,
+    },
     params,
     updateParams,
     handlePageChange,
-    refresh: () => fetchOrders(params),
+    refresh: refetch,
   };
 }

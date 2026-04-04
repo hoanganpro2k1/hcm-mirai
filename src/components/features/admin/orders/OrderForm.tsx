@@ -17,13 +17,11 @@ import {
   GENDER_OPTIONS,
   STATUS_OPTIONS,
 } from "@/constants/order.constant";
-import { orderService } from "@/services/order.service";
+import { useOrderMutations } from "@/hooks/use-order-mutations";
 import { JobOrder } from "@/types/order.type";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft, Loader2 } from "lucide-react";
-import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { toast } from "sonner";
 import * as z from "zod";
 
 const orderSchema = z.object({
@@ -53,7 +51,9 @@ export const OrderForm = ({
   onSuccess,
   onCancel,
 }: OrderFormProps) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { createOrder, updateOrder, isCreating, isUpdating } =
+    useOrderMutations();
+  const isSubmitting = isCreating || isUpdating;
 
   const {
     control,
@@ -82,23 +82,13 @@ export const OrderForm = ({
   const genderValue = watch("gender");
 
   const onSubmit = async (data: OrderFormValues) => {
-    try {
-      setIsSubmitting(true);
-      if (initialData?._id || initialData?.id) {
-        const id = initialData._id?.toString() || initialData.id;
-        await orderService.updateOrder(id, data as any);
-        toast.success("Cập nhật đơn hàng thành công.");
-      } else {
-        await orderService.createOrder(data as any);
-        toast.success("Thêm đơn hàng mới thành công.");
-      }
-      onSuccess();
-    } catch (error) {
-      console.error("Error submitting order:", error);
-      toast.error("Lỗi khi lưu đơn hàng.");
-    } finally {
-      setIsSubmitting(false);
+    if (initialData?.id) {
+      const id = initialData.id as string;
+      await updateOrder({ id, data: data as any });
+    } else {
+      await createOrder(data as any);
     }
+    onSuccess();
   };
 
   return (

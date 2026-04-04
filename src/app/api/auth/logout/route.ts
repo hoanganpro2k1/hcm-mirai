@@ -1,20 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/mongoose";
-import Admin from "@/models/admin";
+import User from "@/models/user";
 
 export async function POST(req: NextRequest) {
   try {
     await dbConnect();
 
-    // Lấy refreshToken từ Cookie HttpOnly hoặc từ Body (tùy frontend truyền xuống)
+    // Lấy refreshToken từ Cookie HttpOnly hoặc từ Body
     let refreshToken: string | null = null;
-    
-    // Thường thì httpOnly cookie sẽ tự động truyền lên
+
     const cookieToken = req.cookies.get("refreshToken")?.value;
     refreshToken = cookieToken || null;
 
     if (!refreshToken) {
-      // Nếu không thấy trong cookie, thử tìm trong body
       const bodyText = await req.text();
       if (bodyText) {
         try {
@@ -27,10 +25,9 @@ export async function POST(req: NextRequest) {
     }
 
     if (refreshToken) {
-      // Nếu có refreshToken, tìm và xóa khỏi Database để vô hiệu hóa
-      await Admin.findOneAndUpdate(
+      await User.findOneAndUpdate(
         { refreshToken },
-        { $set: { refreshToken: null } }
+        { $set: { refreshToken: null } },
       );
     }
 

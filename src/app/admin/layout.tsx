@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
+import QueryProvider from "@/providers/query-provider";
 import { Mulish } from "next/font/google";
 
 const mulish = Mulish({
@@ -33,7 +34,7 @@ export default function AdminLayout({
           disableTransitionOnChange
         >
           <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
-            {children}
+            <QueryProvider>{children}</QueryProvider>
             <Toaster position="top-right" richColors />
           </div>
         </ThemeProvider>

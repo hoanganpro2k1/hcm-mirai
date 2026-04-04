@@ -115,8 +115,10 @@ apiClient.interceptors.response.use(
           useAuthStore.getState().setAuth(newAccessToken);
 
           processQueue(null, newAccessToken);
-          // Retry cái request bị rớt lúc đầu với Token mới
-          originalRequest.headers["Authorization"] = "Bearer " + newAccessToken;
+          originalRequest.headers.set(
+            "Authorization",
+            "Bearer " + newAccessToken,
+          );
           return apiClient(originalRequest);
         }
       } catch (err) {
