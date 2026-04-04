@@ -4,7 +4,7 @@ import { IRefreshToken } from "@/types/refreshToken.type";
 const refreshTokenSchema = new Schema<IRefreshToken>(
   {
     token: { type: String, required: true, unique: true, index: true },
-    adminId: { type: Schema.Types.ObjectId, ref: "Admin", required: true },
+    userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
     expiresAt: { type: Date, required: true, index: true },
   },
   {

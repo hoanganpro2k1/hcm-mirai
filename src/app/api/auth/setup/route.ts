@@ -1,56 +1,67 @@
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/mongoose";
-import Admin from "@/models/admin";
+import User from "@/models/user";
 import { hashPassword } from "@/lib/auth";
 
 export async function POST(req: NextRequest) {
   try {
     await dbConnect();
 
-    // Check if any admin exists
-    const adminCount = await Admin.countDocuments();
-    if (adminCount > 0) {
+    // Check if any user exists
+    const userCount = await User.countDocuments();
+    if (userCount > 0) {
       return NextResponse.json(
-        { message: "Tài khoản admin đã tồn tại. Không thể tạo thêm qua API setup." },
-        { status: 403 }
+        {
+          message:
+            "Tài khoản admin đã tồn tại. Không thể tạo thêm qua API setup.",
+        },
+        { status: 403 },
       );
     }
 
-    const { username, password } = await req.json();
+    const { username, password, name, avatar, phoneNumber } = await req.json();
 
     if (!username || !password) {
       return NextResponse.json(
         { message: "Vui lòng cung cấp username và password." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     // Mã hóa mật khẩu
     const hashedPassword = await hashPassword(password);
 
-    // Tạo Admin mới
-    const newAdmin = new Admin({
+    // Tạo User mới
+    const newUser = new User({
       username,
       password: hashedPassword,
+      name,
+      avatar,
+      phoneNumber,
+      status: "active",
     });
 
-    await newAdmin.save();
+    await newUser.save();
 
     // Trả về không chứa password
     return NextResponse.json(
       {
-        message: "Tạo tài khoản Admin thành công.",
-        admin: {
-          id: newAdmin._id,
-          username: newAdmin.username,
+        message: "Tạo tài khoản User thành công.",
+        user: {
+          id: newUser.id,
+          username: newUser.username,
+          name: newUser.name,
+          avatar: newUser.avatar,
+          phoneNumber: newUser.phoneNumber,
+          status: newUser.status,
         },
       },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error: any) {
     return NextResponse.json(
       { message: "Đã có lỗi xảy ra", error: error.message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

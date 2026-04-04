@@ -105,7 +105,7 @@ export default async function SearchPage({
               {results && results.data.length > 0 ? (
                 results.data.map((order, index) => (
                   <SearchCard
-                    key={order.id || order._id || index}
+                    key={order.id || index}
                     type="order"
                     variant="list"
                     title={order.title ?? ""}

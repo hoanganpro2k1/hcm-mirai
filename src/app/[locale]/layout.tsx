@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
+import QueryProvider from "@/providers/query-provider";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -77,7 +78,7 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <ScrollProgress />
-            {children}
+            <QueryProvider>{children}</QueryProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

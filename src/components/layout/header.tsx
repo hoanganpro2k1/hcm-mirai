@@ -7,10 +7,12 @@ import { useLocale, useTranslations } from "next-intl";
 import NextImage from "next/image";
 import { useState } from "react";
 import { ModeToggle } from "./mode-toggle";
+import { ConsultationModal } from "@/components/features/consultation/ConsultationModal";
 
 export function Header() {
   const t = useTranslations("Header");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -145,7 +147,10 @@ export function Header() {
             <SearchTrigger />
           </div>
           <ModeToggle />
-          <button className="hidden sm:block bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 sm:px-6 rounded uppercase text-xs sm:text-sm font-semibold transition shrink-0">
+          <button 
+            onClick={() => setIsConsultationOpen(true)}
+            className="hidden sm:block bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 sm:px-6 rounded uppercase text-xs sm:text-sm font-semibold transition shrink-0"
+          >
             {t("actions.tuvan")}
           </button>
 
@@ -228,13 +233,23 @@ export function Header() {
             </div>
 
             <div className="p-4 mt-auto">
-              <button className="w-full bg-primary hover:bg-primary/90 transition-colors text-primary-foreground py-3 rounded-md uppercase text-sm font-semibold">
+              <button 
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsConsultationOpen(true);
+                }}
+                className="w-full bg-primary hover:bg-primary/90 transition-colors text-primary-foreground py-3 rounded-md uppercase text-sm font-semibold"
+              >
                 {t("actions.tuvan")}
               </button>
             </div>
           </div>
         </div>
       )}
+      <ConsultationModal 
+        open={isConsultationOpen} 
+        onOpenChange={setIsConsultationOpen} 
+      />
     </header>
   );
 }

@@ -1,13 +1,14 @@
 import dbConnect from "@/lib/mongoose";
 import Order from "@/models/order";
-import Admin from "@/models/admin";
+import User from "@/models/user";
+import { formatDocument } from "@/lib/format-document";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
   try {
     await dbConnect();
-    // Ensure Admin model is registered for populate
-    void Admin.modelName;
+    // Ensure User model is registered for populate
+    void User.modelName;
 
     const { searchParams } = new URL(req.url);
     const s = searchParams.get("s") || "";
@@ -38,21 +39,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(
       {
-        data: orders.map((order: any) => ({
-          id: order._id,
-          coverImage: order.coverImage,
-          title: order.title,
-          salary: order.salary,
-          location: order.location,
-          createdBy: order.createdBy
-            ? {
-                id: order.createdBy._id,
-                username: order.createdBy.username,
-              }
-            : null,
-          createdAt: order.createdAt,
-          description: order.description,
-        })),
+        data: formatDocument(orders),
         total,
         page,
         totalPages: Math.ceil(total / limit),

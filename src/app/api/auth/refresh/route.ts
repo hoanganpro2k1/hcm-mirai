@@ -5,11 +5,11 @@ import {
   verifyToken,
 } from "@/lib/auth";
 import dbConnect from "@/lib/mongoose";
-import Admin from "@/models/admin";
+import User from "@/models/user";
 import Role from "@/models/role";
 import Permission from "@/models/permission";
 import RefreshToken from "@/models/refreshToken";
-import { IPopulatedAdmin } from "@/types/auth.type";
+import { IPopulatedUser } from "@/types/auth.type";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -29,9 +29,9 @@ export async function POST(req: NextRequest) {
     // 1. Kiểm tra tính hợp lệ của token trong Database
     const tokenDoc = await RefreshToken.findOne({ token: refreshTokenCookie });
     if (!tokenDoc || tokenDoc.expiresAt < new Date()) {
-      console.error("RefreshToken API 403: Token not found or expired in DB", { 
-        found: !!tokenDoc, 
-        expired: tokenDoc ? tokenDoc.expiresAt < new Date() : null 
+      console.error("RefreshToken API 403: Token not found or expired in DB", {
+        found: !!tokenDoc,
+        expired: tokenDoc ? tokenDoc.expiresAt < new Date() : null,
       });
       if (tokenDoc) await RefreshToken.deleteOne({ _id: tokenDoc._id });
       return NextResponse.json(
@@ -40,10 +40,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 2. Giải mã token để lấy payload (chỉ để kiểm tra cấu trúc nếu cần, nhưng quan trọng là ID)
+    // 2. Giải mã token để lấy payload
     const decoded = await verifyToken(refreshTokenCookie, "refresh");
     if (!decoded) {
-      console.error("RefreshToken API 403: JWT verify failed (Invalid signature or structural error)");
+      console.error(
+        "RefreshToken API 403: JWT verify failed (Invalid signature or structural error)",
+      );
       await RefreshToken.deleteOne({ _id: tokenDoc._id });
       return NextResponse.json(
         { message: "Refresh token không hợp lệ (mã hóa sai)." },
@@ -51,18 +53,21 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 3. Tìm admin và populate Role/Permissions
-    const admin = (await Admin.findById(tokenDoc.adminId).populate({
+    // 3. Tìm user và populate Role/Permissions
+    const user = (await User.findById(tokenDoc.userId).populate({
       path: "role",
       model: Role,
       populate: {
         path: "permissions",
         model: Permission,
       },
-    })) as IPopulatedAdmin | null;
+    })) as IPopulatedUser | null;
 
-    if (!admin) {
-      console.error("RefreshToken API 403: Admin not found for id", tokenDoc.adminId);
+    if (!user) {
+      console.error(
+        "RefreshToken API 403: User not found for id",
+        tokenDoc.userId,
+      );
       await RefreshToken.deleteOne({ _id: tokenDoc._id });
       return NextResponse.json(
         { message: "Tài khoản không tồn tại." },
@@ -71,13 +76,13 @@ export async function POST(req: NextRequest) {
     }
 
     // 4. Cơ chế Token Rotation: Cấp phát mới lại Access Token và Refresh Token
-    const role = admin.role;
+    const role = user.role;
     const roleName = role?.name;
     const rolePermissions = role?.permissions?.map((p: any) => p.name) || [];
 
     const payload = {
-      adminId: admin._id.toString(),
-      username: admin.username,
+      userId: user.id,
+      username: user.username,
       roleName,
       rolePermissions,
     };
@@ -103,9 +108,13 @@ export async function POST(req: NextRequest) {
       {
         message: "Cấp lại token thành công",
         accessToken: newAccessToken,
-        admin: {
-          id: admin._id,
-          username: admin.username,
+        user: {
+          id: user.id,
+          username: user.username,
+          name: user.name,
+          avatar: user.avatar,
+          phoneNumber: user.phoneNumber,
+          status: user.status,
           role: roleName,
           permissions: rolePermissions,
         },

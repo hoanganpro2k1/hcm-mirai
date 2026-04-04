@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 export interface IPermission extends mongoose.Document {
+  id: string; // Standardized ID
   name: string;
   description: string;
   path: string;

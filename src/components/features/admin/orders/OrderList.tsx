@@ -19,56 +19,25 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { orderService } from "@/services/order.service";
-import { JobOrder } from "@/types/order.type";
+import { useOrderMutations } from "@/hooks/use-order-mutations";
+import { useOrders } from "@/hooks/use-orders";
 import { Edit, Loader2, Plus, Search, Trash2 } from "lucide-react";
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
+import { useState } from "react";
 
 import { useRouter } from "next/navigation";
 
 export const OrderList = () => {
   const router = useRouter();
-  const [orders, setOrders] = useState<JobOrder[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { orders, loading: isLoading } = useOrders({ limit: 100 });
+  const { deleteOrder, isDeleting } = useOrderMutations();
+
   const [searchTerm, setSearchTerm] = useState("");
   const [deletingId, setDeletingId] = useState<string | null>(null);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  const fetchOrders = async () => {
-    try {
-      setIsLoading(true);
-      const response = await orderService.getOrders({ page: 1, limit: 100 });
-      setOrders(response.data);
-    } catch (error) {
-      console.error("Error fetching orders:", error);
-      toast.error("Không thể tải danh sách đơn hàng.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchOrders();
-  }, []);
 
   const handleDelete = async () => {
     if (!deletingId) return;
-
-    try {
-      setIsDeleting(true);
-      await orderService.deleteOrder(deletingId);
-      setOrders(
-        orders.filter((o) => (o._id ? o._id.toString() : o.id) !== deletingId),
-      );
-      toast.success("Đã xóa đơn hàng thành công.");
-      setDeletingId(null);
-    } catch (error) {
-      console.error("Error deleting order:", error);
-      toast.error("Lỗi khi xóa đơn hàng.");
-    } finally {
-      setIsDeleting(false);
-    }
+    await deleteOrder(deletingId);
+    setDeletingId(null);
   };
 
   const filteredOrders = orders.filter((order) =>
@@ -133,10 +102,7 @@ export const OrderList = () => {
               </TableRow>
             ) : (
               filteredOrders.map((order) => (
-                <TableRow
-                  key={order._id?.toString() || order.id}
-                  className="group"
-                >
+                <TableRow key={order.id} className="group">
                   <TableCell className="font-medium px-6 whitespace-normal py-3 md:sticky md:left-0 md:z-20 md:bg-white md:dark:bg-slate-900 md:border-r group-hover:bg-slate-50 dark:group-hover:bg-slate-800 transition-colors">
                     <div className="line-clamp-4" title={order.title}>
                       {order.title}
@@ -164,9 +130,7 @@ export const OrderList = () => {
                         variant="outline"
                         size="icon"
                         onClick={() =>
-                          router.push(
-                            `/admin/orders/${order._id?.toString() || order.id}/edit`,
-                          )
+                          router.push(`/admin/orders/${order.id}/edit`)
                         }
                       >
                         <Edit className="h-4 w-4 text-blue-500" />
@@ -174,9 +138,7 @@ export const OrderList = () => {
                       <Button
                         variant="outline"
                         size="icon"
-                        onClick={() =>
-                          setDeletingId(order._id?.toString() || order.id)
-                        }
+                        onClick={() => setDeletingId(order.id)}
                       >
                         <Trash2 className="h-4 w-4 text-red-500" />
                       </Button>

@@ -23,7 +23,6 @@ export interface IOrder extends mongoose.Document {
 
 export interface JobOrder {
   id: string;
-  _id?: string;
   title: string;
   status: string;
   coverImage?: string;
@@ -37,7 +36,7 @@ export interface JobOrder {
   country?: string;
   gender?: "male" | "female" | "both";
   createdBy?: {
-    _id: string;
+    id: string;
     username: string;
   };
   createdAt?: string;

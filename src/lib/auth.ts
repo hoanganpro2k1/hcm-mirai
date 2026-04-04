@@ -26,7 +26,7 @@ export const comparePasswords = async (
 };
 
 export interface TokenPayload {
-  adminId: string;
+  userId: string;
   username: string;
   roleName?: string;
   rolePermissions?: string[];

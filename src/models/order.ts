@@ -19,9 +19,9 @@ const OrderSchema: Schema = new Schema(
       enum: ["male", "female", "both"],
       default: "both",
     },
-    createdBy: { type: Schema.Types.ObjectId, ref: "Admin" },
-    updatedBy: { type: Schema.Types.ObjectId, ref: "Admin" },
-    deletedBy: { type: Schema.Types.ObjectId, ref: "Admin" },
+    createdBy: { type: Schema.Types.ObjectId, ref: "User" },
+    updatedBy: { type: Schema.Types.ObjectId, ref: "User" },
+    deletedBy: { type: Schema.Types.ObjectId, ref: "User" },
     deletedAt: { type: Date, default: null },
   },
   {

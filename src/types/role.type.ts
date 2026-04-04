@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { IPermission } from "./permission.type";
 
 export interface IRole extends mongoose.Document {
+  id: string; // Standardized ID
   name: string;
   description: string;
   isActive: boolean;

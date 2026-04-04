@@ -5,11 +5,11 @@ import {
   generateRefreshToken,
 } from "@/lib/auth";
 import dbConnect from "@/lib/mongoose";
-import Admin from "@/models/admin";
+import User from "@/models/user";
 import Role from "@/models/role";
 import Permission from "@/models/permission";
 import RefreshToken from "@/models/refreshToken";
-import { IPopulatedAdmin } from "@/types/auth.type";
+import { IPopulatedUser } from "@/types/auth.type";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -25,17 +25,17 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 1. Kiểm tra Admin theo username và populate Role cùng Permissions
-    const admin = (await Admin.findOne({ username }).populate({
+    // 1. Kiểm tra User theo username và populate Role cùng Permissions
+    const user = (await User.findOne({ username }).populate({
       path: "role",
       model: Role,
       populate: {
         path: "permissions",
         model: Permission,
       },
-    })) as IPopulatedAdmin | null;
+    })) as IPopulatedUser | null;
 
-    if (!admin) {
+    if (!user) {
       return NextResponse.json(
         { message: "Tài khoản hoặc mật khẩu không đúng." },
         { status: 401 },
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
     // 2. Kiểm tra mật khẩu
     const isValidPassword = await comparePasswords(
       password,
-      admin.password as string,
+      user.password as string,
     );
     if (!isValidPassword) {
       return NextResponse.json(
@@ -55,13 +55,13 @@ export async function POST(req: NextRequest) {
     }
 
     // Chuẩn bị payload cho Token
-    const roleName = admin.role?.name;
+    const roleName = user.role?.name;
     const rolePermissions =
-      admin.role?.permissions?.map((p: any) => p.name) || [];
+      user.role?.permissions?.map((p: any) => p.name) || [];
 
     const payload = {
-      adminId: admin._id.toString(),
-      username: admin.username,
+      userId: user.id,
+      username: user.username,
       roleName,
       rolePermissions,
     };
@@ -77,22 +77,26 @@ export async function POST(req: NextRequest) {
 
     await RefreshToken.create({
       token: refreshTokenStr,
-      adminId: admin._id,
+      userId: user.id,
       expiresAt: expiresAt,
     });
 
-    // Cập nhật refreshToken cũ trong Admin (nếu vẫn muốn giữ để tương thích ngược hoặc xóa đi)
-    admin.refreshToken = refreshTokenStr;
-    await admin.save();
+    // Cập nhật refreshToken cũ trong User
+    user.refreshToken = refreshTokenStr;
+    await user.save();
 
     // 5. Build response chứa accessToken ở HTTP body
     const response = NextResponse.json(
       {
         message: "Đăng nhập thành công",
         accessToken,
-        admin: {
-          id: admin._id,
-          username: admin.username,
+        user: {
+          id: user.id,
+          username: user.username,
+          name: user.name,
+          avatar: user.avatar,
+          phoneNumber: user.phoneNumber,
+          status: user.status,
           role: roleName,
           permissions: rolePermissions,
         },
