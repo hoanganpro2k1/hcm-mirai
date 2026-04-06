@@ -1,6 +1,7 @@
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { Toaster } from "@/components/ui/sonner";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import QueryProvider from "@/providers/query-provider";
@@ -79,6 +80,7 @@ export default async function RootLayout({
           >
             <ScrollProgress />
             <QueryProvider>{children}</QueryProvider>
+            <Toaster position="top-right" richColors />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

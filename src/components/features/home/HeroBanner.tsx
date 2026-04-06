@@ -89,6 +89,7 @@ export default function HeroBanner() {
               height={slide.height}
               className={cn("w-full h-auto object-contain")}
               priority={i === 0}
+              loading="eager"
             />
           </CarouselItem>
         ))}

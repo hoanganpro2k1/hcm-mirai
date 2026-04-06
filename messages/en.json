@@ -30,7 +30,25 @@
     "cta": "Consult Now",
     "mission": "HCM-MIRAI Study Abroad, along with a leading network of educational partners, is one of the reputable and long-standing consulting and training units in Vietnam. With the mission of \"Dedication - Professionalism - Transparency\", we have been the bridge helping thousands of students conquer international knowledge.",
     "desc1": "We are not just a consulting center, but also a reliable companion, helping you prepare all necessary baggage from language, life skills to complex legal procedures.",
-    "desc2": "With 19 years of training experience and a network of over 200 partner universities in Japan, Korea, Australia, we are committed to bringing the safest and most effective learning path."
+    "desc2": "With 19 years of training experience and a network of over 200 partner universities in Japan, Korea, Australia, we are committed to bringing the safest and most effective learning path.",
+    "features": {
+      "school_choice": {
+        "title": "School Choice Counseling",
+        "description": "Experienced experts advise on schools matching your ability and financial situation."
+      },
+      "visa_support": {
+        "title": "Visa Support",
+        "description": "98% visa success rate thanks to professional and close document preparation."
+      },
+      "document_service": {
+        "title": "Document Procedures",
+        "description": "Full package translation, notarization, and paperwork service to save time for your family."
+      },
+      "career_path": {
+        "title": "Career Orientation",
+        "description": "Ensuring a future after graduation with job opportunities both abroad and in Vietnam."
+      }
+    }
   },
   "Stats": {
     "students": "Students",
@@ -70,7 +88,7 @@
       "address": "Address",
       "phone": "Phone",
       "email": "Email",
-      "address_val": "152 Ngo Gia Tu Street, Le Loi, Vinh Hung, Nghe An, Vietnam",
+      "address_val": "152 Ngo Gia Tu Street, Le Loi, Vinh Hưng, Nghệ An, Vietnam",
       "phone_val": "0973 460 999",
       "email_val": "contact@hcm-mirai.vn"
     },
@@ -193,5 +211,193 @@
       "title": "Free Consultation For You!",
       "subtitle": "Thousands of students have succeeded, what about you? Register to receive the latest consultation and information from HCM-MIRAI."
     }
+  },
+  "Training": {
+    "hero": {
+      "title": "Foreign Language Training",
+      "breadcrumb": "Home"
+    },
+    "intro": {
+      "title": "Master Languages - Discover the World",
+      "desc": "At HCM-MIRAI, we don't just teach languages; we equip you with local culture and etiquette. With native teachers and specialized curriculum, we ensure the most effective learning path."
+    },
+    "courses": {
+      "japanese": {
+        "title": "Japanese (JLPT)",
+        "subtitle": "From N5 to N1",
+        "desc": "Comprehensive training focusing on listening-speaking skills and intensive JLPT exam preparation."
+      },
+      "korean": {
+        "title": "Korean (TOPIK)",
+        "subtitle": "TOPIK I & II",
+        "desc": "Specialized training in grammar, communication, and Korean culture with a high TOPIK pass rate."
+      }
+    },
+    "features": {
+      "native": "Native Teachers",
+      "curriculum": "Standard Curriculum",
+      "facilities": "Modern Labs",
+      "support": "24/7 Academic Support"
+    }
+  },
+  "LaborDomestic": {
+    "hero": {
+      "title": "Domestic Labor Supply",
+      "breadcrumb": "Home"
+    },
+    "intro": {
+      "title": "Comprehensive Manpower Solutions",
+      "desc": "HCM-MIRAI is proud to be a reputable manpower supplier, connecting workers with the best job opportunities in Vietnam."
+    }
+  },
+  "LaborOverseas": {
+    "hero": {
+      "title": "Overseas Labor Supply",
+      "breadcrumb": "Home"
+    },
+    "intro": {
+      "title": "Expanding International Career Opportunities",
+      "desc": "We connect Vietnamese workers with reputable partners in Japan, Korea, Australia, and Europe."
+    }
+  },
+  "StudyAbroad": {
+    "hero": {
+      "title": "Study Abroad & Labor Export",
+      "breadcrumb": "Home"
+    },
+    "intro": {
+      "title": "Empowering Futures in Developed Nations",
+      "desc": "Clear study and work pathways, high visa success rates, and support from start to finish."
+    }
+  },
+  "News": {
+    "hero": {
+      "title": "News & Events",
+      "breadcrumb": "Home"
+    },
+    "intro": {
+      "title": "Latest News from HCM-MIRAI",
+      "desc": "Where we share admission info, extracurricular activities, and student success stories."
+    }
+  },
+  "Consultation": {
+    "title": "Free Consultation - Just for You!",
+    "subtitle": "Contact Now",
+    "name_label": "Full Name",
+    "name_placeholder": "John Doe",
+    "phone_label": "Phone Number",
+    "phone_placeholder": "0987 654 321",
+    "email_label": "Email",
+    "email_placeholder": "email@example.com",
+    "interest_label": "Which program are you interested in?",
+    "interest_placeholder": "Let us know your needs...",
+    "submit": "Submit Request",
+    "security_note": "We promise 100% customer information security.",
+    "quote": "A journey of a thousand miles always begins with a single step of trust.",
+    "sending_label": "Sending...",
+    "success_message": "Consultation request sent successfully! We will contact you soon.",
+    "image_alt": "Consultant"
+  },
+  "HomePrograms": {
+    "title": "Study Abroad & Training Programs",
+    "categories": {
+      "korea": "Korea",
+      "japan": "Japan",
+      "taiwan": "Taiwan",
+      "australia": "Australia",
+      "germany": "Germany",
+      "labor": "SSW/Labor"
+    },
+    "items": {
+      "program_1": { "title": "Study in Korea D2-1 System (Model College)" },
+      "program_2": { "title": "Study in Korea D4-1 System (Korean Visa)" },
+      "program_3": { "title": "Study in Japan Self-funded (October Intake)" },
+      "program_4": { "title": "Japan Newspaper Scholarship 2026" },
+      "program_5": { "title": "Japan Mechanical Engineering Order (High Salary)" },
+      "program_6": { "title": "Study in Australia Vocational Training (Subclass 407)" }
+    },
+    "view_all": "View All Programs",
+    "view_details": "View Details",
+    "no_programs": "Currently there are no programs for this category. Please check back later!",
+    "tags": {
+      "hot": "Hot",
+      "new": "New",
+      "admission": "Admission",
+      "scholarship": "Scholarship",
+      "labor": "Labor"
+    }
+  },
+  "HomePartners": {
+    "title": "Strategic Partners",
+    "subtitle": "Expanding Collaboration",
+    "description": "We are proud to be a partner of over 200 prestigious universities and educational organizations worldwide."
+  },
+  "HomeHighlights": {
+    "title": "Choose the Right School for Your Journey",
+    "subtitle": "Featured Schools",
+    "explore_more": "Explore over 200 partner schools",
+    "view_details": "View Details",
+    "tags": {
+      "top1": "Top 1%",
+      "elite": "Elite",
+      "top_world": "Top World"
+    },
+    "items": {
+      "school_1": {
+        "name": "Yonsei University",
+        "location": "Seoul, South Korea",
+        "description": "One of the oldest and most prestigious private universities in South Korea."
+      },
+      "school_2": {
+        "name": "Seoul National University (SNU)",
+        "location": "Seoul, South Korea",
+        "description": "The most prestigious university in South Korea, a symbol of Korean education."
+      },
+      "school_3": {
+        "name": "The University of Tokyo (UTokyo)",
+        "location": "Tokyo, Japan",
+        "description": "A leading research university in Asia and the world."
+      }
+    }
+  },
+  "HomeTestimonials": {
+    "title": "Student Testimonials",
+    "subtitle": "Success Stories",
+    "testimonials": {
+      "t1": {
+        "name": "Pham Thu Thao",
+        "role": "Student at Yonsei University",
+        "feedback": "I'm so grateful to HCM-MIRAI for accompanying me throughout the application process. Thanks to the dedicated and close advice from the team, I obtained my visa and I'm having wonderful experiences in Korea."
+      },
+      "t2": {
+        "name": "Nguyen Minh Anh",
+        "role": "Student in Japan",
+        "feedback": "The learning environment at HCM-MIRAI is very dynamic and professional. The teachers are dedicated to guiding me every step of the way, helping me quickly adapt to Japanese culture."
+      },
+      "t3": {
+        "name": "Le Hoang Nam",
+        "role": "Mechanical Engineer in Osaka",
+        "feedback": "The labor export application process at the center is very transparent and fast. I got a stable job with an attractive salary after only 4 months of training."
+      }
+    }
+  },
+  "HomeGallery": {
+    "title": "Center Media Gallery",
+    "subtitle": "Media Library",
+    "video_title": "Featured Videos",
+    "youtube_cta": "Watch on YouTube",
+    "view_all_youtube": "Watch more on our YouTube channel",
+    "videos": {
+      "v1": "Student Farewell Ceremony - Dec 2026",
+      "v2": "Live Interview with Korean University Representative"
+    }
+  },
+  "HomeBlog": {
+    "title": "Latest Information - Study Abroad",
+    "subtitle": "News & Events",
+    "view_all": "View All Posts",
+    "view_details": "View Details",
+    "author_admin": "Admin",
+    "author_consultant": "Consultant"
   }
 }

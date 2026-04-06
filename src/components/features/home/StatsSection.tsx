@@ -1,30 +1,8 @@
 "use client";
 
 import { Calendar, GraduationCap, School, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
-
-const stats = [
-  {
-    icon: Users,
-    value: "5000+",
-    label: "Học viên",
-  },
-  {
-    icon: School,
-    value: "200+",
-    label: "Trường liên kết",
-  },
-  {
-    icon: GraduationCap,
-    value: "90%",
-    label: "Tỉ lệ đậu visa",
-  },
-  {
-    icon: Calendar,
-    value: "20 năm",
-    label: "Kinh nghiệm",
-  },
-];
 
 function CountUp({ value }: { value: string }) {
   const [count, setCount] = useState(0);
@@ -83,6 +61,31 @@ function CountUp({ value }: { value: string }) {
 }
 
 export default function StatsSection() {
+  const t = useTranslations("Stats");
+
+  const statsList = [
+    {
+      icon: Users,
+      value: "5000+",
+      label: t("students"),
+    },
+    {
+      icon: School,
+      value: "200+",
+      label: t("schools"),
+    },
+    {
+      icon: GraduationCap,
+      value: "90%",
+      label: t("visa"),
+    },
+    {
+      icon: Calendar,
+      value: `20 ${t("years")}`,
+      label: t("experience"),
+    },
+  ];
+
   return (
     <section className="bg-primary py-12 md:py-16 text-white overflow-hidden relative">
       {/* Decorative background elements */}
@@ -91,7 +94,7 @@ export default function StatsSection() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-          {stats.map((stat, idx) => (
+          {statsList.map((stat, idx) => (
             <div
               key={idx}
               className="flex flex-col items-center text-center space-y-3 group"
