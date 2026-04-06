@@ -30,7 +30,25 @@
     "cta": "Liên hệ tư vấn ngay",
     "mission": "Du học HCM-MIRAI, cùng mạng lưới đối tác giáo dục hàng đầu, là một trong những đơn vị tư vấn và đào tạo uy tín, hoạt động lâu năm tại Việt Nam. Với sứ mệnh \"Tận tâm - Chuyên nghiệp - Minh bạch\", chúng tôi đã là cầu nối giúp hàng nghìn học viên chinh phục tri thức quốc tế.",
     "desc1": "Chúng tôi không chỉ là một trung tâm tư vấn, mà còn là người bạn đồng hành tin cậy, giúp bạn chuẩn bị mọi hành trang cần thiết từ ngôn ngữ, kỹ năng sống đến các thủ tục pháp lý phức tạp.",
-    "desc2": "Với 19 năm kinh nghiệm đào tạo và mạng lưới đối tác hơn 200 trường đại học tại Nhật Bản, Hàn Quốc, Úc, chúng tôi cam kết mang lại lộ trình học tập an toàn và hiệu quả nhất."
+    "desc2": "Với 19 năm kinh nghiệm đào tạo và mạng lưới đối tác hơn 200 trường đại học tại Nhật Bản, Hàn Quốc, Úc, chúng tôi cam kết mang lại lộ trình học tập an toàn và hiệu quả nhất.",
+    "features": {
+      "school_choice": {
+        "title": "Tư vấn chọn trường",
+        "description": "Đội ngũ chuyên gia giàu kinh nghiệm tư vấn trường phù hợp với năng lực và tài chính của bạn."
+      },
+      "visa_support": {
+        "title": "Hỗ trợ visa",
+        "description": "Tỉ lệ đậu visa 98% nhờ quy trình chuẩn bị hồ sơ chuyên nghiệp và sát sao."
+      },
+      "document_service": {
+        "title": "Thủ tục hồ sơ",
+        "description": "Dịch thuật, công chứng và làm hồ sơ trọn gói giúp tiết kiệm thời gian cho gia đình."
+      },
+      "career_path": {
+        "title": "Định hướng nghề nghiệp",
+        "description": "Đảm bảo tương lai sau tốt nghiệp với các cơ hội việc làm tại cả nước ngoài và Việt Nam."
+      }
+    }
   },
   "Stats": {
     "students": "Học viên",
@@ -193,5 +211,193 @@
       "title": "Tư vấn miễn phí ngay cho bạn!",
       "subtitle": "Hàng nghìn học viên đã thành công, còn bạn thì sao? Đăng ký nhận tư vấn và thông tin mới nhất từ HCM-MIRAI."
     }
+  },
+  "Training": {
+    "hero": {
+      "title": "Đào tạo ngoại ngữ",
+      "breadcrumb": "Trang chủ"
+    },
+    "intro": {
+      "title": "Chinh phục đa ngôn ngữ - Khám phá thế giới",
+      "desc": "Tại HCM-MIRAI, chúng tôi không chỉ dạy ngôn ngữ mà còn trang bị cho bạn văn hóa và phong cách làm việc bản địa. Với đội ngũ giáo viên bản xứ và giáo trình chuyên sâu, chúng tôi cam kết lộ trình học tập hiệu quả nhất."
+    },
+    "courses": {
+      "japanese": {
+        "title": "Tiếng Nhật (JLPT)",
+        "subtitle": "Từ N5 đến N1",
+        "desc": "Chương trình đào tạo toàn diện, tập trung vào kỹ năng nghe-nói và luyện thi JLPT cường độ cao."
+      },
+      "korean": {
+        "title": "Tiếng Hàn (TOPIK)",
+        "subtitle": "TOPIK I & II",
+        "desc": "Đào tạo chuyên sâu về ngữ pháp, giao tiếp và văn hóa Hàn Quốc, tỷ lệ đậu TOPIK cao."
+      }
+    },
+    "features": {
+      "native": "Giáo viên bản xứ",
+      "curriculum": "Giáo trình chuẩn",
+      "facilities": "Phòng Lab hiện đại",
+      "support": "Hỗ trợ học tập 24/7"
+    }
+  },
+  "LaborDomestic": {
+    "hero": {
+      "title": "Cung ứng lao động trong nước",
+      "breadcrumb": "Trang chủ"
+    },
+    "intro": {
+      "title": "Giải pháp nhân lực toàn diện cho doanh nghiệp",
+      "desc": "HCM-MIRAI tự hào là đơn vị cung ứng nhân lực uy tín, kết nối người lao động với những cơ hội việc làm tốt nhất tại Việt Nam."
+    }
+  },
+  "LaborOverseas": {
+    "hero": {
+      "title": "Cung ứng lao động nước ngoài",
+      "breadcrumb": "Trang chủ"
+    },
+    "intro": {
+      "title": "Mở rộng cơ hội nghề nghiệp quốc tế",
+      "desc": "Chúng tôi kết nối người lao động Việt Nam với các đối tác uy tín tại Nhật Bản, Hàn Quốc, Úc và Châu Âu."
+    }
+  },
+  "StudyAbroad": {
+    "hero": {
+      "title": "Du học & XKLĐ",
+      "breadcrumb": "Trang chủ"
+    },
+    "intro": {
+      "title": "Chắp cánh tương lai tại các quốc gia phát triển",
+      "desc": "Lộ trình du học và làm việc rõ ràng, tỉ lệ đậu visa cao, hỗ trợ học viên từ khi bắt đầu đến khi ổn định tại nước ngoài."
+    }
+  },
+  "News": {
+    "hero": {
+      "title": "Tin tức & Sự kiện",
+      "breadcrumb": "Trang chủ"
+    },
+    "intro": {
+      "title": "Cập nhật tin tức mới nhất từ HCM-MIRAI",
+      "desc": "Nơi chia sẻ những thông tin tuyển sinh, hoạt động ngoại khóa và thành công của các học viên."
+    }
+  },
+  "Consultation": {
+    "title": "Tư vấn miễn phí - Dành riêng cho bạn!",
+    "subtitle": "Liên hệ ngay",
+    "name_label": "Họ và tên",
+    "name_placeholder": "Nguyễn Văn A",
+    "phone_label": "Số điện thoại",
+    "phone_placeholder": "0987 654 321",
+    "email_label": "Email",
+    "email_placeholder": "email@example.com",
+    "interest_label": "Bạn đang quan tâm đến chương trình nào?",
+    "interest_placeholder": "Hãy cho chúng tôi biết nhu cầu của bạn...",
+    "submit": "Gửi yêu cầu tư vấn",
+    "security_note": "Chúng tôi cam kết bảo mật thông tin khách hàng 100%.",
+    "quote": "Hành trình vạn dặm, luôn bắt đầu từ một bước chân tin cậy.",
+    "image_alt": "Tư vấn viên",
+    "success_message": "Gửi yêu cầu thành công! Chúng tôi sẽ liên hệ sớm nhất.",
+    "sending_label": "Đang gửi..."
+  },
+  "HomePrograms": {
+    "title": "Chương trình du học và đào tạo",
+    "categories": {
+      "korea": "Hàn Quốc",
+      "japan": "Nhật Bản",
+      "taiwan": "Đài Loan",
+      "australia": "Úc",
+      "germany": "Đức",
+      "labor": "XKLĐ"
+    },
+    "items": {
+      "program_1": { "title": "Du học Hàn Quốc hệ D2-1 (Cao đẳng mẫu mực)" },
+      "program_2": { "title": "Du học Hàn Quốc hệ D4-1 (Visa tiếng Hàn)" },
+      "program_3": { "title": "Du học Nhật Bản hệ tự túc (Kỳ tháng 10)" },
+      "program_4": { "title": "Học bổng báo Nhật Bản 2026" },
+      "program_5": { "title": "Đơn hàng cơ khí Nhật Bản (Lương cao)" },
+      "program_6": { "title": "Du học Úc diện đào tạo nghề (Subclass 407)" }
+    },
+    "view_all": "Xem tất cả chương trình",
+    "view_details": "Xem chi tiết",
+    "no_programs": "Hiện tại chưa có chương trình nào cho chuyên mục này. Vui lòng quay lại sau!",
+    "tags": {
+      "hot": "Hot",
+      "new": "Mới",
+      "admission": "Tuyển sinh",
+      "scholarship": "Học bổng",
+      "labor": "XKLĐ"
+    }
+  },
+  "HomePartners": {
+    "title": "Đối tác chiến lược",
+    "subtitle": "Hợp tác vươn xa",
+    "description": "Chúng tôi tự hào là đối tác của hơn 200 trường đại học và tổ chức giáo dục uy tín trên toàn thế giới."
+  },
+  "HomeHighlights": {
+    "title": "Chọn Trường Phù Hợp Cho Hành Trình Du Học",
+    "subtitle": "Các trường học tiêu biểu",
+    "explore_more": "Khám phá hơn 200 trường liên kết",
+    "view_details": "Xem chi tiết",
+    "tags": {
+      "top1": "Top 1%",
+      "elite": "Ưu tú",
+      "top_world": "Top Thế giới"
+    },
+    "items": {
+      "school_1": {
+        "name": "Đại học Yonsei (Yonsei University)",
+        "location": "Seoul, Hàn Quốc",
+        "description": "Một trong những trường đại học tư thục lâu đời và uy tín nhất Hàn Quốc."
+      },
+      "school_2": {
+        "name": "Đại học Quốc gia Seoul (SNU)",
+        "location": "Seoul, Hàn Quốc",
+        "description": "Trường đại học danh giá nhất Hàn Quốc, biểu tượng của giáo dục xứ Kim Chi."
+      },
+      "school_3": {
+        "name": "Đại học Tokyo (UTokyo)",
+        "location": "Tokyo, Nhật Bản",
+        "description": "Trường đại học nghiên cứu hàng đầu Châu Á và thế giới."
+      }
+    }
+  },
+  "HomeTestimonials": {
+    "title": "Học viên cảm nhận về HCM-MIRAI",
+    "subtitle": "Câu chuyện thành công",
+    "testimonials": {
+      "t1": {
+        "name": "Phạm Thu Thảo",
+        "role": "Sinh viên Đại học Yonsei",
+        "feedback": "Em cảm ơn HCM-MIRAI rất nhiều vì đã đồng hành cùng em trong suốt quá trình làm hồ sơ. Nhờ sự tư vấn tận tình và sát sao của các anh chị, em đã đạt được visa và đang có những trải nghiệm tuyệt vời tại Hàn Quốc."
+      },
+      "t2": {
+        "name": "Nguyễn Minh Anh",
+        "role": "Học viên tại Nhật Bản",
+        "feedback": "Môi trường học tập tại HCM-MIRAI rất năng động và chuyên nghiệp. Thầy cô giáo tận tâm chỉ bảo từng chút một, giúp em nhanh chóng làm quen với văn hóa Nhật Bản."
+      },
+      "t3": {
+        "name": "Lê Hoàng Nam",
+        "role": "Kỹ sư cơ khí tại Osaka",
+        "feedback": "Quy trình làm hồ sơ XKLĐ tại trung tâm rất minh bạch và nhanh chóng. Em đã có công việc ổn định với mức lương hấp dẫn chỉ sau 4 tháng đào tạo."
+      }
+    }
+  },
+  "HomeGallery": {
+    "title": "Hình ảnh và video trung tâm",
+    "subtitle": "Thư viện truyền thông",
+    "video_title": "Video nổi bật",
+    "youtube_cta": "Xem ngay trên YouTube",
+    "view_all_youtube": "Xem thêm trên kênh YouTube của chúng tôi",
+    "videos": {
+      "v1": "Lễ chia tay học viên kỳ tháng 12/2026",
+      "v2": "Phỏng vấn trực tiếp cùng đại diện trường Hàn Quốc"
+    }
+  },
+  "HomeBlog": {
+    "title": "Thông tin mới nhất - Du học",
+    "subtitle": "Tin tức & Sự kiện",
+    "view_all": "Xem tất cả bài viết",
+    "view_details": "Xem chi tiết",
+    "author_admin": "Admin",
+    "author_consultant": "Tư vấn viên"
   }
 }

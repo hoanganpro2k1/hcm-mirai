@@ -1,6 +1,7 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/section-header";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const partners = [
@@ -13,6 +14,7 @@ const partners = [
 ];
 
 export default function PartnerMarquee() {
+  const t = useTranslations("HomePartners");
   // Duplicate partners to create seamless scroll
   const doublePartners = [...partners, ...partners, ...partners];
 
@@ -20,9 +22,9 @@ export default function PartnerMarquee() {
     <section className="py-16 bg-white dark:bg-gray-950 overflow-hidden transition-colors border-t border-gray-50 dark:border-gray-900">
       <div className="container mx-auto px-6">
         <SectionHeader
-          title="Đối tác chiến lược"
-          subtitle="Hợp tác vươn xa"
-          description="Chúng tôi tự hào là đối tác của hơn 200 trường đại học và tổ chức giáo dục uy tín trên toàn thế giới."
+          title={t("title")}
+          subtitle={t("subtitle")}
+          description={t("description")}
         />
 
         <div className="relative mt-10">

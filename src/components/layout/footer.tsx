@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 import { Facebook, Tiktok } from "@/components/ui/icons";
 
@@ -117,10 +117,10 @@ export function Footer() {
               </h3>
               <ul className="space-y-4">
                 {[
-                  { label: t("links.about_mirai"), href: "gioi-thieu" },
-                  { label: t("links.services"), href: "dich-vu" },
-                  { label: t("links.gallery"), href: "thu-vien-hinh-anh" },
-                  { label: t("links.testimonials"), href: "cam-nhan-hoc-vien" },
+                  { label: t("links.about_mirai"), href: "/gioi-thieu" },
+                  { label: t("links.services"), href: "/dich-vu" },
+                  { label: t("links.gallery"), href: "/thu-vien-hinh-anh" },
+                  { label: t("links.testimonials"), href: "/cam-nhan-hoc-vien" },
                 ].map((link, i) => (
                   <li key={i}>
                     <Link
@@ -170,11 +170,11 @@ export function Footer() {
               </h3>
               <ul className="space-y-4">
                 {[
-                  { label: t("links.contact_consult"), href: "lien-he" },
-                  { label: t("links.services"), href: "dich-vu" },
-                  { label: t("links.study_overseas"), href: "du-hoc" },
-                  { label: t("links.train_language"), href: "dao-tao" },
-                  { label: t("links.news_events"), href: "tin-tuc" },
+                  { label: t("links.contact_consult"), href: "/lien-he" },
+                  { label: t("links.services"), href: "/dich-vu" },
+                  { label: t("links.study_overseas"), href: "/du-hoc-xkld" },
+                  { label: t("links.train_language"), href: "/dao-tao-ngoai-ngu" },
+                  { label: t("links.news_events"), href: "/tin-tuc" },
                 ].map((link, i) => (
                   <li key={i}>
                     <Link

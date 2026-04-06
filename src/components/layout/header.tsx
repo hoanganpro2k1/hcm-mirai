@@ -14,6 +14,7 @@ export function Header() {
   const t = useTranslations("Header");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -28,7 +29,7 @@ export function Header() {
       href: "#",
       children: [
         { label: t("nav.about_mirai"), href: "/gioi-thieu" },
-        { label: t("nav.services"), href: "/dich-vu-chinh" },
+        { label: t("nav.services"), href: "/dich-vu" },
         { label: t("nav.gallery"), href: "/thu-vien-hinh-anh" },
         { label: t("nav.testimonials"), href: "/cam-nhan-hoc-vien" },
       ],
@@ -42,15 +43,20 @@ export function Header() {
         { label: t("nav.overseas"), href: "/cung-ung-ld-nuoc-ngoai" },
       ],
     },
-    { label: t("nav.duhoc"), href: "/du-hoc-xklđ" },
+    { label: t("nav.duhoc"), href: "/du-hoc-xkld" },
     { label: t("nav.tintuc"), href: "/tin-tuc" },
     { label: t("nav.donhang"), href: "/don-hang" },
   ];
 
   return (
-    <header className="w-full flex flex-col font-sans sticky top-0 z-50 transition-colors">
+    <header 
+      className="w-full flex flex-col font-sans sticky top-0 z-50 transition-colors"
+      onClick={() => isSearchOpen && setIsSearchOpen(false)}
+    >
       {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground text-sm py-2 px-6 flex justify-between items-center transition-colors">
+      <div 
+        className="bg-primary text-primary-foreground text-sm py-2 px-6 flex justify-between items-center transition-colors"
+      >
         <Link
           href="tel:+0973460999"
           className="flex items-center gap-2 hover:text-gray-300 transition-colors"
@@ -90,7 +96,9 @@ export function Header() {
       </div>
 
       {/* Main Navigation */}
-      <div className="bg-background/95 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b shadow-sm transition-colors">
+      <div 
+        className="bg-background/95 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b shadow-sm transition-colors"
+      >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <NextImage
@@ -104,7 +112,7 @@ export function Header() {
         </Link>
 
         {/* Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6 text-primary font-medium text-[15px]">
+        <nav className="hidden xl:flex items-center gap-6 text-primary font-medium text-[15px]">
           {navItems.map((item) => (
             <div key={item.label} className="relative group py-6 -my-6">
               <Link
@@ -144,8 +152,12 @@ export function Header() {
 
         {/* Actions Context Group */}
         <div className="flex items-center gap-2 sm:gap-4">
-          <div className="relative hidden md:flex items-center">
-            <SearchTrigger />
+          <div className="relative flex items-center">
+            <SearchTrigger 
+              isOpen={isSearchOpen} 
+              onToggle={() => setIsSearchOpen(!isSearchOpen)} 
+              onClose={() => setIsSearchOpen(false)}
+            />
           </div>
           <ModeToggle />
           <button
@@ -157,7 +169,7 @@ export function Header() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden p-1.5 sm:p-2 -mr-2 text-foreground hover:bg-muted rounded-md transition-colors shrink-0"
+            className="xl:hidden p-1.5 sm:p-2 -mr-2 text-foreground hover:bg-muted rounded-md transition-colors shrink-0"
             onClick={() => setIsMobileMenuOpen(true)}
           >
             <Menu className="w-6 h-6" />
@@ -167,7 +179,7 @@ export function Header() {
 
       {/* Mobile Menu Overlay & Drawer */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
+        <div className="fixed inset-0 z-50 xl:hidden">
           {/* Overlay */}
           <div
             className="fixed inset-0 bg-black/50 transition-opacity"

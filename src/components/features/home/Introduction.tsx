@@ -6,36 +6,28 @@ import { Briefcase, FileText, GraduationCap, Landmark } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-const features = [
+const featureKeys = [
   {
+    key: "school_choice",
     icon: GraduationCap,
-    title: "Tư vấn chọn trường",
-    description:
-      "Đội ngũ chuyên gia giàu kinh nghiệm tư vấn trường phù hợp với năng lực và tài chính của bạn.",
     color: "bg-blue-100 dark:bg-blue-900/30",
     iconColor: "text-blue-600 dark:text-blue-400",
   },
   {
+    key: "visa_support",
     icon: Landmark,
-    title: "Hỗ trợ visa",
-    description:
-      "Tỉ lệ đậu visa 98% nhờ quy trình chuẩn bị hồ sơ chuyên nghiệp và sát sao.",
     color: "bg-red-100 dark:bg-red-900/30",
     iconColor: "text-red-600 dark:text-red-400",
   },
   {
+    key: "document_service",
     icon: FileText,
-    title: "Thủ tục hồ sơ",
-    description:
-      "Dịch thuật, công chứng và làm hồ sơ trọn gói giúp tiết kiệm thời gian cho gia đình.",
     color: "bg-emerald-100 dark:bg-emerald-900/30",
     iconColor: "text-emerald-600 dark:text-emerald-400",
   },
   {
+    key: "career_path",
     icon: Briefcase,
-    title: "Định hướng nghề nghiệp",
-    description:
-      "Đảm bảo tương lai sau tốt nghiệp với các cơ hội việc làm tại cả nước ngoài và Việt Nam.",
     color: "bg-amber-100 dark:bg-amber-900/30",
     iconColor: "text-amber-600 dark:text-amber-400",
   },
@@ -69,6 +61,7 @@ export default function Introduction() {
                 src="https://picsum.photos/800/600?education"
                 alt="HCM-MIRAI Building"
                 fill
+                loading="eager"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -93,7 +86,7 @@ export default function Introduction() {
 
             {/* Feature Cards Grid (2x2) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {features.map((feature, idx) => (
+              {featureKeys.map((feature, idx) => (
                 <div
                   key={idx}
                   className="p-6 bg-blue-50/50 dark:bg-blue-900/10 rounded-xl border border-blue-100/50 dark:border-blue-800/50 hover:bg-white dark:hover:bg-gray-900 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 group flex flex-col items-center text-center sm:items-start sm:text-left"
@@ -102,10 +95,10 @@ export default function Introduction() {
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-tight">
-                    {feature.title}
+                    {t(`features.${feature.key}.title`)}
                   </h4>
                   <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">
-                    {feature.description}
+                    {t(`features.${feature.key}.description`)}
                   </p>
                 </div>
               ))}

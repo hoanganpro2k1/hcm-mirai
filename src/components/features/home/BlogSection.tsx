@@ -2,8 +2,9 @@
 
 import { SectionHeader } from "@/components/ui/section-header";
 import { Calendar, ChevronRight, User } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 const newsItems = [
   {
@@ -39,13 +40,15 @@ const newsItems = [
 ];
 
 export default function BlogSection() {
+  const t = useTranslations("HomeBlog");
+
   return (
     <section className="py-20 bg-white dark:bg-gray-950 transition-colors">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between mb-8">
           <SectionHeader
-            title="Thông tin mới nhất - Du học"
-            subtitle="Tin tức & Sự kiện"
+            title={t("title")}
+            subtitle={t("subtitle")}
             align="left"
             className="mb-0"
           />
@@ -53,7 +56,7 @@ export default function BlogSection() {
             href="/tin-tuc"
             className="hidden md:flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors"
           >
-            Xem tất cả bài viết
+            {t("view_all")}
             <ChevronRight className="w-5 h-5 bg-primary/10 rounded-full p-0.5 group-hover:bg-accent group-hover:text-white transition-all" />
           </Link>
         </div>
@@ -107,7 +110,7 @@ export default function BlogSection() {
                     href={`/tin-tuc/${item.id}`}
                     className="inline-flex items-center gap-2 text-primary dark:text-blue-400 font-bold hover:text-accent transition-colors group/link"
                   >
-                    Xem chi tiết
+                    {t("view_details")}
                     <ChevronRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
                   </Link>
                 </div>
@@ -122,7 +125,7 @@ export default function BlogSection() {
             href="/tin-tuc"
             className="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors"
           >
-            Xem tất cả bài viết
+            {t("view_all")}
             <ChevronRight className="w-5 h-5 bg-primary/10 rounded-full p-0.5 group-hover:bg-accent group-hover:text-white transition-all" />
           </Link>
         </div>

@@ -19,7 +19,7 @@ export const consultationService = {
   },
 
   submitConsultation: async (data: ConsultationFormValues) => {
-    const res = await apiClient.post("/api/consultations", data);
+    const res = await apiClient.post("/consultations", data);
     return res.data;
   },
 };

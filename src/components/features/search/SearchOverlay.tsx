@@ -67,7 +67,7 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
     <div
       onClick={onClose}
       className={cn(
-        "fixed left-0 top-[72px] z-98 flex h-screen w-screen flex-col bg-black/20 backdrop-blur-md transition-all duration-300 dark:bg-black/80",
+        "fixed left-0 top-[69px] z-98 flex h-screen w-screen flex-col bg-black/20 backdrop-blur-md transition-all duration-300 dark:bg-black/80",
         isAnimate ? "opacity-100" : "opacity-0 pointer-events-none",
       )}
     >
@@ -78,7 +78,7 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
           isAnimate ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0",
         )}
       >
-        <div className="container mx-auto flex max-w-7xl flex-1 flex-col px-4 py-6 xl:px-0">
+        <div className="container mx-auto flex max-w-7xl h-full md:h-auto flex-1 flex-col px-4 py-6 xl:px-0">
           <div className="flex items-center justify-between gap-4 pb-2 md:pb-4">
             <InputGroup className="relative h-14 border-none! px-4 shadow-none! ring-0!">
               <SearchIcon className="size-7 text-gray-400" />
@@ -145,7 +145,7 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
                   ))}
                 </div>
               </div>
-              <div className="flex-1 overflow-y-auto pr-2">
+              <div className="flex-1 overflow-y-auto pr-2 pb-10 custom-scrollbar overscroll-contain">
                 <div className="grid grid-cols-1">
                   <div className="flex flex-col gap-12">
                     <div className="flex flex-col gap-2">
