@@ -3,12 +3,16 @@ import { Search } from "lucide-react";
 import SearchOverlay from "./SearchOverlay";
 
 interface SearchTriggerProps {
-  isOpen: boolean;
-  onToggle: () => void;
-  onClose: () => void;
+  isOpen?: boolean;
+  onToggle?: () => void;
+  onClose?: () => void;
 }
 
-const SearchTrigger = ({ isOpen, onToggle, onClose }: SearchTriggerProps) => {
+const SearchTrigger = ({ 
+  isOpen = false, 
+  onToggle = () => {}, 
+  onClose = () => {} 
+}: SearchTriggerProps) => {
   return (
     <>
       <Button

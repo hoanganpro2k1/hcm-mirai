@@ -38,7 +38,7 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
     results,
     isLoading,
     inputRef,
-  } = useSearch(isOpen);
+  } = useSearch({ isOpen, limit: 4, name: "Overlay" });
 
   useEffect(() => {
     if (isOpen) {

@@ -399,5 +399,22 @@
     "view_details": "View Details",
     "author_admin": "Admin",
     "author_consultant": "Consultant"
+  },
+  "Search": {
+    "title": "SEARCH RESULTS",
+    "filter_label": "Filter results",
+    "categories": {
+      "all": "All",
+      "order": "Job Orders"
+    },
+    "empty": {
+      "message": "No matching results found for",
+      "no_query": "Please enter a keyword to search",
+      "back_home": "Back to Home"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
   }
 }

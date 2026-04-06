@@ -1,5 +1,5 @@
 import DOMPurify from "isomorphic-dompurify";
-import { Eye, Image } from "lucide-react";
+import { Eye, Image as ImageIcon } from "lucide-react";
 import NextImage from "next/image";
 
 interface SearchCardProps {
@@ -38,11 +38,12 @@ const SearchCard = ({
               alt={title}
               width={320}
               height={180}
+              loading="eager"
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gray-100">
-              <Image className="h-10 w-10 text-gray-300" />
+              <ImageIcon className="h-10 w-10 text-gray-300" />
             </div>
           )}
         </div>
@@ -80,12 +81,13 @@ const SearchCard = ({
               src={image}
               alt={title}
               fill
+              loading="eager"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gray-100">
-              <Image className="h-8 w-8 text-gray-400" />
+              <ImageIcon className="h-8 w-8 text-gray-400" />
             </div>
           )}
           <div className="group-hover:bg-primary-black-50/70 absolute left-0 top-0 z-50 m-2.5 flex h-7 items-center gap-1.5 rounded-full bg-black/50 px-3 text-white transition-all duration-300">
@@ -115,12 +117,13 @@ const SearchCard = ({
             alt={title}
             width={64}
             height={64}
+            loading="eager"
             sizes="(max-width: 768px) 100vw, 50vw"
             className="h-full w-full object-cover"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gray-100">
-            <Image className="h-6 w-6 text-gray-400" />
+            <ImageIcon className="h-6 w-6 text-gray-400" />
           </div>
         )}
       </div>
