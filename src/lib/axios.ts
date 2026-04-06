@@ -52,10 +52,16 @@ apiClient.interceptors.request.use(
       // Sử dụng .set để đảm bảo tính tương thích với AxiosHeaders
       config.headers.set("Authorization", `Bearer ${accessToken}`);
     } else {
-      console.warn(
-        "Axios Interceptor: Access Token is missing for request to",
-        config.url,
-      );
+      // Silent warnings for known public routes
+      const publicRoutes = ["/search", "/orders", "/blogs", "/categories", "/consultation"];
+      const isPublicRoute = publicRoutes.some(route => config.url?.includes(route));
+
+      if (!isPublicRoute) {
+        console.warn(
+          "Axios Interceptor: Access Token is missing for request to",
+          config.url,
+        );
+      }
     }
     return config;
   },

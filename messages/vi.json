@@ -399,5 +399,22 @@
     "view_details": "Xem chi tiết",
     "author_admin": "Admin",
     "author_consultant": "Tư vấn viên"
+  },
+  "Search": {
+    "title": "KẾT QUẢ TÌM KIẾM",
+    "filter_label": "Lọc kết quả",
+    "categories": {
+      "all": "Tất cả",
+      "order": "Đơn hàng"
+    },
+    "empty": {
+      "message": "Không tìm thấy kết quả phù hợp cho",
+      "no_query": "Vui lòng nhập từ khóa để tìm kiếm",
+      "back_home": "Quay lại trang chủ"
+    },
+    "pagination": {
+      "previous": "Trang trước",
+      "next": "Trang sau"
+    }
   }
 }

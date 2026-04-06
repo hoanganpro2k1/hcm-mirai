@@ -19,7 +19,6 @@ export const userAdminService = {
   },
 
   createUser: async (data: UserCreatePayload): Promise<IUser> => {
-    console.log("data", data);
     const res = await apiClient.post<IUser>("/users", data);
     return res.data;
   },

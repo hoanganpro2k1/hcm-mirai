@@ -15,26 +15,93 @@ export async function GET(req: NextRequest) {
     const page = parseInt(searchParams.get("page") || "1");
     const limit = parseInt(searchParams.get("limit") || "10");
 
-    const query: any = { deletedAt: null };
-    
+    const matchStage: any = { deletedAt: null };
     if (s) {
-      query.$or = [
-        { title: { $regex: s, $options: "i" } },
-        { description: { $regex: s, $options: "i" } },
-        { location: { $regex: s, $options: "i" } },
-      ];
+      // Tách từ khóa thành các từ đơn để tìm kiếm linh hoạt (như Full Text Search)
+      // Ví dụ: "Tuyển nam" sẽ khớp với "Tuyển 10 Nam"
+      const terms = s.split(/\s+/).filter((t) => t.length > 0);
+      if (terms.length > 0) {
+        const pattern = terms
+          .map((t) => `(?=.*${t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`)
+          .join("");
+        const flexibleRegex = { $regex: pattern, $options: "i" };
+
+        matchStage.$or = [
+          { title: flexibleRegex },
+          { description: flexibleRegex },
+          { location: flexibleRegex },
+        ];
+      }
     }
 
     const skip = (page - 1) * limit;
 
+    const pipeline: any[] = [{ $match: matchStage }];
+
+    if (s) {
+      pipeline.push({
+        $addFields: {
+          relevance_score: {
+            $add: [
+              // 1. Ưu tiên tuyệt đối: Khớp chính xác toàn bộ cụm từ (100đ)
+              { $cond: [{ $eq: ["$title", s] }, 100, 0] },
+              // 2. Ưu tiên cao: Bắt đầu bằng toàn bộ cụm từ (50đ)
+              {
+                $cond: [
+                  { $regexMatch: { input: "$title", regex: `^${s}`, options: "i" } },
+                  50,
+                  0,
+                ],
+              },
+              // 3. Ưu tiên trung bình: Chứa nguyên cụm từ dính liền (20đ)
+              {
+                $cond: [
+                  { $regexMatch: { input: "$title", regex: s, options: "i" } },
+                  20,
+                  0,
+                ],
+              },
+              // 4. Ưu tiên cơ bản: Chứa các từ lẻ (đã lọc ở matchStage) (10đ)
+              10,
+            ],
+          },
+        },
+      });
+      pipeline.push({ $sort: { relevance_score: -1, createdAt: -1 } });
+    } else {
+      pipeline.push({ $sort: { createdAt: -1 } });
+    }
+
+    pipeline.push(
+      { $skip: skip },
+      { $limit: limit },
+      {
+        $lookup: {
+          from: "users",
+          localField: "createdBy",
+          foreignField: "_id",
+          as: "createdBy",
+        },
+      },
+      { $unwind: { path: "$createdBy", preserveNullAndEmptyArrays: true } },
+      {
+        $project: {
+          coverImage: 1,
+          title: 1,
+          salary: 1,
+          location: 1,
+          createdAt: 1,
+          description: 1,
+          relevance_score: 1,
+          "createdBy.username": 1,
+          "createdBy._id": 1,
+        },
+      }
+    );
+
     const [orders, total] = await Promise.all([
-      Order.find(query)
-        .select("coverImage title salary location createdBy createdAt description")
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(limit)
-        .populate("createdBy", "username"),
-      Order.countDocuments(query),
+      Order.aggregate(pipeline),
+      Order.countDocuments(matchStage),
     ]);
 
     return NextResponse.json(
