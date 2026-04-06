@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import {
   Dialog,
   DialogContent,
@@ -17,16 +15,8 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Loader2, Send } from "lucide-react";
-import axios from "axios";
-
-const formSchema = z.object({
-  name: z.string().min(2, "Họ tên phải có ít nhất 2 ký tự"),
-  phone: z.string().regex(/^[0-9]{10}$/, "Số điện thoại không hợp lệ (10 chữ số)"),
-  email: z.string().email("Email không hợp lệ").optional().or(z.literal("")),
-  note: z.string().optional(),
-});
-
-type FormValues = z.infer<typeof formSchema>;
+import { useConsultationMutations } from "@/hooks/use-consultation-mutations";
+import { consultationSchema, type ConsultationFormValues as FormValues } from "@/schemas/consultation.schema";
 
 interface ConsultationModalProps {
   open: boolean;
@@ -34,7 +24,7 @@ interface ConsultationModalProps {
 }
 
 export function ConsultationModal({ open, onOpenChange }: ConsultationModalProps) {
-  const [isLoading, setIsLoading] = useState(false);
+  const { submitConsultation, isSubmitting: isLoading } = useConsultationMutations();
 
   const {
     register,
@@ -43,7 +33,7 @@ export function ConsultationModal({ open, onOpenChange }: ConsultationModalProps
     reset,
     formState: { errors },
   } = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(consultationSchema),
     defaultValues: {
       name: "",
       phone: "",
@@ -54,19 +44,12 @@ export function ConsultationModal({ open, onOpenChange }: ConsultationModalProps
 
   async function onSubmit(values: FormValues) {
     try {
-      setIsLoading(true);
-      const response = await axios.post("/api/consultations", values);
-      
-      if (response.status === 201) {
-        toast.success("Gửi yêu cầu thành công! Chúng tôi sẽ liên hệ sớm nhất.");
-        reset();
-        onOpenChange(false);
-      }
-    } catch (error: any) {
-      console.error("Consultation Error:", error);
-      toast.error(error.response?.data?.message || "Đã có lỗi xảy ra. Vui lòng thử lại.");
-    } finally {
-      setIsLoading(false);
+      await submitConsultation(values);
+      toast.success("Gửi yêu cầu thành công! Chúng tôi sẽ liên hệ sớm nhất.");
+      reset();
+      onOpenChange(false);
+    } catch {
+      // Error handled by hook
     }
   }
 

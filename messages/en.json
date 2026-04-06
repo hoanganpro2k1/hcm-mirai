@@ -57,5 +57,141 @@
     "gender": "Gender",
     "search": "Search job orders",
     "all": "All"
+  },
+  "NotFound": {
+    "title": "404 - Page Not Found",
+    "description": "Sorry, the page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "subtitle": "We are always ready to listen and support you on your journey to conquer knowledge.",
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "address_val": "152 Ngo Gia Tu Street, Le Loi, Vinh Hung, Nghe An, Vietnam",
+      "phone_val": "0973 460 999",
+      "email_val": "contact@hcm-mirai.vn"
+    },
+    "form": {
+      "title": "Send us a message",
+      "description": "Fill out the form below and we will get back to you within 24 hours.",
+      "name": "Full name",
+      "phone": "Phone number",
+      "email": "Email",
+      "service": "Service of interest",
+      "message": "Message content",
+      "placeholder_name": "John Doe",
+      "placeholder_phone": "0987 654 321",
+      "placeholder_email": "email@example.com",
+      "placeholder_message": "Let us know your needs...",
+      "submit": "Send Message",
+      "success": "Message sent successfully! We will contact you back as soon as possible."
+    }
+  },
+  "Footer": {
+    "maps": {
+      "head_office": "HÀ NỘI HEAD OFFICE MAP",
+      "training_center": "TOPIK TRAINING CENTER"
+    },
+    "socials": {
+      "facebook": "Official Fanpage",
+      "tiktok": "HCM-MIRAI TikTok"
+    },
+    "links": {
+      "about_mirai": "ABOUT HCM-MIRAI",
+      "testimonials": "STUDENT TESTIMONIALS",
+      "services": "MAIN SERVICES",
+      "study_overseas": "STUDY OVERSEAS",
+      "train_language": "LANGUAGE TRAINING",
+      "university_list": "UNIVERSITY LIST",
+      "gallery": "PHOTO GALLERY",
+      "contact_consult": "CONTACT CONSULTATION",
+      "privacy": "PRIVACY POLICY",
+      "terms": "TERMS OF SERVICE",
+      "news_events": "NEWS & EVENTS"
+    },
+    "categories": {
+      "about": "ABOUT",
+      "connect": "CONNECT WITH HCM-MIRAI",
+      "support": "SUPPORT CENTER",
+      "legal": "LEGAL INFORMATION"
+    }
+  },
+  "About": {
+    "hero": {
+      "title": "About HCM-MIRAI",
+      "breadcrumb": "Home"
+    },
+    "vision_mission": {
+      "mission": {
+        "title": "Mission",
+        "desc": "Connecting knowledge, shaping the future, and helping Vietnam's young generation access international educational excellence."
+      },
+      "vision": {
+        "title": "Vision",
+        "desc": "To become a leading study abroad consultant and language training provider, the #1 choice for students and parents."
+      },
+      "core_values": {
+        "title": "Core Values",
+        "desc": "Dedicated in consultation - Professional in process - Transparent in costs."
+      },
+      "philosophy": {
+        "title": "Educational Philosophy",
+        "desc": "Learner-centered education, teaching not only language but also life skills and a global mindset."
+      }
+    },
+    "benefits": {
+      "title": "Why Choose HCM-MIRAI for Your Study Abroad Journey?",
+      "item1": {
+        "title": "19 Years of Experience",
+        "desc": "Nearly two decades of experience establishing our brand and reputation in education."
+      },
+      "item2": {
+        "title": "Strategic Partners",
+        "desc": "Direct links with over 200 prestigious Universities and Colleges in Japan, Korea, and Australia."
+      },
+      "item3": {
+        "title": "High Visa Success Rate",
+        "desc": "Professional document preparation support, maintaining a visa success rate above 98%."
+      },
+      "item4": {
+        "title": "Transparent Pricing",
+        "desc": "Commitment to no hidden costs beyond the contract, with clear financial roadmaps from the start."
+      }
+    },
+    "team": {
+      "title": "HCM-MIRAI Leadership Team",
+      "subtitle": "Dedicated professionals accompanying you on your journey"
+    },
+    "media": {
+      "title": "Center Media Gallery",
+      "subtitle": "Modern and dynamic learning environment"
+    }
+  },
+  "Gallery": {
+    "hero": {
+      "title": "Photo Gallery",
+      "breadcrumb": "Home"
+    },
+    "images": {
+      "title": "Center Images",
+      "subtitle": "Images and videos capturing memorable moments at the center.",
+      "categories": {
+        "all": "All",
+        "facilities": "Facilities",
+        "events": "Events",
+        "students": "Students"
+      }
+    },
+    "videos": {
+      "title": "Center Videos",
+      "subtitle": "Images and videos capturing memorable moments at the center."
+    },
+    "registration": {
+      "title": "Free Consultation For You!",
+      "subtitle": "Thousands of students have succeeded, what about you? Register to receive the latest consultation and information from HCM-MIRAI."
+    }
   }
 }

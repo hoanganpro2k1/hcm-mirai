@@ -59,6 +59,7 @@ export const ImageUpload = ({
               className="object-cover"
               alt="Uploaded image"
               src={value}
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         ) : (

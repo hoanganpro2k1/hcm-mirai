@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { SectionHeader } from "@/components/ui/section-header";
+import Image from "next/image";
 
 const partners = [
   { name: "University 1", logo: "https://picsum.photos/200/100?logo1" },
@@ -42,6 +42,7 @@ export default function PartnerMarquee() {
                     src={partner.logo}
                     alt={partner.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-contain"
                   />
                 </div>

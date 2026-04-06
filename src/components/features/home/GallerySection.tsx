@@ -1,8 +1,8 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/section-header";
-import Image from "next/image";
 import { Play, ZoomIn } from "lucide-react";
+import Image from "next/image";
 
 const photos = [
   { id: 1, src: "https://picsum.photos/400/600?gallery1", size: "row-span-2" },
@@ -49,6 +49,7 @@ export default function GallerySection() {
                   src={photo.src}
                   alt={`Center Photo ${photo.id}`}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -78,6 +79,7 @@ export default function GallerySection() {
                       src={video.thumbnail}
                       alt={video.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20">
@@ -100,7 +102,7 @@ export default function GallerySection() {
                 </div>
               ))}
             </div>
-            
+
             <button className="w-full py-4 rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 font-bold hover:border-primary hover:text-primary transition-all">
               Xem thêm trên kênh YouTube của chúng tôi
             </button>

@@ -1,8 +1,8 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/section-header";
-import Image from "next/image";
 import { Quote, Star } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -10,7 +10,8 @@ const testimonials = [
     name: "Phạm Thu Thảo",
     role: "Sinh viên Đại học Yonsei",
     image: "https://picsum.photos/600/800?student1",
-    feedback: "Em cảm ơn HCM-MIRAI rất nhiều vì đã đồng hành cùng em trong suốt quá trình làm hồ sơ. Nhờ sự tư vấn tận tình và sát sao của các anh chị, em đã đạt được visa và đang có những trải nghiệm tuyệt vời tại Hàn Quốc.",
+    feedback:
+      "Em cảm ơn HCM-MIRAI rất nhiều vì đã đồng hành cùng em trong suốt quá trình làm hồ sơ. Nhờ sự tư vấn tận tình và sát sao của các anh chị, em đã đạt được visa và đang có những trải nghiệm tuyệt vời tại Hàn Quốc.",
     rating: 5,
   },
 ];
@@ -38,6 +39,7 @@ export default function TestimonialsSection() {
                 src={testimonial.image}
                 alt={testimonial.name}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -50,10 +52,7 @@ export default function TestimonialsSection() {
           <div className="w-full md:w-1/2 flex flex-col space-y-6">
             <div className="flex gap-1">
               {[...Array(testimonial.rating)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-5 h-5 fill-accent text-accent"
-                />
+                <Star key={i} className="w-5 h-5 fill-accent text-accent" />
               ))}
             </div>
 

@@ -53,6 +53,7 @@ export function AdminUserSection({ className }: AdminUserSectionProps) {
               src={user.avatar}
               alt={displayName}
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="rounded-full object-cover border-2 border-primary/20"
               unoptimized // Use unoptimized for dynamic URLs if not configured in next.config.js
             />
