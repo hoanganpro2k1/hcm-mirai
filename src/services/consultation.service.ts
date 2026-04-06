@@ -1,4 +1,5 @@
 import { apiClient } from "@/lib/axios";
+import { ConsultationFormValues } from "@/schemas/consultation.schema";
 import { IConsultation } from "@/types/consultation.type";
 
 export const consultationService = {
@@ -15,5 +16,10 @@ export const consultationService = {
       { status },
     );
     return res.data.data;
+  },
+
+  submitConsultation: async (data: ConsultationFormValues) => {
+    const res = await apiClient.post("/api/consultations", data);
+    return res.data;
   },
 };

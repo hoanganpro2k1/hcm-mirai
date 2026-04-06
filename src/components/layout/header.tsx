@@ -1,13 +1,14 @@
 "use client";
 
+import { ConsultationModal } from "@/components/features/consultation/ConsultationModal";
 import SearchTrigger from "@/components/features/search/SearchTrigger";
+import { Button } from "@/components/ui/button";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import NextImage from "next/image";
 import { useState } from "react";
 import { ModeToggle } from "./mode-toggle";
-import { ConsultationModal } from "@/components/features/consultation/ConsultationModal";
 
 export function Header() {
   const t = useTranslations("Header");
@@ -147,7 +148,7 @@ export function Header() {
             <SearchTrigger />
           </div>
           <ModeToggle />
-          <button 
+          <button
             onClick={() => setIsConsultationOpen(true)}
             className="hidden sm:block bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 sm:px-6 rounded uppercase text-xs sm:text-sm font-semibold transition shrink-0"
           >
@@ -179,12 +180,13 @@ export function Header() {
               <div className="font-bold text-foreground text-lg uppercase">
                 Menu
               </div>
-              <button
+              <Button
+                variant={"ghost"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="p-2 text-muted-foreground hover:bg-muted rounded-md transition"
               >
                 <X className="w-6 h-6" />
-              </button>
+              </Button>
             </div>
 
             <div className="flex flex-col py-2">
@@ -233,7 +235,7 @@ export function Header() {
             </div>
 
             <div className="p-4 mt-auto">
-              <button 
+              <Button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   setIsConsultationOpen(true);
@@ -241,14 +243,14 @@ export function Header() {
                 className="w-full bg-primary hover:bg-primary/90 transition-colors text-primary-foreground py-3 rounded-md uppercase text-sm font-semibold"
               >
                 {t("actions.tuvan")}
-              </button>
+              </Button>
             </div>
           </div>
         </div>
       )}
-      <ConsultationModal 
-        open={isConsultationOpen} 
-        onOpenChange={setIsConsultationOpen} 
+      <ConsultationModal
+        open={isConsultationOpen}
+        onOpenChange={setIsConsultationOpen}
       />
     </header>
   );

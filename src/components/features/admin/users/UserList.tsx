@@ -1,5 +1,8 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
   TableBody,
@@ -8,14 +11,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import { USER_STATUS_OPTIONS } from "@/constants/user.constant";
 import { IUser } from "@/types/auth.type";
-import { Edit, Trash2, UserX, UserCheck, ShieldCheck } from "lucide-react";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
+import { Edit, ShieldCheck, Trash2, UserCheck, UserX } from "lucide-react";
 import Image from "next/image";
 
 interface UserListProps {
@@ -76,6 +76,7 @@ export function UserList({
                         alt={user.username}
                         width={36}
                         height={36}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="h-full w-full rounded-full object-cover"
                       />
                     ) : (
@@ -96,7 +97,9 @@ export function UserList({
                 {user.phoneNumber ? (
                   <span className="text-sm">{user.phoneNumber}</span>
                 ) : (
-                  <span className="text-xs text-slate-400 italic">Chưa cập nhật</span>
+                  <span className="text-xs text-slate-400 italic">
+                    Chưa cập nhật
+                  </span>
                 )}
               </TableCell>
               <TableCell>
@@ -112,7 +115,8 @@ export function UserList({
                   variant={user.status === "active" ? "default" : "destructive"}
                   className="capitalize"
                 >
-                  {USER_STATUS_OPTIONS.find((opt) => opt.value === user.status)?.label || user.status}
+                  {USER_STATUS_OPTIONS.find((opt) => opt.value === user.status)
+                    ?.label || user.status}
                 </Badge>
               </TableCell>
               <TableCell className="text-sm text-slate-500">
@@ -123,7 +127,11 @@ export function UserList({
                   <Button
                     variant="ghost"
                     size="icon"
-                    title={user.status === "active" ? "Khóa tài khoản" : "Mở khóa tài khoản"}
+                    title={
+                      user.status === "active"
+                        ? "Khóa tài khoản"
+                        : "Mở khóa tài khoản"
+                    }
                     onClick={() => onToggleStatus(user)}
                   >
                     {user.status === "active" ? (

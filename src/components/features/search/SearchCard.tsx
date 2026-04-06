@@ -76,7 +76,7 @@ const SearchCard = ({
       >
         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
           {image ? (
-            <img
+            <NextImage
               src={image}
               alt={title}
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -106,9 +106,16 @@ const SearchCard = ({
       href={href || "#"}
       className="group flex items-center gap-4 rounded-xl border border-gray-100 bg-white p-3 transition-all hover:bg-gray-50 hover:shadow-sm"
     >
-      <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+      <div className="h-16 w-16 shrink-0 overflow-hidden rounded-lg">
         {image ? (
-          <img src={image} alt={title} className="h-full w-full object-cover" />
+          <NextImage
+            src={image}
+            alt={title}
+            width={64}
+            height={64}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="h-full w-full object-cover"
+          />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gray-100">
             <Image className="h-6 w-6 text-gray-400" />

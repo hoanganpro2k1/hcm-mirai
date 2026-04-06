@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { SectionHeader } from "@/components/ui/section-header";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 const categories = [
   { id: "korea", label: "Hàn Quốc" },
@@ -77,7 +77,7 @@ export default function ProgramSection() {
             align="left"
             className="mb-0"
           />
-          
+
           {/* Tabs Navigation */}
           <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
             {categories.map((cat) => (
@@ -88,7 +88,7 @@ export default function ProgramSection() {
                   "px-6 py-2.5 rounded-full text-sm font-bold transition-all border-2",
                   activeTab === cat.id
                     ? "bg-primary text-white border-primary shadow-lg shadow-primary/20"
-                    : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-100 dark:border-gray-700 hover:border-primary/50"
+                    : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-100 dark:border-gray-700 hover:border-primary/50",
                 )}
               >
                 {cat.label}
@@ -110,6 +110,7 @@ export default function ProgramSection() {
                     src={program.image}
                     alt={program.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
@@ -136,7 +137,8 @@ export default function ProgramSection() {
           ) : (
             <div className="col-span-full py-20 text-center">
               <p className="text-gray-500 dark:text-gray-400 italic">
-                Hiện tại chưa có chương trình nào cho chuyên mục này. Vui lòng quay lại sau!
+                Hiện tại chưa có chương trình nào cho chuyên mục này. Vui lòng
+                quay lại sau!
               </p>
             </div>
           )}

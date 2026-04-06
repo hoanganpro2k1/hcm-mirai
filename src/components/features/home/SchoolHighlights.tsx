@@ -1,9 +1,9 @@
 "use client";
 
-import { SectionHeader } from "@/components/ui/section-header";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { SectionHeader } from "@/components/ui/section-header";
 import { ArrowRight, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const schools = [
   {
@@ -11,7 +11,8 @@ const schools = [
     name: "Đại học Yonsei (Yonsei University)",
     location: "Seoul, Hàn Quốc",
     image: "https://picsum.photos/600/400?yonsei",
-    description: "Một trong những trường đại học tư thục lâu đời và uy tín nhất Hàn Quốc.",
+    description:
+      "Một trong những trường đại học tư thục lâu đời và uy tín nhất Hàn Quốc.",
     tags: ["Top 1%"],
   },
   {
@@ -19,7 +20,8 @@ const schools = [
     name: "Đại học Quốc gia Seoul (SNU)",
     location: "Seoul, Hàn Quốc",
     image: "https://picsum.photos/600/400?snu",
-    description: "Trường đại học danh giá nhất Hàn Quốc, biểu tượng của giáo dục xứ Kim Chi.",
+    description:
+      "Trường đại học danh giá nhất Hàn Quốc, biểu tượng của giáo dục xứ Kim Chi.",
     tags: ["Ưu tú"],
   },
   {
@@ -53,6 +55,7 @@ export default function SchoolHighlights() {
                   src={school.image}
                   alt={school.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute top-4 left-4 flex gap-2">

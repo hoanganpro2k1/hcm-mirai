@@ -57,5 +57,141 @@
     "gender": "Giới tính",
     "search": "Tìm kiếm đơn hàng",
     "all": "Tất cả"
+  },
+  "NotFound": {
+    "title": "404 - Không tìm thấy trang",
+    "description": "Rất tiếc, trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển.",
+    "backHome": "Về trang chủ"
+  },
+  "Contact": {
+    "title": "Liên hệ với chúng tôi",
+    "subtitle": "Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn trên hành trình chinh phục tri thức.",
+    "info": {
+      "address": "Địa chỉ",
+      "phone": "Điện thoại",
+      "email": "Email",
+      "address_val": "152 Đ. Ngô Gia Tự, Lê Lợi, Vinh Hưng, Nghệ An, Việt Nam",
+      "phone_val": "0973 460 999",
+      "email_val": "contact@hcm-mirai.vn"
+    },
+    "form": {
+      "title": "Gửi tin nhắn cho chúng tôi",
+      "description": "Điền vào biểu mẫu bên dưới và chúng tôi sẽ phản hồi bạn trong vòng 24 giờ.",
+      "name": "Họ và tên",
+      "phone": "Số điện thoại",
+      "email": "Email",
+      "service": "Dịch vụ quan tâm",
+      "message": "Nội dung tin nhắn",
+      "placeholder_name": "Nguyễn Văn A",
+      "placeholder_phone": "0987 654 321",
+      "placeholder_email": "email@example.com",
+      "placeholder_message": "Hãy cho chúng tôi biết nhu cầu của bạn...",
+      "submit": "Gửi tin nhắn",
+      "success": "Gửi tin nhắn thành công! Chúng tôi sẽ liên hệ lại với bạn sớm nhất."
+    }
+  },
+  "Footer": {
+    "maps": {
+      "head_office": "BẢN ĐỒ TRỤ SỞ HÀ NỘI",
+      "training_center": "TRUNG TÂM ĐÀO TẠO TOPIK"
+    },
+    "socials": {
+      "facebook": "Fanpage chính",
+      "tiktok": "Tik Tok HCM-MIRAI"
+    },
+    "links": {
+      "about_mirai": "VỀ HCM-MIRAI",
+      "testimonials": "CẢM NHẬN HỌC VIÊN",
+      "services": "DỊCH VỤ CHÍNH",
+      "study_overseas": "DU HỌC & XKLĐ",
+      "train_language": "ĐÀO TẠO NGOẠI NGỮ",
+      "university_list": "DANH SÁCH TRƯỜNG ĐẠI HỌC",
+      "gallery": "THƯ VIỆN HÌNH ẢNH",
+      "contact_consult": "LIÊN HỆ",
+      "privacy": "CHÍNH SÁCH & QUYỀN RIÊNG TƯ",
+      "terms": "ĐIỀU KHOẢN DỊCH VỤ",
+      "news_events": "TIN TỨC & SỰ KIỆN"
+    },
+    "categories": {
+      "about": "GIỚI THIỆU",
+      "connect": "KẾT NỐI HCM-MIRAI",
+      "support": "TRUNG TÂM HỖ TRỢ",
+      "legal": "THÔNG TIN PHÁP LÝ"
+    }
+  },
+  "About": {
+    "hero": {
+      "title": "Về HCM-MIRAI",
+      "breadcrumb": "Trang chủ"
+    },
+    "vision_mission": {
+      "mission": {
+        "title": "Sứ mệnh",
+        "desc": "Kết nối tri thức, định hướng tương lai, giúp thế hệ trẻ Việt Nam tiếp cận tinh hoa giáo dục quốc tế."
+      },
+      "vision": {
+        "title": "Tầm nhìn",
+        "desc": "Trở thành đơn vị tư vấn du học và đào tạo ngoại ngữ hàng đầu, là lựa chọn số 1 của học viên và phụ huynh."
+      },
+      "core_values": {
+        "title": "Giá trị cốt lõi",
+        "desc": "Tận tâm trong tư vấn - Chuyên nghiệp trong quy trình - Minh bạch trong chi phí."
+      },
+      "philosophy": {
+        "title": "Triết lý giáo dục",
+        "desc": "Lấy người học làm trung tâm, đào tạo không chỉ ngôn ngữ mà cả kỹ năng sống và tư duy toàn cầu."
+      }
+    },
+    "benefits": {
+      "title": "Tại sao chọn HCM-MIRAI cho hành trình du học?",
+      "item1": {
+        "title": "19 năm kinh nghiệm",
+        "desc": "Hành trình gần hai thập kỷ khẳng định thương hiệu và uy tín trong lĩnh vực giáo dục."
+      },
+      "item2": {
+        "title": "Đối tác chiến lược",
+        "desc": "Liên kết trực tiếp với hơn 200 trường Đại học, Cao đẳng danh tiếng tại Nhật, Hàn, Úc."
+      },
+      "item3": {
+        "title": "Tỷ lệ đậu Visa cao",
+        "desc": "Hỗ trợ hoàn thiện hồ sơ chuyên nghiệp, tỷ lệ đậu visa luôn duy trì ở mức trên 98%."
+      },
+      "item4": {
+        "title": "Chi phí minh bạch",
+        "desc": "Cam kết không phát sinh chi phí ngoài hợp đồng, lộ trình tài chính rõ ràng ngay từ đầu."
+      }
+    },
+    "team": {
+      "title": "Đội ngũ cán bộ HCM-MIRAI",
+      "subtitle": "Những con người tận tâm luôn đồng hành cùng bạn"
+    },
+    "media": {
+      "title": "Hình ảnh và video trung tâm",
+      "subtitle": "Môi trường học tập hiện đại và năng động"
+    }
+  },
+  "Gallery": {
+    "hero": {
+      "title": "Thư viện hình ảnh",
+      "breadcrumb": "Trang chủ"
+    },
+    "images": {
+      "title": "Hình ảnh trung tâm",
+      "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm.",
+      "categories": {
+        "all": "Tất cả",
+        "facilities": "Cơ sở vật chất",
+        "events": "Sự kiện",
+        "students": "Học viên"
+      }
+    },
+    "videos": {
+      "title": "Video trung tâm",
+      "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm."
+    },
+    "registration": {
+      "title": "Tư vấn miễn phí ngay cho bạn!",
+      "subtitle": "Hàng nghìn học viên đã thành công, còn bạn thì sao? Đăng ký nhận tư vấn và thông tin mới nhất từ HCM-MIRAI."
+    }
   }
 }
