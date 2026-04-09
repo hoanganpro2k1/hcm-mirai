@@ -9,26 +9,26 @@ export default function StudyProgramGrid() {
 
   const programs = [
     {
-      title: "Du học Nhật Bản",
-      desc: "Trải nghiệm nền giáo dục hàng đầu thế giới với học bổng lên tới 100% học phí.",
+      title: t("programs.prog1.title"),
+      desc: t("programs.prog1.desc"),
       icon: <Globe className="w-8 h-8 text-red-600" />,
       image: "https://picsum.photos/id/101/800/600",
     },
     {
-      title: "Du học Hàn Quốc",
-      desc: "Lộ trình visa thẳng, hỗ trợ việc làm thêm với thu nhập hấp dẫn.",
+      title: t("programs.prog2.title"),
+      desc: t("programs.prog2.desc"),
       icon: <GraduationCap className="w-8 h-8 text-blue-600" />,
       image: "https://picsum.photos/id/102/800/600",
     },
     {
-      title: "Kỹ năng đặc định",
-      desc: "Chương trình XKLĐ chất lượng cao, thời hạn làm việc lâu dài tại nước ngoài.",
+      title: t("programs.prog3.title"),
+      desc: t("programs.prog3.desc"),
       icon: <Plane className="w-8 h-8 text-purple-600" />,
       image: "https://picsum.photos/id/103/800/600",
     },
     {
-      title: "Thực tập sinh",
-      desc: "Vừa học vừa làm, cơ hội nâng cao tay nghề và thu nhập ngoại tệ.",
+      title: t("programs.prog4.title"),
+      desc: t("programs.prog4.desc"),
       icon: <Award className="w-8 h-8 text-green-600" />,
       image: "https://picsum.photos/id/104/800/600",
     },
@@ -72,9 +72,6 @@ export default function StudyProgramGrid() {
                 <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
                   {program.desc}
                 </p>
-                <button className="flex items-center gap-2 font-black uppercase text-sm group/btn text-red-600">
-                  <span>Xem lộ trình chi tiết</span>
-                </button>
               </div>
             </div>
           ))}

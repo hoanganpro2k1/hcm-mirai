@@ -193,6 +193,10 @@
       "title": "Thư viện hình ảnh",
       "breadcrumb": "Trang chủ"
     },
+    "common": {
+      "badge": "Thư viện",
+      "seeMore": "Xem thêm"
+    },
     "images": {
       "title": "Hình ảnh trung tâm",
       "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm.",
@@ -205,7 +209,15 @@
     },
     "videos": {
       "title": "Video trung tâm",
-      "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm."
+      "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm.",
+      "items": {
+        "v1": "GẦN 20 NĂM VỮNG BƯỚC HCM-MIRAI KHÔNG NGỪNG VƯƠN XA",
+        "v2": "DU HỌC THẠC SĨ CÙNG HCM-MIRAI - BƯỚC TIẾN LỚN CHO SỰ NGHIỆP",
+        "v3": "KHÔNG LO HỌC PHÍ NHẬP HỌC 0 ĐỒNG TẠI HCM-MIRAI",
+        "v4": "KHÔNG NGHĨ SẼ KHÓC - NHƯNG NƯỚC MẮT VẪN RƠI | HCM-MIRAI",
+        "v5": "GIÂY PHÚT CHIA XA KHI CON LÊN ĐƯỜNG DU HỌC | HCM-MIRAI",
+        "v6": "HỌC VIÊN HCM-MIRAI MÁCH NHỎ - BÍ KÍP XIN VISA CỰC DỄ"
+      }
     },
     "registration": {
       "title": "Tư vấn miễn phí ngay cho bạn!",
@@ -215,13 +227,17 @@
   "Training": {
     "hero": {
       "title": "Đào tạo ngoại ngữ",
-      "breadcrumb": "Trang chủ"
+      "breadcrumb": "Trang chủ",
+      "seo_desc": "Chương trình đào tạo Tiếng Nhật và Tiếng Hàn chuyên sâu, cam kết đầu ra JLPT và TOPIK."
     },
     "intro": {
       "title": "Chinh phục đa ngôn ngữ - Khám phá thế giới",
       "desc": "Tại HCM-MIRAI, chúng tôi không chỉ dạy ngôn ngữ mà còn trang bị cho bạn văn hóa và phong cách làm việc bản địa. Với đội ngũ giáo viên bản xứ và giáo trình chuyên sâu, chúng tôi cam kết lộ trình học tập hiệu quả nhất."
     },
     "courses": {
+      "badge_levels": "Các cấp độ giảng dạy",
+      "badge_cert": "Chứng chỉ uy tín",
+      "cta": "Tìm hiểu lộ trình",
       "japanese": {
         "title": "Tiếng Nhật (JLPT)",
         "subtitle": "Từ N5 đến N1",
@@ -235,15 +251,27 @@
     },
     "features": {
       "native": "Giáo viên bản xứ",
+      "native_desc": "Học trực tiếp với giáo viên bản xứ để chuẩn hóa phát âm và phản xạ giao tiếp tự nhiên.",
       "curriculum": "Giáo trình chuẩn",
+      "curriculum_desc": "Giáo trình được biên soạn riêng biệt, bám sát cấu trúc đề thi JLPT và TOPIK mới nhất.",
       "facilities": "Phòng Lab hiện đại",
-      "support": "Hỗ trợ học tập 24/7"
+      "facilities_desc": "Hệ thống phòng Lab, máy chiếu và phần mềm hỗ trợ học tập trực tuyến hiện đại.",
+      "support": "Hỗ trợ học tập 24/7",
+      "support_desc": "Đội ngũ trợ giảng hỗ trợ ôn tập ngoài giờ học, giải đáp thắc mắc 24/7."
+    },
+    "method": {
+      "badge": "Phương pháp & Môi trường",
+      "title_start": "Học tập",
+      "title_highlight": "Chuyên sâu",
+      "title_end": "Chuẩn quốc tế",
+      "desc": "Chúng tôi tạo ra môi trường học tập không áp lực, kích thích tư duy và sự sáng tạo của từng học viên. Tại HCM-MIRAI, mỗi giờ học là một trải nghiệm văn hóa thú vị."
     }
   },
   "LaborDomestic": {
     "hero": {
       "title": "Cung ứng lao động trong nước",
-      "breadcrumb": "Trang chủ"
+      "breadcrumb": "Trang chủ",
+      "seo_desc": "Giải pháp nhân sự uy tín cho các doanh nghiệp tại Việt Nam."
     },
     "intro": {
       "title": "Giải pháp nhân lực toàn diện cho doanh nghiệp",
@@ -253,21 +281,41 @@
   "LaborOverseas": {
     "hero": {
       "title": "Cung ứng lao động nước ngoài",
-      "breadcrumb": "Trang chủ"
+      "breadcrumb": "Trang chủ",
+      "seo_desc": "Cơ hội việc làm tại Nhật Bản, Hàn Quốc, Úc và Châu Âu."
     },
     "intro": {
       "title": "Mở rộng cơ hội nghề nghiệp quốc tế",
       "desc": "Chúng tôi kết nối người lao động Việt Nam với các đối tác uy tín tại Nhật Bản, Hàn Quốc, Úc và Châu Âu."
     }
   },
+  "LaborCommon": {
+    "badge": "Ngành nghề tiêu biểu",
+    "cta": "Xem đơn hàng ngay",
+    "categories": {
+      "cat1": { "title": "Xây dựng", "desc": "Giàn giáo, hàn xì, điện dân dụng, kiến trúc..." },
+      "cat2": { "title": "Cơ khí", "desc": "Vận hành máy, tiện, phay, bào, lắp ráp linh kiện..." },
+      "cat3": { "title": "May mặc", "desc": "May công nghiệp, da giày, thiết kế thời trang..." },
+      "cat4": { "title": "Chế biến", "desc": "Thực phẩm, thủy sản, nông sản kỹ thuật cao..." },
+      "cat5": { "title": "Công suất lớn", "desc": "Lắp ráp ô tô, điện tử, vật liệu mới..." },
+      "cat6": { "title": "Điều dưỡng", "desc": "Chăm sóc người già, y tá, bác sĩ chuyên khoa..." }
+    }
+  },
   "StudyAbroad": {
     "hero": {
       "title": "Du học & XKLĐ",
-      "breadcrumb": "Trang chủ"
+      "breadcrumb": "Trang chủ",
+      "seo_desc": "Tầm nhìn quốc tế, sự nghiệp vững bền."
     },
     "intro": {
       "title": "Chắp cánh tương lai tại các quốc gia phát triển",
       "desc": "Lộ trình du học và làm việc rõ ràng, tỉ lệ đậu visa cao, hỗ trợ học viên từ khi bắt đầu đến khi ổn định tại nước ngoài."
+    },
+    "programs": {
+      "prog1": { "title": "Du học Nhật Bản", "desc": "Trải nghiệm nền giáo dục hàng đầu thế giới với học bổng lên tới 100% học phí." },
+      "prog2": { "title": "Du học Hàn Quốc", "desc": "Lộ trình visa thẳng, hỗ trợ việc làm thêm với thu nhập hấp dẫn." },
+      "prog3": { "title": "Kỹ năng đặc định", "desc": "Chương trình XKLĐ chất lượng cao, thời hạn làm việc lâu dài tại nước ngoài." },
+      "prog4": { "title": "Thực tập sinh", "desc": "Vừa học vừa làm, cơ hội nâng cao tay nghề và thu nhập ngoại tệ." }
     }
   },
   "News": {

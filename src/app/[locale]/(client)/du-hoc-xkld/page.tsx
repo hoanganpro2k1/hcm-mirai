@@ -3,12 +3,21 @@ import StudyProgramGrid from "@/components/features/study/StudyProgramGrid";
 import ConsultationForm from "@/components/features/home/ConsultationForm";
 import PartnerMarquee from "@/components/features/home/PartnerMarquee";
 import { useTranslations } from "next-intl";
-import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Du học & XKLĐ | HCM-MIRAI",
-  description: "Tầm nhìn quốc tế, sự nghiệp vững bền.",
+type Props = {
+  params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "StudyAbroad.hero" });
+  
+  return {
+    title: `${t("title")} | HCM-MIRAI`,
+    description: t("seo_desc"),
+  };
+}
 
 export default function StudyAbroadPage() {
   const t = useTranslations("StudyAbroad.hero");

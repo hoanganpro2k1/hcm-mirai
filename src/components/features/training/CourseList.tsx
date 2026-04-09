@@ -1,5 +1,6 @@
 "use client";
 
+import { IMAGES } from "@/constants/images";
 import { Link } from "@/i18n/routing";
 import {
   ArrowRight,
@@ -22,7 +23,7 @@ export default function CourseList() {
       icon: <BookOpen className="w-8 h-8 text-red-600" />,
       levels: ["N5", "N4", "N3", "N2", "N1"],
       accent: "bg-red-600",
-      image: "https://picsum.photos/id/21/800/600",
+      image: IMAGES.TRAINING.japanese,
     },
     {
       id: "korean",
@@ -32,7 +33,7 @@ export default function CourseList() {
       icon: <GraduationCap className="w-8 h-8 text-blue-600" />,
       levels: ["TOPIK I", "TOPIK II"],
       accent: "bg-blue-600",
-      image: "https://picsum.photos/id/22/800/600",
+      image: IMAGES.TRAINING.korean,
     },
   ];
 
@@ -87,7 +88,7 @@ export default function CourseList() {
 
                 <div className="space-y-4">
                   <h4 className="text-xs font-black text-gray-400 uppercase tracking-widest">
-                    Levels Offered
+                    {t("courses.badge_levels")}
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {course.levels.map((level) => (
@@ -104,13 +105,13 @@ export default function CourseList() {
                 <div className="pt-6 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-green-600 font-bold">
                     <CheckCircle2 className="w-5 h-5" />
-                    <span>Chứng chỉ uy tín</span>
+                    <span>{t("courses.badge_cert")}</span>
                   </div>
                   <Link
                     href="/lien-he"
                     className="flex items-center gap-2 font-black uppercase text-sm group/btn"
                   >
-                    <span>Tìm hiểu lộ trình</span>
+                    <span>{t("courses.cta")}</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>

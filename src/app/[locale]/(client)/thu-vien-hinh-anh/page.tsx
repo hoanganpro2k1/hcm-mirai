@@ -3,13 +3,22 @@ import CenterImages from "@/components/features/gallery/CenterImages";
 import CenterVideos from "@/components/features/gallery/CenterVideos";
 import ConsultationForm from "@/components/features/home/ConsultationForm";
 import PartnerMarquee from "@/components/features/home/PartnerMarquee";
-import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
-export const metadata: Metadata = {
-  title: "Thư viện hình ảnh | HCM-MIRAI",
-  description: "Khám phá không gian học tập và các hoạt động sôi nổi tại trung tâm đào tạo HCM-MIRAI",
+type Props = {
+  params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Gallery" });
+  
+  return {
+    title: `${t("hero.title")} | HCM-MIRAI`,
+    description: t("images.subtitle"),
+  };
+}
 
 export default function GalleryPage() {
   const tGallery = useTranslations("Gallery.hero");

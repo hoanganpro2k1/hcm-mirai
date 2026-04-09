@@ -193,6 +193,10 @@
       "title": "Photo Gallery",
       "breadcrumb": "Home"
     },
+    "common": {
+      "badge": "Gallery",
+      "seeMore": "View more"
+    },
     "images": {
       "title": "Center Images",
       "subtitle": "Images and videos capturing memorable moments at the center.",
@@ -205,7 +209,15 @@
     },
     "videos": {
       "title": "Center Videos",
-      "subtitle": "Images and videos capturing memorable moments at the center."
+      "subtitle": "Images and videos capturing memorable moments at the center.",
+      "items": {
+        "v1": "NEARLY 20 YEARS OF STEADY PROGRESS HCM-MIRAI KEEPS REACHING FURTHER",
+        "v2": "MASTER'S STUDY ABROAD WITH HCM-MIRAI - A BIG STEP FOR YOUR CAREER",
+        "v3": "NO WORRIES ABOUT TUITION WITH 0 VND ENROLLMENT AT HCM-MIRAI",
+        "v4": "DIDN'T THINK I WOULD CRY - BUT TEARS STILL FELL | HCM-MIRAI",
+        "v5": "THE MOMENT OF PARTING WHEN STUDYING ABROAD | HCM-MIRAI",
+        "v6": "HCM-MIRAI STUDENTS REVEAL - SUPER EASY VISA TIPS"
+      }
     },
     "registration": {
       "title": "Free Consultation For You!",
@@ -215,13 +227,17 @@
   "Training": {
     "hero": {
       "title": "Foreign Language Training",
-      "breadcrumb": "Home"
+      "breadcrumb": "Home",
+      "seo_desc": "Intensive Japanese and Korean training programs with guaranteed JLPT and TOPIK output."
     },
     "intro": {
       "title": "Master Languages - Discover the World",
       "desc": "At HCM-MIRAI, we don't just teach languages; we equip you with local culture and etiquette. With native teachers and specialized curriculum, we ensure the most effective learning path."
     },
     "courses": {
+      "badge_levels": "Levels Offered",
+      "badge_cert": "Prestigious Certificate",
+      "cta": "Explore the Route",
       "japanese": {
         "title": "Japanese (JLPT)",
         "subtitle": "From N5 to N1",
@@ -235,15 +251,27 @@
     },
     "features": {
       "native": "Native Teachers",
+      "native_desc": "Learn directly with native teachers to standardize pronunciation and natural communication reflexes.",
       "curriculum": "Standard Curriculum",
+      "curriculum_desc": "Exclusive curriculum structured closely around the latest JLPT and TOPIK exam formats.",
       "facilities": "Modern Labs",
-      "support": "24/7 Academic Support"
+      "facilities_desc": "Modern Lab systems, projectors, and online learning support software.",
+      "support": "24/7 Academic Support",
+      "support_desc": "Teaching assistants help with review outside of class hours and answer questions 24/7."
+    },
+    "method": {
+      "badge": "Method & Environment",
+      "title_start": "Intensive",
+      "title_highlight": "International Standard",
+      "title_end": "Learning",
+      "desc": "We create a pressure-free learning environment that stimulates the thinking and creativity of each student. At HCM-MIRAI, every lesson is an exciting cultural experience."
     }
   },
   "LaborDomestic": {
     "hero": {
       "title": "Domestic Labor Supply",
-      "breadcrumb": "Home"
+      "breadcrumb": "Home",
+      "seo_desc": "Reputable human resource solutions for enterprises in Vietnam."
     },
     "intro": {
       "title": "Comprehensive Manpower Solutions",
@@ -253,21 +281,41 @@
   "LaborOverseas": {
     "hero": {
       "title": "Overseas Labor Supply",
-      "breadcrumb": "Home"
+      "breadcrumb": "Home",
+      "seo_desc": "Job opportunities in Japan, Korea, Australia, and Europe."
     },
     "intro": {
       "title": "Expanding International Career Opportunities",
       "desc": "We connect Vietnamese workers with reputable partners in Japan, Korea, Australia, and Europe."
     }
   },
+  "LaborCommon": {
+    "badge": "Typical Industries",
+    "cta": "View Orders Now",
+    "categories": {
+      "cat1": { "title": "Construction", "desc": "Scaffolding, welding, civil electricity, architecture..." },
+      "cat2": { "title": "Mechanical", "desc": "Machine operation, turning, milling, planing, component assembly..." },
+      "cat3": { "title": "Garment", "desc": "Industrial sewing, footwear, fashion design..." },
+      "cat4": { "title": "Processing", "desc": "Food, seafood, high-tech agricultural products..." },
+      "cat5": { "title": "Manufacturing", "desc": "Automobile assembly, electronics, new materials..." },
+      "cat6": { "title": "Nursing", "desc": "Elderly care, nursing, specialized doctors..." }
+    }
+  },
   "StudyAbroad": {
     "hero": {
       "title": "Study Abroad & Labor Export",
-      "breadcrumb": "Home"
+      "breadcrumb": "Home",
+      "seo_desc": "International vision, sustainable career."
     },
     "intro": {
       "title": "Empowering Futures in Developed Nations",
       "desc": "Clear study and work pathways, high visa success rates, and support from start to finish."
+    },
+    "programs": {
+      "prog1": { "title": "Study in Japan", "desc": "Experience world-class education with scholarships up to 100% of intuition fees." },
+      "prog2": { "title": "Study in Korea", "desc": "Straight visa pathway, supporting part-time jobs with attractive income." },
+      "prog3": { "title": "Specified Skilled Worker", "desc": "High-quality labor export program with long-term working periods abroad." },
+      "prog4": { "title": "Technical Intern Training", "desc": "Study while working, an opportunity to improve skills and earn foreign currency." }
     }
   },
   "News": {

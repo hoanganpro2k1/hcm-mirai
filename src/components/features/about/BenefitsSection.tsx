@@ -1,5 +1,6 @@
 "use client";
 
+import { IMAGES } from "@/constants/images";
 import {
   CheckCircle2,
   History,
@@ -85,7 +86,7 @@ export default function BenefitsSection() {
           <div className="relative group lg:ml-12">
             <div className="relative rounded-[3rem] overflow-hidden aspect-4/5 shadow-2xl border-4 md:border-8 border-white dark:border-gray-800 animate-in zoom-in-95 duration-1000">
               <Image
-                src="https://picsum.photos/id/180/1000/1200"
+                src={IMAGES.ABOUT.BENEFITS.benefit}
                 alt="Student success"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

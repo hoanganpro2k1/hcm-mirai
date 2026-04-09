@@ -3,12 +3,21 @@ import LaborServiceGrid from "@/components/features/labor/LaborServiceGrid";
 import ConsultationForm from "@/components/features/home/ConsultationForm";
 import PartnerMarquee from "@/components/features/home/PartnerMarquee";
 import { useTranslations } from "next-intl";
-import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Cung ứng lao động trong nước | HCM-MIRAI",
-  description: "Giải pháp nhân sự uy tín cho các doanh nghiệp tại Việt Nam.",
+type Props = {
+  params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "LaborDomestic.hero" });
+  
+  return {
+    title: `${t("title")} | HCM-MIRAI`,
+    description: t("seo_desc"),
+  };
+}
 
 export default function DomesticLaborPage() {
   const t = useTranslations("LaborDomestic.hero");
