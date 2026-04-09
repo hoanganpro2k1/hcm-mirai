@@ -19,7 +19,7 @@ export default function ServicesHero() {
         <div className="w-full lg:w-1/2 rounded-3xl overflow-hidden relative aspect-4/3 md:aspect-video lg:aspect-square xl:aspect-4/3">
           <Image
             src={IMAGES.SERVICES.HERO.hero}
-            alt="HCM-MIRAI Services"
+            alt="HCM Mirai Services"
             fill
             className="object-cover"
           />

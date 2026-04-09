@@ -5,7 +5,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale });
   return {
-    title: `${t("Search.title", { fallback: "Tìm kiếm" })} | HCM-MIRAI`,
+    title: `${t("Search.title", { fallback: "Tìm kiếm" })} | HCM Mirai`,
   };
 }
 

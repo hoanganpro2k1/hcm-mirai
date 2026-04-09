@@ -12,11 +12,7 @@ export function Footer() {
   const t = useTranslations("Footer");
   const currentYear = new Date().getFullYear();
 
-  const contactInfo = {
-    phone: "0973 460 999",
-    email: "contact@hcm-mirai.vn",
-    address: "152 Đ. Ngô Gia Tự, Lê Lợi, Vinh, Nghệ An",
-  };
+  const tContact = useTranslations("Contact.info");
 
   return (
     <footer className="bg-primary text-white pt-16 pb-8 font-sans">
@@ -27,7 +23,7 @@ export function Footer() {
             <Link href="/" className="inline-block shrink-0 mb-4">
               <Image
                 src="/logo.png"
-                alt="HCM - MIRAI Logo"
+                alt="HCM Mirai Logo"
                 width={180}
                 height={56}
                 className="w-auto h-10 sm:h-12 object-contain"
@@ -47,7 +43,7 @@ export function Footer() {
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
-                  title="HCM-MIRAI Map"
+                  title="HCM Mirai Map"
                   className="transition-all duration-500"
                 ></iframe>
               </div>
@@ -67,13 +63,13 @@ export function Footer() {
                       {t("info.address")}
                     </p>
                     <p className="text-sm font-medium leading-relaxed">
-                      {contactInfo.address}
+                      {tContact("address_val")}
                     </p>
                   </div>
                 </Link>
 
                 <Link
-                  href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
+                  href={`tel:${tContact("phone_val").replace(/\s/g, "")}`}
                   className="flex gap-3 group hover:bg-white/5 p-2 -m-2 rounded-xl transition-all"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors">
@@ -84,13 +80,13 @@ export function Footer() {
                       {t("info.phone")}
                     </p>
                     <p className="text-sm font-bold tracking-tight">
-                      {contactInfo.phone}
+                      {tContact("phone_val")}
                     </p>
                   </div>
                 </Link>
 
                 <Link
-                  href={`mailto:${contactInfo.email}`}
+                  href={`mailto:${tContact("email_val")}`}
                   className="flex gap-3 group hover:bg-white/5 p-2 -m-2 rounded-xl transition-all"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors">
@@ -100,7 +96,7 @@ export function Footer() {
                     <p className="text-[10px] font-black uppercase tracking-widest text-white/40">
                       {t("info.email")}
                     </p>
-                    <p className="text-sm font-medium">{contactInfo.email}</p>
+                    <p className="text-sm font-medium">{tContact("email_val")}</p>
                   </div>
                 </Link>
               </div>
@@ -202,8 +198,11 @@ export function Footer() {
               </h3>
               <ul className="space-y-4">
                 {[
-                  { label: t("links.privacy"), href: "#" },
-                  { label: t("links.terms"), href: "#" },
+                  {
+                    label: t("links.privacy"),
+                    href: "/chinh-sach-bao-mat",
+                  },
+                  { label: t("links.terms"), href: "/dieu-khoan-su-dung" },
                 ].map((link, i) => (
                   <li key={i}>
                     <Link

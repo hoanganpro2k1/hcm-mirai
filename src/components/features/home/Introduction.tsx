@@ -60,7 +60,7 @@ export default function Introduction() {
             <div className="relative rounded-3xl overflow-hidden border-8 border-gray-100 dark:border-gray-900 shadow-2xl z-10 aspect-4/3">
               <Image
                 src={IMAGES.HOME.INTRODUCTION.home1}
-                alt="HCM-MIRAI Building"
+                alt="HCM Mirai Building"
                 fill
                 loading="eager"
                 sizes="(max-width: 768px) 100vw, 50vw"

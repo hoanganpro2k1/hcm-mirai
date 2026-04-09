@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
   const t = await getTranslations({ locale, namespace: "Gallery" });
   
   return {
-    title: `${t("hero.title")} | HCM-MIRAI`,
+    title: `${t("hero.title")} | HCM Mirai`,
     description: t("images.subtitle"),
   };
 }

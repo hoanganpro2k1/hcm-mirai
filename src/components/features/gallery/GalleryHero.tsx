@@ -14,7 +14,7 @@ export default function GalleryHero() {
       <div className="absolute inset-0">
         <Image
           src="https://picsum.photos/id/160/2000/1000"
-          alt="Gallery HCM-MIRAI"
+          alt="Gallery HCM Mirai"
           fill
           sizes="100vw"
           className="object-cover"

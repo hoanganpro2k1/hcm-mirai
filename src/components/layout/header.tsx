@@ -56,11 +56,11 @@ export function Header() {
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground text-sm py-2 px-6 flex justify-between items-center transition-colors">
         <Link
-          href="tel:+0973460999"
+          href={`tel:${t("topbar.phone_val", { defaultValue: "0973460999" }).replace(/\s/g, "")}`}
           className="flex items-center gap-2 hover:text-gray-300 transition-colors"
         >
           <Phone className="w-4 h-4" />
-          <span>+0973 460 999</span>
+          <span>{t("topbar.phone_val", { defaultValue: "0973 460 999" })}</span>
         </Link>
         <Link
           href="/don-hang"
@@ -99,7 +99,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <NextImage
             src="/logo.png"
-            alt="HCM - MIRAI Logo"
+            alt="HCM Mirai Logo"
             width={160}
             height={50}
             className="w-auto h-8 sm:h-10 object-contain"

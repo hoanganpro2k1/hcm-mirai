@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
   const t = await getTranslations({ locale, namespace: "Training.hero" });
   
   return {
-    title: `${t("title")} | HCM-MIRAI`,
+    title: `${t("title")} | HCM Mirai`,
     description: t("seo_desc"),
   };
 }

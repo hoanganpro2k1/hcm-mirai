@@ -4,7 +4,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale });
   return {
-    title: `${t("Header.nav.testimonials")} | HCM-MIRAI`,
+    title: `${t("Header.nav.testimonials")} | HCM Mirai`,
   };
 }
 

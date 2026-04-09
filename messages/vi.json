@@ -9,7 +9,7 @@
       "tintuc": "Tin tức & Sự kiện",
       "donhang": "Đơn hàng",
       "lienhe": "Liên hệ",
-      "about_mirai": "Về HCM-MIRAI",
+      "about_mirai": "Về HCM Mirai",
       "services": "Dịch vụ chính",
       "gallery": "Thư viện hình ảnh",
       "testimonials": "Cảm nhận học viên",
@@ -31,11 +31,11 @@
     "go_to_slide": "Chuyển đến slide {number}"
   },
   "Introduction": {
-    "title": "Chắp cánh ước mơ du học cùng HCM-MIRAI",
+    "title": "Chắp cánh ước mơ du học cùng HCM Mirai",
     "subtitle": "Chúng tôi là ai?",
-    "whyChooseUs": "Tại sao bạn nên lựa chọn HCM-MIRAI?",
+    "whyChooseUs": "Tại sao bạn nên lựa chọn HCM Mirai?",
     "cta": "Liên hệ tư vấn ngay",
-    "mission": "Du học HCM-MIRAI, cùng mạng lưới đối tác giáo dục hàng đầu, là một trong những đơn vị tư vấn và đào tạo uy tín, hoạt động lâu năm tại Việt Nam. Với sứ mệnh \"Tận tâm - Chuyên nghiệp - Minh bạch\", chúng tôi đã là cầu nối giúp hàng nghìn học viên chinh phục tri thức quốc tế.",
+    "mission": "Du học HCM Mirai, cùng mạng lưới đối tác giáo dục hàng đầu, là một trong những đơn vị tư vấn và đào tạo uy tín, hoạt động lâu năm tại Việt Nam. Với sứ mệnh \"Tận tâm - Chuyên nghiệp - Minh bạch\", chúng tôi đã là cầu nối giúp hàng nghìn học viên chinh phục tri thức quốc tế.",
     "desc1": "Chúng tôi không chỉ là một trung tâm tư vấn, mà còn là người bạn đồng hành tin cậy, giúp bạn chuẩn bị mọi hành trang cần thiết từ ngôn ngữ, kỹ năng sống đến các thủ tục pháp lý phức tạp.",
     "desc2": "Với 19 năm kinh nghiệm đào tạo và mạng lưới đối tác hơn 200 trường đại học tại Nhật Bản, Hàn Quốc, Úc, chúng tôi cam kết mang lại lộ trình học tập an toàn và hiệu quả nhất.",
     "features": {
@@ -91,15 +91,15 @@
   "Contact": {
     "title": "Liên hệ với chúng tôi",
     "subtitle": "Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn trên hành trình chinh phục tri thức.",
-    "seo_desc": "Liên hệ với HCM-MIRAI để được tư vấn chi tiết về các dịch vụ du học và xuất khẩu lao động.",
-    "greeting": "Chào mừng bạn đến với HCM-MIRAI!",
+    "seo_desc": "Liên hệ với HCM Mirai để được tư vấn chi tiết về các dịch vụ du học và xuất khẩu lao động.",
+    "greeting": "Chào mừng bạn đến với HCM Mirai!",
     "info": {
       "address": "Địa chỉ",
       "phone": "Điện thoại",
       "email": "Email",
       "address_val": "152 Đ. Ngô Gia Tự, Lê Lợi, Vinh Hưng, Nghệ An, Việt Nam",
       "phone_val": "0973 460 999",
-      "email_val": "contact@hcm-mirai.vn"
+      "email_val": "contact@hcm-mirai.com"
     },
     "form": {
       "title": "Gửi tin nhắn cho chúng tôi",
@@ -124,10 +124,10 @@
     },
     "socials": {
       "facebook": "Fanpage chính",
-      "tiktok": "Tik Tok HCM-MIRAI"
+      "tiktok": "Tik Tok HCM Mirai"
     },
     "links": {
-      "about_mirai": "VỀ HCM-MIRAI",
+      "about_mirai": "VỀ HCM Mirai",
       "testimonials": "CẢM NHẬN HỌC VIÊN",
       "services": "DỊCH VỤ CHÍNH",
       "study_overseas": "DU HỌC & XKLĐ",
@@ -135,13 +135,13 @@
       "university_list": "DANH SÁCH TRƯỜNG ĐẠI HỌC",
       "gallery": "THƯ VIỆN HÌNH ẢNH",
       "contact_consult": "LIÊN HỆ",
-      "privacy": "CHÍNH SÁCH & QUYỀN RIÊNG TƯ",
+      "privacy": "CHÍNH SÁCH BẢO MẬT",
       "terms": "ĐIỀU KHOẢN DỊCH VỤ",
       "news_events": "TIN TỨC & SỰ KIỆN"
     },
     "categories": {
       "about": "GIỚI THIỆU",
-      "connect": "KẾT NỐI HCM-MIRAI",
+      "connect": "KẾT NỐI HCM Mirai",
       "support": "TRUNG TÂM HỖ TRỢ",
       "legal": "THÔNG TIN PHÁP LÝ"
     },
@@ -151,12 +151,118 @@
       "phone": "Điện thoại",
       "email": "Email"
     },
-    "copyright": "© {year} HCM-MIRAI. ALL RIGHTS RESERVED.",
-    "designed_by": "Designed by HCM-MIRAI Team"
+    "copyright": "© {year} HCM Mirai. ALL RIGHTS RESERVED.",
+    "designed_by": "Designed by HCM Mirai Team"
+  },
+  "PrivacyPolicy": {
+    "title": "CHÍNH SÁCH VÀ QUYỀN RIÊNG TƯ",
+    "sections": {
+      "a": {
+        "title": "A. Mục đích và phạm vi thu thập",
+        "content": [
+          "Để sử dụng một số dịch vụ trên website https://hcm-mirai.com, quý khách có thể được yêu cầu đăng ký với chúng tôi thông tin cá nhân (thành viên), bao gồm: Email, Họ tên, Số ĐT liên lạc, địa chỉ.",
+          "Chúng tôi cũng thu thập thông tin về số lần viếng thăm, bao gồm số trang quý khách xem, số links (liên kết) bạn click, những thông tin khác liên quan đến việc kết nối đến website và các thông tin mà trình duyệt Web (Browser) quý khách sử dụng mỗi khi truy cập vào website của chúng tôi gồm: địa chỉ IP, loại Browser, ngôn ngữ sử dụng, thời gian và những địa chỉ mà Browser truy xuất đến."
+        ]
+      },
+      "b": {
+        "title": "B. Phạm vi sử dụng thông tin",
+        "content": [
+          "Mục đích sử dụng thông tin Thành viên cung cấp để:",
+          "Hỗ trợ khách hàng khi mua sản phẩm",
+          "Giải đáp thắc mắc khách hàng",
+          "Cung cấp cho khách hàng thông tin mới nhất trên Website của chúng tôi, thực hiện các khảo sát khách hàng, các hoạt động quảng bá liên quan đến các sản phẩm và dịch vụ của website nếu quý khách đăng ký nhận email thông báo."
+        ]
+      },
+      "c": {
+        "title": "C. Thời gian lưu trữ thông tin",
+        "content": "Dữ liệu cá nhân của Thành viên sẽ được lưu trữ cho đến khi có yêu cầu hủy bỏ hoặc tự Thành viên đăng nhập và thực hiện hủy bỏ. Còn lại trong mọi trường hợp thông tin cá nhân Thành viên sẽ được bảo mật trên máy chủ của https://hcm-mirai.com"
+      },
+      "d": {
+        "title": "D. Địa chỉ của đơn vị thu thập và quản lý thông tin cá nhân",
+        "content": "Địa chỉ: 152 Đ. Ngô Gia Tự, Lê Lợi, Vinh, Nghệ An"
+      },
+      "e": {
+        "title": "E. Phương tiện và công cụ để người dùng tiếp cận và chỉnh sửa dữ liệu cá nhân của mình",
+        "content": [
+          "Thành viên có quyền tự kiểm tra, cập nhật, điều chỉnh hoặc hủy bỏ thông tin cá nhân của mình bằng cách đăng nhập vào tài khoản và chỉnh sửa thông tin cá nhân hoặc yêu cầu https://hcm-mirai.com thực hiện việc này.",
+          "Thành viên có quyền gửi khiếu nại về người bán đến Ban quản trị của https://hcm-mirai.com tại địa chỉ: contact@hcm-mirai.com khi tiếp nhận những phản hồi này chúng tôi sẽ xác nhận lại thông tin, trường hợp đúng như phản ánh của Thành viên tùy theo mức độ, và sẽ có những biện pháp xử lý kịp thời."
+        ]
+      },
+      "f": {
+        "title": "F. Cam kết bảo mật thông tin cá nhân khách hàng",
+        "content": [
+          "Thông tin cá nhân của Thành viên trên https://hcm-mirai.com được chúng tôi cam kết bảo mật tuyệt đối theo chính sách bảo vệ thông tin cá nhân của website. Việc thu thập và sử dụng thông tin của mỗi Thành viên chỉ được thực hiện khi có sự đồng ý của khách hàng đó trừ những trường hợp pháp luật có quy định khác.",
+          "Không sử dụng, không chuyển giao, cung cấp hay tiết lộ cho bên thứ 3 nào về thông tin cá nhân của Thành viên khi không có sự cho phép đồng ý từ Thành viên.",
+          "Trong trường hợp máy chủ lưu trữ thông tin bị hacker tấn công dẫn đến mất mát dữ liệu cá nhân Thành viên, https://hcm-mirai.com sẽ có trách nhiệm thông báo vụ việc cho cơ quan chức năng điều tra xử lý kịp thời và thông báo cho Thành viên được biết.",
+          "Bảo mật tuyệt đối mọi thông tin giao dịch trực tuyến của Thành viên bao gồm thông tin hóa đơn kế toán chứng từ số hóa tại khu vực dữ liệu trung tâm an toàn cấp 1 của https://hcm-mirai.com.",
+          "Ban quản trị chúng tôi yêu cầu các cá nhân khi đăng ký/mua hàng là Thành viên, phải cung cấp đầy đủ thông tin cá nhân có liên quan như: họ và tên, địa chỉ liên lạc, email, điện thoại,…., và chịu trách nhiệm về tính pháp lý của những thông tin trên. Ban quản trị https://hcm-mirai.com không chịu trách nhiệm cũng như không giải quyết mọi khiếu nại có liên quan đến quyền lợi của Thành viên đó nếu xét thấy tất cả thông tin cá nhân của Thành viên đó cung cấp khi đăng ký ban đầu là không chính xác.",
+          "Ban quản trị khuyến cáo Thành viên nên bảo mật các thông tin liên quan đến mật khẩu truy xuất của mình và không nên chia sẻ với bất kỳ người nào khác. Nếu sử dụng máy tính chung nhiều người, Thành viên nên đăng xuất, hoặc thoát hết tất cả cửa sổ Website đang mở."
+        ]
+      }
+    }
+  },
+  "TermsOfService": {
+    "title": "ĐIỀU KHOẢN DỊCH VỤ",
+    "intro": "Bạn vui lòng đọc kỹ các Điều khoản & Điều kiện trong Điều Khoản Sử Dụng này trước khi đăng ký, truy cập và sử dụng Dịch Vụ trên Website hcm-mirai.com của HCM Mirai. Bằng việc sử dụng Dịch Vụ của chúng tôi, bạn đã chấp thuận Điều Khoản Sử Dụng này và đồng ý bị ràng buộc bởi các quy định về sử dụng Dịch vụ trên Website hcm-mirai.com. Nếu bạn có bất kỳ câu hỏi nào về bản Điều Khoản Sử Dụng này, vui lòng liên hệ chúng tôi qua email: contact@hcm-mirai.com để biết thêm chi tiết.",
+    "articles": {
+      "1": {
+        "title": "ĐIỀU 1. ĐỐI TƯỢNG VÀ PHẠM VI ÁP DỤNG.",
+        "content": [
+          "Thỏa thuận này áp dụng đối với tất cả các cá nhân tổ chức truy cập và/hoặc sử dụng trang mạng với tên miền là hcm-mirai.com, các dịch vụ, các trang mạng phát sinh từ tên miền này; các trang mạng và ứng dụng thuộc sở hữu của HCM Mirai.",
+          "Thỏa thuận này áp dụng đối với tất cả các hành vi phát sinh từ việc sử dụng, truy cập, tìm kiếm, chia sẻ, cung cấp, v.v… các nội dung, các sản phẩm, các thông tin, các tài nguyên phát sinh từ trang mạng với tên miền là hcm-mirai.com, các dịch vụ, các trang mạng phát sinh từ tên miền này; các trang mạng và ứng dụng thuộc sở hữu của HCM Mirai."
+        ]
+      },
+      "2": {
+        "title": "ĐIỀU 2. ĐỊNH NGHĨA.",
+        "content": [
+          "Điều khoản sử dụng có nghĩa là toàn bộ nội dung của văn bản này và các văn bản đính kèm của nó.",
+          "Website là tên gọi chung của tất cả các đối tượng sau: trang mạng có tên miền hcm-mirai.com, các dịch vụ, các trang mạng phát sinh từ tên miền này; và các trang mạng và ứng dụng chạy trên các nền tảng khác thuộc sở hữu của HCM Mirai.",
+          "Người dùng (bao gồm ứng viên và đối tác) là bất kỳ cá nhân hay tổ chức nào sử dụng Website.",
+          "Nội dung người dùng là toàn bộ tất cả thông tin, dữ liệu, văn bản, phần mềm, âm nhạc, âm thanh, hình ảnh, đồ họa, video, quảng cáo, tin nhắn hoặc các tài liệu khác được gửi, đăng hoặc thể hiện bởi Người dùng trên Website hoặc Người dùng thông qua HCM Mirai để thể hiện lên Website.",
+          "Dịch vụ là tất cả các sản phẩm mà HCM Mirai cung cấp trong phạm vi kinh doanh của mình bằng hình thức cung cấp trực tiếp đến người tiêu dùng hoặc cung cấp gián tiếp qua Website.",
+          "Tài khoản người dùng là một bộ bao gồm 01 (một) Tên đăng nhập ứng với 01 (một) Mật khẩu mà Người Dùng dùng để đăng nhập vào Website nhằm sử dụng Website và sử dụng Dịch Vụ."
+        ]
+      },
+      "3": {
+        "title": "ĐIỀU 3. XÁC THỰC THÔNG TIN VÀ ĐĂNG KÝ SỬ DỤNG.",
+        "content": "Để sử dụng Dịch Vụ, Người Dùng đồng ý thực hiện đầy đủ các bước và quy định mà chúng tôi yêu cầu khi đăng ký Tài Khoản Người Dùng và/hoặc đăng ký sử dụng Dịch Vụ, bao gồm nhưng không giới hạn việc nhập thông tin theo yêu cầu của chúng tôi và việc việc chúng tôi xác thực thông tin đăng ký,..."
+      },
+      "4": {
+        "title": "ĐIỀU 4. TÀI KHOẢN VÀ MẬT KHẨU.",
+        "content": [
+          "Để sử dụng Dịch Vụ trên Website, Người dùng phải đăng ký tài khoản, khởi tạo mật khẩu và xác thực số điện thoại của Người Dùng. Người dùng có nghĩa vụ quản lý và tự bảo mật đối với Tài Khoản Người Dùng.",
+          "Trong trường hợp Chúng tôi có lý do kết luận rằng Nội Dung Người Dùng được đăng tải bởi Tài Khoản Người Dùng không đúng sự thật, không tuân thủ đúng các điều khoản sử dụng của Website và/hoặc các thỏa thuận của Điều Khoản Sử Dụng này, Chúng tôi có quyền yêu cầu Người Dùng thay đổi mật khẩu hoặc Chúng Tôi có quyền tạm dừng tài khoản của Người Dùng đến khi giải quyết và khắc phục xong các vi phạm vừa nêu.",
+          "Trường hợp Người Dùng mất Mật khẩu hoặc hoặc sử dụng không đúng các điều khoản sử dụng của Website, và hoặc sử dụng không đúng các thỏa thuận của Điều Khoản Sử Dụng Này mà gây ra thiệt hại thì Người Dùng tự chịu toàn bộ những thiệt hại xảy ra đối với Bên bị thiệt hại. Chúng tôi không có trách nhiệm bồi thường cho những thiệt hại này."
+        ]
+      },
+      "5": {
+        "title": "ĐIỀU 5. THỎA THUẬN VỀ THÔNG TIN",
+        "content": [
+          "Người Dùng thừa nhận rằng chúng tôi có quyền thu thập và sử dụng các thông tin sau để phục vụ việc cung cấp Dịch Vụ: Thông tin cá nhân, Thông tin đối tác, Thông tin chung...",
+          "Người Dùng cam kết không đăng tải các nội dung bạo lực, gây mất an toàn, phản cảm, không đúng sự thật, vi phạm sở hữu trí tuệ hoặc mã độc."
+        ]
+      },
+      "6": {
+        "title": "ĐIỀU 6. THỎA THUẬN SỞ HỮU TRÍ TUỆ",
+        "content": "Người Dùng cam kết rằng tất cả các hành vi đăng tải Nội Dung Người Dùng đều không xâm phạm quyền của bất kỳ bên thứ ba nào. HCM Mirai giữ toàn quyền sở hữu trí tuệ đối với các tài nguyên trên Website."
+      },
+      "7": {
+        "title": "ĐIỀU 7. THỎA THUẬN QUẢNG CÁO",
+        "content": "Bằng cách sử dụng Website và các Dịch Vụ, Người Dùng đồng ý rằng Chúng tôi có quyền được gửi thông tin quảng cáo về Dịch Vụ thông qua email, tin nhắn hoặc cuộc gọi."
+      },
+      "8": {
+        "title": "ĐIỀU 8. TUYÊN BỐ CHẾ TÀI",
+        "content": "Chúng tôi có quyền tạm khóa Tài Khoản Người Dùng hoặc ngừng hiển thị Nội Dung Người Dùng nếu có dấu hiệu vi phạm pháp luật hoặc gây thiệt hại đến hệ thống Website."
+      },
+      "9": {
+        "title": "ĐIỀU 9. HIỆU LỰC CỦA ĐIỀU KHOẢN SỬ DỤNG",
+        "content": "Điều khoản sử dụng có hiệu lực khi bạn đăng ký tài khoản hoặc sử dụng Dịch vụ. Chúng tôi có quyền cập nhật Điều khoản này và sẽ thông báo cho Người Dùng."
+      }
+    }
   },
   "About": {
     "hero": {
-      "title": "Về HCM-MIRAI",
+      "title": "Về HCM Mirai",
       "breadcrumb": "Trang chủ"
     },
     "vision_mission": {
@@ -178,7 +284,7 @@
       }
     },
     "benefits": {
-      "title": "Tại sao chọn HCM-MIRAI cho hành trình du học?",
+      "title": "Tại sao chọn HCM Mirai cho hành trình du học?",
       "item1": {
         "title": "19 năm kinh nghiệm",
         "desc": "Hành trình gần hai thập kỷ khẳng định thương hiệu và uy tín trong lĩnh vực giáo dục."
@@ -197,7 +303,7 @@
       }
     },
     "team": {
-      "title": "Đội ngũ cán bộ HCM-MIRAI",
+      "title": "Đội ngũ cán bộ HCM Mirai",
       "subtitle": "Những con người tận tâm luôn đồng hành cùng bạn"
     },
     "media": {
@@ -228,17 +334,17 @@
       "title": "Video trung tâm",
       "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm.",
       "items": {
-        "v1": "GẦN 20 NĂM VỮNG BƯỚC HCM-MIRAI KHÔNG NGỪNG VƯƠN XA",
-        "v2": "DU HỌC THẠC SĨ CÙNG HCM-MIRAI - BƯỚC TIẾN LỚN CHO SỰ NGHIỆP",
-        "v3": "KHÔNG LO HỌC PHÍ NHẬP HỌC 0 ĐỒNG TẠI HCM-MIRAI",
-        "v4": "KHÔNG NGHĨ SẼ KHÓC - NHƯNG NƯỚC MẮT VẪN RƠI | HCM-MIRAI",
-        "v5": "GIÂY PHÚT CHIA XA KHI CON LÊN ĐƯỜNG DU HỌC | HCM-MIRAI",
-        "v6": "HỌC VIÊN HCM-MIRAI MÁCH NHỎ - BÍ KÍP XIN VISA CỰC DỄ"
+        "v1": "GẦN 20 NĂM VỮNG BƯỚC HCM Mirai KHÔNG NGỪNG VƯƠN XA",
+        "v2": "DU HỌC THẠC SĨ CÙNG HCM Mirai - BƯỚC TIẾN LỚN CHO SỰ NGHIỆP",
+        "v3": "KHÔNG LO HỌC PHÍ NHẬP HỌC 0 ĐỒNG TẠI HCM Mirai",
+        "v4": "KHÔNG NGHĨ SẼ KHÓC - NHƯNG NƯỚC MẮT VẪN RƠI | HCM Mirai",
+        "v5": "GIÂY PHÚT CHIA XA KHI CON LÊN ĐƯỜNG DU HỌC | HCM Mirai",
+        "v6": "HỌC VIÊN HCM Mirai MÁCH NHỎ - BÍ KÍP XIN VISA CỰC DỄ"
       }
     },
     "registration": {
       "title": "Tư vấn miễn phí ngay cho bạn!",
-      "subtitle": "Hàng nghìn học viên đã thành công, còn bạn thì sao? Đăng ký nhận tư vấn và thông tin mới nhất từ HCM-MIRAI."
+      "subtitle": "Hàng nghìn học viên đã thành công, còn bạn thì sao? Đăng ký nhận tư vấn và thông tin mới nhất từ HCM Mirai."
     }
   },
   "Training": {
@@ -249,7 +355,7 @@
     },
     "intro": {
       "title": "Chinh phục đa ngôn ngữ - Khám phá thế giới",
-      "desc": "Tại HCM-MIRAI, chúng tôi không chỉ dạy ngôn ngữ mà còn trang bị cho bạn văn hóa và phong cách làm việc bản địa. Với đội ngũ giáo viên bản xứ và giáo trình chuyên sâu, chúng tôi cam kết lộ trình học tập hiệu quả nhất."
+      "desc": "Tại HCM Mirai, chúng tôi không chỉ dạy ngôn ngữ mà còn trang bị cho bạn văn hóa và phong cách làm việc bản địa. Với đội ngũ giáo viên bản xứ và giáo trình chuyên sâu, chúng tôi cam kết lộ trình học tập hiệu quả nhất."
     },
     "courses": {
       "badge_levels": "Các cấp độ giảng dạy",
@@ -281,9 +387,9 @@
       "title_start": "Học tập",
       "title_highlight": "Chuyên sâu",
       "title_end": "Chuẩn quốc tế",
-      "desc": "Chúng tôi tạo ra môi trường học tập không áp lực, kích thích tư duy và sự sáng tạo của từng học viên. Tại HCM-MIRAI, mỗi giờ học là một trải nghiệm văn hóa thú vị.",
+      "desc": "Chúng tôi tạo ra môi trường học tập không áp lực, kích thích tư duy và sự sáng tạo của từng học viên. Tại HCM Mirai, mỗi giờ học là một trải nghiệm văn hóa thú vị.",
       "quote": "Ngôn ngữ là tấm bản đồ của một nền văn hoá.",
-      "edu_brand": "GIÁO DỤC HCM-MIRAI"
+      "edu_brand": "GIÁO DỤC HCM Mirai"
     }
   },
   "LaborDomestic": {
@@ -294,7 +400,7 @@
     },
     "intro": {
       "title": "Giải pháp nhân lực toàn diện cho doanh nghiệp",
-      "desc": "HCM-MIRAI tự hào là đơn vị cung ứng nhân lực uy tín, kết nối người lao động với những cơ hội việc làm tốt nhất tại Việt Nam."
+      "desc": "HCM Mirai tự hào là đơn vị cung ứng nhân lực uy tín, kết nối người lao động với những cơ hội việc làm tốt nhất tại Việt Nam."
     }
   },
   "LaborOverseas": {
@@ -343,7 +449,7 @@
       "breadcrumb": "Trang chủ"
     },
     "intro": {
-      "title": "Cập nhật tin tức mới nhất từ HCM-MIRAI",
+      "title": "Cập nhật tin tức mới nhất từ HCM Mirai",
       "desc": "Nơi chia sẻ những thông tin tuyển sinh, hoạt động ngoại khóa và thành công của các học viên."
     },
     "grid": {
@@ -459,18 +565,18 @@
     }
   },
   "HomeTestimonials": {
-    "title": "Học viên cảm nhận về HCM-MIRAI",
+    "title": "Học viên cảm nhận về HCM Mirai",
     "subtitle": "Câu chuyện thành công",
     "testimonials": {
       "t1": {
         "name": "Phạm Thu Thảo",
         "role": "Sinh viên Đại học Yonsei",
-        "feedback": "Em cảm ơn HCM-MIRAI rất nhiều vì đã đồng hành cùng em trong suốt quá trình làm hồ sơ. Nhờ sự tư vấn tận tình và sát sao của các anh chị, em đã đạt được visa và đang có những trải nghiệm tuyệt vời tại Hàn Quốc."
+        "feedback": "Em cảm ơn HCM Mirai rất nhiều vì đã đồng hành cùng em trong suốt quá trình làm hồ sơ. Nhờ sự tư vấn tận tình và sát sao của các anh chị, em đã đạt được visa và đang có những trải nghiệm tuyệt vời tại Hàn Quốc."
       },
       "t2": {
         "name": "Nguyễn Minh Anh",
         "role": "Học viên tại Nhật Bản",
-        "feedback": "Môi trường học tập tại HCM-MIRAI rất năng động và chuyên nghiệp. Thầy cô giáo tận tâm chỉ bảo từng chút một, giúp em nhanh chóng làm quen với văn hóa Nhật Bản."
+        "feedback": "Môi trường học tập tại HCM Mirai rất năng động và chuyên nghiệp. Thầy cô giáo tận tâm chỉ bảo từng chút một, giúp em nhanh chóng làm quen với văn hóa Nhật Bản."
       },
       "t3": {
         "name": "Lê Hoàng Nam",
@@ -534,11 +640,11 @@
   },
   "Services": {
     "hero": {
-      "overview": "HCM-MIRAI OVERVIEW",
+      "overview": "HCM Mirai OVERVIEW",
       "description": "Hơn 10 năm kinh nghiệm trong lĩnh vực tư vấn du học, HCM-Mirai tự hào mang đến cho bạn lộ trình học tập tối ưu, tiết kiệm chi phí và cơ hội nhận được nhiều học bổng từ các trường Đại học danh tiếng tại Hàn Quốc & Nhật Bản.",
       "cta": "Nhận Tư Vấn Ngay",
       "title1": "CÁC DỊCH VỤ VÀ ƯU ĐÃI",
-      "title2": "CỦA HCM-MIRAI"
+      "title2": "CỦA HCM Mirai"
     },
     "studyAbroad": {
       "title": "Dịch vụ tư vấn du học",

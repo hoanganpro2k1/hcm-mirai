@@ -12,7 +12,7 @@ export default function NewsGrid() {
     {
       id: 1,
       title:
-        "HCM-MIRAI ký kết biên bản ghi nhớ với trường Đại học Dong-A Hàn Quốc",
+        "HCM Mirai ký kết biên bản ghi nhớ với trường Đại học Dong-A Hàn Quốc",
       category: "Tin tức",
       date: "2024-04-05",
       author: "Admin",
@@ -22,7 +22,7 @@ export default function NewsGrid() {
     {
       id: 2,
       title:
-        "Học viên HCM-MIRAI chinh phục visa du học Nhật Bản kỳ tháng 4/2024",
+        "Học viên HCM Mirai chinh phục visa du học Nhật Bản kỳ tháng 4/2024",
       category: "Sự kiện",
       date: "2024-03-28",
       author: "Admin",
@@ -32,7 +32,7 @@ export default function NewsGrid() {
     {
       id: 3,
       title:
-        "Hành trình trải nghiệm văn hóa rực rỡ tại Trung tâm Đào tạo HCM-MIRAI",
+        "Hành trình trải nghiệm văn hóa rực rỡ tại Trung tâm Đào tạo HCM Mirai",
       category: "Sự kiện",
       date: "2024-03-15",
       author: "Admin",

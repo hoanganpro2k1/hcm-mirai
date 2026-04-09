@@ -111,7 +111,7 @@ export default function BenefitsSection() {
                 </div>
               </div>
               <p className="text-xs text-gray-500 italic font-medium">
-                {`"Hơn 10.000 học sinh đã tin tưởng và chọn HCM-MIRAI"`}
+                {`"Hơn 10.000 học sinh đã tin tưởng và chọn HCM Mirai"`}
               </p>
             </div>
 
