@@ -1,10 +1,10 @@
 import * as z from "zod";
 
-export const consultationSchema = z.object({
-  name: z.string().min(2, "Họ tên phải có ít nhất 2 ký tự"),
-  phone: z.string().regex(/^[0-9]{10,11}$/, "Số điện thoại không hợp lệ (10-11 chữ số)"),
-  email: z.string().email("Email không hợp lệ").optional().or(z.literal("")),
-  note: z.string().min(5, "Nội dung phải có ít nhất 5 ký tự").optional().or(z.literal("")),
+export const getConsultationSchema = (t: (key: string) => string) => z.object({
+  name: z.string().min(2, t("name_min")),
+  phone: z.string().regex(/^[0-9]{10,11}$/, t("phone_invalid")),
+  email: z.string().email(t("email_invalid")).optional().or(z.literal("")),
+  note: z.string().min(5, t("note_min")).optional().or(z.literal("")),
 });
 
-export type ConsultationFormValues = z.infer<typeof consultationSchema>;
+export type ConsultationFormValues = z.infer<ReturnType<typeof getConsultationSchema>>;

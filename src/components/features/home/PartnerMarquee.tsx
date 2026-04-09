@@ -42,7 +42,7 @@ export default function PartnerMarquee() {
                 <div className="relative w-full h-full">
                   <Image
                     src={partner.logo}
-                    alt={partner.name}
+                    alt={t("partner_name", { number: (idx % partners.length) + 1 })}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-contain"

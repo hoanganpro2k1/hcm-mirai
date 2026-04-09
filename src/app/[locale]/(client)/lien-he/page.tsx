@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale });
   return {
-    title: `${t("Header.nav.lienhe")} | HCM-MIRAI`,
-    description: t("Contact.seo_desc", { fallback: "Liên hệ với HCM-MIRAI để được tư vấn chi tiết về các dịch vụ du học và xuất khẩu lao động." }),
+    title: `${t("Header.nav.lienhe")} | HCM Mirai`,
+    description: t("Contact.seo_desc", { fallback: "Liên hệ với HCM Mirai để được tư vấn chi tiết về các dịch vụ du học và xuất khẩu lao động." }),
   };
 }
 
@@ -53,7 +53,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="HCM-MIRAI Location"
+                  title="HCM Mirai Location"
                   className="rounded-[2.5rem]"
                 ></iframe>
 

@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale });
   return {
-    title: `${t("Header.nav.about_mirai")} | HCM-MIRAI`,
-    description: t("About.hero.seo_desc", { fallback: "Trang giới thiệu chi tiết về sứ mệnh, tầm nhìn, đội ngũ và các dịch vụ của HCM-MIRAI trong lĩnh vực du học và tư vấn giáo dục quốc tế." }),
+    title: `${t("Header.nav.about_mirai")} | HCM Mirai`,
+    description: t("About.hero.seo_desc", { fallback: "Trang giới thiệu chi tiết về sứ mệnh, tầm nhìn, đội ngũ và các dịch vụ của HCM Mirai trong lĩnh vực du học và tư vấn giáo dục quốc tế." }),
   };
 }
 

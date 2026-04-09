@@ -125,21 +125,21 @@ export default function ServicesPage() {
       <ServicesHero />
 
       <ServiceGrid
-        accentText="HCM-MIRAI"
+        accentText="HCM Mirai"
         title={tServices("studyAbroad.title")}
         items={tuVanDuHocItems}
         seeMoreText={tServices("common.seeMore")}
       />
 
       <ServiceGrid
-        accentText="HCM-MIRAI"
+        accentText="HCM Mirai"
         title={tServices("languageTraining.title")}
         items={daoTaoTiengHanItems}
         seeMoreText={tServices("common.seeMore")}
       />
 
       <ServiceGrid
-        accentText="HCM-MIRAI"
+        accentText="HCM Mirai"
         title={tServices("studentSupport.title")}
         items={hoTroHocSinhItems}
         seeMoreText={tServices("common.seeMore")}

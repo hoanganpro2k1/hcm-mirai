@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale });
   return {
-    title: `${t("News.hero.title")} | HCM-MIRAI`,
-    description: t("News.hero.seo_desc", { fallback: "Cập nhật những tin tức mới nhất về tuyển sinh và hoạt động tại HCM-MIRAI." }),
+    title: `${t("News.hero.title")} | HCM Mirai`,
+    description: t("News.hero.seo_desc", { fallback: "Cập nhật những tin tức mới nhất về tuyển sinh và hoạt động tại HCM Mirai." }),
   };
 }
 

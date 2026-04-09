@@ -9,7 +9,7 @@
       "tintuc": "News & Events",
       "donhang": "Job Orders",
       "lienhe": "Contact",
-      "about_mirai": "About HCM-MIRAI",
+      "about_mirai": "About HCM Mirai",
       "services": "Main Services",
       "gallery": "Gallery",
       "testimonials": "Testimonials",
@@ -18,18 +18,25 @@
     },
     "actions": {
       "timkiem": "Search",
-      "tuvan": "Consult Now"
+      "tuvan": "Consult Now",
+      "open_menu": "Open menu",
+      "close_menu": "Close menu"
     },
     "topbar": {
-      "tuyensinh": "LATEST JOB ORDERS - APRIL 2026"
+      "tuyensinh": "LATEST JOB ORDERS - APRIL 2026",
+      "phone_val": "0973 460 999"
     }
   },
+  "Hero": {
+    "slide_alt": "Slide image {number}",
+    "go_to_slide": "Go to slide {number}"
+  },
   "Introduction": {
-    "title": "Spread your dreams of studying abroad with HCM-MIRAI",
+    "title": "Spread your dreams of studying abroad with HCM Mirai",
     "subtitle": "Who We Are",
-    "whyChooseUs": "Why Should You Choose HCM-MIRAI?",
+    "whyChooseUs": "Why Should You Choose HCM Mirai?",
     "cta": "Consult Now",
-    "mission": "HCM-MIRAI Study Abroad, along with a leading network of educational partners, is one of the reputable and long-standing consulting and training units in Vietnam. With the mission of \"Dedication - Professionalism - Transparency\", we have been the bridge helping thousands of students conquer international knowledge.",
+    "mission": "HCM Mirai Study Abroad, along with a leading network of educational partners, is one of the reputable and long-standing consulting and training units in Vietnam. With the mission of \"Dedication - Professionalism - Transparency\", we have been the bridge helping thousands of students conquer international knowledge.",
     "desc1": "We are not just a consulting center, but also a reliable companion, helping you prepare all necessary baggage from language, life skills to complex legal procedures.",
     "desc2": "With 19 years of training experience and a network of over 200 partner universities in Japan, Korea, Australia, we are committed to bringing the safest and most effective learning path.",
     "features": {
@@ -55,8 +62,8 @@
     "students": "Students",
     "schools": "Partner Schools",
     "visa": "Visa Success Rate",
-    "experience": "Experience",
-    "years": "years"
+    "years": "Years",
+    "experience": "Experience"
   },
   "Orders": {
     "title": "LABOR EXPORT ORDERS",
@@ -85,15 +92,15 @@
   "Contact": {
     "title": "Contact Us",
     "subtitle": "We are always ready to listen and support you on your journey to conquer knowledge.",
-    "seo_desc": "Contact HCM-MIRAI for detailed consultation on study abroad and labor export services.",
-    "greeting": "Welcome to HCM-MIRAI!",
+    "seo_desc": "Contact HCM Mirai for detailed consultation on study abroad and labor export services.",
+    "greeting": "Welcome to HCM Mirai!",
     "info": {
       "address": "Address",
       "phone": "Phone",
       "email": "Email",
       "address_val": "152 Ngo Gia Tu Street, Le Loi, Vinh Hưng, Nghệ An, Vietnam",
       "phone_val": "0973 460 999",
-      "email_val": "contact@hcm-mirai.vn"
+      "email_val": "contact@hcm-mirai.com"
     },
     "form": {
       "title": "Send us a message",
@@ -118,10 +125,10 @@
     },
     "socials": {
       "facebook": "Official Fanpage",
-      "tiktok": "HCM-MIRAI TikTok"
+      "tiktok": "HCM Mirai TikTok"
     },
     "links": {
-      "about_mirai": "ABOUT HCM-MIRAI",
+      "about_mirai": "ABOUT HCM Mirai",
       "testimonials": "STUDENT TESTIMONIALS",
       "services": "MAIN SERVICES",
       "study_overseas": "STUDY OVERSEAS",
@@ -135,14 +142,128 @@
     },
     "categories": {
       "about": "ABOUT",
-      "connect": "CONNECT WITH HCM-MIRAI",
+      "connect": "CONNECT WITH HCM Mirai",
       "support": "SUPPORT CENTER",
       "legal": "LEGAL INFORMATION"
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "copyright": "© {year} HCM Mirai. ALL RIGHTS RESERVED.",
+    "designed_by": "Designed by HCM Mirai Team"
+  },
+  "PrivacyPolicy": {
+    "title": "PRIVACY POLICY",
+    "sections": {
+      "a": {
+        "title": "A. Purpose and scope of collection",
+        "content": [
+          "To use certain services on the website https://hcm-mirai.com, you may be required to register personal information (member) with us, including: Email, Full name, Contact phone number, address.",
+          "We also collect information about the number of visits, including the number of pages you view, the number of links you click, other information related to the connection to the website and information that the Web browser you use every time you access our website including: IP address, Browser type, language used, time and addresses that Browser accesses."
+        ]
+      },
+      "b": {
+        "title": "B. Scope of information use",
+        "content": [
+          "The purpose of using the information Member provided to:",
+          "Supporting customers when purchasing products",
+          "Answering customer questions",
+          "Providing customers with the latest information on our Website, conducting customer surveys, promotional activities related to the products and services of the website if you register to receive email notifications."
+        ]
+      },
+      "c": {
+        "title": "C. Information storage time",
+        "content": "Member's personal data will be stored until there is a request for cancellation or the Member logs in and cancels it. Otherwise, in all cases, Member's personal information will be secured on the server of https://hcm-mirai.com"
+      },
+      "d": {
+        "title": "D. Address of the unit collecting and managing personal information",
+        "content": "Address: 152 Ngo Gia Tu St, Le Loi, Vinh, Nghe An"
+      },
+      "e": {
+        "title": "E. Means and tools for users to access and edit their personal data",
+        "content": [
+          "Members have the right to check, update, adjust or cancel their personal information by logging into their account and editing personal information or requesting https://hcm-mirai.com to do this.",
+          "Members have the right to send complaints about the seller to the Administrator of https://hcm-mirai.com at: contact@hcm-mirai.com. When receiving these feedbacks, we will re-confirm the information, in case it is as reflected by the Member, depending on the level, there will be timely processing measures."
+        ]
+      },
+      "f": {
+        "title": "F. Commitment to confidentiality of customer personal information",
+        "content": [
+          "Personal information of Members on https://hcm-mirai.com is committed to absolute confidentiality according to the personal information protection policy of the website. The collection and use of each Member's information is only performed with the consent of that customer unless otherwise provided by law.",
+          "Do not use, transfer, provide or disclose to any 3rd party about the Member's personal information without the consent of the Member.",
+          "In case the information storage server is attacked by a hacker resulting in the loss of Member's personal data, https://hcm-mirai.com will be responsible for reporting the incident to the investigating authorities for timely processing and notifying the Member.",
+          "Absolutely secure all online transaction information of the Member including invoice information, accounting documents, digitized at level 1 secure central data area of https://hcm-mirai.com.",
+          "We require individuals when registering/purchasing as Members, to provide full personal information such as: full name, contact address, email, phone, etc., and take responsibility for the legality of the above information. The administration of https://hcm-mirai.com is not responsible for nor resolves any complaints related to the interests of that Member if it is found that all the personal information of that Member provided at the initial registration is incorrect.",
+          "The Administration recommends that Members should secure information related to their access password and should not share it with any other person. If using a shared computer, Members should log out, or exit all opening Website windows."
+        ]
+      }
+    }
+  },
+  "TermsOfService": {
+    "title": "TERMS OF SERVICE",
+    "intro": "Please read these Terms & Conditions carefully before registering, accessing and using the Service on Website hcm-mirai.com of HCM Mirai. By using our Service, you have accepted these Terms of Use and agree to be bound by the provisions on using the Service on Website hcm-mirai.com. If you have any questions about these Terms of Use, please contact us via email: contact@hcm-mirai.com for further details.",
+    "articles": {
+      "1": {
+        "title": "ARTICLE 1. SUBJECT AND SCOPE OF APPLICATION.",
+        "content": [
+          "This agreement applies to all individuals and organizations accessing and/or using the network with the domain name hcm-mirai.com, services, networks arising from this domain name; websites and applications owned by HCM Mirai.",
+          "This agreement applies to all acts arising from the use, access, search, sharing, provision, etc. of contents, products, information, resources arising from the network with the domain name hcm-mirai.com, services, networks arising from this domain name; websites and applications owned by HCM Mirai."
+        ]
+      },
+      "2": {
+        "title": "ARTICLE 2. DEFINITIONS.",
+        "content": [
+          "Terms of Use means the entire content of this document and its attachments.",
+          "Website is a general name for all the following objects: website with domain name hcm-mirai.com, services, websites arising from this domain name; and websites and applications running on other platforms owned by HCM Mirai.",
+          "Users (including candidates and partners) are any individuals or organizations using the Website.",
+          "User Content is all information, data, text, software, music, sound, photos, graphics, video, advertisements, messages or other materials sent, posted or displayed by the User on the Website or User through HCM Mirai to display on the Website.",
+          "Service is all products that HCM Mirai provides within its business scope by providing directly to consumers or providing indirectly through the Website.",
+          "User Account is a set including 01 (one) Username corresponding to 01 (one) Password that the User uses to log into the Website to use the Website and use the Service."
+        ]
+      },
+      "3": {
+        "title": "ARTICLE 3. INFORMATION AUTHENTICATION AND REGISTRATION FOR USE.",
+        "content": "To use the Service, User agrees to fully perform the steps and regulations that we require when registering for a User Account and/or registering to use the Service, including but not limited to entering information as requested by us and our authentication of registration information,..."
+      },
+      "4": {
+        "title": "ARTICLE 4. ACCOUNT AND PASSWORD.",
+        "content": [
+          "To use the Service on the Website, Users must register an account, initialize a password and authenticate the User's phone number. User is obligated to manage and secure the User Account.",
+          "In case we have reason to conclude that User Content posted by User Account is untrue, does not comply with the terms of use of the Website and/or the agreements of these Terms of Use, We have the right to request the User to change the password or We have the right to temporarily suspend the User's account until the violations are resolved and corrected.",
+          "In case the User loses the Password or uses the terms of use of the Website incorrectly, or uses the agreements of these Terms of Use incorrectly causing damage, the User shall bear all damages occurring to the Damaged Party. We are not responsible for compensating for these damages."
+        ]
+      },
+      "5": {
+        "title": "ARTICLE 5. AGREEMENT ON INFORMATION",
+        "content": [
+          "User acknowledges that we have the right to collect and use information to serve the provision of Services: Personal information, Partner information, General information...",
+          "User commits not to post content that is violent, unsafe, offensive, untrue, infringing intellectual property or malicious code."
+        ]
+      },
+      "6": {
+        "title": "ARTICLE 6. INTELLECTUAL PROPERTY AGREEMENT",
+        "content": "User commits that all User Content posting acts do not infringe the rights of any third party. HCM Mirai holds all intellectual property rights to the resources on the Website."
+      },
+      "7": {
+        "title": "ARTICLE 7. ADVERTISING AGREEMENT",
+        "content": "By using the Website and Services, User agrees that We have the right to send promotional information about the Service through email, text message or call."
+      },
+      "8": {
+        "title": "ARTICLE 8. SANCTION STATEMENT",
+        "content": "We have the right to temporarily lock User Accounts or stop displaying User Content if there are signs of law violation or causing damage to the Website system."
+      },
+      "9": {
+        "title": "ARTICLE 9. EFFECT OF TERMS OF USE",
+        "content": "The Terms of Use take effect when you register an account or use the Service. We have the right to update these Terms and will notify the User."
+      }
     }
   },
   "About": {
     "hero": {
-      "title": "About HCM-MIRAI",
+      "title": "About HCM Mirai",
       "breadcrumb": "Home"
     },
     "vision_mission": {
@@ -164,7 +285,7 @@
       }
     },
     "benefits": {
-      "title": "Why Choose HCM-MIRAI for Your Study Abroad Journey?",
+      "title": "Why Choose HCM Mirai for Your Study Abroad Journey?",
       "item1": {
         "title": "19 Years of Experience",
         "desc": "Nearly two decades of experience establishing our brand and reputation in education."
@@ -183,7 +304,7 @@
       }
     },
     "team": {
-      "title": "HCM-MIRAI Leadership Team",
+      "title": "HCM Mirai Leadership Team",
       "subtitle": "Dedicated professionals accompanying you on your journey"
     },
     "media": {
@@ -214,17 +335,17 @@
       "title": "Center Videos",
       "subtitle": "Images and videos capturing memorable moments at the center.",
       "items": {
-        "v1": "NEARLY 20 YEARS OF STEADY PROGRESS HCM-MIRAI KEEPS REACHING FURTHER",
-        "v2": "MASTER'S STUDY ABROAD WITH HCM-MIRAI - A BIG STEP FOR YOUR CAREER",
-        "v3": "NO WORRIES ABOUT TUITION WITH 0 VND ENROLLMENT AT HCM-MIRAI",
-        "v4": "DIDN'T THINK I WOULD CRY - BUT TEARS STILL FELL | HCM-MIRAI",
-        "v5": "THE MOMENT OF PARTING WHEN STUDYING ABROAD | HCM-MIRAI",
-        "v6": "HCM-MIRAI STUDENTS REVEAL - SUPER EASY VISA TIPS"
+        "v1": "NEARLY 20 YEARS OF STEADY PROGRESS HCM Mirai KEEPS REACHING FURTHER",
+        "v2": "MASTER'S STUDY ABROAD WITH HCM Mirai - A BIG STEP FOR YOUR CAREER",
+        "v3": "NO WORRIES ABOUT TUITION WITH 0 VND ENROLLMENT AT HCM Mirai",
+        "v4": "DIDN'T THINK I WOULD CRY - BUT TEARS STILL FELL | HCM Mirai",
+        "v5": "THE MOMENT OF PARTING WHEN STUDYING ABROAD | HCM Mirai",
+        "v6": "HCM Mirai STUDENTS REVEAL - SUPER EASY VISA TIPS"
       }
     },
     "registration": {
       "title": "Free Consultation For You!",
-      "subtitle": "Thousands of students have succeeded, what about you? Register to receive the latest consultation and information from HCM-MIRAI."
+      "subtitle": "Thousands of students have succeeded, what about you? Register to receive the latest consultation and information from HCM Mirai."
     }
   },
   "Training": {
@@ -235,7 +356,7 @@
     },
     "intro": {
       "title": "Master Languages - Discover the World",
-      "desc": "At HCM-MIRAI, we don't just teach languages; we equip you with local culture and etiquette. With native teachers and specialized curriculum, we ensure the most effective learning path."
+      "desc": "At HCM Mirai, we don't just teach languages; we equip you with local culture and etiquette. With native teachers and specialized curriculum, we ensure the most effective learning path."
     },
     "courses": {
       "badge_levels": "Levels Offered",
@@ -267,7 +388,9 @@
       "title_start": "Intensive",
       "title_highlight": "International Standard",
       "title_end": "Learning",
-      "desc": "We create a pressure-free learning environment that stimulates the thinking and creativity of each student. At HCM-MIRAI, every lesson is an exciting cultural experience."
+      "desc": "We create a pressure-free learning environment that stimulates the thinking and creativity of each student. At HCM Mirai, every lesson is an exciting cultural experience.",
+      "quote": "Language is the roadmap of a culture.",
+      "edu_brand": "HCM Mirai EDUCATION"
     }
   },
   "LaborDomestic": {
@@ -278,7 +401,7 @@
     },
     "intro": {
       "title": "Comprehensive Manpower Solutions",
-      "desc": "HCM-MIRAI is proud to be a reputable manpower supplier, connecting workers with the best job opportunities in Vietnam."
+      "desc": "HCM Mirai is proud to be a reputable manpower supplier, connecting workers with the best job opportunities in Vietnam."
     }
   },
   "LaborOverseas": {
@@ -327,9 +450,27 @@
       "breadcrumb": "Home"
     },
     "intro": {
-      "title": "Latest News from HCM-MIRAI",
+      "title": "Latest News from HCM Mirai",
       "desc": "Where we share admission info, extracurricular activities, and student success stories."
+    },
+    "grid": {
+      "latest_update": "Latest Updates",
+      "read_more": "Read More",
+      "load_more": "Load More News",
+      "categories": {
+        "all": "All",
+        "news": "News",
+        "event": "Events",
+        "admission": "Admissions"
+      }
     }
+  },
+  "Validation": {
+    "name_min": "Name must be at least 2 characters",
+    "phone_invalid": "Invalid phone number (10-11 digits)",
+    "email_invalid": "Invalid email address",
+    "note_min": "Content must be at least 5 characters",
+    "required": "This field is required"
   },
   "Consultation": {
     "title": "Free Consultation - Just for You!",
@@ -393,7 +534,8 @@
   "HomePartners": {
     "title": "Strategic Partners",
     "subtitle": "Expanding Collaboration",
-    "description": "We are proud to be a partner of over 200 prestigious universities and educational organizations worldwide."
+    "description": "We are proud to be a partner of over 200 prestigious universities and educational organizations worldwide.",
+    "partner_name": "University {number}"
   },
   "HomeHighlights": {
     "title": "Choose the Right School for Your Journey",
@@ -430,12 +572,12 @@
       "t1": {
         "name": "Pham Thu Thao",
         "role": "Student at Yonsei University",
-        "feedback": "I'm so grateful to HCM-MIRAI for accompanying me throughout the application process. Thanks to the dedicated and close advice from the team, I obtained my visa and I'm having wonderful experiences in Korea."
+        "feedback": "I'm so grateful to HCM Mirai for accompanying me throughout the application process. Thanks to the dedicated and close advice from the team, I obtained my visa and I'm having wonderful experiences in Korea."
       },
       "t2": {
         "name": "Nguyen Minh Anh",
         "role": "Student in Japan",
-        "feedback": "The learning environment at HCM-MIRAI is very dynamic and professional. The teachers are dedicated to guiding me every step of the way, helping me quickly adapt to Japanese culture."
+        "feedback": "The learning environment at HCM Mirai is very dynamic and professional. The teachers are dedicated to guiding me every step of the way, helping me quickly adapt to Japanese culture."
       },
       "t3": {
         "name": "Le Hoang Nam",
@@ -461,7 +603,24 @@
     "view_all": "View All Posts",
     "view_details": "View Details",
     "author_admin": "Admin",
-    "author_consultant": "Consultant"
+    "author_consultant": "Consultant",
+    "items": {
+      "item_1": {
+        "title": "Korea Admission for April and December 2026",
+        "category": "Admission News",
+        "excerpt": "Announcement of study abroad in Korea for D4-1, D2-1 systems... with many attractive incentives."
+      },
+      "item_2": {
+        "title": "Experience in interviewing for Japanese study visa with high success rate",
+        "category": "Study Guide",
+        "excerpt": "Share important tips to help you be confident in the interview with the Consulate."
+      },
+      "item_3": {
+        "title": "Chinese Government Full Scholarship Program 2026",
+        "category": "Scholarship",
+        "excerpt": "Opportunity to receive 100% tuition and living expenses from leading universities in China."
+      }
+    }
   },
   "Search": {
     "title": "SEARCH RESULTS",
@@ -482,10 +641,10 @@
   },
   "Services": {
     "hero": {
-      "overview": "HCM-MIRAI OVERVIEW",
+      "overview": "HCM Mirai OVERVIEW",
       "description": "With over 10 years of experience in study abroad consulting, HCM-Mirai proudly provides optimal learning pathways, cost savings, and opportunities to receive scholarships from prestigious universities in Korea & Japan.",
       "cta": "Get a Consultation Now",
-      "title1": "HCM-MIRAI SERVICES",
+      "title1": "HCM Mirai SERVICES",
       "title2": "& OFFERS"
     },
     "studyAbroad": {

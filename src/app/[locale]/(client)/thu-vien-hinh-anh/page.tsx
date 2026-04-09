@@ -15,17 +15,16 @@ export async function generateMetadata({ params }: Props) {
   const t = await getTranslations({ locale, namespace: "Gallery" });
   
   return {
-    title: `${t("hero.title")} | HCM-MIRAI`,
+    title: `${t("hero.title")} | HCM Mirai`,
     description: t("images.subtitle"),
   };
 }
 
 export default function GalleryPage() {
   const tGallery = useTranslations("Gallery.hero");
-  const tHeader = useTranslations("Header");
 
   const breadcrumbItems = [
-    { label: tHeader("nav.about_mirai").replace("Về HCM-MIRAI", "Trang chủ"), href: "/" },
+    { label: tGallery("breadcrumb"), href: "/" },
     { label: tGallery("title") },
   ];
 

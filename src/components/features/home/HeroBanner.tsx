@@ -5,6 +5,7 @@ import Fade from "embla-carousel-fade";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -13,6 +14,8 @@ import {
 } from "@/components/ui/carousel";
 import { IMAGES } from "@/constants/images";
 import { cn } from "@/lib/utils";
+
+import { useTranslations } from "next-intl";
 
 type SlideType = {
   id: number;
@@ -43,6 +46,7 @@ const slides: SlideType[] = [
 ];
 
 export default function HeroBanner() {
+  const t = useTranslations("Hero");
   const [api, setApi] = useState<CarouselApi>();
   const [index, setIndex] = useState(0);
 
@@ -84,7 +88,7 @@ export default function HeroBanner() {
           <CarouselItem key={slide.id} className="pl-0">
             <Image
               src={slide.image}
-              alt={`Slide ${i + 1}`}
+              alt={t("slide_alt", { number: i + 1 })}
               width={slide.width}
               height={slide.height}
               className={cn("w-full h-auto object-contain")}
@@ -98,9 +102,10 @@ export default function HeroBanner() {
       {/* DOTS */}
       <div className="absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 gap-3">
         {slides.map((_, i) => (
-          <button
+          <Button
             key={i}
             onClick={() => api?.scrollTo(i)}
+            aria-label={t("go_to_slide", { number: i + 1 })}
             className={`
               h-3 w-3 rounded-full transition-all duration-300
               ${

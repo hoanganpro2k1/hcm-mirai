@@ -14,7 +14,7 @@ export default function AboutHero() {
       <div className="absolute inset-0">
         <Image
           src="https://picsum.photos/id/122/2000/1000"
-          alt="About HCM-MIRAI"
+          alt="About HCM Mirai"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"

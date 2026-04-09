@@ -3,6 +3,7 @@
 import { ConsultationModal } from "@/components/features/consultation/ConsultationModal";
 import SearchTrigger from "@/components/features/search/SearchTrigger";
 import { Button } from "@/components/ui/button";
+import { useSettings } from "@/hooks/use-settings";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -12,10 +13,14 @@ import { ModeToggle } from "./mode-toggle";
 
 export function Header() {
   const t = useTranslations("Header");
+  const { data: settings, isLoading } = useSettings();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const locale = useLocale();
+  const locale = useLocale() as "vi" | "en";
+
+  // Dynamic topbar text from settings, fallback to i18n
+  const topbarText = settings?.topbar_text?.[locale] || t("topbar.tuyensinh");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -49,26 +54,24 @@ export function Header() {
   ];
 
   return (
-    <header 
+    <header
       className="w-full flex flex-col font-sans sticky top-0 z-50 transition-colors"
       onClick={() => isSearchOpen && setIsSearchOpen(false)}
     >
       {/* Top Bar */}
-      <div 
-        className="bg-primary text-primary-foreground text-sm py-2 px-6 flex justify-between items-center transition-colors"
-      >
+      <div className="bg-primary text-primary-foreground text-sm py-2 px-6 flex justify-between items-center transition-colors">
         <Link
-          href="tel:+0973460999"
+          href={`tel:${t("topbar.phone_val", { defaultValue: "0973460999" }).replace(/\s/g, "")}`}
           className="flex items-center gap-2 hover:text-gray-300 transition-colors"
         >
           <Phone className="w-4 h-4" />
-          <span>+0973 460 999</span>
+          <span>{t("topbar.phone_val", { defaultValue: "0973 460 999" })}</span>
         </Link>
         <Link
           href="/don-hang"
           className="hidden uppercase md:block font-medium hover:text-white/80 transition-colors hover:underline"
         >
-          {t("topbar.tuyensinh")}
+          {isLoading ? "Đang tải..." : topbarText}
         </Link>
         <div className="flex items-center gap-1 font-semibold">
           <button
@@ -96,14 +99,12 @@ export function Header() {
       </div>
 
       {/* Main Navigation */}
-      <div 
-        className="bg-background/95 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b shadow-sm transition-colors"
-      >
+      <div className="bg-background/95 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b shadow-sm transition-colors">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <NextImage
             src="/logo.png"
-            alt="HCM - MIRAI Logo"
+            alt="HCM Mirai Logo"
             width={160}
             height={50}
             className="w-auto h-8 sm:h-10 object-contain"
@@ -153,9 +154,9 @@ export function Header() {
         {/* Actions Context Group */}
         <div className="flex items-center gap-2 sm:gap-4">
           <div className="relative flex items-center">
-            <SearchTrigger 
-              isOpen={isSearchOpen} 
-              onToggle={() => setIsSearchOpen(!isSearchOpen)} 
+            <SearchTrigger
+              isOpen={isSearchOpen}
+              onToggle={() => setIsSearchOpen(!isSearchOpen)}
               onClose={() => setIsSearchOpen(false)}
             />
           </div>
@@ -168,12 +169,13 @@ export function Header() {
           </button>
 
           {/* Mobile Menu Toggle */}
-          <button
+          <Button
             className="xl:hidden p-1.5 sm:p-2 -mr-2 text-foreground hover:bg-muted rounded-md transition-colors shrink-0"
             onClick={() => setIsMobileMenuOpen(true)}
+            aria-label={t("actions.open_menu")}
           >
             <Menu className="w-6 h-6" />
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -196,6 +198,7 @@ export function Header() {
                 variant={"ghost"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="p-2 text-muted-foreground hover:bg-muted rounded-md transition"
+                aria-label={t("actions.close_menu")}
               >
                 <X className="w-6 h-6" />
               </Button>

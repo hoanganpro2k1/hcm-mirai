@@ -52,7 +52,7 @@ export default function PageHero({
             )}
             <div className="h-px w-12 bg-white/30" />
             <span className="text-white/80 uppercase tracking-widest text-sm font-bold">
-              HCM-MIRAI
+              HCM Mirai
             </span>
           </div>
 
