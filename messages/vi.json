@@ -1,6 +1,7 @@
 {
   "Header": {
     "nav": {
+      "home": "Trang chủ",
       "gioithieu": "Giới thiệu",
       "daotao": "Đào tạo ngoại ngữ",
       "cungung": "Cung ứng lao động",
@@ -84,6 +85,8 @@
   "Contact": {
     "title": "Liên hệ với chúng tôi",
     "subtitle": "Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn trên hành trình chinh phục tri thức.",
+    "seo_desc": "Liên hệ với HCM-MIRAI để được tư vấn chi tiết về các dịch vụ du học và xuất khẩu lao động.",
+    "greeting": "Chào mừng bạn đến với HCM-MIRAI!",
     "info": {
       "address": "Địa chỉ",
       "phone": "Điện thoại",
@@ -193,6 +196,10 @@
       "title": "Thư viện hình ảnh",
       "breadcrumb": "Trang chủ"
     },
+    "common": {
+      "badge": "Thư viện",
+      "seeMore": "Xem thêm"
+    },
     "images": {
       "title": "Hình ảnh trung tâm",
       "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm.",
@@ -205,7 +212,15 @@
     },
     "videos": {
       "title": "Video trung tâm",
-      "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm."
+      "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm.",
+      "items": {
+        "v1": "GẦN 20 NĂM VỮNG BƯỚC HCM-MIRAI KHÔNG NGỪNG VƯƠN XA",
+        "v2": "DU HỌC THẠC SĨ CÙNG HCM-MIRAI - BƯỚC TIẾN LỚN CHO SỰ NGHIỆP",
+        "v3": "KHÔNG LO HỌC PHÍ NHẬP HỌC 0 ĐỒNG TẠI HCM-MIRAI",
+        "v4": "KHÔNG NGHĨ SẼ KHÓC - NHƯNG NƯỚC MẮT VẪN RƠI | HCM-MIRAI",
+        "v5": "GIÂY PHÚT CHIA XA KHI CON LÊN ĐƯỜNG DU HỌC | HCM-MIRAI",
+        "v6": "HỌC VIÊN HCM-MIRAI MÁCH NHỎ - BÍ KÍP XIN VISA CỰC DỄ"
+      }
     },
     "registration": {
       "title": "Tư vấn miễn phí ngay cho bạn!",
@@ -215,13 +230,17 @@
   "Training": {
     "hero": {
       "title": "Đào tạo ngoại ngữ",
-      "breadcrumb": "Trang chủ"
+      "breadcrumb": "Trang chủ",
+      "seo_desc": "Chương trình đào tạo Tiếng Nhật và Tiếng Hàn chuyên sâu, cam kết đầu ra JLPT và TOPIK."
     },
     "intro": {
       "title": "Chinh phục đa ngôn ngữ - Khám phá thế giới",
       "desc": "Tại HCM-MIRAI, chúng tôi không chỉ dạy ngôn ngữ mà còn trang bị cho bạn văn hóa và phong cách làm việc bản địa. Với đội ngũ giáo viên bản xứ và giáo trình chuyên sâu, chúng tôi cam kết lộ trình học tập hiệu quả nhất."
     },
     "courses": {
+      "badge_levels": "Các cấp độ giảng dạy",
+      "badge_cert": "Chứng chỉ uy tín",
+      "cta": "Tìm hiểu lộ trình",
       "japanese": {
         "title": "Tiếng Nhật (JLPT)",
         "subtitle": "Từ N5 đến N1",
@@ -235,15 +254,27 @@
     },
     "features": {
       "native": "Giáo viên bản xứ",
+      "native_desc": "Học trực tiếp với giáo viên bản xứ để chuẩn hóa phát âm và phản xạ giao tiếp tự nhiên.",
       "curriculum": "Giáo trình chuẩn",
+      "curriculum_desc": "Giáo trình được biên soạn riêng biệt, bám sát cấu trúc đề thi JLPT và TOPIK mới nhất.",
       "facilities": "Phòng Lab hiện đại",
-      "support": "Hỗ trợ học tập 24/7"
+      "facilities_desc": "Hệ thống phòng Lab, máy chiếu và phần mềm hỗ trợ học tập trực tuyến hiện đại.",
+      "support": "Hỗ trợ học tập 24/7",
+      "support_desc": "Đội ngũ trợ giảng hỗ trợ ôn tập ngoài giờ học, giải đáp thắc mắc 24/7."
+    },
+    "method": {
+      "badge": "Phương pháp & Môi trường",
+      "title_start": "Học tập",
+      "title_highlight": "Chuyên sâu",
+      "title_end": "Chuẩn quốc tế",
+      "desc": "Chúng tôi tạo ra môi trường học tập không áp lực, kích thích tư duy và sự sáng tạo của từng học viên. Tại HCM-MIRAI, mỗi giờ học là một trải nghiệm văn hóa thú vị."
     }
   },
   "LaborDomestic": {
     "hero": {
       "title": "Cung ứng lao động trong nước",
-      "breadcrumb": "Trang chủ"
+      "breadcrumb": "Trang chủ",
+      "seo_desc": "Giải pháp nhân sự uy tín cho các doanh nghiệp tại Việt Nam."
     },
     "intro": {
       "title": "Giải pháp nhân lực toàn diện cho doanh nghiệp",
@@ -253,21 +284,41 @@
   "LaborOverseas": {
     "hero": {
       "title": "Cung ứng lao động nước ngoài",
-      "breadcrumb": "Trang chủ"
+      "breadcrumb": "Trang chủ",
+      "seo_desc": "Cơ hội việc làm tại Nhật Bản, Hàn Quốc, Úc và Châu Âu."
     },
     "intro": {
       "title": "Mở rộng cơ hội nghề nghiệp quốc tế",
       "desc": "Chúng tôi kết nối người lao động Việt Nam với các đối tác uy tín tại Nhật Bản, Hàn Quốc, Úc và Châu Âu."
     }
   },
+  "LaborCommon": {
+    "badge": "Ngành nghề tiêu biểu",
+    "cta": "Xem đơn hàng ngay",
+    "categories": {
+      "cat1": { "title": "Xây dựng", "desc": "Giàn giáo, hàn xì, điện dân dụng, kiến trúc..." },
+      "cat2": { "title": "Cơ khí", "desc": "Vận hành máy, tiện, phay, bào, lắp ráp linh kiện..." },
+      "cat3": { "title": "May mặc", "desc": "May công nghiệp, da giày, thiết kế thời trang..." },
+      "cat4": { "title": "Chế biến", "desc": "Thực phẩm, thủy sản, nông sản kỹ thuật cao..." },
+      "cat5": { "title": "Công suất lớn", "desc": "Lắp ráp ô tô, điện tử, vật liệu mới..." },
+      "cat6": { "title": "Điều dưỡng", "desc": "Chăm sóc người già, y tá, bác sĩ chuyên khoa..." }
+    }
+  },
   "StudyAbroad": {
     "hero": {
       "title": "Du học & XKLĐ",
-      "breadcrumb": "Trang chủ"
+      "breadcrumb": "Trang chủ",
+      "seo_desc": "Tầm nhìn quốc tế, sự nghiệp vững bền."
     },
     "intro": {
       "title": "Chắp cánh tương lai tại các quốc gia phát triển",
       "desc": "Lộ trình du học và làm việc rõ ràng, tỉ lệ đậu visa cao, hỗ trợ học viên từ khi bắt đầu đến khi ổn định tại nước ngoài."
+    },
+    "programs": {
+      "prog1": { "title": "Du học Nhật Bản", "desc": "Trải nghiệm nền giáo dục hàng đầu thế giới với học bổng lên tới 100% học phí." },
+      "prog2": { "title": "Du học Hàn Quốc", "desc": "Lộ trình visa thẳng, hỗ trợ việc làm thêm với thu nhập hấp dẫn." },
+      "prog3": { "title": "Kỹ năng đặc định", "desc": "Chương trình XKLĐ chất lượng cao, thời hạn làm việc lâu dài tại nước ngoài." },
+      "prog4": { "title": "Thực tập sinh", "desc": "Vừa học vừa làm, cơ hội nâng cao tay nghề và thu nhập ngoại tệ." }
     }
   },
   "News": {
@@ -309,12 +360,24 @@
       "labor": "XKLĐ"
     },
     "items": {
-      "program_1": { "title": "Du học Hàn Quốc hệ D2-1 (Cao đẳng mẫu mực)" },
-      "program_2": { "title": "Du học Hàn Quốc hệ D4-1 (Visa tiếng Hàn)" },
-      "program_3": { "title": "Du học Nhật Bản hệ tự túc (Kỳ tháng 10)" },
-      "program_4": { "title": "Học bổng báo Nhật Bản 2026" },
-      "program_5": { "title": "Đơn hàng cơ khí Nhật Bản (Lương cao)" },
-      "program_6": { "title": "Du học Úc diện đào tạo nghề (Subclass 407)" }
+      "program_1": {
+        "title": "Du học Hàn Quốc hệ D2-1 (Cao đẳng mẫu mực)"
+      },
+      "program_2": {
+        "title": "Du học Hàn Quốc hệ D4-1 (Visa tiếng Hàn)"
+      },
+      "program_3": {
+        "title": "Du học Nhật Bản hệ tự túc (Kỳ tháng 10)"
+      },
+      "program_4": {
+        "title": "Học bổng báo Nhật Bản 2026"
+      },
+      "program_5": {
+        "title": "Đơn hàng cơ khí Nhật Bản (Lương cao)"
+      },
+      "program_6": {
+        "title": "Du học Úc diện đào tạo nghề (Subclass 407)"
+      }
     },
     "view_all": "Xem tất cả chương trình",
     "view_details": "Xem chi tiết",
@@ -415,6 +478,115 @@
     "pagination": {
       "previous": "Trang trước",
       "next": "Trang sau"
+    }
+  },
+  "Services": {
+    "hero": {
+      "overview": "HCM-MIRAI OVERVIEW",
+      "description": "Hơn 10 năm kinh nghiệm trong lĩnh vực tư vấn du học, HCM-Mirai tự hào mang đến cho bạn lộ trình học tập tối ưu, tiết kiệm chi phí và cơ hội nhận được nhiều học bổng từ các trường Đại học danh tiếng tại Hàn Quốc & Nhật Bản.",
+      "cta": "Nhận Tư Vấn Ngay",
+      "title1": "CÁC DỊCH VỤ VÀ ƯU ĐÃI",
+      "title2": "CỦA HCM-MIRAI"
+    },
+    "studyAbroad": {
+      "title": "Dịch vụ tư vấn du học",
+      "d41": {
+        "title": "Chương trình Du học Hàn Quốc tự túc (Visa D4-1)",
+        "desc": "Thích hợp cho học sinh, sinh viên có nhu cầu sang Hàn Quốc học tiếng và trải nghiệm văn hóa trước khi học chuyên ngành."
+      },
+      "d26": {
+        "title": "Du học trao đổi 1 năm (Visa D2-6)",
+        "desc": "Cơ hội học tập và trải nghiệm 1 năm tại các trường đại học uy tín của Hàn Quốc thông qua chương trình trao đổi sinh viên."
+      },
+      "d2": {
+        "title": "Du học hệ Cao đẳng, Đại học (Visa D2)",
+        "desc": "Dành cho học sinh đã tốt nghiệp THPT hoặc sinh viên muốn học chuyên ngành tại các trường đại học, cao đẳng Hàn Quốc."
+      },
+      "d24": {
+        "title": "Du học Cao Học đăng ký tự túc (Visa D2-4)",
+        "desc": "Chương trình đào tạo chuyên sâu dành cho những bạn đã tốt nghiệp Đại học mong muốn tiếp tục học lên Thạc sĩ."
+      },
+      "phd": {
+        "title": "Du học Thạc sỹ - Tiến sỹ",
+        "desc": "Hỗ trợ chuẩn bị hồ sơ xin học bổng và nhập học vào các viện nghiên cứu, trường đại học hàng đầu Hàn Quốc."
+      }
+    },
+    "languageTraining": {
+      "title": "Đào tạo Tiếng Hàn",
+      "teachers": {
+        "title": "Đội ngũ giáo viên",
+        "desc": "Đội ngũ giáo viên bản ngữ và Việt Nam giàu kinh nghiệm, tâm huyết, chuyên môn cao trong giảng dạy tiếng Hàn."
+      },
+      "facilities": {
+        "title": "Cơ sở vật chất",
+        "desc": "Trang bị đầy đủ các thiết bị giảng dạy hiện đại, không gian lớp học thoải mái, hỗ trợ tối đa việc tiếp thu kiến thức."
+      },
+      "comm": {
+        "title": "Khoá Đào tạo Tiếng Hàn Giao Tiếp",
+        "desc": "Tập trung phát triển kỹ năng nghe - nói, rèn luyện phản xạ giao tiếp tự nhiên với người bản xứ."
+      },
+      "mid": {
+        "title": "Khóa tiếng Hàn trung cấp",
+        "desc": "Giúp học viên nắm vững ngữ pháp, từ vựng chuyên sâu để chuẩn bị cho các kỳ thi năng lực hoặc du học."
+      },
+      "topik": {
+        "title": "Đào tạo Topik - KLT",
+        "desc": "Luyện thi chứng chỉ TOPIK, EPS-TOPIK với giáo trình bám sát đề thi thực tế, đảm bảo đầu ra."
+      },
+      "topikAdv": {
+        "title": "Khóa TOPIK nâng cao",
+        "desc": "Khoá học đặc biệt dành cho sinh viên muốn đạt TOPIK 4-6 trong thời gian ngắn để xin học bổng Đại học."
+      }
+    },
+    "studentSupport": {
+      "title": "Hỗ trợ học sinh du học",
+      "prep": {
+        "title": "Chuẩn bị hành trang",
+        "desc": "Hướng dẫn chi tiết những vật dụng cần thiết, cách đóng gói đồ đạc cũng như văn hóa lối sống cần lưu ý khi sang nước ngoài."
+      },
+      "dorm": {
+        "title": "Ký túc xá",
+        "desc": "Hỗ trợ sinh viên đăng ký ký túc xá của trường với chi phí hợp lý, đảm bảo an ninh và thuận tiện cho việc học."
+      },
+      "airport": {
+        "title": "Đưa đón Sân Bay",
+        "desc": "Dịch vụ đưa đón tận nơi khi bắt đầu xuất cảnh và hỗ trợ đón tại sân bay nước đến để sinh viên không bị bỡ ngỡ."
+      },
+      "legal": {
+        "title": "Hỗ trợ thủ tục pháp lý",
+        "desc": "Đồng hành làm thẻ ngoại kiều (Alien Registration Card), mở tài khoản ngân hàng và các thủ tục cần thiết khác."
+      },
+      "job": {
+        "title": "Tìm việc làm thêm",
+        "desc": "Kết nối, giới thiệu các công việc part-time phù hợp năng lực tiếng nhằm tăng thu nhập và kinh nghiệm thực tế."
+      },
+      "rent": {
+        "title": "Nhà Trọ",
+        "desc": "Giới thiệu các phòng trọ (Goshiwon, One-room) gần trường, an ninh tốt dành cho những sinh viên không ở Ký túc xá."
+      }
+    },
+    "whyChooseUs": {
+      "label": "ĐIỂM NỔI BẬT",
+      "title": "Tại sao nên lựa chọn HCM-Mirai trên hành trình du học của bạn?",
+      "reason1": {
+        "title": "Tư vấn lộ trình học tập tối ưu",
+        "desc": "Giúp bạn lựa chọn trường và chuyên ngành phù hợp với năng lực, tài chính và định hướng tương lai."
+      },
+      "reason2": {
+        "title": "Tỷ lệ đậu Visa cao",
+        "desc": "Hỗ trợ chuẩn bị hồ sơ 100%, luyện phỏng vấn kỹ lưỡng, tỷ lệ đỗ visa lên đến 99%."
+      },
+      "reason3": {
+        "title": "Hỗ trợ toàn diện và xuyên suốt",
+        "desc": "Đồng hành cùng học sinh từ khi làm hồ sơ đến khi sang Hàn Quốc và khi tốt nghiệp."
+      },
+      "reason4": {
+        "title": "Chi phí minh bạch, tiết kiệm",
+        "desc": "Cam kết không phát sinh chi phí ngầm, luôn tối ưu hóa mọi khoản để tiết kiệm nhất cho gia đình."
+      }
+    },
+    "common": {
+      "seeMore": "Xem Thêm"
     }
   }
 }

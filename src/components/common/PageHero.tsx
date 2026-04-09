@@ -11,11 +11,11 @@ interface PageHeroProps {
   icon?: React.ReactNode;
 }
 
-export default function PageHero({ 
-  title, 
-  breadcrumb, 
+export default function PageHero({
+  title,
+  breadcrumb,
   backgroundImage = "https://picsum.photos/id/10/1920/1080",
-  icon 
+  icon,
 }: PageHeroProps) {
   return (
     <section className="relative h-[300px] md:h-[400px] flex items-center overflow-hidden bg-[#0F172A]">
@@ -29,7 +29,7 @@ export default function PageHero({
           priority
         />
       </div>
-      
+
       {/* Animated Gradient Overlay */}
       <div className="absolute inset-0 z-10 bg-linear-to-r from-primary/80 via-primary/40 to-transparent" />
 
@@ -37,7 +37,9 @@ export default function PageHero({
         <div className="max-w-4xl animate-in fade-in slide-in-from-left-8 duration-700">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 text-white/70 text-sm mb-6 font-medium">
-            <Link href="/" className="hover:text-white transition-colors">{breadcrumb}</Link>
+            <Link href="/" className="hover:text-white transition-colors">
+              {breadcrumb}
+            </Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-white font-bold">{title}</span>
           </nav>
@@ -49,7 +51,9 @@ export default function PageHero({
               </div>
             )}
             <div className="h-px w-12 bg-white/30" />
-            <span className="text-white/80 uppercase tracking-widest text-sm font-bold">HCM-MIRAI Service</span>
+            <span className="text-white/80 uppercase tracking-widest text-sm font-bold">
+              HCM-MIRAI
+            </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-none">

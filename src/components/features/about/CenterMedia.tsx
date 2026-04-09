@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "lucide-react";
+import { IMAGES } from "@/constants/images";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -10,27 +10,27 @@ export default function CenterMedia() {
   const media = [
     {
       type: "image",
-      src: "https://picsum.photos/id/1/1000/1000",
+      src: IMAGES.ABOUT.CENTER_MEDIA.centerMedia1,
       className: "col-span-2 row-span-2",
     },
     {
       type: "video",
-      src: "https://picsum.photos/id/2/1000/1000",
+      src: IMAGES.ABOUT.CENTER_MEDIA.centerMedia2,
       className: "col-span-1 row-span-1",
     },
     {
       type: "image",
-      src: "https://picsum.photos/id/3/1000/1000",
+      src: IMAGES.ABOUT.CENTER_MEDIA.centerMedia3,
       className: "col-span-1 row-span-1",
     },
     {
       type: "image",
-      src: "https://picsum.photos/id/4/1000/1000",
+      src: IMAGES.ABOUT.CENTER_MEDIA.centerMedia4,
       className: "col-span-1 row-span-1",
     },
     {
       type: "video",
-      src: "https://picsum.photos/id/5/1000/1000",
+      src: IMAGES.ABOUT.CENTER_MEDIA.centerMedia5,
       className: "col-span-1 row-span-1",
     },
   ];
@@ -59,16 +59,6 @@ export default function CenterMedia() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all flex items-center justify-center">
-                {item.type === "video" && (
-                  <PlayCircle className="w-12 h-12 md:w-16 md:h-16 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all cursor-pointer" />
-                )}
-              </div>
-
-              {/* Subtle Label */}
-              <div className="absolute bottom-4 left-4 text-white text-[10px] md:text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                {item.type === "video" ? "Xem video" : "Phóng to"}
-              </div>
             </div>
           ))}
         </div>

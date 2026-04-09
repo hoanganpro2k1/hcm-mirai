@@ -7,42 +7,43 @@ import Image from "next/image";
 
 export default function CenterVideos() {
   const t = useTranslations("Gallery.videos");
+  const tCommon = useTranslations("Gallery.common");
 
   const videos = [
     {
       id: 1,
       src: "https://picsum.photos/id/101/1200/800",
-      title: "GẦN 20 NĂM VỮNG BƯỚC K-EDU KHÔNG NGỪNG VƯƠN XA",
+      title: t("items.v1"),
       duration: "05:12",
     },
     {
       id: 2,
       src: "https://picsum.photos/id/102/1200/800",
-      title: "DU HỌC THẠC SĨ CÙNG K-EDU - BƯỚC TIẾN LỚN CHO SỰ NGHIỆP",
+      title: t("items.v2"),
       duration: "04:30",
     },
     {
       id: 3,
       src: "https://picsum.photos/id/103/1200/800",
-      title: "KHÔNG LO HỌC PHÍ NHẬP HỌC 0 ĐỒNG TẠI K-EDU",
+      title: t("items.v3"),
       duration: "03:45",
     },
     {
       id: 4,
       src: "https://picsum.photos/id/104/1200/800",
-      title: "KHÔNG NGHĨ SẼ KHÓC - NHƯNG NƯỚC MẮT VẪN RƠI | K-EDU",
+      title: t("items.v4"),
       duration: "06:20",
     },
     {
       id: 5,
       src: "https://picsum.photos/id/107/1200/800",
-      title: "GIÂY PHÚT CHIA XA KHI CON LÊN ĐƯỜNG DU HỌC | K-EDU",
+      title: t("items.v5"),
       duration: "04:15",
     },
     {
       id: 6,
       src: "https://picsum.photos/id/106/1200/800",
-      title: "HỌC VIÊN K-EDU MÁCH NHỎ - BÍ KÍP XIN VISA CỰC DỄ",
+      title: t("items.v6"),
       duration: "03:10",
     },
   ];
@@ -55,7 +56,7 @@ export default function CenterVideos() {
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-primary font-bold text-sm">
               <Library className="w-4 h-4" />
-              <span>Thư viện</span>
+              <span>{tCommon("badge")}</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1E293B] dark:text-white uppercase tracking-tight">
               {t("title")}
@@ -68,7 +69,7 @@ export default function CenterVideos() {
             href="/thu-vien-hinh-anh"
             className="text-red-500 hover:text-red-600 font-bold text-sm flex items-center gap-2 transition-colors group"
           >
-            Xem thêm
+            {tCommon("seeMore")}
             <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

@@ -4,7 +4,6 @@ import { Link } from "@/i18n/routing";
 import {
   Briefcase,
   CheckCircle2,
-  ChevronRight,
   Construction,
   Shirt,
   Utensils,
@@ -18,42 +17,43 @@ interface LaborServiceGridProps {
 
 export default function LaborServiceGrid({ namespace }: LaborServiceGridProps) {
   const t = useTranslations(namespace);
+  const tCommon = useTranslations("LaborCommon");
 
   const categories = [
     {
       icon: <Construction className="w-8 h-8 text-red-600" />,
-      title: "Xây dựng",
-      desc: "Giàn giáo, hàn xì, điện dân dụng, kiến trúc...",
+      title: tCommon("categories.cat1.title"),
+      desc: tCommon("categories.cat1.desc"),
       color: "bg-red-50",
     },
     {
       icon: <Wrench className="w-8 h-8 text-blue-600" />,
-      title: "Cơ khí",
-      desc: "Vận hành máy, tiện, phay, bào, lắp ráp linh kiện...",
+      title: tCommon("categories.cat2.title"),
+      desc: tCommon("categories.cat2.desc"),
       color: "bg-blue-50",
     },
     {
       icon: <Shirt className="w-8 h-8 text-purple-600" />,
-      title: "May mặc",
-      desc: "May công nghiệp, da giày, thiết kế thời trang...",
+      title: tCommon("categories.cat3.title"),
+      desc: tCommon("categories.cat3.desc"),
       color: "bg-purple-50",
     },
     {
       icon: <Utensils className="w-8 h-8 text-green-600" />,
-      title: "Chế biến",
-      desc: "Thực phẩm, thủy sản, nông sản kỹ thuật cao...",
+      title: tCommon("categories.cat4.title"),
+      desc: tCommon("categories.cat4.desc"),
       color: "bg-green-50",
     },
     {
       icon: <Briefcase className="w-8 h-8 text-orange-600" />,
-      title: "Công suất lớn",
-      desc: "Lắp ráp ô tô, điện tử, vật liệu mới...",
+      title: tCommon("categories.cat5.title"),
+      desc: tCommon("categories.cat5.desc"),
       color: "bg-orange-50",
     },
     {
       icon: <CheckCircle2 className="w-8 h-8 text-teal-600" />,
-      title: "Điều dưỡng",
-      desc: "Chăm sóc người già, y tá, bác sĩ chuyên khoa...",
+      title: tCommon("categories.cat6.title"),
+      desc: tCommon("categories.cat6.desc"),
       color: "bg-teal-50",
     },
   ];
@@ -65,7 +65,7 @@ export default function LaborServiceGrid({ namespace }: LaborServiceGridProps) {
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase mb-4 opacity-70">
               <div className="w-8 h-0.5 bg-primary" />
-              <span>Ngành nghề tiêu biểu</span>
+              <span>{tCommon("badge")}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-[#1E293B] dark:text-white uppercase tracking-tighter leading-tight mb-6">
               {t("intro.title")}
@@ -78,7 +78,7 @@ export default function LaborServiceGrid({ namespace }: LaborServiceGridProps) {
             href="/don-hang"
             className="px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-black uppercase text-sm tracking-widest shadow-xl shadow-primary/20 hover:-translate-y-1 transition-all"
           >
-            Xem đơn hàng ngay
+            {tCommon("cta")}
           </Link>
         </div>
 
@@ -100,10 +100,6 @@ export default function LaborServiceGrid({ namespace }: LaborServiceGridProps) {
               <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-8">
                 {cat.desc}
               </p>
-              <div className="flex items-center gap-2 text-primary font-bold text-sm group/btn">
-                <span>Xem chi tiết</span>
-                <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </div>
             </div>
           ))}
         </div>

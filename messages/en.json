@@ -1,6 +1,7 @@
 {
   "Header": {
     "nav": {
+      "home": "Home",
       "gioithieu": "About Us",
       "daotao": "Language Training",
       "cungung": "Labor Supply",
@@ -84,6 +85,8 @@
   "Contact": {
     "title": "Contact Us",
     "subtitle": "We are always ready to listen and support you on your journey to conquer knowledge.",
+    "seo_desc": "Contact HCM-MIRAI for detailed consultation on study abroad and labor export services.",
+    "greeting": "Welcome to HCM-MIRAI!",
     "info": {
       "address": "Address",
       "phone": "Phone",
@@ -193,6 +196,10 @@
       "title": "Photo Gallery",
       "breadcrumb": "Home"
     },
+    "common": {
+      "badge": "Gallery",
+      "seeMore": "View more"
+    },
     "images": {
       "title": "Center Images",
       "subtitle": "Images and videos capturing memorable moments at the center.",
@@ -205,7 +212,15 @@
     },
     "videos": {
       "title": "Center Videos",
-      "subtitle": "Images and videos capturing memorable moments at the center."
+      "subtitle": "Images and videos capturing memorable moments at the center.",
+      "items": {
+        "v1": "NEARLY 20 YEARS OF STEADY PROGRESS HCM-MIRAI KEEPS REACHING FURTHER",
+        "v2": "MASTER'S STUDY ABROAD WITH HCM-MIRAI - A BIG STEP FOR YOUR CAREER",
+        "v3": "NO WORRIES ABOUT TUITION WITH 0 VND ENROLLMENT AT HCM-MIRAI",
+        "v4": "DIDN'T THINK I WOULD CRY - BUT TEARS STILL FELL | HCM-MIRAI",
+        "v5": "THE MOMENT OF PARTING WHEN STUDYING ABROAD | HCM-MIRAI",
+        "v6": "HCM-MIRAI STUDENTS REVEAL - SUPER EASY VISA TIPS"
+      }
     },
     "registration": {
       "title": "Free Consultation For You!",
@@ -215,13 +230,17 @@
   "Training": {
     "hero": {
       "title": "Foreign Language Training",
-      "breadcrumb": "Home"
+      "breadcrumb": "Home",
+      "seo_desc": "Intensive Japanese and Korean training programs with guaranteed JLPT and TOPIK output."
     },
     "intro": {
       "title": "Master Languages - Discover the World",
       "desc": "At HCM-MIRAI, we don't just teach languages; we equip you with local culture and etiquette. With native teachers and specialized curriculum, we ensure the most effective learning path."
     },
     "courses": {
+      "badge_levels": "Levels Offered",
+      "badge_cert": "Prestigious Certificate",
+      "cta": "Explore the Route",
       "japanese": {
         "title": "Japanese (JLPT)",
         "subtitle": "From N5 to N1",
@@ -235,15 +254,27 @@
     },
     "features": {
       "native": "Native Teachers",
+      "native_desc": "Learn directly with native teachers to standardize pronunciation and natural communication reflexes.",
       "curriculum": "Standard Curriculum",
+      "curriculum_desc": "Exclusive curriculum structured closely around the latest JLPT and TOPIK exam formats.",
       "facilities": "Modern Labs",
-      "support": "24/7 Academic Support"
+      "facilities_desc": "Modern Lab systems, projectors, and online learning support software.",
+      "support": "24/7 Academic Support",
+      "support_desc": "Teaching assistants help with review outside of class hours and answer questions 24/7."
+    },
+    "method": {
+      "badge": "Method & Environment",
+      "title_start": "Intensive",
+      "title_highlight": "International Standard",
+      "title_end": "Learning",
+      "desc": "We create a pressure-free learning environment that stimulates the thinking and creativity of each student. At HCM-MIRAI, every lesson is an exciting cultural experience."
     }
   },
   "LaborDomestic": {
     "hero": {
       "title": "Domestic Labor Supply",
-      "breadcrumb": "Home"
+      "breadcrumb": "Home",
+      "seo_desc": "Reputable human resource solutions for enterprises in Vietnam."
     },
     "intro": {
       "title": "Comprehensive Manpower Solutions",
@@ -253,21 +284,41 @@
   "LaborOverseas": {
     "hero": {
       "title": "Overseas Labor Supply",
-      "breadcrumb": "Home"
+      "breadcrumb": "Home",
+      "seo_desc": "Job opportunities in Japan, Korea, Australia, and Europe."
     },
     "intro": {
       "title": "Expanding International Career Opportunities",
       "desc": "We connect Vietnamese workers with reputable partners in Japan, Korea, Australia, and Europe."
     }
   },
+  "LaborCommon": {
+    "badge": "Typical Industries",
+    "cta": "View Orders Now",
+    "categories": {
+      "cat1": { "title": "Construction", "desc": "Scaffolding, welding, civil electricity, architecture..." },
+      "cat2": { "title": "Mechanical", "desc": "Machine operation, turning, milling, planing, component assembly..." },
+      "cat3": { "title": "Garment", "desc": "Industrial sewing, footwear, fashion design..." },
+      "cat4": { "title": "Processing", "desc": "Food, seafood, high-tech agricultural products..." },
+      "cat5": { "title": "Manufacturing", "desc": "Automobile assembly, electronics, new materials..." },
+      "cat6": { "title": "Nursing", "desc": "Elderly care, nursing, specialized doctors..." }
+    }
+  },
   "StudyAbroad": {
     "hero": {
       "title": "Study Abroad & Labor Export",
-      "breadcrumb": "Home"
+      "breadcrumb": "Home",
+      "seo_desc": "International vision, sustainable career."
     },
     "intro": {
       "title": "Empowering Futures in Developed Nations",
       "desc": "Clear study and work pathways, high visa success rates, and support from start to finish."
+    },
+    "programs": {
+      "prog1": { "title": "Study in Japan", "desc": "Experience world-class education with scholarships up to 100% of intuition fees." },
+      "prog2": { "title": "Study in Korea", "desc": "Straight visa pathway, supporting part-time jobs with attractive income." },
+      "prog3": { "title": "Specified Skilled Worker", "desc": "High-quality labor export program with long-term working periods abroad." },
+      "prog4": { "title": "Technical Intern Training", "desc": "Study while working, an opportunity to improve skills and earn foreign currency." }
     }
   },
   "News": {
@@ -309,12 +360,24 @@
       "labor": "SSW/Labor"
     },
     "items": {
-      "program_1": { "title": "Study in Korea D2-1 System (Model College)" },
-      "program_2": { "title": "Study in Korea D4-1 System (Korean Visa)" },
-      "program_3": { "title": "Study in Japan Self-funded (October Intake)" },
-      "program_4": { "title": "Japan Newspaper Scholarship 2026" },
-      "program_5": { "title": "Japan Mechanical Engineering Order (High Salary)" },
-      "program_6": { "title": "Study in Australia Vocational Training (Subclass 407)" }
+      "program_1": {
+        "title": "Study in Korea D2-1 System (Model College)"
+      },
+      "program_2": {
+        "title": "Study in Korea D4-1 System (Korean Visa)"
+      },
+      "program_3": {
+        "title": "Study in Japan Self-funded (October Intake)"
+      },
+      "program_4": {
+        "title": "Japan Newspaper Scholarship 2026"
+      },
+      "program_5": {
+        "title": "Japan Mechanical Engineering Order (High Salary)"
+      },
+      "program_6": {
+        "title": "Study in Australia Vocational Training (Subclass 407)"
+      }
     },
     "view_all": "View All Programs",
     "view_details": "View Details",
@@ -415,6 +478,115 @@
     "pagination": {
       "previous": "Previous",
       "next": "Next"
+    }
+  },
+  "Services": {
+    "hero": {
+      "overview": "HCM-MIRAI OVERVIEW",
+      "description": "With over 10 years of experience in study abroad consulting, HCM-Mirai proudly provides optimal learning pathways, cost savings, and opportunities to receive scholarships from prestigious universities in Korea & Japan.",
+      "cta": "Get a Consultation Now",
+      "title1": "HCM-MIRAI SERVICES",
+      "title2": "& OFFERS"
+    },
+    "studyAbroad": {
+      "title": "Study Abroad Consulting Services",
+      "d41": {
+        "title": "Self-Funded Korean Study Abroad Program (D4-1 Visa)",
+        "desc": "Suitable for students who want to go to Korea to learn the language and experience the culture before majoring in a specific field."
+      },
+      "d26": {
+        "title": "1-Year Exchange Study (D2-6 Visa)",
+        "desc": "Opportunity to study and experience 1 year at prestigious universities in Korea through student exchange programs."
+      },
+      "d2": {
+        "title": "College / University Degree Study (D2 Visa)",
+        "desc": "For high school graduates or students who want to study specialized majors at colleges and universities in Korea."
+      },
+      "d24": {
+        "title": "Self-Funded Master’s Degree Study (D2-4 Visa)",
+        "desc": "Intensive training program for those who have graduated from university and wish to continue to pursue a Master’s degree."
+      },
+      "phd": {
+        "title": "Master’s - PhD Study Abroad",
+        "desc": "Support with preparing scholarship applications and gaining admission to top research institutes and universities in Korea."
+      }
+    },
+    "languageTraining": {
+      "title": "Korean Language Training",
+      "teachers": {
+        "title": "Teaching Staff",
+        "desc": "A team of experienced, dedicated native and Vietnamese teachers with high expertise in teaching Korean."
+      },
+      "facilities": {
+        "title": "Facilities",
+        "desc": "Fully equipped with modern teaching equipment, comfortable classroom space, giving maximum support for knowledge acquisition."
+      },
+      "comm": {
+        "title": "Communicative Korean Training Course",
+        "desc": "Focuses on developing listening and speaking skills, training natural communication reflexes with native speakers."
+      },
+      "mid": {
+        "title": "Intermediate Korean Course",
+        "desc": "Helps students master intensive grammar and vocabulary to quickly prepare for proficiency exams or study abroad."
+      },
+      "topik": {
+        "title": "TOPIK - KLT Training",
+        "desc": "TOPIK, EPS-TOPIK certification preparation with a curriculum closely following actual exams, guaranteed output."
+      },
+      "topikAdv": {
+        "title": "Advanced TOPIK Course",
+        "desc": "Special course for students who want to achieve TOPIK 4-6 in a short time to apply for university scholarships."
+      }
+    },
+    "studentSupport": {
+      "title": "Study Abroad Student Support",
+      "prep": {
+        "title": "Preparation Guide",
+        "desc": "Detailed instructions on essential items, how to pack luggage, as well as lifestyle and cultural aspects to note when going abroad."
+      },
+      "dorm": {
+        "title": "Dormitory",
+        "desc": "Support students in registering for the university’s dormitory with reasonable costs, ensuring security and convenience for studying."
+      },
+      "airport": {
+        "title": "Airport Transfer",
+        "desc": "Door-to-door pick-up service when departing and pick-up support at the destination airport so students do not feel overwhelmed."
+      },
+      "legal": {
+        "title": "Legal Procedures Support",
+        "desc": "Accompanying you in making Alien Registration Cards, opening bank accounts, and other necessary procedures."
+      },
+      "job": {
+        "title": "Part-time Job Hunting",
+        "desc": "Connecting and introducing part-time jobs suitable for language competency to increase income and practical experience."
+      },
+      "rent": {
+        "title": "Housing / Accommodation",
+        "desc": "Introducing rental rooms (Goshiwon, One-room) near the university with good security for students not staying in the Dormitory."
+      }
+    },
+    "whyChooseUs": {
+      "label": "HIGHLIGHTS",
+      "title": "Why should you choose HCM-Mirai for your study abroad journey?",
+      "reason1": {
+        "title": "Optimal study pathway consultation",
+        "desc": "Help you choose the school and major suitable for your capabilities, finances, and future orientation."
+      },
+      "reason2": {
+        "title": "High Visa success rate",
+        "desc": "100% support for application preparation, thorough interview training, visa pass rate up to 99%."
+      },
+      "reason3": {
+        "title": "Comprehensive and continuous support",
+        "desc": "Accompany students from application preparation until they go to Korea and upon graduation."
+      },
+      "reason4": {
+        "title": "Transparent and saving costs",
+        "desc": "Commit to strictly zero hidden costs, always optimizing all expenses to save the most for the family."
+      }
+    },
+    "common": {
+      "seeMore": "See More"
     }
   }
 }

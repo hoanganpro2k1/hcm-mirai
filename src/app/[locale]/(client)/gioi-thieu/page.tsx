@@ -1,23 +1,37 @@
+import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import ConsultationForm from "@/components/features/home/ConsultationForm";
 import PartnerMarquee from "@/components/features/home/PartnerMarquee";
 import TestimonialsSection from "@/components/features/home/TestimonialsSection";
-import AboutHero from "@/components/features/about/AboutHero";
 import VisionMission from "@/components/features/about/VisionMission";
 import BenefitsSection from "@/components/features/about/BenefitsSection";
 import TeamSection from "@/components/features/about/TeamSection";
 import CenterMedia from "@/components/features/about/CenterMedia";
-import { Metadata } from "next";
+import { useTranslations } from "next-intl";
 
-export const metadata: Metadata = {
-  title: "Giới thiệu về HCM-MIRAI - Chắp cánh ước mơ du học",
-  description: "Trang giới thiệu chi tiết về sứ mệnh, tầm nhìn, đội ngũ và các dịch vụ của HCM-MIRAI trong lĩnh vực du học và tư vấn giáo dục quốc tế.",
-};
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  return {
+    title: `${t("Header.nav.about_mirai")} | HCM-MIRAI`,
+    description: t("About.hero.seo_desc", { fallback: "Trang giới thiệu chi tiết về sứ mệnh, tầm nhìn, đội ngũ và các dịch vụ của HCM-MIRAI trong lĩnh vực du học và tư vấn giáo dục quốc tế." }),
+  };
+}
 
 export default function GioiThieuPage() {
+  const tHeader = useTranslations("Header");
+
+  const breadcrumbItems = [
+    { label: tHeader("nav.home"), href: "/" },
+    { label: tHeader("nav.about_mirai") },
+  ];
+
   return (
     <main className="min-h-screen bg-background">
-      {/* 1. Hero Section */}
-      <AboutHero />
+      <div className="container mx-auto px-6 py-4">
+        <PageBreadcrumbs items={breadcrumbItems} />
+      </div>
 
       {/* 2. Vision and Mission (Core values) */}
       <VisionMission />

@@ -1,20 +1,39 @@
-import GalleryHero from "@/components/features/gallery/GalleryHero";
+import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import CenterImages from "@/components/features/gallery/CenterImages";
 import CenterVideos from "@/components/features/gallery/CenterVideos";
 import ConsultationForm from "@/components/features/home/ConsultationForm";
 import PartnerMarquee from "@/components/features/home/PartnerMarquee";
-import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-export const metadata: Metadata = {
-  title: "Thư viện hình ảnh | HCM-MIRAI",
-  description: "Khám phá không gian học tập và các hoạt động sôi nổi tại trung tâm đào tạo HCM-MIRAI",
+type Props = {
+  params: Promise<{ locale: string }>;
 };
 
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Gallery" });
+  
+  return {
+    title: `${t("hero.title")} | HCM-MIRAI`,
+    description: t("images.subtitle"),
+  };
+}
+
 export default function GalleryPage() {
+  const tGallery = useTranslations("Gallery.hero");
+  const tHeader = useTranslations("Header");
+
+  const breadcrumbItems = [
+    { label: tHeader("nav.about_mirai").replace("Về HCM-MIRAI", "Trang chủ"), href: "/" },
+    { label: tGallery("title") },
+  ];
+
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <GalleryHero />
+      <div className="container mx-auto px-6 py-4">
+        <PageBreadcrumbs items={breadcrumbItems} />
+      </div>
 
       {/* Center Images Section (3x3 Grid) */}
       <CenterImages />
