@@ -7,7 +7,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { IMAGES } from "@/constants/images";
 import { useConsultationMutations } from "@/hooks/use-consultation-mutations";
 import {
-  consultationSchema,
+  getConsultationSchema,
   type ConsultationFormValues as FormValues,
 } from "@/schemas/consultation.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,6 +19,7 @@ import { toast } from "sonner";
 
 export default function ConsultationForm() {
   const t = useTranslations("Consultation");
+  const tValidation = useTranslations("Validation");
   const { submitConsultation, isSubmitting: isLoading } =
     useConsultationMutations();
 
@@ -29,7 +30,7 @@ export default function ConsultationForm() {
     reset,
     formState: { errors },
   } = useForm<FormValues>({
-    resolver: zodResolver(consultationSchema),
+    resolver: zodResolver(getConsultationSchema(tValidation)),
     defaultValues: {
       name: "",
       phone: "",

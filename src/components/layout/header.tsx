@@ -49,14 +49,12 @@ export function Header() {
   ];
 
   return (
-    <header 
+    <header
       className="w-full flex flex-col font-sans sticky top-0 z-50 transition-colors"
       onClick={() => isSearchOpen && setIsSearchOpen(false)}
     >
       {/* Top Bar */}
-      <div 
-        className="bg-primary text-primary-foreground text-sm py-2 px-6 flex justify-between items-center transition-colors"
-      >
+      <div className="bg-primary text-primary-foreground text-sm py-2 px-6 flex justify-between items-center transition-colors">
         <Link
           href="tel:+0973460999"
           className="flex items-center gap-2 hover:text-gray-300 transition-colors"
@@ -96,9 +94,7 @@ export function Header() {
       </div>
 
       {/* Main Navigation */}
-      <div 
-        className="bg-background/95 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b shadow-sm transition-colors"
-      >
+      <div className="bg-background/95 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b shadow-sm transition-colors">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <NextImage
@@ -153,9 +149,9 @@ export function Header() {
         {/* Actions Context Group */}
         <div className="flex items-center gap-2 sm:gap-4">
           <div className="relative flex items-center">
-            <SearchTrigger 
-              isOpen={isSearchOpen} 
-              onToggle={() => setIsSearchOpen(!isSearchOpen)} 
+            <SearchTrigger
+              isOpen={isSearchOpen}
+              onToggle={() => setIsSearchOpen(!isSearchOpen)}
               onClose={() => setIsSearchOpen(false)}
             />
           </div>
@@ -168,12 +164,13 @@ export function Header() {
           </button>
 
           {/* Mobile Menu Toggle */}
-          <button
+          <Button
             className="xl:hidden p-1.5 sm:p-2 -mr-2 text-foreground hover:bg-muted rounded-md transition-colors shrink-0"
             onClick={() => setIsMobileMenuOpen(true)}
+            aria-label={t("actions.open_menu")}
           >
             <Menu className="w-6 h-6" />
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -196,6 +193,7 @@ export function Header() {
                 variant={"ghost"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="p-2 text-muted-foreground hover:bg-muted rounded-md transition"
+                aria-label={t("actions.close_menu")}
               >
                 <X className="w-6 h-6" />
               </Button>

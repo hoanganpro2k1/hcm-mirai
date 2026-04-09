@@ -3,7 +3,10 @@
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { consultationSchema, type ConsultationFormValues } from "@/schemas/consultation.schema";
+import {
+  getConsultationSchema,
+  type ConsultationFormValues as ContactFormValues,
+} from "@/schemas/consultation.schema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,16 +15,10 @@ import { CheckCircle2, Loader2, Send } from "lucide-react";
 import { useConsultationMutations } from "@/hooks/use-consultation-mutations";
 import { toast } from "sonner";
 
-const contactSchema = consultationSchema;
-
-type ContactFormValues = ConsultationFormValues;
-
 export function ContactForm() {
   const t = useTranslations("Contact.form");
-  const { 
-    submitConsultation, 
-    isSubmitting, 
-  } = useConsultationMutations();
+  const tValidation = useTranslations("Validation");
+  const { submitConsultation, isSubmitting } = useConsultationMutations();
 
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -31,7 +28,7 @@ export function ContactForm() {
     reset,
     formState: { errors },
   } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(getConsultationSchema(tValidation)),
   });
 
   const onSubmit = async (data: ContactFormValues) => {

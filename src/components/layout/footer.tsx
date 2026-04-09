@@ -37,7 +37,7 @@ export function Footer() {
 
             <div className="space-y-6">
               <h3 className="text-base font-bold uppercase relative mb-2 inline-block tracking-normal">
-                Thông tin liên hệ
+                {t("info.title")}
               </h3>
               <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl ring-1 ring-white/20">
                 <iframe
@@ -64,7 +64,7 @@ export function Footer() {
                   </div>
                   <div className="space-y-1">
                     <p className="text-[10px] font-black uppercase tracking-widest text-white/40">
-                      Địa chỉ
+                      {t("info.address")}
                     </p>
                     <p className="text-sm font-medium leading-relaxed">
                       {contactInfo.address}
@@ -81,7 +81,7 @@ export function Footer() {
                   </div>
                   <div className="space-y-1">
                     <p className="text-[10px] font-black uppercase tracking-widest text-white/40">
-                      Điện thoại
+                      {t("info.phone")}
                     </p>
                     <p className="text-sm font-bold tracking-tight">
                       {contactInfo.phone}
@@ -98,7 +98,7 @@ export function Footer() {
                   </div>
                   <div className="space-y-1">
                     <p className="text-[10px] font-black uppercase tracking-widest text-white/40">
-                      Email
+                      {t("info.email")}
                     </p>
                     <p className="text-sm font-medium">{contactInfo.email}</p>
                   </div>
@@ -223,11 +223,11 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] text-white/20 font-black uppercase tracking-[0.3em]">
-            © {currentYear} HCM-MIRAI. ALL RIGHTS RESERVED.
+            {t("copyright", { year: currentYear })}
           </p>
           <div className="flex gap-8">
             <p className="text-[10px] text-white/20 font-black uppercase tracking-[0.3em]">
-              Designed by HCM-MIRAI Team
+              {t("designed_by")}
             </p>
           </div>
         </div>

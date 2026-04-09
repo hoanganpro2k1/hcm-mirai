@@ -1,12 +1,13 @@
 "use client";
 
 import { Calendar, GraduationCap, School, Users } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
 function CountUp({ value }: { value: string }) {
   const [count, setCount] = useState(0);
   const elementRef = useRef<HTMLSpanElement>(null);
+  const locale = useLocale();
 
   // Tách số và phần hậu tố (ví dụ: "5000+" -> { target: 5000, suffix: "+" })
   const match = value.match(/(\d+)(.*)/);
@@ -54,7 +55,7 @@ function CountUp({ value }: { value: string }) {
 
   return (
     <span ref={elementRef}>
-      {count.toLocaleString("vi-VN")}
+      {count.toLocaleString(locale === "vi" ? "vi-VN" : "en-US")}
       {suffix}
     </span>
   );

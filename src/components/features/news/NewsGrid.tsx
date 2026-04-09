@@ -76,23 +76,23 @@ export default function NewsGrid() {
           <div className="max-w-2xl">
             <div className="flex items-center justify-center md:justify-start gap-2 text-primary font-bold text-sm tracking-widest uppercase mb-4 opacity-70">
               <div className="w-8 h-0.5 bg-primary" />
-              <span>Cập nhật mới nhất</span>
+              <span>{t("grid.latest_update")}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-[#1E293B] dark:text-white uppercase tracking-tighter leading-tight">
               {t("intro.title")}
             </h2>
           </div>
           <nav className="flex items-center justify-center gap-2 overflow-x-auto pb-4 md:pb-0">
-            {["Tất cả", "Tin tức", "Sự kiện", "Tuyển sinh"].map((cat) => (
+            {Object.entries(t.raw("grid.categories")).map(([key, label]: [string, any]) => (
               <button
-                key={cat}
+                key={key}
                 className={`px-6 py-2.5 rounded-full text-sm font-black uppercase tracking-widest whitespace-nowrap transition-all ${
-                  cat === "Tất cả"
+                  key === "all"
                     ? "bg-red-600 text-white shadow-lg shadow-red-200 dark:shadow-none"
                     : "bg-gray-100 dark:bg-gray-800 text-gray-500 hover:bg-red-50 hover:text-red-600"
                 }`}
               >
-                {cat}
+                {label}
               </button>
             ))}
           </nav>
@@ -147,7 +147,7 @@ export default function NewsGrid() {
                     href={`/tin-tuc/${item.id}`}
                     className="flex items-center gap-2 font-black uppercase text-xs tracking-widest group/btn"
                   >
-                    <span>Đọc thêm</span>
+                    <span>{t("grid.read_more")}</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                   <div className="w-1.5 h-1.5 bg-red-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -160,7 +160,7 @@ export default function NewsGrid() {
         {/* Load More Button */}
         <div className="mt-20 text-center">
           <button className="px-10 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-2xl font-black uppercase text-sm tracking-widest transition-all">
-            Xem thêm tin tức
+            {t("grid.load_more")}
           </button>
         </div>
       </div>

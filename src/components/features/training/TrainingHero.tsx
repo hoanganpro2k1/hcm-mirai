@@ -35,7 +35,7 @@ export default function TrainingHero() {
                <GraduationCap className="w-8 h-8 text-white" />
             </div>
             <div className="h-px w-12 bg-white/30" />
-            <span className="text-white/80 uppercase tracking-widest text-sm font-bold">HCM-MIRAI Education</span>
+            <span className="text-white/80 uppercase tracking-widest text-sm font-bold">{t("edu_brand")}</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-6">
@@ -45,7 +45,7 @@ export default function TrainingHero() {
           <div className="flex items-center gap-4">
              <div className="w-16 h-1.5 bg-red-600" />
              <p className="text-white/60 text-lg font-medium italic">
-                &ldquo;Language is the roadmap of a culture.&rdquo;
+                &ldquo;{t("quote")}&rdquo;
              </p>
           </div>
         </div>

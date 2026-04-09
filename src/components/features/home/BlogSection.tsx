@@ -6,41 +6,38 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 
-const newsItems = [
-  {
-    id: 1,
-    title: "Tuyển sinh kỳ tháng 4 và tháng 12 năm 2026 tại Hàn Quốc",
-    category: "Tin tuyển sinh",
-    date: "15/03/2026",
-    author: "Admin",
-    image: "https://picsum.photos/600/400?news1",
-    excerpt:
-      "Thông báo tuyển sinh du học Hàn Quốc các hệ D4-1, D2-1... với nhiều ưu đãi hấp dẫn.",
-  },
-  {
-    id: 2,
-    title: "Kinh nghiệm phỏng vấn visa du học Nhật Bản tỉ lệ đậu cao",
-    category: "Cẩm nang du học",
-    date: "12/03/2026",
-    author: "Tư vấn viên",
-    image: "https://picsum.photos/600/400?news2",
-    excerpt:
-      "Chia sẻ những bí quyết quan trọng giúp bạn tự tin trong buổi phỏng vấn cùng Lãnh sự quán.",
-  },
-  {
-    id: 3,
-    title: "Chương trình học bổng toàn phần chính phủ Trung Quốc năm 2026",
-    category: "Học bổng",
-    date: "10/03/2026",
-    author: "Admin",
-    image: "https://picsum.photos/600/400?news3",
-    excerpt:
-      "Cơ hội nhận học bổng 100% học phí và sinh hoạt phí từ các trường đại học hàng đầu Trung Quốc.",
-  },
-];
-
 export default function BlogSection() {
   const t = useTranslations("HomeBlog");
+
+  const newsItems = [
+    {
+      id: 1,
+      title: t("items.item_1.title"),
+      category: t("items.item_1.category"),
+      date: "15/03/2026",
+      author: t("author_admin"),
+      image: "https://picsum.photos/600/400?news1",
+      excerpt: t("items.item_1.excerpt"),
+    },
+    {
+      id: 2,
+      title: t("items.item_2.title"),
+      category: t("items.item_2.category"),
+      date: "12/03/2026",
+      author: t("author_consultant"),
+      image: "https://picsum.photos/600/400?news2",
+      excerpt: t("items.item_2.excerpt"),
+    },
+    {
+      id: 3,
+      title: t("items.item_3.title"),
+      category: t("items.item_3.category"),
+      date: "10/03/2026",
+      author: t("author_admin"),
+      image: "https://picsum.photos/600/400?news3",
+      excerpt: t("items.item_3.excerpt"),
+    },
+  ];
 
   return (
     <section className="py-20 bg-white dark:bg-gray-950 transition-colors">

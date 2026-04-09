@@ -22,10 +22,9 @@ export async function generateMetadata({ params }: Props) {
 
 export default function GalleryPage() {
   const tGallery = useTranslations("Gallery.hero");
-  const tHeader = useTranslations("Header");
 
   const breadcrumbItems = [
-    { label: tHeader("nav.about_mirai").replace("Về HCM-MIRAI", "Trang chủ"), href: "/" },
+    { label: tGallery("breadcrumb"), href: "/" },
     { label: tGallery("title") },
   ];
 

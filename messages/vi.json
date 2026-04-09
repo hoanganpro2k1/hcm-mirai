@@ -18,11 +18,17 @@
     },
     "actions": {
       "timkiem": "Tìm kiếm",
-      "tuvan": "Tư vấn ngay"
+      "tuvan": "Tư vấn ngay",
+      "open_menu": "Mở menu",
+      "close_menu": "Đóng menu"
     },
     "topbar": {
       "tuyensinh": "ĐƠN HÀNG MỚI NHẤT THÁNG 4/2026"
     }
+  },
+  "Hero": {
+    "slide_alt": "Hình ảnh slide {number}",
+    "go_to_slide": "Chuyển đến slide {number}"
   },
   "Introduction": {
     "title": "Chắp cánh ước mơ du học cùng HCM-MIRAI",
@@ -54,9 +60,9 @@
   "Stats": {
     "students": "Học viên",
     "schools": "Trường liên kết",
-    "visa": "Tỉ lệ đậu visa",
-    "experience": "Kinh nghiệm",
-    "years": "năm"
+    "visa": "Tỷ lệ Visa",
+    "years": "Năm",
+    "experience": "Kinh nghiệm"
   },
   "Orders": {
     "title": "ĐƠN HÀNG XUẤT KHẨU LAO ĐỘNG",
@@ -138,7 +144,15 @@
       "connect": "KẾT NỐI HCM-MIRAI",
       "support": "TRUNG TÂM HỖ TRỢ",
       "legal": "THÔNG TIN PHÁP LÝ"
-    }
+    },
+    "info": {
+      "title": "Thông tin liên hệ",
+      "address": "Địa chỉ",
+      "phone": "Điện thoại",
+      "email": "Email"
+    },
+    "copyright": "© {year} HCM-MIRAI. ALL RIGHTS RESERVED.",
+    "designed_by": "Designed by HCM-MIRAI Team"
   },
   "About": {
     "hero": {
@@ -267,7 +281,9 @@
       "title_start": "Học tập",
       "title_highlight": "Chuyên sâu",
       "title_end": "Chuẩn quốc tế",
-      "desc": "Chúng tôi tạo ra môi trường học tập không áp lực, kích thích tư duy và sự sáng tạo của từng học viên. Tại HCM-MIRAI, mỗi giờ học là một trải nghiệm văn hóa thú vị."
+      "desc": "Chúng tôi tạo ra môi trường học tập không áp lực, kích thích tư duy và sự sáng tạo của từng học viên. Tại HCM-MIRAI, mỗi giờ học là một trải nghiệm văn hóa thú vị.",
+      "quote": "Ngôn ngữ là tấm bản đồ của một nền văn hoá.",
+      "edu_brand": "GIÁO DỤC HCM-MIRAI"
     }
   },
   "LaborDomestic": {
@@ -329,7 +345,25 @@
     "intro": {
       "title": "Cập nhật tin tức mới nhất từ HCM-MIRAI",
       "desc": "Nơi chia sẻ những thông tin tuyển sinh, hoạt động ngoại khóa và thành công của các học viên."
+    },
+    "grid": {
+      "latest_update": "Cập nhật mới nhất",
+      "read_more": "Đọc thêm",
+      "load_more": "Xem thêm tin tức",
+      "categories": {
+        "all": "Tất cả",
+        "news": "Tin tức",
+        "event": "Sự kiện",
+        "admission": "Tuyển sinh"
+      }
     }
+  },
+  "Validation": {
+    "name_min": "Họ tên phải có ít nhất 2 ký tự",
+    "phone_invalid": "Số điện thoại không hợp lệ (10-11 chữ số)",
+    "email_invalid": "Email không hợp lệ",
+    "note_min": "Nội dung phải có ít nhất 5 ký tự",
+    "required": "Trường này là bắt buộc"
   },
   "Consultation": {
     "title": "Tư vấn miễn phí - Dành riêng cho bạn!",
@@ -393,7 +427,8 @@
   "HomePartners": {
     "title": "Đối tác chiến lược",
     "subtitle": "Hợp tác vươn xa",
-    "description": "Chúng tôi tự hào là đối tác của hơn 200 trường đại học và tổ chức giáo dục uy tín trên toàn thế giới."
+    "description": "Chúng tôi tự hào là đối tác của hơn 200 trường đại học và tổ chức giáo dục uy tín trên toàn thế giới.",
+    "partner_name": "Trường Đại học {number}"
   },
   "HomeHighlights": {
     "title": "Chọn Trường Phù Hợp Cho Hành Trình Du Học",
@@ -461,7 +496,24 @@
     "view_all": "Xem tất cả bài viết",
     "view_details": "Xem chi tiết",
     "author_admin": "Admin",
-    "author_consultant": "Tư vấn viên"
+    "author_consultant": "Tư vấn viên",
+    "items": {
+      "item_1": {
+        "title": "Tuyển sinh kỳ tháng 4 và tháng 12 năm 2026 tại Hàn Quốc",
+        "category": "Tin tuyển sinh",
+        "excerpt": "Thông báo tuyển sinh du học Hàn Quốc các hệ D4-1, D2-1... với nhiều ưu đãi hấp dẫn."
+      },
+      "item_2": {
+        "title": "Kinh nghiệm phỏng vấn visa du học Nhật Bản tỉ lệ đậu cao",
+        "category": "Cẩm nang du học",
+        "excerpt": "Chia sẻ những bí quyết quan trọng giúp bạn tự tin trong buổi phỏng vấn cùng Lãnh sự quán."
+      },
+      "item_3": {
+        "title": "Chương trình học bổng toàn phần chính phủ Trung Quốc năm 2026",
+        "category": "Học bổng",
+        "excerpt": "Cơ hội nhận học bổng 100% học phí và sinh hoạt phí từ các trường đại học hàng đầu Trung Quốc."
+      }
+    }
   },
   "Search": {
     "title": "KẾT QUẢ TÌM KIẾM",
