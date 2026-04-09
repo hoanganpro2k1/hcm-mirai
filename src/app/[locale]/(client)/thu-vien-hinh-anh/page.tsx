@@ -1,9 +1,10 @@
-import GalleryHero from "@/components/features/gallery/GalleryHero";
+import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import CenterImages from "@/components/features/gallery/CenterImages";
 import CenterVideos from "@/components/features/gallery/CenterVideos";
 import ConsultationForm from "@/components/features/home/ConsultationForm";
 import PartnerMarquee from "@/components/features/home/PartnerMarquee";
 import { Metadata } from "next";
+import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
   title: "Thư viện hình ảnh | HCM-MIRAI",
@@ -11,10 +12,19 @@ export const metadata: Metadata = {
 };
 
 export default function GalleryPage() {
+  const tGallery = useTranslations("Gallery.hero");
+  const tHeader = useTranslations("Header");
+
+  const breadcrumbItems = [
+    { label: tHeader("nav.about_mirai").replace("Về HCM-MIRAI", "Trang chủ"), href: "/" },
+    { label: tGallery("title") },
+  ];
+
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <GalleryHero />
+      <div className="container mx-auto px-6 py-4">
+        <PageBreadcrumbs items={breadcrumbItems} />
+      </div>
 
       {/* Center Images Section (3x3 Grid) */}
       <CenterImages />

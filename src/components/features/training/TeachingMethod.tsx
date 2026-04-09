@@ -1,7 +1,7 @@
 "use client";
 
+import { Award, BookText, Laptop, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Users, Globe, BookText, Laptop, MapPin, Award } from "lucide-react";
 
 export default function TeachingMethod() {
   const t = useTranslations("Training.features");
@@ -30,7 +30,7 @@ export default function TeachingMethod() {
       title: t("support"),
       desc: "Đội ngũ trợ giảng hỗ trợ ôn tập ngoài giờ học, giải đáp thắc mắc 24/7.",
       color: "bg-green-50",
-    }
+    },
   ];
 
   return (
@@ -43,54 +43,61 @@ export default function TeachingMethod() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left: Content Header */}
           <div className="max-w-xl animate-in fade-in slide-in-from-left-12 duration-1000">
-             <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-2 text-primary font-bold text-sm tracking-[0.2em] uppercase opacity-70">
-                   <div className="w-8 h-[2px] bg-primary" />
-                   <span>Phương pháp & Môi trường</span>
-                </div>
-                <h2 className="text-4xl md:text-6xl font-black text-[#1E293B] dark:text-white uppercase tracking-tighter leading-none">
-                   Học tập <span className="text-red-600 italic">Chuyên sâu</span> Chuẩn quốc tế
-                </h2>
-             </div>
-             <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-10 italic">
-                Chúng tôi tạo ra môi trường học tập không áp lực, kích thích tư duy và sự sáng tạo của từng học viên. Tại HCM-MIRAI, mỗi giờ học là một trải nghiệm văn hóa thú vị.
-             </p>
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-2 text-primary font-bold text-sm tracking-[0.2em] uppercase opacity-70">
+                <div className="w-8 h-[2px] bg-primary" />
+                <span>Phương pháp & Môi trường</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-[#1E293B] dark:text-white uppercase tracking-tighter leading-tight">
+                Học tập <span className="text-red-600">Chuyên sâu</span> Chuẩn
+                quốc tế
+              </h2>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-10 italic">
+              Chúng tôi tạo ra môi trường học tập không áp lực, kích thích tư
+              duy và sự sáng tạo của từng học viên. Tại HCM-MIRAI, mỗi giờ học
+              là một trải nghiệm văn hóa thú vị.
+            </p>
 
-             {/* Illustration or Image Stack */}
-             <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-square bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden relative group">
-                   <img 
-                    src="https://picsum.photos/id/1/600/600" 
-                    alt="Classroom" 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
-                  />
-                </div>
-                <div className="aspect-square bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden relative group mt-8">
-                   <img 
-                    src="https://picsum.photos/id/2/600/600" 
-                    alt="Reading" 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
-                  />
-                </div>
-             </div>
+            {/* Illustration or Image Stack */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="aspect-square bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden relative group">
+                <img
+                  src="https://picsum.photos/id/1/600/600"
+                  alt="Classroom"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+              <div className="aspect-square bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden relative group mt-8">
+                <img
+                  src="https://picsum.photos/id/2/600/600"
+                  alt="Reading"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Right: Feature Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 animate-in fade-in slide-in-from-right-12 duration-1000">
-             {methods.map((method, idx) => (
-                <div 
-                  key={idx}
-                  className={`p-8 rounded-[2.5rem] bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group`}
+            {methods.map((method, idx) => (
+              <div
+                key={idx}
+                className={`p-8 rounded-[2.5rem] bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group`}
+              >
+                <div
+                  className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm`}
                 >
-                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm`}>
-                      {method.icon}
-                   </div>
-                   <h3 className="text-xl font-black text-[#1E293B] dark:text-white uppercase tracking-tight mb-4">{method.title}</h3>
-                   <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base leading-relaxed">
-                      {method.desc}
-                   </p>
+                  {method.icon}
                 </div>
-             ))}
+                <h3 className="text-xl font-black text-[#1E293B] dark:text-white uppercase tracking-tight mb-4">
+                  {method.title}
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base leading-relaxed">
+                  {method.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -52,7 +52,7 @@ export default function ConsultationForm() {
   }
 
   return (
-    <section className="py-20 bg-blue-50/50 dark:bg-gray-900 overflow-hidden relative transition-colors">
+    <section id="consultation-form" className="py-20 bg-blue-50/50 dark:bg-gray-900 overflow-hidden relative transition-colors">
       <div className="container mx-auto px-6">
         <div className="bg-white dark:bg-gray-800 rounded-[2.5rem] shadow-2xl overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col lg:flex-row relative z-10">
           {/* Left: Form Content */}

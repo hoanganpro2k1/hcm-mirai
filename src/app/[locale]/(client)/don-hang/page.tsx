@@ -1,5 +1,6 @@
 "use client";
 
+import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import { OrderCard } from "@/components/features/order/order-card";
 import { OrderCardSkeleton } from "@/components/features/order/order-card-skeleton";
 import { OrderFilter } from "@/components/features/order/order-filter";
@@ -12,6 +13,7 @@ import { useState } from "react";
 
 export default function OrderPage() {
   const t = useTranslations("Orders");
+  const tHeader = useTranslations("Header");
 
   const {
     orders,
@@ -38,9 +40,18 @@ export default function OrderPage() {
     updateParams({ ...localFilters, page: 1 });
   };
 
+  const breadcrumbItems = [
+    {
+      label: tHeader("nav.about_mirai").replace("Về HCM-MIRAI", "Trang chủ"),
+      href: "/",
+    },
+    { label: tHeader("nav.donhang") },
+  ];
+
   return (
     <div className="py-12 bg-gray-50/50 dark:bg-black transition-colors min-h-screen">
       <div className="container mx-auto px-6 max-w-7xl">
+        <PageBreadcrumbs items={breadcrumbItems} className="mb-8" />
         <SectionHeader title={t("title")} align="center" className="mb-12" />
 
         <OrderFilter

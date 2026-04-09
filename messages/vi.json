@@ -309,12 +309,24 @@
       "labor": "XKLĐ"
     },
     "items": {
-      "program_1": { "title": "Du học Hàn Quốc hệ D2-1 (Cao đẳng mẫu mực)" },
-      "program_2": { "title": "Du học Hàn Quốc hệ D4-1 (Visa tiếng Hàn)" },
-      "program_3": { "title": "Du học Nhật Bản hệ tự túc (Kỳ tháng 10)" },
-      "program_4": { "title": "Học bổng báo Nhật Bản 2026" },
-      "program_5": { "title": "Đơn hàng cơ khí Nhật Bản (Lương cao)" },
-      "program_6": { "title": "Du học Úc diện đào tạo nghề (Subclass 407)" }
+      "program_1": {
+        "title": "Du học Hàn Quốc hệ D2-1 (Cao đẳng mẫu mực)"
+      },
+      "program_2": {
+        "title": "Du học Hàn Quốc hệ D4-1 (Visa tiếng Hàn)"
+      },
+      "program_3": {
+        "title": "Du học Nhật Bản hệ tự túc (Kỳ tháng 10)"
+      },
+      "program_4": {
+        "title": "Học bổng báo Nhật Bản 2026"
+      },
+      "program_5": {
+        "title": "Đơn hàng cơ khí Nhật Bản (Lương cao)"
+      },
+      "program_6": {
+        "title": "Du học Úc diện đào tạo nghề (Subclass 407)"
+      }
     },
     "view_all": "Xem tất cả chương trình",
     "view_details": "Xem chi tiết",
@@ -415,6 +427,115 @@
     "pagination": {
       "previous": "Trang trước",
       "next": "Trang sau"
+    }
+  },
+  "Services": {
+    "hero": {
+      "overview": "HCM-MIRAI OVERVIEW",
+      "description": "Hơn 10 năm kinh nghiệm trong lĩnh vực tư vấn du học, HCM-Mirai tự hào mang đến cho bạn lộ trình học tập tối ưu, tiết kiệm chi phí và cơ hội nhận được nhiều học bổng từ các trường Đại học danh tiếng tại Hàn Quốc & Nhật Bản.",
+      "cta": "Nhận Tư Vấn Ngay",
+      "title1": "CÁC DỊCH VỤ VÀ ƯU ĐÃI",
+      "title2": "CỦA HCM-MIRAI"
+    },
+    "studyAbroad": {
+      "title": "Dịch vụ tư vấn du học",
+      "d41": {
+        "title": "Chương trình Du học Hàn Quốc tự túc (Visa D4-1)",
+        "desc": "Thích hợp cho học sinh, sinh viên có nhu cầu sang Hàn Quốc học tiếng và trải nghiệm văn hóa trước khi học chuyên ngành."
+      },
+      "d26": {
+        "title": "Du học trao đổi 1 năm (Visa D2-6)",
+        "desc": "Cơ hội học tập và trải nghiệm 1 năm tại các trường đại học uy tín của Hàn Quốc thông qua chương trình trao đổi sinh viên."
+      },
+      "d2": {
+        "title": "Du học hệ Cao đẳng, Đại học (Visa D2)",
+        "desc": "Dành cho học sinh đã tốt nghiệp THPT hoặc sinh viên muốn học chuyên ngành tại các trường đại học, cao đẳng Hàn Quốc."
+      },
+      "d24": {
+        "title": "Du học Cao Học đăng ký tự túc (Visa D2-4)",
+        "desc": "Chương trình đào tạo chuyên sâu dành cho những bạn đã tốt nghiệp Đại học mong muốn tiếp tục học lên Thạc sĩ."
+      },
+      "phd": {
+        "title": "Du học Thạc sỹ - Tiến sỹ",
+        "desc": "Hỗ trợ chuẩn bị hồ sơ xin học bổng và nhập học vào các viện nghiên cứu, trường đại học hàng đầu Hàn Quốc."
+      }
+    },
+    "languageTraining": {
+      "title": "Đào tạo Tiếng Hàn",
+      "teachers": {
+        "title": "Đội ngũ giáo viên",
+        "desc": "Đội ngũ giáo viên bản ngữ và Việt Nam giàu kinh nghiệm, tâm huyết, chuyên môn cao trong giảng dạy tiếng Hàn."
+      },
+      "facilities": {
+        "title": "Cơ sở vật chất",
+        "desc": "Trang bị đầy đủ các thiết bị giảng dạy hiện đại, không gian lớp học thoải mái, hỗ trợ tối đa việc tiếp thu kiến thức."
+      },
+      "comm": {
+        "title": "Khoá Đào tạo Tiếng Hàn Giao Tiếp",
+        "desc": "Tập trung phát triển kỹ năng nghe - nói, rèn luyện phản xạ giao tiếp tự nhiên với người bản xứ."
+      },
+      "mid": {
+        "title": "Khóa tiếng Hàn trung cấp",
+        "desc": "Giúp học viên nắm vững ngữ pháp, từ vựng chuyên sâu để chuẩn bị cho các kỳ thi năng lực hoặc du học."
+      },
+      "topik": {
+        "title": "Đào tạo Topik - KLT",
+        "desc": "Luyện thi chứng chỉ TOPIK, EPS-TOPIK với giáo trình bám sát đề thi thực tế, đảm bảo đầu ra."
+      },
+      "topikAdv": {
+        "title": "Khóa TOPIK nâng cao",
+        "desc": "Khoá học đặc biệt dành cho sinh viên muốn đạt TOPIK 4-6 trong thời gian ngắn để xin học bổng Đại học."
+      }
+    },
+    "studentSupport": {
+      "title": "Hỗ trợ học sinh du học",
+      "prep": {
+        "title": "Chuẩn bị hành trang",
+        "desc": "Hướng dẫn chi tiết những vật dụng cần thiết, cách đóng gói đồ đạc cũng như văn hóa lối sống cần lưu ý khi sang nước ngoài."
+      },
+      "dorm": {
+        "title": "Ký túc xá",
+        "desc": "Hỗ trợ sinh viên đăng ký ký túc xá của trường với chi phí hợp lý, đảm bảo an ninh và thuận tiện cho việc học."
+      },
+      "airport": {
+        "title": "Đưa đón Sân Bay",
+        "desc": "Dịch vụ đưa đón tận nơi khi bắt đầu xuất cảnh và hỗ trợ đón tại sân bay nước đến để sinh viên không bị bỡ ngỡ."
+      },
+      "legal": {
+        "title": "Hỗ trợ thủ tục pháp lý",
+        "desc": "Đồng hành làm thẻ ngoại kiều (Alien Registration Card), mở tài khoản ngân hàng và các thủ tục cần thiết khác."
+      },
+      "job": {
+        "title": "Tìm việc làm thêm",
+        "desc": "Kết nối, giới thiệu các công việc part-time phù hợp năng lực tiếng nhằm tăng thu nhập và kinh nghiệm thực tế."
+      },
+      "rent": {
+        "title": "Nhà Trọ",
+        "desc": "Giới thiệu các phòng trọ (Goshiwon, One-room) gần trường, an ninh tốt dành cho những sinh viên không ở Ký túc xá."
+      }
+    },
+    "whyChooseUs": {
+      "label": "ĐIỂM NỔI BẬT",
+      "title": "Tại sao nên lựa chọn HCM-Mirai trên hành trình du học của bạn?",
+      "reason1": {
+        "title": "Tư vấn lộ trình học tập tối ưu",
+        "desc": "Giúp bạn lựa chọn trường và chuyên ngành phù hợp với năng lực, tài chính và định hướng tương lai."
+      },
+      "reason2": {
+        "title": "Tỷ lệ đậu Visa cao",
+        "desc": "Hỗ trợ chuẩn bị hồ sơ 100%, luyện phỏng vấn kỹ lưỡng, tỷ lệ đỗ visa lên đến 99%."
+      },
+      "reason3": {
+        "title": "Hỗ trợ toàn diện và xuyên suốt",
+        "desc": "Đồng hành cùng học sinh từ khi làm hồ sơ đến khi sang Hàn Quốc và khi tốt nghiệp."
+      },
+      "reason4": {
+        "title": "Chi phí minh bạch, tiết kiệm",
+        "desc": "Cam kết không phát sinh chi phí ngầm, luôn tối ưu hóa mọi khoản để tiết kiệm nhất cho gia đình."
+      }
+    },
+    "common": {
+      "seeMore": "Xem Thêm"
     }
   }
 }

@@ -8,6 +8,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function CourseList() {
   const t = useTranslations("Training");
@@ -56,7 +57,8 @@ export default function CourseList() {
             >
               {/* Banner Image */}
               <div className="relative h-48 md:h-64 overflow-hidden">
-                <img
+                <Image
+                  fill
                   src={course.image}
                   alt={course.title}
                   className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"

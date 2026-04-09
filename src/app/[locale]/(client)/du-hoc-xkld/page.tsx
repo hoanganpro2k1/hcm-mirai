@@ -1,8 +1,7 @@
-import PageHero from "@/components/common/PageHero";
+import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import StudyProgramGrid from "@/components/features/study/StudyProgramGrid";
 import ConsultationForm from "@/components/features/home/ConsultationForm";
 import PartnerMarquee from "@/components/features/home/PartnerMarquee";
-import { GraduationCap } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Metadata } from "next";
 
@@ -14,14 +13,16 @@ export const metadata: Metadata = {
 export default function StudyAbroadPage() {
   const t = useTranslations("StudyAbroad.hero");
 
+  const breadcrumbItems = [
+    { label: t("breadcrumb"), href: "/" },
+    { label: t("title") },
+  ];
+
   return (
     <main className="min-h-screen">
-      <PageHero 
-        title={t("title")}
-        breadcrumb={t("breadcrumb")}
-        backgroundImage="https://picsum.photos/id/113/1920/1080"
-        icon={<GraduationCap className="w-8 h-8 text-white" />}
-      />
+      <div className="container mx-auto px-6 py-4">
+        <PageBreadcrumbs items={breadcrumbItems} />
+      </div>
 
       <StudyProgramGrid />
 

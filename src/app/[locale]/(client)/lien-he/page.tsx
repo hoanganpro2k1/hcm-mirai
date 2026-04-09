@@ -1,14 +1,24 @@
+import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import { ContactForm } from "@/components/features/contact/ContactForm";
-import { ContactHero } from "@/components/features/contact/ContactHero";
 import { ContactInfo } from "@/components/features/contact/ContactInfo";
+import { useTranslations } from "next-intl";
 
 const MAP_URL =
   "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d581.3002592414904!2d105.6706893!3d18.6920496!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3139cf003f442797%3A0x65ad8d011faa48b9!2zVHJ1bmcgdMOibSBuaOG6rXQgbmfhu68gSENNIE1pcmFp!5e1!3m2!1svi!2s!4v1775444016155!5m2!1svi!2s";
 
 export default function ContactPage() {
+  const tHeader = useTranslations("Header");
+
+  const breadcrumbItems = [
+    { label: tHeader("nav.about_mirai").replace("Về HCM-MIRAI", "Trang chủ"), href: "/" },
+    { label: tHeader("nav.lienhe") },
+  ];
+
   return (
     <main className="w-full bg-white dark:bg-gray-950 font-sans">
-      <ContactHero />
+      <div className="container mx-auto px-6 py-4">
+        <PageBreadcrumbs items={breadcrumbItems} />
+      </div>
 
       <section className="py-20">
         <div className="container mx-auto px-6">

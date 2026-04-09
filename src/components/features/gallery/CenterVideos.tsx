@@ -12,37 +12,37 @@ export default function CenterVideos() {
     {
       id: 1,
       src: "https://picsum.photos/id/101/1200/800",
-      title: "GẦN 20 NĂM VỮNG BƯỚC K-EDU KHÔNG NGỪNG VƯƠN XA",
+      title: "GẦN 20 NĂM VỮNG BƯỚC HCM-MIRAI KHÔNG NGỪNG VƯƠN XA",
       duration: "05:12",
     },
     {
       id: 2,
       src: "https://picsum.photos/id/102/1200/800",
-      title: "DU HỌC THẠC SĨ CÙNG K-EDU - BƯỚC TIẾN LỚN CHO SỰ NGHIỆP",
+      title: "DU HỌC THẠC SĨ CÙNG HCM-MIRAI - BƯỚC TIẾN LỚN CHO SỰ NGHIỆP",
       duration: "04:30",
     },
     {
       id: 3,
       src: "https://picsum.photos/id/103/1200/800",
-      title: "KHÔNG LO HỌC PHÍ NHẬP HỌC 0 ĐỒNG TẠI K-EDU",
+      title: "KHÔNG LO HỌC PHÍ NHẬP HỌC 0 ĐỒNG TẠI HCM-MIRAI",
       duration: "03:45",
     },
     {
       id: 4,
       src: "https://picsum.photos/id/104/1200/800",
-      title: "KHÔNG NGHĨ SẼ KHÓC - NHƯNG NƯỚC MẮT VẪN RƠI | K-EDU",
+      title: "KHÔNG NGHĨ SẼ KHÓC - NHƯNG NƯỚC MẮT VẪN RƠI | HCM-MIRAI",
       duration: "06:20",
     },
     {
       id: 5,
       src: "https://picsum.photos/id/107/1200/800",
-      title: "GIÂY PHÚT CHIA XA KHI CON LÊN ĐƯỜNG DU HỌC | K-EDU",
+      title: "GIÂY PHÚT CHIA XA KHI CON LÊN ĐƯỜNG DU HỌC | HCM-MIRAI",
       duration: "04:15",
     },
     {
       id: 6,
       src: "https://picsum.photos/id/106/1200/800",
-      title: "HỌC VIÊN K-EDU MÁCH NHỎ - BÍ KÍP XIN VISA CỰC DỄ",
+      title: "HỌC VIÊN HCM-MIRAI MÁCH NHỎ - BÍ KÍP XIN VISA CỰC DỄ",
       duration: "03:10",
     },
   ];

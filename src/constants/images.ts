@@ -27,4 +27,13 @@ export const IMAGES = {
       gallery7: "/assets/pages/home/gallery-7.jpg",
     },
   },
+  SERVICES: {
+    HERO: {
+      hero: "/assets/pages/services/hero.jpg",
+      pageHero: "/assets/pages/services/page-hero.jpg",
+    },
+    WHY_CHOOSE_US: {
+      whyChooseUs: "/assets/pages/services/why-choose-us.jpg",
+    },
+  },
 };
