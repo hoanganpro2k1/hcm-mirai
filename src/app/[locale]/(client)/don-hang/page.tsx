@@ -42,7 +42,7 @@ export default function OrderPage() {
 
   const breadcrumbItems = [
     {
-      label: tHeader("nav.about_mirai").replace("Về HCM-MIRAI", "Trang chủ"),
+      label: tHeader("nav.home"),
       href: "/",
     },
     { label: tHeader("nav.donhang") },

@@ -1,4 +1,13 @@
 import { SearchPageContent } from "@/components/features/search/SearchPageContent";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  return {
+    title: `${t("Search.title", { fallback: "Tìm kiếm" })} | HCM-MIRAI`,
+  };
+}
 
 export default async function SearchPage({
   searchParams,

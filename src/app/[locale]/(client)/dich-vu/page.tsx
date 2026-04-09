@@ -13,7 +13,7 @@ export default function ServicesPage() {
   const tServices = useTranslations("Services");
 
   const breadcrumbItems = [
-    { label: tHeader("nav.about_mirai").replace("Về HCM-MIRAI", "Trang chủ"), href: "/" },
+    { label: tHeader("nav.home"), href: "/" },
     { label: tHeader("nav.services") },
   ];
 

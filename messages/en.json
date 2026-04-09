@@ -1,6 +1,7 @@
 {
   "Header": {
     "nav": {
+      "home": "Home",
       "gioithieu": "About Us",
       "daotao": "Language Training",
       "cungung": "Labor Supply",
@@ -84,6 +85,8 @@
   "Contact": {
     "title": "Contact Us",
     "subtitle": "We are always ready to listen and support you on your journey to conquer knowledge.",
+    "seo_desc": "Contact HCM-MIRAI for detailed consultation on study abroad and labor export services.",
+    "greeting": "Welcome to HCM-MIRAI!",
     "info": {
       "address": "Address",
       "phone": "Phone",

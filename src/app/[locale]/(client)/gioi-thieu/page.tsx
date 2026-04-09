@@ -6,19 +6,24 @@ import VisionMission from "@/components/features/about/VisionMission";
 import BenefitsSection from "@/components/features/about/BenefitsSection";
 import TeamSection from "@/components/features/about/TeamSection";
 import CenterMedia from "@/components/features/about/CenterMedia";
-import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 
-export const metadata: Metadata = {
-  title: "Giới thiệu về HCM-MIRAI - Chắp cánh ước mơ du học",
-  description: "Trang giới thiệu chi tiết về sứ mệnh, tầm nhìn, đội ngũ và các dịch vụ của HCM-MIRAI trong lĩnh vực du học và tư vấn giáo dục quốc tế.",
-};
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  return {
+    title: `${t("Header.nav.about_mirai")} | HCM-MIRAI`,
+    description: t("About.hero.seo_desc", { fallback: "Trang giới thiệu chi tiết về sứ mệnh, tầm nhìn, đội ngũ và các dịch vụ của HCM-MIRAI trong lĩnh vực du học và tư vấn giáo dục quốc tế." }),
+  };
+}
 
 export default function GioiThieuPage() {
   const tHeader = useTranslations("Header");
 
   const breadcrumbItems = [
-    { label: tHeader("nav.about_mirai").replace("Về HCM-MIRAI", "Trang chủ"), href: "/" },
+    { label: tHeader("nav.home"), href: "/" },
     { label: tHeader("nav.about_mirai") },
   ];
 

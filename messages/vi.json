@@ -1,6 +1,7 @@
 {
   "Header": {
     "nav": {
+      "home": "Trang chủ",
       "gioithieu": "Giới thiệu",
       "daotao": "Đào tạo ngoại ngữ",
       "cungung": "Cung ứng lao động",
@@ -84,6 +85,8 @@
   "Contact": {
     "title": "Liên hệ với chúng tôi",
     "subtitle": "Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn trên hành trình chinh phục tri thức.",
+    "seo_desc": "Liên hệ với HCM-MIRAI để được tư vấn chi tiết về các dịch vụ du học và xuất khẩu lao động.",
+    "greeting": "Chào mừng bạn đến với HCM-MIRAI!",
     "info": {
       "address": "Địa chỉ",
       "phone": "Điện thoại",
