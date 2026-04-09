@@ -8,6 +8,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { SectionHeader } from "@/components/ui/section-header";
+import { IMAGES } from "@/constants/images";
 import { ArrowLeft, ArrowRight, Quote, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -16,19 +17,19 @@ import { useState } from "react";
 const testimonialData = [
   {
     id: 1,
-    image: "https://picsum.photos/600/800?student1",
+    image: IMAGES.HOME.TESTIMONIALS.testimonial1,
     rating: 5,
     key: "t1",
   },
   {
     id: 2,
-    image: "https://picsum.photos/600/800?student2",
+    image: IMAGES.HOME.TESTIMONIALS.testimonial2,
     rating: 5,
     key: "t2",
   },
   {
     id: 3,
-    image: "https://picsum.photos/600/800?student3",
+    image: IMAGES.HOME.TESTIMONIALS.testimonial3,
     rating: 5,
     key: "t3",
   },

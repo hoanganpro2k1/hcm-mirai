@@ -4,21 +4,23 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { SectionHeader } from "@/components/ui/section-header";
+import { IMAGES } from "@/constants/images";
+import { useConsultationMutations } from "@/hooks/use-consultation-mutations";
+import {
+  consultationSchema,
+  type ConsultationFormValues as FormValues,
+} from "@/schemas/consultation.schema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useForm, Controller } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { Loader2, Send } from "lucide-react";
-import { useConsultationMutations } from "@/hooks/use-consultation-mutations";
-import { 
-  consultationSchema, 
-  type ConsultationFormValues as FormValues 
-} from "@/schemas/consultation.schema";
 
 export default function ConsultationForm() {
   const t = useTranslations("Consultation");
-  const { submitConsultation, isSubmitting: isLoading } = useConsultationMutations();
+  const { submitConsultation, isSubmitting: isLoading } =
+    useConsultationMutations();
 
   const {
     register,
@@ -39,7 +41,10 @@ export default function ConsultationForm() {
   async function onSubmit(values: FormValues) {
     try {
       await submitConsultation(values);
-      toast.success(t("success_message") || "Gửi yêu cầu thành công! Chúng tôi sẽ liên hệ sớm nhất.");
+      toast.success(
+        t("success_message") ||
+          "Gửi yêu cầu thành công! Chúng tôi sẽ liên hệ sớm nhất.",
+      );
       reset();
     } catch {
       // Error handled by hook
@@ -62,7 +67,8 @@ export default function ConsultationForm() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="fullname">
-                    {t("name_label")} <span className="text-destructive">*</span>
+                    {t("name_label")}{" "}
+                    <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="fullname"
@@ -70,11 +76,16 @@ export default function ConsultationForm() {
                     className="rounded-xl h-12"
                     {...register("name")}
                   />
-                  {errors.name && <p className="text-xs text-red-500">{errors.name.message}</p>}
+                  {errors.name && (
+                    <p className="text-xs text-red-500">
+                      {errors.name.message}
+                    </p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">
-                    {t("phone_label")} <span className="text-destructive">*</span>
+                    {t("phone_label")}{" "}
+                    <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="phone"
@@ -82,7 +93,11 @@ export default function ConsultationForm() {
                     className="rounded-xl h-12"
                     {...register("phone")}
                   />
-                  {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
+                  {errors.phone && (
+                    <p className="text-xs text-red-500">
+                      {errors.phone.message}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -95,13 +110,13 @@ export default function ConsultationForm() {
                   className="rounded-xl h-12"
                   {...register("email")}
                 />
-                {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
+                {errors.email && (
+                  <p className="text-xs text-red-500">{errors.email.message}</p>
+                )}
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">
-                  {t("interest_label")}
-                </Label>
+                <Label htmlFor="message">{t("interest_label")}</Label>
                 <Controller
                   name="note"
                   control={control}
@@ -114,11 +129,13 @@ export default function ConsultationForm() {
                     />
                   )}
                 />
-                {errors.note && <p className="text-xs text-red-500">{errors.note.message}</p>}
+                {errors.note && (
+                  <p className="text-xs text-red-500">{errors.note.message}</p>
+                )}
               </div>
 
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isLoading}
                 className="w-full h-14 rounded-xl text-lg font-bold uppercase tracking-wider bg-accent hover:bg-accent/90 shadow-lg shadow-accent/20 flex gap-2"
               >
@@ -145,7 +162,7 @@ export default function ConsultationForm() {
           <div className="hidden lg:block lg:w-[40%] bg-blue-100 dark:bg-blue-900/20 relative overflow-hidden">
             <div className="absolute inset-0 bg-linear-to-t from-blue-100/50 dark:from-blue-950/20 to-transparent z-10" />
             <Image
-              src="https://picsum.photos/600/900?young-woman"
+              src={IMAGES.HOME.CONSULTATION.consultation}
               alt={t("image_alt")}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"

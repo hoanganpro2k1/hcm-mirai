@@ -1,31 +1,32 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/section-header";
+import { IMAGES } from "@/constants/images";
+import { Link } from "@/i18n/routing";
 import { Play, ZoomIn } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 import Image from "next/image";
 
 const photos = [
-  { id: 1, src: "https://picsum.photos/400/600?gallery1", size: "row-span-2" },
-  { id: 2, src: "https://picsum.photos/600/400?gallery2", size: "col-span-2" },
-  { id: 3, src: "https://picsum.photos/400/300?gallery3", size: "" },
-  { id: 4, src: "https://picsum.photos/400/300?gallery4", size: "" },
-  { id: 5, src: "https://picsum.photos/600/400?gallery5", size: "col-span-2" },
+  { id: 1, src: IMAGES.HOME.GALLERY.gallery2, size: "row-span-2" },
+  { id: 2, src: IMAGES.HOME.GALLERY.gallery1, size: "col-span-2" },
+  { id: 3, src: IMAGES.HOME.GALLERY.gallery5, size: "" },
+  { id: 4, src: IMAGES.HOME.GALLERY.gallery4, size: "" },
+  { id: 5, src: IMAGES.HOME.GALLERY.gallery3, size: "col-span-2" },
 ];
 
 const videos = [
   {
     id: 1,
     titleKey: "v1",
-    thumbnail: "https://picsum.photos/600/340?video1",
-    duration: "03:45",
+    thumbnail: IMAGES.HOME.GALLERY.gallery6,
+    duration: "00:23",
   },
   {
     id: 2,
     titleKey: "v2",
-    thumbnail: "https://picsum.photos/600/340?video2",
-    duration: "12:20",
+    thumbnail: IMAGES.HOME.GALLERY.gallery7,
+    duration: "00:42",
   },
 ];
 
@@ -107,7 +108,7 @@ export default function GallerySection() {
               ))}
             </div>
 
-            <Link 
+            <Link
               href="/thu-vien-hinh-anh"
               className="w-full py-4 text-center block rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 font-bold hover:border-primary hover:text-primary transition-all"
             >

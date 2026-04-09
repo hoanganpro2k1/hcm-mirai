@@ -1,6 +1,7 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/section-header";
+import { IMAGES } from "@/constants/images";
 import { Link } from "@/i18n/routing";
 import { Briefcase, FileText, GraduationCap, Landmark } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -58,7 +59,7 @@ export default function Introduction() {
             {/* Main Image */}
             <div className="relative rounded-3xl overflow-hidden border-8 border-gray-100 dark:border-gray-900 shadow-2xl z-10 aspect-4/3">
               <Image
-                src="https://picsum.photos/800/600?education"
+                src={IMAGES.HOME.INTRODUCTION.home1}
                 alt="HCM-MIRAI Building"
                 fill
                 loading="eager"
