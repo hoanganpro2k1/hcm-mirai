@@ -3,6 +3,7 @@
 import { ConsultationModal } from "@/components/features/consultation/ConsultationModal";
 import SearchTrigger from "@/components/features/search/SearchTrigger";
 import { Button } from "@/components/ui/button";
+import { useSettings } from "@/hooks/use-settings";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -12,10 +13,14 @@ import { ModeToggle } from "./mode-toggle";
 
 export function Header() {
   const t = useTranslations("Header");
+  const { data: settings, isLoading } = useSettings();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const locale = useLocale();
+  const locale = useLocale() as "vi" | "en";
+
+  // Dynamic topbar text from settings, fallback to i18n
+  const topbarText = settings?.topbar_text?.[locale] || t("topbar.tuyensinh");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -66,7 +71,7 @@ export function Header() {
           href="/don-hang"
           className="hidden uppercase md:block font-medium hover:text-white/80 transition-colors hover:underline"
         >
-          {t("topbar.tuyensinh")}
+          {isLoading ? "Đang tải..." : topbarText}
         </Link>
         <div className="flex items-center gap-1 font-semibold">
           <button
