@@ -56,10 +56,10 @@ export function Footer() {
                   className="flex gap-3 group hover:bg-white/5 p-2 -m-2 rounded-xl transition-all"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors">
-                    <MapPin className="w-5 h-5 text-white/70" />
+                    <MapPin className="w-5 h-5 text-white/80" />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs font-black uppercase tracking-widest text-white/70">
+                    <p className="text-xs font-black uppercase tracking-widest text-white/90">
                       {t("info.address")}
                     </p>
                     <p className="text-sm font-medium leading-relaxed">
@@ -73,10 +73,10 @@ export function Footer() {
                   className="flex gap-3 group hover:bg-white/5 p-2 -m-2 rounded-xl transition-all"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors">
-                    <Phone className="w-5 h-5 text-white/70" />
+                    <Phone className="w-5 h-5 text-white/80" />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs font-black uppercase tracking-widest text-white/70">
+                    <p className="text-xs font-black uppercase tracking-widest text-white/90">
                       {t("info.phone")}
                     </p>
                     <p className="text-sm font-bold tracking-tight">
@@ -90,13 +90,15 @@ export function Footer() {
                   className="flex gap-3 group hover:bg-white/5 p-2 -m-2 rounded-xl transition-all"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors">
-                    <Mail className="w-5 h-5 text-white/70" />
+                    <Mail className="w-5 h-5 text-white/80" />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs font-black uppercase tracking-widest text-white/70">
+                    <p className="text-xs font-black uppercase tracking-widest text-white/90">
                       {t("info.email")}
                     </p>
-                    <p className="text-sm font-medium">{tContact("email_val")}</p>
+                    <p className="text-sm font-medium">
+                      {tContact("email_val")}
+                    </p>
                   </div>
                 </Link>
               </div>
@@ -124,7 +126,7 @@ export function Footer() {
                   <li key={i}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2 group"
+                      className="text-sm text-white/80 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2 group"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-white/40 transition-colors"></span>
                       {link.label}
@@ -180,7 +182,7 @@ export function Footer() {
                   <li key={i}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2 group"
+                      className="text-sm text-white/80 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2 group"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-white/40 transition-colors"></span>
                       {link.label}
@@ -207,7 +209,7 @@ export function Footer() {
                   <li key={i}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2 group"
+                      className="text-sm text-white/80 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2 group"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-white/40 transition-colors"></span>
                       {link.label}
@@ -221,11 +223,11 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs text-white/50 font-black uppercase tracking-[0.3em]">
+          <p className="text-xs text-white font-black uppercase tracking-[0.3em]">
             {t("copyright", { year: currentYear })}
           </p>
           <div className="flex gap-8">
-            <p className="text-xs text-white/50 font-black uppercase tracking-[0.3em]">
+            <p className="text-xs text-white font-black uppercase tracking-[0.3em]">
               {t("designed_by")}
             </p>
           </div>
