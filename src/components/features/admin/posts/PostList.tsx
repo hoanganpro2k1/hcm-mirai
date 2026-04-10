@@ -21,11 +21,13 @@ import {
 } from "@/components/ui/table";
 import { usePostMutations } from "@/hooks/use-post-mutations";
 import { useAdminPosts } from "@/hooks/use-posts";
-import { Edit, Loader2, Plus, Search, Trash2, Eye } from "lucide-react";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useDebounce } from "@/hooks/use-debounce";
 import { format } from "date-fns";
+import { Edit, Eye, Loader2, Plus, Search, Trash2 } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+
 
 export const PostList = () => {
   const router = useRouter();
@@ -33,6 +35,7 @@ export const PostList = () => {
   const { deletePost, isDeleting } = usePostMutations();
 
   const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const handleDelete = async () => {
@@ -45,9 +48,8 @@ export const PostList = () => {
     }
   };
 
-
   const filteredPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+    post.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase()),
   );
 
   return (
@@ -95,7 +97,10 @@ export const PostList = () => {
               </TableRow>
             ) : filteredPosts.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="h-24 text-center text-slate-500">
+                <TableCell
+                  colSpan={6}
+                  className="h-24 text-center text-slate-500"
+                >
                   Không tìm thấy bài viết nào.
                 </TableCell>
               </TableRow>
@@ -128,35 +133,49 @@ export const PostList = () => {
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className="capitalize">
-                      {post.category === "news" ? "Tin tức" : post.category === "event" ? "Sự kiện" : "Tuyển sinh"}
+                      {post.category === "news"
+                        ? "Tin tức"
+                        : post.category === "event"
+                          ? "Sự kiện"
+                          : "Tuyển sinh"}
                     </Badge>
                   </TableCell>
                   <TableCell>
                     <Badge
-                      variant={post.status === "published" ? "default" : "secondary"}
-                      className={post.status === "published" ? "bg-emerald-500 hover:bg-emerald-600" : ""}
+                      variant={
+                        post.status === "published" ? "default" : "secondary"
+                      }
+                      className={
+                        post.status === "published"
+                          ? "bg-emerald-500 hover:bg-emerald-600"
+                          : ""
+                      }
                     >
                       {post.status === "published" ? "Đã đăng" : "Bản nháp"}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-sm text-slate-500">
-                    {post.publishedAt 
+                    {post.publishedAt
                       ? format(new Date(post.publishedAt), "dd/MM/yyyy")
                       : format(new Date(post.createdAt), "dd/MM/yyyy")}
                   </TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
-                       <Button
+                      <Button
                         variant="outline"
                         size="icon"
-                        onClick={() => window.open(`/tin-tuc/${post.slug}`, "_blank")}
+                        onClick={() =>
+                          window.open(`/vi/tin-tuc/${post.slug}`, "_blank")
+                        }
                       >
                         <Eye className="h-4 w-4 text-slate-500" />
                       </Button>
                       <Button
                         variant="outline"
                         size="icon"
-                        onClick={() => router.push(`/admin/posts/${post.id}/edit`)}
+                        onClick={() =>
+                          router.push(`/admin/posts/${post.id}/edit`)
+                        }
                       >
                         <Edit className="h-4 w-4 text-blue-500" />
                       </Button>
@@ -184,7 +203,8 @@ export const PostList = () => {
           <DialogHeader>
             <DialogTitle>Xác nhận xóa bài viết?</DialogTitle>
             <DialogDescription>
-              Hành động này không thể hoàn tác. Bài viết này sẽ bị xóa khỏi hệ thống.
+              Hành động này không thể hoàn tác. Bài viết này sẽ bị xóa khỏi hệ
+              thống.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>

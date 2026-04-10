@@ -19,9 +19,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useDebounce } from "@/hooks/use-debounce";
 import { useOrderMutations } from "@/hooks/use-order-mutations";
 import { useOrders } from "@/hooks/use-orders";
+import { COUNTRY_OPTIONS, CATEGORY_OPTIONS } from "@/constants/order.constant";
+
 import { Edit, Loader2, Plus, Search, Trash2 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 import { useRouter } from "next/navigation";
@@ -32,6 +36,7 @@ export const OrderList = () => {
   const { deleteOrder, isDeleting } = useOrderMutations();
 
   const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const handleDelete = async () => {
@@ -41,7 +46,7 @@ export const OrderList = () => {
   };
 
   const filteredOrders = orders.filter((order) =>
-    order.title.toLowerCase().includes(searchTerm.toLowerCase()),
+    order.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase()),
   );
 
   return (
@@ -69,6 +74,7 @@ export const OrderList = () => {
         <Table>
           <TableHeader>
             <TableRow>
+              <TableHead className="w-[80px]">Ảnh</TableHead>
               <TableHead className="min-w-[250px] px-6 md:sticky md:left-0 md:z-30 md:bg-white md:dark:bg-slate-900 md:border-r">
                 Tiêu đề
               </TableHead>
@@ -103,14 +109,38 @@ export const OrderList = () => {
             ) : (
               filteredOrders.map((order) => (
                 <TableRow key={order.id} className="group">
+                  <TableCell>
+                    <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-slate-100 border border-slate-200">
+                      {order.coverImage ? (
+                        <Image
+                          src={order.coverImage}
+                          alt={order.title}
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div className="flex items-center justify-center h-full text-[10px] text-slate-400 text-center px-1">
+                          No cover
+                        </div>
+                      )}
+                    </div>
+                  </TableCell>
                   <TableCell className="font-medium px-6 whitespace-normal py-3 md:sticky md:left-0 md:z-20 md:bg-white md:dark:bg-slate-900 md:border-r group-hover:bg-slate-50 dark:group-hover:bg-slate-800 transition-colors">
                     <div className="line-clamp-4" title={order.title}>
                       {order.title}
                     </div>
                   </TableCell>
-                  <TableCell>{order.country || "Chưa rõ"}</TableCell>
+                  <TableCell>
+                    {COUNTRY_OPTIONS.find((opt) => opt.value === order.country)
+                      ?.label ||
+                      order.country ||
+                      "Chưa rõ"}
+                  </TableCell>
                   <TableCell className="whitespace-normal min-w-[150px]">
-                    {order.category || "N/A"}
+                    {CATEGORY_OPTIONS.find((opt) => opt.value === order.category)
+                      ?.label ||
+                      order.category ||
+                      "N/A"}
                   </TableCell>
                   <TableCell className="whitespace-normal min-w-[200px]">
                     {order.salary || "Thỏa thuận"}

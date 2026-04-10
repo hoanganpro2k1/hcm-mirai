@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   description: "Xây đắp hiện tại - Tạo dựng tương lai!",
   icons: {
-    icon: "/logo.png",
+    icon: "/logo.ico",
   },
 };
 

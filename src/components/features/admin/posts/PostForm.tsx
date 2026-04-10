@@ -13,14 +13,26 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+
+const CATEGORY_OPTIONS = [
+  { label: "Tin tức", value: "news" },
+  { label: "Sự kiện", value: "event" },
+  { label: "Tuyển sinh", value: "admission" },
+];
+
+const STATUS_OPTIONS = [
+  { label: "Bản nháp", value: "draft" },
+  { label: "Công khai", value: "published" },
+];
+
 import { usePostMutations } from "@/hooks/use-post-mutations";
 import { slugify } from "@/lib/utils";
+import { PostFormValues, postSchema } from "@/schemas/post.schema";
 import { IPost } from "@/types/post.type";
-import { postSchema, PostFormValues } from "@/schemas/post.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, Save, ArrowLeft } from "lucide-react";
+import { ArrowLeft, Loader2, Save } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useForm, Controller } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 
 interface PostFormProps {
   initialData?: IPost | null;
@@ -113,7 +125,9 @@ export const PostForm = ({ initialData }: PostFormProps) => {
               onChange={handleTitleChange}
             />
             {errors.title && (
-              <p className="text-xs text-red-500 font-medium">{errors.title.message}</p>
+              <p className="text-xs text-red-500 font-medium">
+                {errors.title.message}
+              </p>
             )}
           </div>
 
@@ -126,7 +140,9 @@ export const PostForm = ({ initialData }: PostFormProps) => {
               onChange={(e) => setValue("slug", slugify(e.target.value))}
             />
             {errors.slug && (
-              <p className="text-xs text-red-500 font-medium">{errors.slug.message}</p>
+              <p className="text-xs text-red-500 font-medium">
+                {errors.slug.message}
+              </p>
             )}
           </div>
 
@@ -154,7 +170,9 @@ export const PostForm = ({ initialData }: PostFormProps) => {
               )}
             />
             {errors.content && (
-              <p className="text-xs text-red-500 font-medium">{errors.content.message}</p>
+              <p className="text-xs text-red-500 font-medium">
+                {errors.content.message}
+              </p>
             )}
           </div>
         </div>
@@ -183,20 +201,28 @@ export const PostForm = ({ initialData }: PostFormProps) => {
                 name="category"
                 control={control}
                 render={({ field }) => (
-                  <Select value={field.value} onValueChange={field.onChange}>
+                  <Select
+                    value={field.value}
+                    onValueChange={field.onChange}
+                    items={CATEGORY_OPTIONS}
+                  >
                     <SelectTrigger className="w-full h-10">
                       <SelectValue placeholder="Chọn danh mục" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="news">Tin tức</SelectItem>
-                      <SelectItem value="event">Sự kiện</SelectItem>
-                      <SelectItem value="admission">Tuyển sinh</SelectItem>
+                      {CATEGORY_OPTIONS.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 )}
               />
               {errors.category && (
-                <p className="text-xs text-red-500 font-medium">{errors.category.message}</p>
+                <p className="text-xs text-red-500 font-medium">
+                  {errors.category.message}
+                </p>
               )}
             </div>
 
@@ -206,19 +232,28 @@ export const PostForm = ({ initialData }: PostFormProps) => {
                 name="status"
                 control={control}
                 render={({ field }) => (
-                  <Select value={field.value} onValueChange={field.onChange}>
+                  <Select
+                    value={field.value}
+                    onValueChange={field.onChange}
+                    items={STATUS_OPTIONS}
+                  >
                     <SelectTrigger className="w-full h-10">
                       <SelectValue placeholder="Trạng thái" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="draft">Bản nháp</SelectItem>
-                      <SelectItem value="published">Công khai</SelectItem>
+                      {STATUS_OPTIONS.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 )}
               />
               {errors.status && (
-                <p className="text-xs text-red-500 font-medium">{errors.status.message}</p>
+                <p className="text-xs text-red-500 font-medium">
+                  {errors.status.message}
+                </p>
               )}
             </div>
           </div>
