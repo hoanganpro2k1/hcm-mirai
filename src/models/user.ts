@@ -1,5 +1,6 @@
 import mongoose, { Schema, Model } from "mongoose";
 import { IUser } from "@/types/auth.type";
+import "./role"; // Đảm bảo Role model đã được đăng ký
 
 const userSchema = new Schema<IUser>(
   {

@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
+import "./user"; // Đảm bảo User model đã được đăng ký cho việc populate author
 
 export interface IPostDocument extends Document {
   title: string;
