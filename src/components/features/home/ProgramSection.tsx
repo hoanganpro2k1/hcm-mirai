@@ -1,15 +1,23 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/section-header";
-import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/routing";
+import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
+import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
-const categoryIds = ["korea", "japan", "taiwan", "australia", "germany", "labor"];
+const categoryIds = [
+  "korea",
+  "japan",
+  "taiwan",
+  "australia",
+  "germany",
+  "labor",
+];
 
 const programData = [
   {
@@ -63,27 +71,23 @@ export default function ProgramSection() {
     <section className="py-20 bg-gray-50 dark:bg-gray-900/50 transition-colors">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
-          <SectionHeader
-            title={t("title")}
-            align="left"
-            className="mb-0"
-          />
+          <SectionHeader title={t("title")} align="left" className="mb-0" />
 
           {/* Tabs Navigation */}
           <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
             {categoryIds.map((id) => (
-              <button
+              <Button
                 key={id}
                 onClick={() => setActiveTab(id)}
                 className={cn(
                   "px-6 py-2.5 rounded-full text-sm font-bold transition-all border-2",
                   activeTab === id
-                    ? "bg-primary text-white border-primary shadow-lg shadow-primary/20"
+                    ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20"
                     : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-100 dark:border-gray-700 hover:border-primary/50",
                 )}
               >
                 {t(`categories.${id}`)}
-              </button>
+              </Button>
             ))}
           </div>
         </div>
@@ -105,7 +109,7 @@ export default function ProgramSection() {
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-accent text-white text-[10px] uppercase font-black px-3 py-1 rounded-full shadow-lg">
+                    <span className="bg-accent text-accent-foreground text-xs uppercase font-black px-3 py-1 rounded-full shadow-lg">
                       {t(`tags.${program.tagKey}`)}
                     </span>
                   </div>
@@ -136,7 +140,7 @@ export default function ProgramSection() {
 
         {/* View all button */}
         <div className="mt-12 text-center">
-          <Link 
+          <Link
             href="/du-hoc-xkld"
             className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all hover:text-accent group"
           >

@@ -88,7 +88,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="bg-primary py-12 md:py-16 text-white overflow-hidden relative">
+    <section className="bg-primary py-12 md:py-16 text-primary-foreground overflow-hidden relative">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
@@ -100,14 +100,14 @@ export default function StatsSection() {
               key={idx}
               className="flex flex-col items-center text-center space-y-3 group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-2 group-hover:bg-accent transition-all duration-300 transform group-hover:rotate-6">
-                <stat.icon className="w-7 h-7 text-white" />
+              <div className="w-14 h-14 rounded-2xl bg-primary-foreground/10 flex items-center justify-center mb-2 group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300 transform group-hover:rotate-6">
+                <stat.icon className="w-7 h-7" />
               </div>
               <div className="space-y-1">
-                <h3 className="text-3xl md:text-4xl font-bold text-white group-hover:text-accent transition-colors">
+                <h3 className="text-3xl md:text-4xl font-bold transition-colors">
                   <CountUp value={stat.value} />
                 </h3>
-                <p className="text-blue-100/80 font-medium uppercase tracking-wider text-xs md:text-sm">
+                <p className="opacity-80 font-medium uppercase tracking-wider text-xs md:text-sm">
                   {stat.label}
                 </p>
               </div>

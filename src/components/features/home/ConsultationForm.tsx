@@ -138,7 +138,7 @@ export default function ConsultationForm() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-14 rounded-xl text-lg font-bold uppercase tracking-wider bg-accent hover:bg-accent/90 shadow-lg shadow-accent/20 flex gap-2"
+                className="w-full h-14 rounded-xl text-lg font-bold uppercase tracking-wider bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20 flex gap-2"
               >
                 {isLoading ? (
                   <>
