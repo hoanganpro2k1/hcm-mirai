@@ -107,7 +107,7 @@ export default function Introduction() {
 
             <Link
               href="/lien-he"
-              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-primary/20 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-primary/20 flex items-center justify-center gap-2"
             >
               {t("cta")}
             </Link>

@@ -56,7 +56,7 @@ export default function SchoolHighlights() {
                   {school.tagKeys.map((tagKey) => (
                     <span
                       key={tagKey}
-                      className="bg-accent text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase italic"
+                      className="bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full uppercase italic"
                     >
                       {t(`tags.${tagKey}`)}
                     </span>
