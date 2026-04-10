@@ -447,7 +447,8 @@
   "News": {
     "hero": {
       "title": "Tin tức & Sự kiện",
-      "breadcrumb": "Trang chủ"
+      "breadcrumb": "Trang chủ",
+      "seo_desc": "Cập nhật những tin tức mới nhất về tuyển sinh và hoạt động tại HCM Mirai."
     },
     "intro": {
       "title": "Cập nhật tin tức mới nhất từ HCM Mirai",

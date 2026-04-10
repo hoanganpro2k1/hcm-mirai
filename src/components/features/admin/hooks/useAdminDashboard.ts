@@ -5,6 +5,7 @@ import {
   ClipboardList,
   KeyRound,
   LayoutDashboard,
+  Newspaper,
   Settings,
   ShieldCheck,
   Users,
@@ -22,7 +23,15 @@ export const NAV_ITEMS = [
     requiredPermission: "dashboard:view",
   },
   {
+    id: "posts",
+    icon: Newspaper,
+    label: "Tin tức & Sự kiện",
+    href: "/admin/posts",
+    requiredPermission: "posts:view",
+  },
+  {
     id: "orders",
+
     icon: BriefcaseBusiness,
     label: "Đơn hàng XKLĐ",
     href: "/admin/orders",

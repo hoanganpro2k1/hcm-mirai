@@ -447,7 +447,8 @@
   "News": {
     "hero": {
       "title": "News & Events",
-      "breadcrumb": "Home"
+      "breadcrumb": "Home",
+      "seo_desc": "Update the latest news about admissions and activities at HCM Mirai."
     },
     "intro": {
       "title": "Latest News from HCM Mirai",
