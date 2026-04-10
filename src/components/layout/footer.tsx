@@ -59,7 +59,7 @@ export function Footer() {
                     <MapPin className="w-5 h-5 text-white/70" />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40">
+                    <p className="text-xs font-black uppercase tracking-widest text-white/70">
                       {t("info.address")}
                     </p>
                     <p className="text-sm font-medium leading-relaxed">
@@ -76,7 +76,7 @@ export function Footer() {
                     <Phone className="w-5 h-5 text-white/70" />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40">
+                    <p className="text-xs font-black uppercase tracking-widest text-white/70">
                       {t("info.phone")}
                     </p>
                     <p className="text-sm font-bold tracking-tight">
@@ -93,7 +93,7 @@ export function Footer() {
                     <Mail className="w-5 h-5 text-white/70" />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40">
+                    <p className="text-xs font-black uppercase tracking-widest text-white/70">
                       {t("info.email")}
                     </p>
                     <p className="text-sm font-medium">{tContact("email_val")}</p>
@@ -221,11 +221,11 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] text-white/20 font-black uppercase tracking-[0.3em]">
+          <p className="text-xs text-white/50 font-black uppercase tracking-[0.3em]">
             {t("copyright", { year: currentYear })}
           </p>
           <div className="flex gap-8">
-            <p className="text-[10px] text-white/20 font-black uppercase tracking-[0.3em]">
+            <p className="text-xs text-white/50 font-black uppercase tracking-[0.3em]">
               {t("designed_by")}
             </p>
           </div>

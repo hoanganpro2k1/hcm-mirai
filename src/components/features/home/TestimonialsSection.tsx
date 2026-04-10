@@ -93,9 +93,9 @@ export default function TestimonialsSection() {
                     </div>
 
                     <div className="pt-6 border-t border-gray-100 dark:border-gray-800">
-                      <h4 className="text-2xl font-bold text-primary dark:text-blue-400">
+                      <h3 className="text-2xl font-bold text-primary dark:text-blue-400">
                         {t(`testimonials.${testimonial.key}.name`)}
-                      </h4>
+                      </h3>
                       <p className="text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-widest text-sm mt-1">
                         {t(`testimonials.${testimonial.key}.role`)}
                       </p>
