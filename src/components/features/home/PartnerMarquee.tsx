@@ -1,16 +1,18 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/section-header";
+import { IMAGES } from "@/constants/images";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const partners = [
-  { name: "University 1", logo: "https://picsum.photos/200/100?logo1" },
-  { name: "University 2", logo: "https://picsum.photos/200/100?logo2" },
-  { name: "University 3", logo: "https://picsum.photos/200/100?logo3" },
-  { name: "University 4", logo: "https://picsum.photos/200/100?logo4" },
-  { name: "University 5", logo: "https://picsum.photos/200/100?logo5" },
-  { name: "University 6", logo: "https://picsum.photos/200/100?logo6" },
+  { name: "University 1", logo: IMAGES.PARTNERS.partner1 },
+  { name: "University 2", logo: IMAGES.PARTNERS.partner2 },
+  { name: "University 3", logo: IMAGES.PARTNERS.partner3 },
+  { name: "University 4", logo: IMAGES.PARTNERS.partner4 },
+  { name: "University 5", logo: IMAGES.PARTNERS.partner5 },
+  { name: "University 6", logo: IMAGES.PARTNERS.partner6 },
+  { name: "University 7", logo: IMAGES.PARTNERS.partner7 },
 ];
 
 export default function PartnerMarquee() {
@@ -42,7 +44,9 @@ export default function PartnerMarquee() {
                 <div className="relative w-full h-full">
                   <Image
                     src={partner.logo}
-                    alt={t("partner_name", { number: (idx % partners.length) + 1 })}
+                    alt={t("partner_name", {
+                      number: (idx % partners.length) + 1,
+                    })}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-contain"

@@ -1,34 +1,24 @@
 "use client";
 
 import { Facebook, Linkedin } from "@/components/ui/icons";
+import { IMAGES } from "@/constants/images";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function TeamSection() {
   const t = useTranslations("About.team");
 
-  const team = [
-    {
-      name: "ThS. Nguyễn Văn A",
-      role: "Giám đốc Trung tâm",
-      image: "https://picsum.photos/id/64/800/800",
-    },
-    {
-      name: "Trần Thị B",
-      role: "Trưởng phòng Đào tạo",
-      image: "https://picsum.photos/id/65/800/800",
-    },
-    {
-      name: "Lê Văn C",
-      role: "Cố vấn cấp cao",
-      image: "https://picsum.photos/id/91/800/800",
-    },
-    {
-      name: "Phạm Thị D",
-      role: "Chuyên viên tư vấn Visa",
-      image: "https://picsum.photos/id/103/800/800",
-    },
-  ];
+  const memberIds = ["m1", "m2", "m3", "m4"];
+  const team = memberIds.map((id, idx) => {
+    const teamImages = IMAGES.ABOUT.TEAM_SECTION;
+    const imageKey = `team${idx + 1}` as keyof typeof teamImages;
+
+    return {
+      name: t(`members.${id}.name`),
+      role: t(`members.${id}.role`),
+      image: teamImages[imageKey],
+    };
+  });
 
   return (
     <section className="py-20 md:py-32 bg-white dark:bg-gray-950 transition-colors">
@@ -63,6 +53,7 @@ export default function TeamSection() {
                   src={member.image}
                   alt={member.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Social Overlay */}

@@ -72,6 +72,7 @@
       "date": "Ngày tuyển",
       "location": "Địa điểm",
       "age": "Độ tuổi",
+      "category": "Ngành nghề",
       "note": "Ghi chú",
       "details": "Chi tiết"
     },
@@ -264,7 +265,8 @@
   "About": {
     "hero": {
       "title": "Về HCM Mirai",
-      "breadcrumb": "Trang chủ"
+      "breadcrumb": "Trang chủ",
+      "seo_desc": "Trang giới thiệu chi tiết về sứ mệnh, tầm nhìn, đội ngũ và các dịch vụ của HCM Mirai trong lĩnh vực du học và tư vấn giáo dục quốc tế."
     },
     "vision_mission": {
       "mission": {
@@ -305,7 +307,13 @@
     },
     "team": {
       "title": "Đội ngũ cán bộ HCM Mirai",
-      "subtitle": "Những con người tận tâm luôn đồng hành cùng bạn"
+      "subtitle": "Những con người tận tâm luôn đồng hành cùng bạn",
+      "members": {
+        "m1": { "name": "Trần Quang Hiệu", "role": "Giám đốc Trung tâm" },
+        "m2": { "name": "Nguyễn Thị Gái", "role": "Trưởng phòng Đào tạo" },
+        "m3": { "name": "Nguyễn Thị Tuyết", "role": "Giáo viên tiếng Nhật" },
+        "m4": { "name": "Nguyễn Thị Ngọc", "role": "Giáo viên tiếng Nhật" }
+      }
     },
     "media": {
       "title": "Hình ảnh và video trung tâm",
@@ -332,16 +340,7 @@
       }
     },
     "videos": {
-      "title": "Video trung tâm",
-      "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm.",
-      "items": {
-        "v1": "GẦN 20 NĂM VỮNG BƯỚC HCM Mirai KHÔNG NGỪNG VƯƠN XA",
-        "v2": "DU HỌC THẠC SĨ CÙNG HCM Mirai - BƯỚC TIẾN LỚN CHO SỰ NGHIỆP",
-        "v3": "KHÔNG LO HỌC PHÍ NHẬP HỌC 0 ĐỒNG TẠI HCM Mirai",
-        "v4": "KHÔNG NGHĨ SẼ KHÓC - NHƯNG NƯỚC MẮT VẪN RƠI | HCM Mirai",
-        "v5": "GIÂY PHÚT CHIA XA KHI CON LÊN ĐƯỜNG DU HỌC | HCM Mirai",
-        "v6": "HỌC VIÊN HCM Mirai MÁCH NHỎ - BÍ KÍP XIN VISA CỰC DỄ"
-      }
+      "subtitle": "Hình ảnh và video lưu giữ những khoảnh khắc đáng nhớ tại trung tâm."
     },
     "registration": {
       "title": "Tư vấn miễn phí ngay cho bạn!",
@@ -430,18 +429,69 @@
   "StudyAbroad": {
     "hero": {
       "title": "Du học & XKLĐ",
+      "subtitle": "Giải pháp toàn diện cho tương lai",
       "breadcrumb": "Trang chủ",
-      "seo_desc": "Tầm nhìn quốc tế, sự nghiệp vững bền."
+      "seo_desc": "Tầm nhìn quốc tế, sự nghiệp vững bền. HCM Mirai cung cấp lộ trình du học Nhật - Hàn và xuất khẩu lao động uy tín.",
+      "cta_consult": "NHẬN TƯ VẤN MIỄN PHÍ",
+      "cta_video": "XEM VIDEO GIỚI THIỆU"
     },
     "intro": {
       "title": "Chắp cánh tương lai tại các quốc gia phát triển",
-      "desc": "Lộ trình du học và làm việc rõ ràng, tỉ lệ đậu visa cao, hỗ trợ học viên từ khi bắt đầu đến khi ổn định tại nước ngoài."
+      "desc": "Lộ trình du học và làm việc rõ ràng, tỉ lệ đậu visa cao, hỗ trợ học viên từ khi bắt đầu đến khi ổn định tại nước ngoài.",
+      "badge_admission": "Tuyển sinh 2026",
+      "learn_more": "Tìm hiểu chi tiết"
     },
     "programs": {
-      "prog1": { "title": "Du học Nhật Bản", "desc": "Trải nghiệm nền giáo dục hàng đầu thế giới với học bổng lên tới 100% học phí." },
-      "prog2": { "title": "Du học Hàn Quốc", "desc": "Lộ trình visa thẳng, hỗ trợ việc làm thêm với thu nhập hấp dẫn." },
-      "prog3": { "title": "Kỹ năng đặc định", "desc": "Chương trình XKLĐ chất lượng cao, thời hạn làm việc lâu dài tại nước ngoài." },
-      "prog4": { "title": "Thực tập sinh", "desc": "Vừa học vừa làm, cơ hội nâng cao tay nghề và thu nhập ngoại tệ." }
+      "prog1": {
+        "title": "Du học Nhật Bản",
+        "desc": "Kỳ nhập học tháng 4, 7, 10 với hệ tự túc hoặc các chương trình học bổng báo chí, điều dưỡng 0 đồng.",
+        "tags": ["Visa 99%", "Học bổng 100%"]
+      },
+      "prog2": {
+        "title": "Du học Hàn Quốc",
+        "desc": "Hệ ngôn ngữ D4-1, Cao đẳng nghề D2-1 và Đại học D2-2. Hỗ trợ 100% hồ sơ xin visa thẳng.",
+        "tags": ["Visa thẳng", "Học bổng Topik"]
+      },
+      "prog3": {
+        "title": "Kỹ năng đặc định",
+        "desc": "Chương trình Tokutei Gino ngành thực phẩm, khách sạn cho những bạn đã có tiếng Nhật từ N4 trở lên.",
+        "tags": ["Lương 30-40tr", "5 năm"]
+      },
+      "prog4": {
+        "title": "Thực tập sinh",
+        "desc": "Đơn hàng cơ khí, thực phẩm, xây dựng với chi phí thấp, bay nhanh và thu nhập ổn định.",
+        "tags": ["Bay nhanh", "Việc làm ổn định"]
+      }
+    },
+    "advantages": {
+      "title": "Tại sao hàng nghìn học viên chọn HCM Mirai?",
+      "items": {
+        "i1": { "title": "19 năm kinh nghiệm", "desc": "Gần hai thập kỷ hoạt động vững chắc trên thị trường giáo dục quốc tế." },
+        "i2": { "title": "Minh bạch tuyệt đối", "desc": "Cam kết không phát sinh bất kỳ khoản phí nào ngoài hợp đồng đã ký." },
+        "i3": { "title": "Đào tạo bài bản", "desc": "Học viên được đào tạo ngôn ngữ và kỹ năng sống 4-6 tháng trước khi bay." },
+        "i4": { "title": "Tỷ lệ đậu Visa", "desc": "Đội ngũ xử lý hồ sơ giàu kinh nghiệm, duy trì tỷ lệ đỗ visa trên 98%." }
+      }
+    },
+    "process": {
+      "title": "Lộ trình chinh phục ước mơ",
+      "subtitle": "Lộ trình 2026",
+      "steps": {
+        "s1": { "title": "Tư vấn & Sơ tuyển", "desc": "Đánh giá năng lực, tài chính và chọn quốc gia, trường học phù hợp." },
+        "s2": { "title": "Nhập học - Đào tạo", "desc": "Tham gia lớp tiếng Nhật/Hàn cấp tốc kết hợp kỹ năng phỏng vấn." },
+        "s3": { "title": "Phỏng vấn - Chọn đơn", "desc": "Phỏng vấn trực tiếp với đại diện trường hoặc đại diện doanh nghiệp." },
+        "s4": { "title": "Hoàn thiện hồ sơ", "desc": "Chuẩn bị các giấy tờ pháp lý, chứng minh tài chính dưới sự hướng dẫn tỉ mỉ." },
+        "s5": { "title": "Xin Visa - Cấp thư mời", "desc": "Nộp hồ sơ xin tư cách lưu trú (COE) và xin visa tại Đại sứ quán." },
+        "s6": { "title": "Xuất cảnh - Đồng hành", "desc": "Hướng dẫn bay, đón tại sân bay và hỗ trợ ổn định cuộc sống tại nước bạn." }
+      }
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp",
+      "items": {
+        "f1": { "q": "Độ tuổi nào phù hợp nhất để tham gia?", "a": "Thông thường là từ 18-30 tuổi. Một số đơn hàng XKLD đặc thù có thể nhận đến 35 tuổi." },
+        "f2": { "q": "Chưa biết tiếng có tham gia được không?", "a": "Hoàn toàn được. HCM Mirai có trung tâm đào tạo tiếng Hàn/Nhật từ con số 0 trước khi phỏng vấn." },
+        "f3": { "q": "Chi phí trọn gói là bao nhiêu?", "a": "Tùy thuộc vào quốc gia và hệ chương trình, chi phí dao động từ 80 - 200 triệu VNĐ, cam kết minh bạch." },
+        "f4": { "q": "Thời gian làm hồ sơ mất bao lâu?", "a": "Trung bình từ 4-6 tháng tùy thuộc vào kỳ nhập học và tốc độ xử lý giấy tờ của học viên." }
+      }
     }
   },
   "News": {
@@ -492,45 +542,59 @@
     "sending_label": "Đang gửi..."
   },
   "HomePrograms": {
-    "title": "Chương trình du học và đào tạo",
-    "categories": {
-      "korea": "Hàn Quốc",
-      "japan": "Nhật Bản",
-      "taiwan": "Đài Loan",
-      "australia": "Úc",
-      "germany": "Đức",
-      "labor": "XKLĐ"
-    },
-    "items": {
-      "program_1": {
-        "title": "Du học Hàn Quốc hệ D2-1 (Cao đẳng mẫu mực)"
+    "title": "Gương mặt học viên tiêu biểu",
+    "subtitle": "Chúc mừng các học viên đã đậu đơn hàng & Visa",
+    "students": {
+      "s1": {
+        "name": "Lô Ngọc Thêm - Chu Văn Hai",
+        "order": "Xuất cảnh Nhật Bản",
+        "country": "Nhật Bản",
+        "year": "2024"
       },
-      "program_2": {
-        "title": "Du học Hàn Quốc hệ D4-1 (Visa tiếng Hàn)"
+      "s2": {
+        "name": "Lữ Văn Thắng - Lương Văn Cường - Tang Văn Cường - Nguyễn Đình Hùng",
+        "order": "Nhập học tại HCM Mirai",
+        "country": "Nhật Bản",
+        "year": "2024"
       },
-      "program_3": {
-        "title": "Du học Nhật Bản hệ tự túc (Kỳ tháng 10)"
+      "s3": {
+        "name": "Võ Văn Đức - Nguyễn Châu Đại",
+        "order": "Xuất cảnh Nhật Bản",
+        "country": "Nhật Bản",
+        "year": "2025"
       },
-      "program_4": {
-        "title": "Học bổng báo Nhật Bản 2026"
+      "s4": {
+        "name": "Hà Văn Hùng",
+        "order": "Xuất cảnh Nhật Bản",
+        "country": "Nhật Bản",
+        "year": "2025"
       },
-      "program_5": {
-        "title": "Đơn hàng cơ khí Nhật Bản (Lương cao)"
+      "s5": {
+        "name": "Lô Thị Hằng Nga",
+        "order": "Xuất cảnh Nhật Bản",
+        "country": "Nhật Bản",
+        "year": "2025"
       },
-      "program_6": {
-        "title": "Du học Úc diện đào tạo nghề (Subclass 407)"
+      "s6": {
+        "name": "Hồ Thị Mỹ Huyền",
+        "order": "Xuất cảnh du học Hàn Quốc",
+        "country": "Hàn Quốc",
+        "year": "2025"
+      },
+      "s7": {
+        "name": "Phạm A Nghĩa - Nguyễn Văn Phi",
+        "order": "Xuất cảnh Nhật Bản",
+        "country": "Nhật Bản",
+        "year": "2025"
+      },
+      "s8": {
+        "name": "Ngô Anh Tuấn - Ngô Tuấn Tài",
+        "order": "Xuất cảnh Nhật Bản",
+        "country": "Nhật Bản",
+        "year": "2025"
       }
     },
-    "view_all": "Xem tất cả chương trình",
-    "view_details": "Xem chi tiết",
-    "no_programs": "Hiện tại chưa có chương trình nào cho chuyên mục này. Vui lòng quay lại sau!",
-    "tags": {
-      "hot": "Hot",
-      "new": "Mới",
-      "admission": "Tuyển sinh",
-      "scholarship": "Học bổng",
-      "labor": "XKLĐ"
-    }
+    "congrats": "Chúc mừng thành công!"
   },
   "HomePartners": {
     "title": "Đối tác chiến lược",

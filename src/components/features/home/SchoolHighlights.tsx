@@ -1,27 +1,25 @@
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
 import { SectionHeader } from "@/components/ui/section-header";
-import { Link } from "@/i18n/routing";
-import { cn } from "@/lib/utils";
-import { ArrowRight, MapPin } from "lucide-react";
+import { IMAGES } from "@/constants/images";
+import { MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const schoolData = [
   {
     id: 1,
-    image: "https://picsum.photos/600/400?yonsei",
+    image: IMAGES.HOME.SCHOOL_HIGHLIGHTS.school1,
     tagKeys: ["top1"],
   },
   {
     id: 2,
-    image: "https://picsum.photos/600/400?snu",
+    image: IMAGES.HOME.SCHOOL_HIGHLIGHTS.school2,
     tagKeys: ["elite"],
   },
   {
     id: 3,
-    image: "https://picsum.photos/600/400?tokyo",
+    image: IMAGES.HOME.SCHOOL_HIGHLIGHTS.school3,
     tagKeys: ["top_world"],
   },
 ];
@@ -75,34 +73,9 @@ export default function SchoolHighlights() {
                 <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
                   {t(`items.school_${school.id}.description`)}
                 </p>
-                <div className="pt-4">
-                  <Link
-                    href="/du-hoc-xkld"
-                    className={cn(
-                      buttonVariants({ variant: "outline" }),
-                      "w-full rounded-xl border-2 hover:bg-primary hover:text-white transition-all font-bold gap-2 h-12"
-                    )}
-                  >
-                    {t("view_details")}
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <Link
-            href="/du-hoc-xkld"
-            className={cn(
-              buttonVariants({ variant: "ghost" }),
-              "text-primary hover:text-accent font-bold text-lg gap-2 h-12"
-            )}
-          >
-            {t("explore_more")}
-            <ArrowRight className="w-5 h-5" />
-          </Link>
         </div>
       </div>
     </section>

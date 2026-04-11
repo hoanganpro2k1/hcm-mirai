@@ -11,7 +11,11 @@ export const IMAGES = {
     CONSULTATION: {
       consultation: "/assets/pages/home/consultation-1.jpg",
     },
-    SCHOOL_HIGHLIGHTS: {},
+    SCHOOL_HIGHLIGHTS: {
+      school1: "/assets/pages/home/school-1.png",
+      school2: "/assets/pages/home/school-2.gif",
+      school3: "/assets/pages/home/school-3.jpg",
+    },
     TESTIMONIALS: {
       testimonial1: "/assets/pages/home/testimonial-1.jpg",
       testimonial2: "/assets/pages/home/testimonial-2.png",
@@ -40,6 +44,12 @@ export const IMAGES = {
       centerMedia6: "/assets/pages/about/center-media-6.jpg",
       centerMedia7: "/assets/pages/about/center-media-7.jpg",
     },
+    TEAM_SECTION: {
+      team1: "/assets/pages/about/team-1.jpg",
+      team2: "https://picsum.photos/id/177/800/800",
+      team3: "https://picsum.photos/id/342/800/800",
+      team4: "https://picsum.photos/id/447/800/800",
+    },
   },
   SERVICES: {
     HERO: {
@@ -66,5 +76,32 @@ export const IMAGES = {
     korean: "/assets/pages/training/korean.jpg",
     teachingMethod1: "/assets/pages/training/teaching-method-1.jpg",
     teachingMethod2: "/assets/pages/training/teaching-method-2.jpg",
+  },
+  STUDY_ABROAD: {
+    PROGRAMS: {
+      program1: "/assets/pages/study-abroad/program-1.jpg",
+      program2: "/assets/pages/study-abroad/program-2.jpg",
+      program3: "/assets/pages/study-abroad/program-3.jpg",
+      program4: "/assets/pages/study-abroad/program-4.jpg",
+    },
+  },
+  PARTNERS: {
+    partner1: "/assets/common/partner-marquee/partner-1.png",
+    partner2: "/assets/common/partner-marquee/partner-2.jpeg",
+    partner3: "/assets/common/partner-marquee/partner-3.png",
+    partner4: "/assets/common/partner-marquee/partner-4.jpeg",
+    partner5: "/assets/common/partner-marquee/partner-5.png",
+    partner6: "/assets/common/partner-marquee/partner-6.jpeg",
+    partner7: "/assets/common/partner-marquee/partner-7.png",
+  },
+  STUDENTS: {
+    student1: "/assets/pages/home/student-1.jpg",
+    student2: "/assets/pages/home/student-2.jpg",
+    student3: "/assets/pages/home/student-3.jpg",
+    student4: "/assets/pages/home/student-4.jpg",
+    student5: "/assets/pages/home/student-5.jpg",
+    student6: "/assets/pages/home/student-6.jpg",
+    student7: "/assets/pages/home/student-7.jpg",
+    student8: "/assets/pages/home/student-8.jpg",
   },
 };

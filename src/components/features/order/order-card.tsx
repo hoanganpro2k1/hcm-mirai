@@ -7,9 +7,18 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
+import { CATEGORY_OPTIONS } from "@/constants/order.constant";
 import { JobOrder } from "@/types/order.type";
+import { format, isValid, parseISO } from "date-fns";
 import DOMPurify from "isomorphic-dompurify";
-import { Calendar, DollarSign, Info, MapPin, User } from "lucide-react";
+import {
+  Briefcase,
+  Calendar,
+  DollarSign,
+  Info,
+  MapPin,
+  User,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -19,6 +28,15 @@ interface OrderCardProps {
 
 export function OrderCard({ order }: OrderCardProps) {
   const t = useTranslations("Orders");
+
+  const categoryLabel =
+    CATEGORY_OPTIONS.find((opt) => opt.value === order.category)?.label ||
+    order.category ||
+    "N/A";
+
+  const dateValue = order.date ? parseISO(order.date) : null;
+  const formattedDate =
+    dateValue && isValid(dateValue) ? format(dateValue, "dd/MM/yyyy") : "N/A";
 
   return (
     <Card className="group flex flex-col h-full bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-800 pt-0 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500">
@@ -42,6 +60,21 @@ export function OrderCard({ order }: OrderCardProps) {
 
         {/* Info Grid */}
         <div className="grid grid-cols-1 gap-3 pt-2 text-sm">
+          {/* Category */}
+          <div className="flex items-start gap-3">
+            <div className="mt-0.5 p-1.5 bg-red-50 dark:bg-red-950/30 text-red-600 dark:text-red-400 rounded-lg">
+              <Briefcase className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="font-bold text-gray-400 block text-[10px] uppercase tracking-wider">
+                {t("labels.category") || "Ngành nghề"}
+              </span>
+              <p className="text-gray-700 dark:text-gray-300 font-medium">
+                {categoryLabel}
+              </p>
+            </div>
+          </div>
+
           {/* Salary */}
           <div className="flex items-start gap-3">
             <div className="mt-0.5 p-1.5 bg-green-50 dark:bg-green-950/30 text-green-600 dark:text-green-400 rounded-lg">
@@ -67,7 +100,7 @@ export function OrderCard({ order }: OrderCardProps) {
                 {t("labels.date")}
               </span>
               <p className="text-gray-700 dark:text-gray-300 font-medium">
-                {order.date || "N/A"}
+                {formattedDate}
               </p>
             </div>
           </div>
@@ -128,3 +161,4 @@ export function OrderCard({ order }: OrderCardProps) {
     </Card>
   );
 }
+

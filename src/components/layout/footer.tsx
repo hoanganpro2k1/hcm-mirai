@@ -3,7 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import { Facebook, Tiktok } from "@/components/ui/icons";
+import { Facebook, Tiktok, Youtube } from "@/components/ui/icons";
 
 const MAP_URL =
   "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d581.3002592414904!2d105.6706893!3d18.6920496!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3139cf003f442797%3A0x65ad8d011faa48b9!2zVHJ1bmcgdMOibSBuaOG6rXQgbmfhu68gSENNIE1pcmFp!5e1!3m2!1svi!2s!4v1775444016155!5m2!1svi!2s";
@@ -144,18 +144,28 @@ export function Footer() {
               </h3>
               <div className="flex gap-4">
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/hcmmiraijis"
+                  target="_blank"
                   className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-white/10 hover:-translate-y-1 transition-all border border-white/10 group"
                   title="Facebook"
                 >
                   <Facebook className="w-6 h-6 text-white/70 group-hover:text-white" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.tiktok.com/@hcmmiraijis"
+                  target="_blank"
                   className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-white/10 hover:-translate-y-1 transition-all border border-white/10 group"
                   title="TikTok"
                 >
                   <Tiktok className="w-6 h-6 text-white/70 group-hover:text-white" />
+                </Link>
+                <Link
+                  href="https://www.youtube.com/@hcmmirai"
+                  target="_blank"
+                  className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-white/10 hover:-translate-y-1 transition-all border border-white/10 group"
+                  title="YouTube"
+                >
+                  <Youtube className="w-6 h-6 text-white/70 group-hover:text-white" />
                 </Link>
               </div>
             </div>

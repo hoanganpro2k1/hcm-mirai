@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ImageUpload } from "@/components/ui/image-upload";
+import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RichTextEditor } from "@/components/ui/rich-text-editor";
@@ -29,6 +30,7 @@ const orderSchema = z.object({
   country: z.string().min(1, "Vui lòng chọn quốc gia"),
   category: z.string().min(1, "Vui lòng nhập ngành nghề"),
   salary: z.string().min(1, "Vui lòng nhập mức lương"),
+  date: z.string().optional(),
   gender: z.enum(["male", "female", "both"]),
   status: z.string(),
   age: z.string().optional(),
@@ -69,6 +71,7 @@ export const OrderForm = ({
       country: initialData?.country || "",
       category: initialData?.category || "",
       salary: initialData?.salary || "",
+      date: initialData?.date || "",
       gender: (initialData?.gender as "male" | "female" | "both") || "both",
       status: initialData?.status || "active",
       age: initialData?.age || "",
@@ -163,6 +166,20 @@ export const OrderForm = ({
             {errors.salary && (
               <p className="text-xs text-red-500">{errors.salary.message}</p>
             )}
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="date">Ngày tuyển</Label>
+            <Controller
+              name="date"
+              control={control}
+              render={({ field }) => (
+                <DatePicker
+                  value={field.value}
+                  onChange={(date) => field.onChange(date?.toISOString())}
+                />
+              )}
+            />
           </div>
 
           <div className="space-y-2">

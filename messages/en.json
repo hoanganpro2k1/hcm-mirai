@@ -72,6 +72,7 @@
       "date": "Date",
       "location": "Location",
       "age": "Age",
+      "category": "Industry",
       "note": "Note",
       "details": "Details"
     },
@@ -264,7 +265,8 @@
   "About": {
     "hero": {
       "title": "About HCM Mirai",
-      "breadcrumb": "Home"
+      "breadcrumb": "Home",
+      "seo_desc": "An introduction page detailing the mission, vision, team, and services of HCM Mirai in the field of study abroad and international education consulting."
     },
     "vision_mission": {
       "mission": {
@@ -305,7 +307,13 @@
     },
     "team": {
       "title": "HCM Mirai Leadership Team",
-      "subtitle": "Dedicated professionals accompanying you on your journey"
+      "subtitle": "Dedicated professionals accompanying you on your journey",
+      "members": {
+        "m1": { "name": "Trần Quang Hiệu", "role": "Center Director" },
+        "m2": { "name": "Nguyễn Thị Gái", "role": "Head of Training Department" },
+        "m3": { "name": "Nguyễn Thị Tuyết", "role": "Japanese Language Teacher" },
+        "m4": { "name": "Nguyễn Thị Ngọc", "role": "Japanese Language Teacher" }
+      }
     },
     "media": {
       "title": "Center Media Gallery",
@@ -332,16 +340,7 @@
       }
     },
     "videos": {
-      "title": "Center Videos",
-      "subtitle": "Images and videos capturing memorable moments at the center.",
-      "items": {
-        "v1": "NEARLY 20 YEARS OF STEADY PROGRESS HCM Mirai KEEPS REACHING FURTHER",
-        "v2": "MASTER'S STUDY ABROAD WITH HCM Mirai - A BIG STEP FOR YOUR CAREER",
-        "v3": "NO WORRIES ABOUT TUITION WITH 0 VND ENROLLMENT AT HCM Mirai",
-        "v4": "DIDN'T THINK I WOULD CRY - BUT TEARS STILL FELL | HCM Mirai",
-        "v5": "THE MOMENT OF PARTING WHEN STUDYING ABROAD | HCM Mirai",
-        "v6": "HCM Mirai STUDENTS REVEAL - SUPER EASY VISA TIPS"
-      }
+      "subtitle": "Images and videos capturing memorable moments at the center."
     },
     "registration": {
       "title": "Free Consultation For You!",
@@ -429,19 +428,70 @@
   },
   "StudyAbroad": {
     "hero": {
-      "title": "Study Abroad & Labor Export",
+      "title": "Study Abroad & SSW",
+      "subtitle": "Comprehensive solutions for the future",
       "breadcrumb": "Home",
-      "seo_desc": "International vision, sustainable career."
+      "seo_desc": "International vision, sustainable career. HCM Mirai provides prestigious study abroad pathways to Japan - Korea and labor export.",
+      "cta_consult": "GET FREE CONSULTATION",
+      "cta_video": "WATCH INTRO VIDEO"
     },
     "intro": {
       "title": "Empowering Futures in Developed Nations",
-      "desc": "Clear study and work pathways, high visa success rates, and support from start to finish."
+      "desc": "Clear study and work pathways, high visa success rates, and support from start to finish.",
+      "badge_admission": "Admission 2026",
+      "learn_more": "Learn More"
     },
     "programs": {
-      "prog1": { "title": "Study in Japan", "desc": "Experience world-class education with scholarships up to 100% of intuition fees." },
-      "prog2": { "title": "Study in Korea", "desc": "Straight visa pathway, supporting part-time jobs with attractive income." },
-      "prog3": { "title": "Specified Skilled Worker", "desc": "High-quality labor export program with long-term working periods abroad." },
-      "prog4": { "title": "Technical Intern Training", "desc": "Study while working, an opportunity to improve skills and earn foreign currency." }
+      "prog1": {
+        "title": "Study in Japan",
+        "desc": "Intakes in April, July, October with self-funded or 0-VND scholarship programs (Newspaper, Nursing).",
+        "tags": ["99% Visa Success", "100% Scholarship"]
+      },
+      "prog2": {
+        "title": "Study in South Korea",
+        "desc": "D4-1 (Language), D2-1 (Vocational), and D2-2 (University). 100% support for direct visa applications.",
+        "tags": ["Direct Visa", "TOPIK Scholarship"]
+      },
+      "prog3": {
+        "title": "Specified Skilled Worker (SSW)",
+        "desc": "Tokutei Gino program in Food Processing & Hospitality for those with Japanese proficiency of N4 or higher.",
+        "tags": ["Salary $1200-$1600", "5 years"]
+      },
+      "prog4": {
+        "title": "Technical Intern",
+        "desc": "Job orders in Mechanics, Food, and Construction with low costs, fast departure, and stable income.",
+        "tags": ["Fast Departure", "Stable Jobs"]
+      }
+    },
+    "advantages": {
+      "title": "Why Do Thousands of Students Choose HCM Mirai?",
+      "items": {
+        "i1": { "title": "19 Years of Experience", "desc": "Nearly two decades of solid operation in the international education market." },
+        "i2": { "title": "Absolute Transparency", "desc": "Guarantee no hidden costs beyond the signed contract." },
+        "i3": { "title": "Standardized Training", "desc": "Students receive 4-6 months of language and life skills training before departure." },
+        "i4": { "title": "Visa Success Rate", "desc": "Experienced documentation team maintaining a visa success rate above 98%." }
+      }
+    },
+    "process": {
+      "title": "Journey to Conquer Your Dreams",
+      "subtitle": "Pathway 2026",
+      "steps": {
+        "s1": { "title": "Consultation & Screening", "desc": "Assess capabilities, finances and choose the right country and school." },
+        "s2": { "title": "Enrollment - Training", "desc": "Join intensive Japanese/Korean classes combined with interview skills." },
+        "s3": { "title": "Interview - Selection", "desc": "Direct interview with school representatives or enterprise representatives." },
+        "s4": { "title": "Document Finalization", "desc": "Prepare legal documents and financial proof under meticulous guidance." },
+        "s5": { "title": "Visa Application", "desc": "Apply for Certificate of Eligibility (COE) and visa at the Embassy." },
+        "s6": { "title": "Departure - Companion", "desc": "Flight guidance, airport pickup, and support to settle life in the destination country." }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "f1": { "q": "What is the most suitable age to join?", "a": "Typically 18-30 years old. Some specific labor export orders can accept up to 35 years old." },
+        "f2": { "q": "Can I join if I don't know the language yet?", "a": "Absolutely. HCM Mirai has a training center to learn Korean/Japanese from scratch before the interview." },
+        "f3": { "q": "What is the total package cost?", "a": "Depending on the country and program, the cost ranges from 3,500 - 9,000 USD, with transparent commitment." },
+        "f4": { "q": "How long does the application process take?", "a": "On average from 4-6 months depending on the intake and the student's document preparation speed." }
+      }
     }
   },
   "News": {
@@ -492,45 +542,59 @@
     "image_alt": "Consultant"
   },
   "HomePrograms": {
-    "title": "Study Abroad & Training Programs",
-    "categories": {
-      "korea": "Korea",
-      "japan": "Japan",
-      "taiwan": "Taiwan",
-      "australia": "Australia",
-      "germany": "Germany",
-      "labor": "SSW/Labor"
-    },
-    "items": {
-      "program_1": {
-        "title": "Study in Korea D2-1 System (Model College)"
+    "title": "Our Successful Students",
+    "subtitle": "Congratulations to our students who passed interviews & Visa",
+    "students": {
+      "s1": {
+        "name": "Lo Ngoc Them - Chu Van Hai",
+        "order": "Departure for Japan",
+        "country": "Japan",
+        "year": "2024"
       },
-      "program_2": {
-        "title": "Study in Korea D4-1 System (Korean Visa)"
+      "s2": {
+        "name": "Lu Van Thang - Luong Van Cuong - Tang Van Cuong - Nguyen Dinh Hung",
+        "order": "Enrolled at HCM Mirai",
+        "country": "Japan",
+        "year": "2024"
       },
-      "program_3": {
-        "title": "Study in Japan Self-funded (October Intake)"
+      "s3": {
+        "name": "Vo Van Duc - Nguyen Chau Dai",
+        "order": "Departure for Japan",
+        "country": "Japan",
+        "year": "2025"
       },
-      "program_4": {
-        "title": "Japan Newspaper Scholarship 2026"
+      "s4": {
+        "name": "Ha Van Hung",
+        "order": "Departure for Japan",
+        "country": "Japan",
+        "year": "2025"
       },
-      "program_5": {
-        "title": "Japan Mechanical Engineering Order (High Salary)"
+      "s5": {
+        "name": "Lo Thi Hang Nga",
+        "order": "Departure for Japan",
+        "country": "Japan",
+        "year": "2025"
       },
-      "program_6": {
-        "title": "Study in Australia Vocational Training (Subclass 407)"
+      "s6": {
+        "name": "Ho Thi My Huyen",
+        "order": "Departure for Korea",
+        "country": "South Korea",
+        "year": "2025"
+      },
+      "s7": {
+        "name": "Pham A Nghia - Nguyen Van Phi",
+        "order": "Departure for Japan",
+        "country": "Japan",
+        "year": "2025"
+      },
+      "s8": {
+        "name": "Ngo Anh Tuan - Ngo Tuan Tai",
+        "order": "Departure for Japan",
+        "country": "Japan",
+        "year": "2025"
       }
     },
-    "view_all": "View All Programs",
-    "view_details": "View Details",
-    "no_programs": "Currently there are no programs for this category. Please check back later!",
-    "tags": {
-      "hot": "Hot",
-      "new": "New",
-      "admission": "Admission",
-      "scholarship": "Scholarship",
-      "labor": "Labor"
-    }
+    "congrats": "Success Stories!"
   },
   "HomePartners": {
     "title": "Strategic Partners",
