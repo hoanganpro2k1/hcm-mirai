@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "HCM Mirai",
     images: [
       {
-        url: "/site-logo.jpg",
+        url: "https://res.cloudinary.com/dgdrdmgbx/image/upload/v1776069219/users/untxfvj0jgacjsbk188x.jpg",
         width: 1200,
         height: 630,
         alt: "HCM Mirai Logo",
