@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "HCM Mirai",
     images: [
       {
-        url: "/site-logo.jpg",
+        url: "https://res.cloudinary.com/dgdrdmgbx/image/upload/v1776069219/users/untxfvj0jgacjsbk188x.jpg",
         width: 1200,
         height: 630,
         alt: "HCM Mirai Logo",
@@ -59,7 +59,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HCM Mirai - Du học & XKLĐ tại Nghệ An",
     description: "Xây đắp hiện tại - Tạo dựng tương lai!",
-    images: ["/site-logo.jpg"],
+    images: [
+      "https://res.cloudinary.com/dgdrdmgbx/image/upload/v1776069219/users/untxfvj0jgacjsbk188x.jpg",
+    ],
   },
 };
 
