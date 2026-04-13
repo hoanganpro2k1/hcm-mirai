@@ -31,6 +31,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hcmmirai.com"),
   title: {
     default: "HCM Mirai - Du học & XKLĐ tại Nghệ An",
     template: "%s | HCM Mirai",
