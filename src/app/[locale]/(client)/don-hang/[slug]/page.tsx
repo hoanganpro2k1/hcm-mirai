@@ -22,6 +22,8 @@ import {
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { use } from "react";
+import { JsonLd } from "@/components/common/JsonLd";
+import type { BreadcrumbList, Graph, JobPosting } from "schema-dts";
 
 interface OrderDetailPageProps {
   params: Promise<{
@@ -31,7 +33,8 @@ interface OrderDetailPageProps {
 }
 
 export default function OrderDetailPage({ params }: OrderDetailPageProps) {
-  const { slug } = use(params);
+  const localeParams = use(params);
+  const { slug, locale } = localeParams;
   const t = useTranslations("Orders");
   const tHeader = useTranslations("Header");
   const router = useRouter();
@@ -137,8 +140,71 @@ export default function OrderDetailPage({ params }: OrderDetailPageProps) {
     },
   ];
 
+  const jsonLd: Graph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "JobPosting",
+        title: order.title,
+        description: order.description || order.title,
+        datePosted: new Date(
+          (order as any).createdAt || new Date(),
+        ).toISOString(),
+        validThrough:
+          dateValue && isValid(dateValue) ? dateValue.toISOString() : undefined,
+        hiringOrganization: {
+          "@type": "Organization",
+          name: "HCM Mirai",
+          sameAs: "https://hcmmirai.com",
+          logo: "https://hcmmirai.com/logo.png",
+        },
+        jobLocation: {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: order.location,
+            addressCountry: "VN",
+          },
+        },
+        baseSalary: {
+          "@type": "MonetaryAmount",
+          currency: "VND",
+          value: {
+            "@type": "QuantitativeValue",
+            value: order.salary,
+            unitText: "MONTH",
+          },
+        },
+      } as JobPosting,
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: tHeader("nav.home"),
+            item: `https://hcmmirai.com/${locale}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: tHeader("nav.donhang"),
+            item: `https://hcmmirai.com/${locale}/don-hang`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: order.title,
+            item: `https://hcmmirai.com/${locale}/don-hang/${order.slug}`,
+          },
+        ],
+      } as BreadcrumbList,
+    ],
+  };
+
   return (
     <div className="bg-gray-50/50 dark:bg-black transition-colors min-h-screen pb-24">
+      <JsonLd data={jsonLd} />
       {/* Hero Header */}
       <div className="relative h-[40vh] min-h-[400px] overflow-hidden">
         <Image
@@ -217,9 +283,7 @@ export default function OrderDetailPage({ params }: OrderDetailPageProps) {
             <div className="bg-linear-to-br from-primary to-primary-foreground rounded-[2.5rem] p-10 text-white shadow-2xl shadow-primary/20 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-white/20 transition-all duration-700" />
               <div className="relative z-10 space-y-6">
-                <h3 className="text-3xl font-bold">
-                  {t("apply_now")}
-                </h3>
+                <h3 className="text-3xl font-bold">{t("apply_now")}</h3>
                 <p className="text-white/80 text-lg max-w-xl">
                   {t("apply_desc")}
                 </p>

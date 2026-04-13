@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HCM Mirai - Website Hệ thống Giáo dục & Tuyển dụng
 
-## Getting Started
+Chào mừng bạn đến với dự án **HCM Mirai**, một nền tảng website hiện đại được xây dựng để cung cấp thông tin về giáo dục, tin tức và các cơ hội việc làm.
 
-First, run the development server:
+## 🚀 Giới thiệu dự án
+
+HCM Mirai là website đa ngôn ngữ chuyên nghiệp dành cho hệ thống giáo dục và cung ứng nhân lực. Dự án chú trọng vào trải nghiệm người dùng mượt mà, giao diện premium và khả năng quản lý nội dung mạnh mẽ.
+
+### Các công nghệ chủ chốt:
+
+- **Frontend:** Next.js 16+ (App Router), TypeScript
+- **Styling:** Tailwind CSS, Shadcn UI, Framer Motion
+- **State Management:** Zustand
+- **Xác thực:** Custom Auth với cơ chế Refresh Token (Silent Refresh)
+- **Đa ngôn ngữ:** `next-intl` (Hỗ trợ tiếng Việt và tiếng Anh)
+- **Data Fetching:** Axios & TanStack Query
+- **Database:** MongoDB (Mongoose)
+
+---
+
+## 🛠 Hướng dẫn Setup
+
+### 1. Yêu cầu hệ thống
+
+- **Node.js:** Phiên bản 24.x trở lên
+- **Package Manager:** `pnpm` (Khuyến nghị)
+
+### 2. Cài đặt các gói phụ thuộc
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Cấu hình biến môi trường
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Tạo file `.env.local` tại thư mục gốc và cấu hình các thông số sau:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# API và Server
+NEXT_PUBLIC_API_URL=
+MONGODB_URI=
 
-## Learn More
+# JWT Secret (nếu dùng local auth)
+JWT_ACCESS_SECRET=
+JWT_REFRESH_SECRET=
 
-To learn more about Next.js, take a look at the following resources:
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Chạy dự án ở chế độ Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm dev
+```
 
-## Deploy on Vercel
+Truy cập: [http://localhost:3000](http://localhost:3000)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📂 Cấu trúc thư mục dự án
+
+```text
+hcm-mirai/
+├── messages/               # Các tệp dịch thuật (vi.json, en.json)
+├── public/                 # Tài nguyên tĩnh (images, icons, fonts)
+├── docs/                   # Tài liệu hướng dẫn kỹ thuật
+├── src/
+│   ├── app/                # Next.js Routes, Pages & Layouts
+│   ├── components/         # Các Component UI dùng chung và Business Component
+│   │   ├── features/       # Component theo tính năng (news, orders, admin...)
+│   │   └── ui/             # Shadcn UI components
+│   ├── constants/          # Các hằng số định nghĩa trong hệ thống
+│   ├── hooks/              # Custom React Hooks
+│   ├── i18n/               # Cấu hình đa ngôn ngữ (next-intl)
+│   ├── lib/                # Cấu hình thư viện (Axios, Mongoose, Auth...)
+│   ├── models/             # Định nghĩa Mongoose schemas
+│   ├── providers/          # React Context Providers (Query, Theme...)
+│   ├── schemas/            # Zod Validation schemas
+│   ├── services/           # Logic gọi API (Services layer)
+│   ├── store/              # Global state management (Zustand)
+│   ├── types/              # Định nghĩa kiểu dữ liệu TypeScript
+│   └── utils/              # Các hàm tiện ích dùng chung
+├── .agents/                # Cấu hình AI Assistant & Skills
+├── next.config.ts          # Cấu hình Next.js
+└── tailwind.config.ts      # Cấu hình Tailwind CSS
+```
+
+---
+
+## 📖 Tài liệu hướng dẫn
+
+- [Cơ chế Refresh Token](./docs/AUTH_MECHANISM.md)
+- [Quy tắc phát triển (CLAUDE.md)](./CLAUDE.md)
+
+---
+
+## 📄 Bản quyền
+
+Dự án được phát triển bởi đội ngũ HCM Mirai.
