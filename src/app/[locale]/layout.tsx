@@ -31,7 +31,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hcmmirai.com"),
   title: {
     default: "HCM Mirai - Du học & XKLĐ tại Nghệ An",
     template: "%s | HCM Mirai",
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "HCM Mirai",
     images: [
       {
-        url: "https://res.cloudinary.com/dgdrdmgbx/image/upload/v1776069219/users/untxfvj0jgacjsbk188x.jpg",
+        url: "/site-logo.jpg",
         width: 1200,
         height: 630,
         alt: "HCM Mirai Logo",
@@ -59,9 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HCM Mirai - Du học & XKLĐ tại Nghệ An",
     description: "Xây đắp hiện tại - Tạo dựng tương lai!",
-    images: [
-      "https://res.cloudinary.com/dgdrdmgbx/image/upload/v1776069219/users/untxfvj0jgacjsbk188x.jpg",
-    ],
+    images: ["/site-logo.jpg"],
   },
 };
 
