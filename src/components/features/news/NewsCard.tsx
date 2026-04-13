@@ -50,8 +50,9 @@ export const NewsCard = ({ post, index = 0, buttonLabel }: NewsCardProps) => {
   // Handle image
   const thumbnail = post.thumbnail || post.image;
 
-  // Handle excerpt
-  const summary = post.summary || post.excerpt || (post.content ? post.content.replace(/<[^>]*>?/gm, "").substring(0, 150) : "");
+  // Handle excerpt - strip HTML if it's from RichTextEditor
+  const rawSummary = post.summary || post.excerpt || (post.content || "");
+  const summary = rawSummary.replace(/<[^>]*>?/gm, "").substring(0, 160);
 
   return (
     <article

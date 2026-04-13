@@ -5,6 +5,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { NewsCard } from "./NewsCard";
+import { NewsCardSkeleton } from "./NewsCardSkeleton";
 
 export default function NewsGrid() {
   const t = useTranslations("News");
@@ -33,8 +34,12 @@ export default function NewsGrid() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center py-40">
-        <Loader2 className="w-10 h-10 animate-spin text-primary" />
+      <div className="container mx-auto px-6 py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <NewsCardSkeleton key={i} />
+          ))}
+        </div>
       </div>
     );
   }

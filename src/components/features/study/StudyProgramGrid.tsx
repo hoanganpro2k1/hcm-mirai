@@ -36,7 +36,7 @@ export default function StudyProgramGrid() {
           {programIds.map((id, idx) => (
             <div
               key={id}
-              className="group flex flex-col lg:flex-row bg-white dark:bg-gray-800 rounded-[3rem] overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl transition-all duration-500 animate-in fade-in slide-in-from-bottom-12"
+              className="group flex flex-col lg:flex-row bg-white dark:bg-gray-800 rounded-2xl md:rounded-[3rem] overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl transition-all duration-500 animate-in fade-in slide-in-from-bottom-12"
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               <div className="lg:w-2/5 relative h-64 lg:h-auto overflow-hidden">

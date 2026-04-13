@@ -28,7 +28,7 @@ export default function SchoolHighlights() {
   const t = useTranslations("HomeHighlights");
 
   return (
-    <section className="py-20 bg-primary/5 dark:bg-primary/10 transition-colors">
+    <section className="py-12 md:py-20 bg-primary/5 dark:bg-primary/10 transition-colors">
       <div className="container mx-auto px-6">
         <SectionHeader
           title={t("title")}

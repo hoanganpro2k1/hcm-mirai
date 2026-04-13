@@ -14,6 +14,7 @@ const OrderSchema: Schema = new Schema(
     content: { type: String },
     category: { type: String },
     country: { type: String },
+    slug: { type: String, unique: true, sparse: true },
     gender: {
       type: String,
       enum: ["male", "female", "both"],

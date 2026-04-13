@@ -12,6 +12,7 @@ export interface IOrder extends mongoose.Document {
   content?: string;
   category?: string;
   country?: string;
+  slug: string;
   gender?: "male" | "female" | "both";
   createdBy?: mongoose.Types.ObjectId;
   updatedBy?: mongoose.Types.ObjectId;
@@ -34,6 +35,7 @@ export interface JobOrder {
   content?: string;
   category?: string;
   country?: string;
+  slug: string;
   gender?: "male" | "female" | "both";
   createdBy?: {
     id: string;

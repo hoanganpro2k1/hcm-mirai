@@ -38,7 +38,7 @@ export default function CourseList() {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-gray-950 transition-colors">
+    <section className="py-12 md:py-24 bg-white dark:bg-gray-950 transition-colors">
       <div className="container mx-auto px-6">
         <div className="mb-20 text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-black text-[#1E293B] dark:text-white uppercase tracking-tighter leading-tight mb-6">
@@ -54,7 +54,7 @@ export default function CourseList() {
           {courses.map((course) => (
             <div
               key={course.id}
-              className="group relative bg-[#F8FAFC] dark:bg-gray-900 rounded-[3rem] overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-2xl transition-all duration-500 animate-in fade-in slide-in-from-bottom-12"
+              className="group relative bg-[#F8FAFC] dark:bg-gray-900 rounded-2xl md:rounded-[3rem] overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-2xl transition-all duration-500 animate-in fade-in slide-in-from-bottom-12"
             >
               {/* Banner Image */}
               <div className="relative h-48 md:h-64 overflow-hidden">
@@ -81,7 +81,7 @@ export default function CourseList() {
               </div>
 
               {/* Content */}
-              <div className="p-10 space-y-8">
+              <div className="p-6 md:p-10 space-y-8">
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                   {course.desc}
                 </p>

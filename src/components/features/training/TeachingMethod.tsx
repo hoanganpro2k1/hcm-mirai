@@ -91,7 +91,7 @@ export default function TeachingMethod() {
             {methods.map((method, idx) => (
               <div
                 key={idx}
-                className={`p-8 rounded-[2.5rem] bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group`}
+                className={`p-8 rounded-2xl md:rounded-[2.5rem] bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group`}
               >
                 <div
                   className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm`}

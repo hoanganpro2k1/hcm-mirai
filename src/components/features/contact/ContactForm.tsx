@@ -1,18 +1,18 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useConsultationMutations } from "@/hooks/use-consultation-mutations";
 import {
   getConsultationSchema,
   type ConsultationFormValues as ContactFormValues,
 } from "@/schemas/consultation.schema";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, Loader2, Send } from "lucide-react";
-import { useConsultationMutations } from "@/hooks/use-consultation-mutations";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 export function ContactForm() {
@@ -44,14 +44,12 @@ export function ContactForm() {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-gray-100 dark:border-gray-700 h-full">
+    <div className="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-2xl md:rounded-[2.5rem] shadow-2xl border border-gray-100 dark:border-gray-700 h-full">
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           {t("title")}
         </h2>
-        <p className="text-gray-600 dark:text-gray-400">
-          {t("description")}
-        </p>
+        <p className="text-gray-600 dark:text-gray-400">{t("description")}</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -65,7 +63,9 @@ export function ContactForm() {
               {...register("name")}
             />
             {errors.name && (
-              <p className="text-sm text-red-500">{errors.name.message as string}</p>
+              <p className="text-sm text-red-500">
+                {errors.name.message as string}
+              </p>
             )}
           </div>
           <div className="space-y-2">
@@ -77,7 +77,9 @@ export function ContactForm() {
               {...register("phone")}
             />
             {errors.phone && (
-              <p className="text-sm text-red-500">{errors.phone.message as string}</p>
+              <p className="text-sm text-red-500">
+                {errors.phone.message as string}
+              </p>
             )}
           </div>
         </div>
@@ -92,7 +94,9 @@ export function ContactForm() {
             {...register("email")}
           />
           {errors.email && (
-            <p className="text-sm text-red-500">{errors.email.message as string}</p>
+            <p className="text-sm text-red-500">
+              {errors.email.message as string}
+            </p>
           )}
         </div>
 
@@ -105,7 +109,9 @@ export function ContactForm() {
             {...register("note")}
           />
           {errors.note && (
-            <p className="text-sm text-red-500">{errors.note.message as string}</p>
+            <p className="text-sm text-red-500">
+              {errors.note.message as string}
+            </p>
           )}
         </div>
 

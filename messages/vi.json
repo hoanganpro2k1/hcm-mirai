@@ -76,7 +76,16 @@
       "note": "Ghi chú",
       "details": "Chi tiết"
     },
-    "empty": "Không tìm thấy đơn hàng nào phù hợp."
+    "empty": "Không tìm thấy đơn hàng nào phù hợp.",
+    "apply_now": "Ứng tuyển ngay đơn hàng này",
+    "apply_desc": "Để lại thông tin của bạn để nhận được sự tư vấn chi tiết nhất về lộ trình và thủ tục cho đơn hàng này.",
+    "free_consult": "Tư vấn miễn phí",
+    "call_hotline": "Gọi hotline",
+    "recruitment_info": "Thông tin tuyển dụng",
+    "register_now": "Đăng ký ngay",
+    "security_commitment": "Cam kết bảo mật thông tin 100%",
+    "need_support": "Cần hỗ trợ?",
+    "support_desc": "Đội ngũ tư vấn viên của HCM Mirai luôn sẵn sàng hỗ trợ bạn 24/7."
   },
   "Filters": {
     "country": "Quốc gia",

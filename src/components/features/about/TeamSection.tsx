@@ -21,7 +21,7 @@ export default function TeamSection() {
   });
 
   return (
-    <section className="py-20 md:py-32 bg-white dark:bg-gray-950 transition-colors">
+    <section className="py-12 md:py-20 md:py-32 bg-white dark:bg-gray-950 transition-colors">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 md:mb-24 gap-8">
           <div className="max-w-2xl">
@@ -48,7 +48,7 @@ export default function TeamSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {team.map((member, idx) => (
             <div key={idx} className="group flex flex-col items-center">
-              <div className="relative w-full aspect-square rounded-[3rem] overflow-hidden mb-6 shadow-2xl transition-all duration-500 group-hover:rounded-[2rem] border-8 border-transparent group-hover:border-primary/10">
+              <div className="relative w-full aspect-square rounded-2xl md:rounded-[3rem] overflow-hidden mb-6 shadow-2xl transition-all duration-500 group-hover:rounded-[2rem] border-8 border-transparent group-hover:border-primary/10">
                 <Image
                   src={member.image}
                   alt={member.name}

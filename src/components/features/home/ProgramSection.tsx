@@ -19,7 +19,7 @@ export default function ProgramSection() {
   const t = useTranslations("HomePrograms");
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900 border-y border-gray-100 dark:border-gray-800 transition-colors overflow-hidden">
+    <section className="py-12 md:py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900 border-y border-gray-100 dark:border-gray-800 transition-colors overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <SectionHeader
@@ -29,7 +29,7 @@ export default function ProgramSection() {
           />
         </div>
 
-        <div className="relative px-12">
+        <div className="relative px-0 md:px-12">
           <Carousel
             opts={{
               align: "start",
@@ -43,9 +43,9 @@ export default function ProgramSection() {
                   key={id}
                   className="pl-4 md:pl-6 md:pb-8 md:basis-1/2 lg:basis-1/3 xl:basis-1/3"
                 >
-                  <div className="group relative bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 h-full border border-gray-100 dark:border-gray-700 shadow-xl shadow-gray-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2">
+                  <div className="group relative bg-white dark:bg-gray-800 rounded-2xl md:rounded-2xl md:rounded-[2.5rem] p-4 h-full border border-gray-100 dark:border-gray-700 shadow-xl shadow-gray-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2">
                     {/* Image Container */}
-                    <div className="relative aspect-video rounded-[2rem] overflow-hidden mb-6">
+                    <div className="relative aspect-video rounded-xl md:rounded-[2rem] overflow-hidden mb-6">
                       <Image
                         src={
                           IMAGES.STUDENTS[
@@ -54,6 +54,7 @@ export default function ProgramSection() {
                         }
                         alt={t(`students.${id}.name`)}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       {/* Badge Country */}

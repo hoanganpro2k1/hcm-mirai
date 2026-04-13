@@ -24,6 +24,7 @@ export async function GET(req: NextRequest) {
 
     const posts = await Post.find(query)
       .populate("author", "name avatar")
+      .select("-content -updatedBy -deletedBy -deletedAt")
       .sort({ publishedAt: -1, createdAt: -1 })
       .skip(skip)
       .limit(limit);

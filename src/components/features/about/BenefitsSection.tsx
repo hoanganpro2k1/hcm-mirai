@@ -42,7 +42,7 @@ export default function BenefitsSection() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gray-50 dark:bg-gray-900 transition-colors overflow-hidden">
+    <section className="py-12 md:py-20 md:py-32 bg-gray-50 dark:bg-gray-900 transition-colors overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
           <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4">
@@ -60,7 +60,7 @@ export default function BenefitsSection() {
             {benefits.map((benefit, idx) => (
               <div
                 key={idx}
-                className="group p-8 bg-white dark:bg-gray-800 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-50 dark:border-gray-700 hover:-translate-y-2"
+                className="group p-8 bg-white dark:bg-gray-800 rounded-2xl md:rounded-2xl md:rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-50 dark:border-gray-700 hover:-translate-y-2"
               >
                 <div
                   className={`w-14 h-14 rounded-2xl ${benefit.color} flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300`}
@@ -84,7 +84,7 @@ export default function BenefitsSection() {
 
           {/* Right Image logic */}
           <div className="relative group lg:ml-12">
-            <div className="relative rounded-[3rem] overflow-hidden aspect-4/5 shadow-2xl border-4 md:border-8 border-white dark:border-gray-800 animate-in zoom-in-95 duration-1000">
+            <div className="relative rounded-2xl md:rounded-2xl md:rounded-[3rem] overflow-hidden aspect-4/5 shadow-2xl border-4 md:border-8 border-white dark:border-gray-800 animate-in zoom-in-95 duration-1000">
               <Image
                 src={IMAGES.ABOUT.BENEFITS.benefit}
                 alt="Student success"

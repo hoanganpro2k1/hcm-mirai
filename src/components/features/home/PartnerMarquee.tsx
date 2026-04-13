@@ -21,7 +21,7 @@ export default function PartnerMarquee() {
   const doublePartners = [...partners, ...partners, ...partners];
 
   return (
-    <section className="py-16 bg-white dark:bg-gray-950 overflow-hidden transition-colors border-t border-gray-50 dark:border-gray-900">
+    <section className="py-12 md:py-16 bg-white dark:bg-gray-950 overflow-hidden transition-colors border-t border-gray-50 dark:border-gray-900">
       <div className="container mx-auto px-6">
         <SectionHeader
           title={t("title")}

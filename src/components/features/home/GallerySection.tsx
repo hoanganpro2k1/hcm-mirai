@@ -34,7 +34,7 @@ export default function GallerySection() {
   const t = useTranslations("HomeGallery");
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900/50 transition-colors">
+    <section className="py-12 md:py-20 bg-gray-50 dark:bg-gray-900/50 transition-colors">
       <div className="container mx-auto px-6">
         <SectionHeader
           title={t("title")}

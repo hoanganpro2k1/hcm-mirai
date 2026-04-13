@@ -1,7 +1,7 @@
 import { IMAGES } from "@/constants/images";
 import { CheckCircle2 } from "lucide-react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function WhyChooseUsBanner() {
   const t = useTranslations("Services.whyChooseUs");
@@ -30,7 +30,7 @@ export default function WhyChooseUsBanner() {
   ];
 
   return (
-    <section className="py-20">
+    <section className="py-12 md:py-20">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
           <div className="w-full lg:w-1/2 p-10 lg:p-16">

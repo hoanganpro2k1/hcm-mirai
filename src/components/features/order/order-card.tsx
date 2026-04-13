@@ -8,6 +8,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { CATEGORY_OPTIONS } from "@/constants/order.constant";
+import { Link } from "@/i18n/routing";
 import { JobOrder } from "@/types/order.type";
 import { format, isValid, parseISO } from "date-fns";
 import DOMPurify from "isomorphic-dompurify";
@@ -28,6 +29,8 @@ interface OrderCardProps {
 
 export function OrderCard({ order }: OrderCardProps) {
   const t = useTranslations("Orders");
+
+  console.log("order", order);
 
   const categoryLabel =
     CATEGORY_OPTIONS.find((opt) => opt.value === order.category)?.label ||
@@ -151,14 +154,15 @@ export function OrderCard({ order }: OrderCardProps) {
       </CardContent>
 
       <CardFooter className="px-6 py-3 flex justify-end">
-        <Button
-          variant="outline"
-          className="rounded-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-all text-xs font-bold px-6"
-        >
-          {t("labels.details")}
-        </Button>
+        <Link href={`/don-hang/${order.slug || order.id}`}>
+          <Button
+            variant="outline"
+            className="rounded-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-all text-xs font-bold px-6"
+          >
+            {t("labels.details")}
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );
 }
-

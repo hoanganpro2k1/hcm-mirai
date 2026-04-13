@@ -76,7 +76,16 @@
       "note": "Note",
       "details": "Details"
     },
-    "empty": "No matching job orders found."
+    "empty": "No matching job orders found.",
+    "apply_now": "Apply for this job now",
+    "apply_desc": "Leave your information to receive the most detailed advice on the pathway and procedures for this job.",
+    "free_consult": "Free Consultation",
+    "call_hotline": "Call Hotline",
+    "recruitment_info": "Recruitment Information",
+    "register_now": "Register Now",
+    "security_commitment": "100% information security commitment",
+    "need_support": "Need support?",
+    "support_desc": "The HCM Mirai consulting team is always ready to support you 24/7."
   },
   "Filters": {
     "country": "Country",

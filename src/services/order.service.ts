@@ -1,5 +1,10 @@
 import { apiClient } from "@/lib/axios";
-import { IOrder, OrderFilterParams, OrderResponse } from "@/types/order.type";
+import {
+  IOrder,
+  JobOrder,
+  OrderFilterParams,
+  OrderResponse,
+} from "@/types/order.type";
 
 export const orderService = {
   getOrders: async (params: OrderFilterParams): Promise<OrderResponse> => {
@@ -9,6 +14,11 @@ export const orderService = {
 
   getOrderById: async (id: string): Promise<IOrder> => {
     const res = await apiClient.get<IOrder>(`/orders/${id}`);
+    return res.data;
+  },
+
+  getOrderBySlug: async (slug: string): Promise<JobOrder> => {
+    const res = await apiClient.get<JobOrder>(`/orders/by-slug/${slug}`);
     return res.data;
   },
 

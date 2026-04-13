@@ -86,7 +86,7 @@ export default function LaborServiceGrid({ namespace }: LaborServiceGridProps) {
           {categories.map((cat, idx) => (
             <div
               key={idx}
-              className="group p-8 rounded-[2.5rem] bg-[#F8FAFC] dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-2xl hover:border-red-600 transition-all duration-500 animate-in fade-in slide-in-from-bottom-8"
+              className="group p-8 rounded-2xl md:rounded-[2.5rem] bg-[#F8FAFC] dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-2xl hover:border-red-600 transition-all duration-500 animate-in fade-in slide-in-from-bottom-8"
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               <div

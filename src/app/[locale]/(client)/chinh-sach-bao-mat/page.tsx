@@ -1,6 +1,6 @@
-import { getTranslations } from "next-intl/server";
-import { Metadata } from "next";
 import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({
   params: { locale },
@@ -31,7 +31,7 @@ export default async function PrivacyPolicyPage({
       />
 
       <div className="container mx-auto px-6 mt-12">
-        <div className="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 p-8 md:p-16">
+        <div className="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-2xl md:rounded-[2.5rem] shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 p-8 md:p-16">
           <h1 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-8 border-b border-slate-100 dark:border-slate-800 pb-8 text-center uppercase tracking-tight">
             {t("title")}
           </h1>

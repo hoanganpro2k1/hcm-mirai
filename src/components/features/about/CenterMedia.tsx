@@ -36,7 +36,7 @@ export default function CenterMedia() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gray-50 dark:bg-gray-900 transition-colors">
+    <section className="py-12 md:py-32 bg-gray-50 dark:bg-gray-900 transition-colors">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-3xl md:text-5xl font-bold text-accent mb-6 leading-tight">
@@ -47,7 +47,7 @@ export default function CenterMedia() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 md:gap-6 h-[400px] md:h-[600px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-4 md:grid-rows-2 gap-4 md:gap-6 h-[700px] md:h-[600px]">
           {media.map((item, idx) => (
             <div
               key={idx}

@@ -1,18 +1,25 @@
 import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import { ContactForm } from "@/components/features/contact/ContactForm";
 import { ContactInfo } from "@/components/features/contact/ContactInfo";
-import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 const MAP_URL =
   "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d581.3002592414904!2d105.6706893!3d18.6920496!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3139cf003f442797%3A0x65ad8d011faa48b9!2zVHJ1bmcgdMOibSBuaOG6rXQgbmfhu68gSENNIE1pcmFp!5e1!3m2!1svi!2s!4v1775444016155!5m2!1svi!2s";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
   return {
     title: `${t("Header.nav.lienhe")} | HCM Mirai`,
-    description: t("Contact.seo_desc", { fallback: "Liên hệ với HCM Mirai để được tư vấn chi tiết về các dịch vụ du học và xuất khẩu lao động." }),
+    description: t("Contact.seo_desc", {
+      fallback:
+        "Liên hệ với HCM Mirai để được tư vấn chi tiết về các dịch vụ du học và xuất khẩu lao động.",
+    }),
   };
 }
 
@@ -31,7 +38,7 @@ export default function ContactPage() {
         <PageBreadcrumbs items={breadcrumbItems} />
       </div>
 
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-6">
           <ContactInfo />
 
@@ -43,7 +50,7 @@ export default function ContactPage() {
 
             {/* Right: Map and extra info */}
             <div className="order-1 lg:order-2 h-full min-h-[500px]">
-              <div className="bg-gray-100 dark:bg-gray-800 w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700 relative">
+              <div className="bg-gray-100 dark:bg-gray-800 w-full h-full rounded-2xl md:rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700 relative">
                 {/* Google Maps Embed */}
                 <iframe
                   src={MAP_URL}
@@ -54,7 +61,7 @@ export default function ContactPage() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="HCM Mirai Location"
-                  className="rounded-[2.5rem]"
+                  className="rounded-2xl md:rounded-[2.5rem]"
                 ></iframe>
 
                 {/* Floating Map Label */}

@@ -219,6 +219,8 @@ export function Footer() {
                   <li key={i}>
                     <Link
                       href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-sm text-white/80 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2 group"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-white/40 transition-colors"></span>

@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
   const [api, setApi] = useState<CarouselApi>();
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-950 transition-colors relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-white dark:bg-gray-950 transition-colors relative overflow-hidden">
       {/* Decorative Ornaments */}
       <div className="absolute top-10 right-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl z-0" />
       <div className="absolute bottom-10 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl z-0" />

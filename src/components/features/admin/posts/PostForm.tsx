@@ -12,7 +12,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 
 const CATEGORY_OPTIONS = [
   { label: "Tin tức", value: "news" },
@@ -148,12 +147,23 @@ export const PostForm = ({ initialData }: PostFormProps) => {
 
           <div className="space-y-2">
             <Label htmlFor="summary">Tóm tắt ngắn</Label>
-            <Textarea
-              id="summary"
-              placeholder="Mô tả ngắn gọn nội dung bài viết..."
-              {...register("summary")}
-              rows={3}
+            <Controller
+              name="summary"
+              control={control}
+              render={({ field }) => (
+                <RichTextEditor
+                  value={field.value || ""}
+                  onChange={field.onChange}
+                  placeholder="Mô tả ngắn gọn nội dung bài viết..."
+                  className="min-h-[100px]"
+                />
+              )}
             />
+            {errors.summary && (
+              <p className="text-xs text-red-500 font-medium">
+                {errors.summary.message}
+              </p>
+            )}
           </div>
 
           <div className="space-y-2">

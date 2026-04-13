@@ -1,13 +1,13 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/section-header";
-import { ChevronRight, Loader2 } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
-import { NewsCard } from "../news/NewsCard";
-import { useQuery } from "@tanstack/react-query";
-import { postService } from "@/services/post.service";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Link } from "@/i18n/routing";
+import { postService } from "@/services/post.service";
+import { useQuery } from "@tanstack/react-query";
+import { ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { NewsCard } from "../news/NewsCard";
 
 export default function BlogSection() {
   const t = useTranslations("HomeBlog");
@@ -20,7 +20,7 @@ export default function BlogSection() {
   const posts = data?.data || [];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-950 transition-colors">
+    <section className="py-12 md:py-20 bg-white dark:bg-gray-950 transition-colors">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between mb-8">
           <SectionHeader
@@ -42,7 +42,10 @@ export default function BlogSection() {
           {isLoading ? (
             // Skeletons
             [...Array(3)].map((_, i) => (
-              <div key={i} className="rounded-3xl border border-gray-100 dark:border-gray-800 p-8 space-y-6">
+              <div
+                key={i}
+                className="rounded-3xl border border-gray-100 dark:border-gray-800 p-8 space-y-6"
+              >
                 <Skeleton className="h-60 w-full rounded-2xl" />
                 <div className="space-y-3">
                   <Skeleton className="h-4 w-1/3" />
@@ -57,11 +60,11 @@ export default function BlogSection() {
             </div>
           ) : (
             posts.map((item, idx) => (
-              <NewsCard 
-                key={item.id} 
-                post={item} 
-                index={idx} 
-                buttonLabel={t("view_details")} 
+              <NewsCard
+                key={item.id}
+                post={item}
+                index={idx}
+                buttonLabel={t("view_details")}
               />
             ))
           )}

@@ -12,7 +12,10 @@ const mulish = Mulish({
 });
 
 export const metadata = {
-  title: "Admin Panel | HCM Mirai",
+  title: "Quản trị | HCM Mirai",
+  icons: {
+    icon: "/logo.ico",
+  },
 };
 
 export default function AdminLayout({

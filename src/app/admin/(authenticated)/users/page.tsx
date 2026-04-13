@@ -1,5 +1,13 @@
 "use client";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { UserFilter } from "@/components/features/admin/users/UserFilter";
 import { UserForm } from "@/components/features/admin/users/UserForm";
 import { UserList } from "@/components/features/admin/users/UserList";
@@ -8,12 +16,14 @@ import { Pagination } from "@/components/ui/pagination";
 import { useUserMutations } from "@/hooks/use-user-mutations";
 import { useUsers } from "@/hooks/use-users";
 import { IUser } from "@/types/auth.type";
-import { Plus } from "lucide-react";
+import { Loader2, Plus } from "lucide-react";
 import { useState } from "react";
 
 export default function AdminUsersPage() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<IUser | null>(null);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const [userToDelete, setUserToDelete] = useState<string | null>(null);
 
   const {
     users,
@@ -27,8 +37,14 @@ export default function AdminUsersPage() {
     updateParams,
   } = useUsers();
 
-  const { createUser, updateUser, deleteUser, isCreating, isUpdating } =
-    useUserMutations();
+  const {
+    createUser,
+    updateUser,
+    deleteUser,
+    isCreating,
+    isUpdating,
+    isDeleting,
+  } = useUserMutations();
 
   const handleCreateNew = () => {
     setSelectedUser(null);
@@ -40,9 +56,16 @@ export default function AdminUsersPage() {
     setIsFormOpen(true);
   };
 
-  const handleDelete = async (id: string) => {
-    if (window.confirm("Bạn có chắc chắn muốn xóa người dùng này?")) {
-      await deleteUser(id);
+  const handleDelete = (id: string) => {
+    setUserToDelete(id);
+    setIsDeleteDialogOpen(true);
+  };
+
+  const confirmDelete = async () => {
+    if (userToDelete) {
+      await deleteUser(userToDelete);
+      setIsDeleteDialogOpen(false);
+      setUserToDelete(null);
     }
   };
 
@@ -114,6 +137,44 @@ export default function AdminUsersPage() {
         onSubmit={handleSubmit}
         isSubmitting={isCreating || isUpdating}
       />
+
+      <Dialog
+        open={isDeleteDialogOpen}
+        onOpenChange={(open) => !open && setIsDeleteDialogOpen(false)}
+      >
+        <DialogContent showCloseButton={false}>
+          <DialogHeader>
+            <DialogTitle>Xác nhận xóa người dùng?</DialogTitle>
+            <DialogDescription>
+              Hành động này không thể hoàn tác. Người dùng này sẽ bị xóa vĩnh
+              viễn khỏi hệ thống.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button
+              variant="outline"
+              onClick={() => setIsDeleteDialogOpen(false)}
+              disabled={isDeleting}
+            >
+              Hủy
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={confirmDelete}
+              disabled={isDeleting}
+            >
+              {isDeleting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Đang xóa...
+                </>
+              ) : (
+                "Đồng ý xóa"
+              )}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

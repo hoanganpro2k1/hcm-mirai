@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { STATUS_OPTIONS } from "@/constants/order.constant";
 
 export default function DashboardOverviewPage() {
   const { user, stats, isStatsLoading } = useAdminDashboard();
@@ -194,13 +195,14 @@ export default function DashboardOverviewPage() {
                     <Badge
                       variant="outline"
                       className={cn(
-                        "capitalize border-transparent",
+                        "capitalize border-transparent font-medium",
                         order.status === "active"
                           ? "bg-emerald-50 text-emerald-700 border-emerald-100"
                           : "bg-slate-50 text-slate-700 border-slate-100",
                       )}
                     >
-                      {order.status || "Active"}
+                      {STATUS_OPTIONS.find((opt) => opt.value === order.status)
+                        ?.label || order.status}
                     </Badge>
                   </div>
                 ))
@@ -216,14 +218,6 @@ export default function DashboardOverviewPage() {
               <ImageIcon className="h-5 w-5 text-purple-500" />
               Ảnh mới tải lên
             </CardTitle>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="cursor-pointer text-slate-500 font-medium"
-            >
-              Thư viện
-              <ChevronRight className="h-4 w-4 ml-1" />
-            </Button>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-4 gap-3">

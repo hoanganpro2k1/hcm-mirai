@@ -30,6 +30,7 @@ export async function GET(req: NextRequest) {
         .sort({ createdAt: -1 })
         .skip(skip)
         .limit(limit)
+        .select("-content -updatedBy -deletedBy -deletedAt")
         .populate("createdBy", "username"),
       Order.countDocuments(query),
     ]);
@@ -63,6 +64,7 @@ export async function POST(req: NextRequest) {
     if (errorResponse) return errorResponse;
 
     const body = await req.json();
+    const { slugify } = await import("@/lib/utils");
 
     // Validate required fields
     if (!body.title) {
@@ -71,6 +73,7 @@ export async function POST(req: NextRequest) {
 
     const order = await Order.create({
       ...body,
+      slug: body.slug || slugify(body.title),
       createdBy: payload?.userId,
       deletedAt: null,
     });
