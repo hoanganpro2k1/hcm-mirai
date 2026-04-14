@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { IMAGES } from "@/constants/images";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function ServicesHero() {
   const t = useTranslations("Services.hero");
@@ -21,6 +21,7 @@ export default function ServicesHero() {
             src={IMAGES.SERVICES.HERO.hero}
             alt="HCM Mirai Services"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover"
           />
         </div>

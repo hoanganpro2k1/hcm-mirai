@@ -62,6 +62,7 @@ export default function CourseList() {
                   fill
                   src={course.image}
                   alt={course.title}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 />
                 <div

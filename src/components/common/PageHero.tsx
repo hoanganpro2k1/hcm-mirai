@@ -25,6 +25,7 @@ export default function PageHero({
           src={backgroundImage}
           alt={title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover grayscale brightness-50 contrast-125 transition-transform duration-1000"
           priority
         />

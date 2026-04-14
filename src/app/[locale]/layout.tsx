@@ -31,14 +31,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
   title: {
     default: "HCM Mirai - Du học & XKLĐ tại Nghệ An",
     template: "%s | HCM Mirai",
   },
   description: "Xây đắp hiện tại - Tạo dựng tương lai!",
-  icons: {
-    icon: "/logo.ico",
-  },
   openGraph: {
     title: "HCM Mirai - Du học & XKLĐ tại Nghệ An",
     description: "Xây đắp hiện tại - Tạo dựng tương lai!",

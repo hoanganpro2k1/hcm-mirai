@@ -1,6 +1,7 @@
 "use client";
 
 import { buttonVariants } from "@/components/ui/button";
+import { IMAGES } from "@/constants/images";
 import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { ChevronRight, Play } from "lucide-react";
@@ -15,9 +16,10 @@ export default function StudyHero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/study_abroad_hero_bg_1775872656248.png"
+          src={IMAGES.HOME.HERO.slide1}
           alt="Study Abroad Background"
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
           className="object-cover opacity-50"
         />

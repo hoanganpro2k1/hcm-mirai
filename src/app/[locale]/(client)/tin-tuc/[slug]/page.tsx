@@ -1,3 +1,4 @@
+import { JsonLd } from "@/components/common/JsonLd";
 import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import ConsultationForm from "@/components/features/home/ConsultationForm";
 import { Link } from "@/i18n/routing";
@@ -8,7 +9,6 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { JsonLd } from "@/components/common/JsonLd";
 import { Graph } from "schema-dts";
 
 export async function generateMetadata({
@@ -171,6 +171,7 @@ export default async function NewsDetailPage({
                   src={post.thumbnail}
                   alt={post.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   priority
                 />
