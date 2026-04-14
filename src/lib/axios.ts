@@ -53,7 +53,7 @@ apiClient.interceptors.request.use(
       config.headers.set("Authorization", `Bearer ${accessToken}`);
     } else {
       // Silent warnings for known public routes
-      const publicRoutes = ["/search", "/orders", "/blogs", "/categories", "/consultation", "/settings"];
+      const publicRoutes = ["/search", "/orders", "/blogs", "/posts", "/categories", "/consultation", "/settings"];
       const isPublicRoute = publicRoutes.some(route => config.url?.includes(route));
 
       if (!isPublicRoute) {

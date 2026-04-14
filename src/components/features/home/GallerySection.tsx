@@ -19,14 +19,16 @@ const videos = [
   {
     id: 1,
     titleKey: "v1",
-    thumbnail: IMAGES.HOME.GALLERY.gallery6,
+    thumbnail: IMAGES.HOME.GALLERY.gallery3,
     duration: "00:23",
+    link: "https://www.youtube.com/watch?v=GJ4A1wnhee0",
   },
   {
     id: 2,
     titleKey: "v2",
     thumbnail: IMAGES.HOME.GALLERY.gallery7,
     duration: "00:42",
+    link: "https://www.youtube.com/watch?v=0FvM1sSkmdo",
   },
 ];
 
@@ -75,9 +77,12 @@ export default function GallerySection() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
               {videos.map((video) => (
-                <div
+                <Link
                   key={video.id}
-                  className="group bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all flex flex-col md:flex-row border border-gray-100 dark:border-gray-700"
+                  href={video.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all flex flex-col md:flex-row border border-gray-100 dark:border-gray-700 cursor-pointer"
                 >
                   <div className="relative md:w-48 h-36 overflow-hidden">
                     <Image
@@ -104,7 +109,7 @@ export default function GallerySection() {
                       {t("youtube_cta")} &rarr;
                     </p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 

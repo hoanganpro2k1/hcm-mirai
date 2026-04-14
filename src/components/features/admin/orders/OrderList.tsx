@@ -19,10 +19,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { CATEGORY_OPTIONS, COUNTRY_OPTIONS } from "@/constants/order.constant";
 import { useDebounce } from "@/hooks/use-debounce";
 import { useOrderMutations } from "@/hooks/use-order-mutations";
 import { useOrders } from "@/hooks/use-orders";
-import { COUNTRY_OPTIONS, CATEGORY_OPTIONS } from "@/constants/order.constant";
 
 import { Edit, Loader2, Plus, Search, Trash2 } from "lucide-react";
 import Image from "next/image";
@@ -116,6 +116,7 @@ export const OrderList = () => {
                           src={order.coverImage}
                           alt={order.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="object-cover"
                         />
                       ) : (
@@ -137,8 +138,9 @@ export const OrderList = () => {
                       "Chưa rõ"}
                   </TableCell>
                   <TableCell className="whitespace-normal min-w-[150px]">
-                    {CATEGORY_OPTIONS.find((opt) => opt.value === order.category)
-                      ?.label ||
+                    {CATEGORY_OPTIONS.find(
+                      (opt) => opt.value === order.category,
+                    )?.label ||
                       order.category ||
                       "N/A"}
                   </TableCell>

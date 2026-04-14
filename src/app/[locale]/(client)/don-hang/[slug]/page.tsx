@@ -1,5 +1,6 @@
 "use client";
 
+import { JsonLd } from "@/components/common/JsonLd";
 import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -22,7 +23,6 @@ import {
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { use } from "react";
-import { JsonLd } from "@/components/common/JsonLd";
 import type { BreadcrumbList, Graph, JobPosting } from "schema-dts";
 
 interface OrderDetailPageProps {
@@ -211,6 +211,7 @@ export default function OrderDetailPage({ params }: OrderDetailPageProps) {
           src={order.coverImage || "/logo.png"}
           alt={order.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
           className="object-cover"
         />

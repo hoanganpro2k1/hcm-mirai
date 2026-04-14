@@ -667,8 +667,8 @@
     "youtube_cta": "Watch on YouTube",
     "view_all_youtube": "Watch more on our channel",
     "videos": {
-      "v1": "Student Farewell Ceremony - Dec 2026",
-      "v2": "Live Interview with Korean University Representative"
+      "v1": "Sharing with HCM MIRAI - Episode 01",
+      "v2": "Opportunity to work in Greece for Vietnamese workers"
     }
   },
   "HomeBlog": {
@@ -719,7 +719,8 @@
       "description": "With over 10 years of experience in study abroad consulting, HCM-Mirai proudly provides optimal learning pathways, cost savings, and opportunities to receive scholarships from prestigious universities in Korea & Japan.",
       "cta": "Get a Consultation Now",
       "title1": "HCM Mirai SERVICES",
-      "title2": "& OFFERS"
+      "title2": "& OFFERS",
+      "seo_desc": "Explore professional study abroad, labor export, and foreign language training services at HCM Mirai."
     },
     "studyAbroad": {
       "title": "Study Abroad Consulting Services",

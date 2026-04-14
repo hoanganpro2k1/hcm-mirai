@@ -64,7 +64,6 @@ const PostSchema: Schema = new Schema(
 
 // Search indexes
 PostSchema.index({ title: "text", summary: "text" });
-PostSchema.index({ slug: 1 });
 PostSchema.index({ status: 1, category: 1, publishedAt: -1 });
 
 const Post: Model<IPostDocument> =

@@ -66,6 +66,7 @@ export default function WhyChooseUsBanner() {
               src={IMAGES.SERVICES.WHY_CHOOSE_US.whyChooseUs}
               alt="Why Choose Us"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover"
             />
           </div>

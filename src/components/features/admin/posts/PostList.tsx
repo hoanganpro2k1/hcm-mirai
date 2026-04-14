@@ -19,15 +19,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useDebounce } from "@/hooks/use-debounce";
 import { usePostMutations } from "@/hooks/use-post-mutations";
 import { useAdminPosts } from "@/hooks/use-posts";
-import { useDebounce } from "@/hooks/use-debounce";
 import { format } from "date-fns";
 import { Edit, Eye, Loader2, Plus, Search, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
 
 export const PostList = () => {
   const router = useRouter();
@@ -114,6 +113,7 @@ export const PostList = () => {
                           src={post.thumbnail}
                           alt={post.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="object-cover"
                         />
                       ) : (
