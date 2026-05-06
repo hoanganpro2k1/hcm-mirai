@@ -60,6 +60,7 @@ export const ImageUpload = ({
               alt="Uploaded image"
               src={value}
               sizes="(max-width: 768px) 100vw, 50vw"
+              priority
             />
           </div>
         ) : (

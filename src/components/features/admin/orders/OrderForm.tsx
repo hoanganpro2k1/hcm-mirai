@@ -108,7 +108,7 @@ export const OrderForm = ({
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <Label htmlFor="title">Tiêu đề đơn hàng</Label>
+            <Label className="font-bold" htmlFor="title">Tiêu đề đơn hàng</Label>
             <Input
               id="title"
               {...register("title")}
@@ -120,7 +120,7 @@ export const OrderForm = ({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="country">Quốc gia</Label>
+            <Label className="font-bold" htmlFor="country">Quốc gia</Label>
             <Select
               value={watch("country") || ""}
               onValueChange={(val: string | null) => {
@@ -145,7 +145,7 @@ export const OrderForm = ({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="category">Ngành nghề</Label>
+            <Label className="font-bold" htmlFor="category">Ngành nghề</Label>
             <Input
               id="category"
               {...register("category")}
@@ -157,7 +157,7 @@ export const OrderForm = ({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="salary">Mức lương</Label>
+            <Label className="font-bold" htmlFor="salary">Mức lương</Label>
             <Input
               id="salary"
               {...register("salary")}
@@ -169,7 +169,7 @@ export const OrderForm = ({
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="date">Ngày tuyển</Label>
+            <Label className="font-bold" htmlFor="date">Ngày tuyển</Label>
             <Controller
               name="date"
               control={control}
@@ -183,7 +183,7 @@ export const OrderForm = ({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="gender">Giới tính</Label>
+            <Label className="font-bold" htmlFor="gender">Giới tính</Label>
             <Select
               value={genderValue}
               onValueChange={(val: string | null) => {
@@ -205,7 +205,7 @@ export const OrderForm = ({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="age">Độ tuổi</Label>
+            <Label className="font-bold" htmlFor="age">Độ tuổi</Label>
             <Input
               id="age"
               {...register("age")}
@@ -214,7 +214,7 @@ export const OrderForm = ({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="location">Địa điểm làm việc</Label>
+            <Label className="font-bold" htmlFor="location">Địa điểm làm việc</Label>
             <Input
               id="location"
               {...register("location")}
@@ -223,7 +223,7 @@ export const OrderForm = ({
           </div>
 
           <div className="space-y-2 md:col-span-2">
-            <Label>Ảnh bìa đơn hàng</Label>
+            <Label className="font-bold">Ảnh bìa đơn hàng</Label>
             <Controller
               name="coverImage"
               control={control}
@@ -239,7 +239,7 @@ export const OrderForm = ({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="status">Trạng thái</Label>
+            <Label className="font-bold" htmlFor="status">Trạng thái</Label>
             <Select
               value={watch("status") || "active"}
               onValueChange={(val: string | null) => {
@@ -262,7 +262,7 @@ export const OrderForm = ({
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="description">Mô tả ngắn</Label>
+          <Label className="font-bold" htmlFor="description">Mô tả ngắn</Label>
           <Controller
             name="description"
             control={control}
@@ -271,13 +271,14 @@ export const OrderForm = ({
                 value={field.value || ""}
                 onChange={field.onChange}
                 placeholder="Mô tả tóm tắt về đơn hàng..."
+                folder="orders"
               />
             )}
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="content">Chi tiết đơn hàng</Label>
+          <Label className="font-bold" htmlFor="content">Chi tiết đơn hàng</Label>
           <Controller
             name="content"
             control={control}
@@ -286,6 +287,7 @@ export const OrderForm = ({
                 value={field.value || ""}
                 onChange={field.onChange}
                 placeholder="Thông tin chi tiết, yêu cầu, quyền lợi..."
+                folder="orders"
               />
             )}
           />

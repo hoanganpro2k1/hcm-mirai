@@ -73,7 +73,7 @@
       "location": "Địa điểm",
       "age": "Độ tuổi",
       "category": "Ngành nghề",
-      "note": "Ghi chú",
+      "note": "Mô tả ngắn",
       "details": "Chi tiết"
     },
     "empty": "Không tìm thấy đơn hàng nào phù hợp.",

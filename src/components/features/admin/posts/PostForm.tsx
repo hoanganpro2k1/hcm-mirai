@@ -156,6 +156,7 @@ export const PostForm = ({ initialData }: PostFormProps) => {
                   onChange={field.onChange}
                   placeholder="Mô tả ngắn gọn nội dung bài viết..."
                   className="min-h-[100px]"
+                  folder="news"
                 />
               )}
             />
@@ -176,6 +177,7 @@ export const PostForm = ({ initialData }: PostFormProps) => {
                   value={field.value}
                   onChange={field.onChange}
                   placeholder="Viết nội dung bài viết tại đây..."
+                  folder="news"
                 />
               )}
             />
