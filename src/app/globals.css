@@ -163,6 +163,23 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+
 .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+@layer components {
+  /* Hiển thị các hàng trống trong nội dung bài viết/đơn hàng */
+  .prose p:empty::before,
+  .prose p br::before {
+    content: "\00a0";
+    display: inline-block;
+    width: 0;
+  }
+
+  /* Đảm bảo khoảng cách giữa các đoạn văn trong lớp prose */
+  .prose p {
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+  }
 }

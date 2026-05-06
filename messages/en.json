@@ -73,7 +73,7 @@
       "location": "Location",
       "age": "Age",
       "category": "Industry",
-      "note": "Note",
+      "note": "Description",
       "details": "Details"
     },
     "empty": "No matching job orders found.",
