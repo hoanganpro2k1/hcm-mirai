@@ -11,7 +11,8 @@ import { CATEGORY_OPTIONS } from "@/constants/order.constant";
 import { Link } from "@/i18n/routing";
 import { JobOrder } from "@/types/order.type";
 import { format, isValid, parseISO } from "date-fns";
-import DOMPurify from "isomorphic-dompurify";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import {
   Briefcase,
   Calendar,
@@ -141,12 +142,11 @@ export function OrderCard({ order }: OrderCardProps) {
         <div className="pt-4 border-t border-gray-50 dark:border-gray-800">
           <div className="flex items-start gap-2 text-[13px] text-gray-600 dark:text-gray-400 italic">
             <Info className="w-4 h-4 mt-0.5 shrink-0" />
-            <div
-              className="line-clamp-3 text-[13px] text-gray-600 dark:text-gray-400 italic"
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(order.description || ""),
-              }}
-            />
+            <div className="line-clamp-3 text-[13px] text-gray-600 dark:text-gray-400 italic">
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {order.description || ""}
+              </ReactMarkdown>
+            </div>
           </div>
         </div>
       </CardContent>

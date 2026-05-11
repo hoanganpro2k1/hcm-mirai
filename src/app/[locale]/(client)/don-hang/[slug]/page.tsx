@@ -8,7 +8,8 @@ import { CATEGORY_OPTIONS } from "@/constants/order.constant";
 import { useOrderDetails } from "@/hooks/use-order-details";
 import { Link, useRouter } from "@/i18n/routing";
 import { format, isValid, parseISO } from "date-fns";
-import DOMPurify from "isomorphic-dompurify";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import {
   ArrowLeft,
   Briefcase,
@@ -255,12 +256,11 @@ export default function OrderDetailPage({ params }: OrderDetailPageProps) {
                 <div className="w-2 h-8 bg-primary rounded-full" />
                 {t("labels.note")}
               </h2>
-              <div
-                className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-400 leading-relaxed"
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(order.description || ""),
-                }}
-              />
+                <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                    {order.description || ""}
+                  </ReactMarkdown>
+                </div>
 
               <div className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
@@ -269,12 +269,11 @@ export default function OrderDetailPage({ params }: OrderDetailPageProps) {
                 </h2>
                 {order.content && (
                   <div>
-                    <div
-                      className="prose prose-lg dark:prose-invert max-w-none"
-                      dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(order.content),
-                      }}
-                    />
+                    <div className="prose prose-lg dark:prose-invert max-w-none">
+                      <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                        {order.content}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                 )}
               </div>

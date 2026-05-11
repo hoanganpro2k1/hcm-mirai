@@ -1,4 +1,5 @@
-import DOMPurify from "isomorphic-dompurify";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import { Eye, Image as ImageIcon } from "lucide-react";
 import NextImage from "next/image";
 
@@ -52,12 +53,11 @@ const SearchCard = ({
             {title}
           </h3>
           {description && (
-            <p
-              className="mt-2 line-clamp-3 overflow-hidden text-sm leading-relaxed text-gray-500 md:text-base md:font-normal"
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(description || ""),
-              }}
-            />
+            <div className="mt-2 line-clamp-3 overflow-hidden text-sm leading-relaxed text-gray-500 md:text-base md:font-normal">
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {description || ""}
+              </ReactMarkdown>
+            </div>
           )}
           <div className="mt-auto flex items-center gap-1 pt-6 text-xs text-gray-500 md:text-sm">
             {date && <span>{date}</span>}
