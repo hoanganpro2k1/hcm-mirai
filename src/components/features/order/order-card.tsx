@@ -30,8 +30,6 @@ interface OrderCardProps {
 export function OrderCard({ order }: OrderCardProps) {
   const t = useTranslations("Orders");
 
-  console.log("order", order);
-
   const categoryLabel =
     CATEGORY_OPTIONS.find((opt) => opt.value === order.category)?.label ||
     order.category ||

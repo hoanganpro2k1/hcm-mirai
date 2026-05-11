@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
 import * as dotenv from "dotenv";
+import mongoose from "mongoose";
 import path from "path";
 
 // Load env
@@ -15,52 +15,57 @@ async function setup() {
   }
 
   try {
-    console.log("Connecting to MongoDB...");
     await mongoose.connect(MONGODB_URI);
-    console.log("Connected successfully.");
 
     // Models
-    const Permission = mongoose.models.Permission || mongoose.model("Permission", new mongoose.Schema({
-      name: String,
-      description: String,
-      path: String,
-      method: String,
-      module: String
-    }));
+    const Permission =
+      mongoose.models.Permission ||
+      mongoose.model(
+        "Permission",
+        new mongoose.Schema({
+          name: String,
+          description: String,
+          path: String,
+          method: String,
+          module: String,
+        }),
+      );
 
-    const Role = mongoose.models.Role || mongoose.model("Role", new mongoose.Schema({
-      name: String,
-      permissions: [{ type: mongoose.Schema.Types.ObjectId, ref: "Permission" }]
-    }));
+    const Role =
+      mongoose.models.Role ||
+      mongoose.model(
+        "Role",
+        new mongoose.Schema({
+          name: String,
+          permissions: [
+            { type: mongoose.Schema.Types.ObjectId, ref: "Permission" },
+          ],
+        }),
+      );
 
     // 1. Đảm bảo permission 'orders:view' tồn tại
     let orderViewPerm = await Permission.findOne({ name: "orders:view" });
     if (!orderViewPerm) {
-      console.log("Creating 'orders:view' permission...");
       orderViewPerm = await Permission.create({
         name: "orders:view",
         description: "Quyền xem danh sách đơn hàng XKLĐ",
         path: "/api/orders",
         method: "GET",
-        module: "orders"
+        module: "orders",
       });
     }
 
     // 2. Cập nhật Role 'editor'
-    console.log("Updating 'editor' role...");
     const editorRole = await Role.findOneAndUpdate(
       { name: "editor" },
-      { 
-        $set: { 
-          permissions: [orderViewPerm._id] 
-        } 
+      {
+        $set: {
+          permissions: [orderViewPerm._id],
+        },
       },
-      { upsert: true, new: true }
+      { upsert: true, new: true },
     );
 
-    console.log("Setup complete!");
-    console.log("Role 'editor' now has permissions:", ["orders:view"]);
-    
     process.exit(0);
   } catch (error) {
     console.error("Error setting up permissions:", error);
