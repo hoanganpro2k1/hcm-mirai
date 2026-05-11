@@ -1,48 +1,16 @@
-"use client";
-
 import { postService } from "@/services/post.service";
-import { useInfiniteQuery } from "@tanstack/react-query";
-import { Loader2 } from "lucide-react";
-import { useTranslations } from "next-intl";
 import { NewsCard } from "./NewsCard";
-import { NewsCardSkeleton } from "./NewsCardSkeleton";
+import { PaginationWrapper } from "@/components/common/PaginationWrapper";
+import { getTranslations } from "next-intl/server";
 
-export default function NewsGrid() {
-  const t = useTranslations("News");
+interface NewsGridProps {
+  page: number;
+  limit: number;
+}
 
-  const {
-    data,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-    isLoading,
-    isError,
-  } = useInfiniteQuery({
-    queryKey: ["posts", "all"],
-    queryFn: ({ pageParam = 1 }) =>
-      postService.getPosts(pageParam as number, 9),
-    getNextPageParam: (lastPage) => {
-      if (lastPage.page < lastPage.totalPages) {
-        return lastPage.page + 1;
-      }
-      return undefined;
-    },
-    initialPageParam: 1,
-  });
-
-  const posts = data?.pages.flatMap((page) => page.data) || [];
-
-  if (isLoading) {
-    return (
-      <div className="container mx-auto px-6 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <NewsCardSkeleton key={i} />
-          ))}
-        </div>
-      </div>
-    );
-  }
+export default async function NewsGrid({ page, limit }: NewsGridProps) {
+  const t = await getTranslations("News");
+  const { data: posts, totalPages, page: currentPage } = await postService.getPosts(page, limit);
 
   return (
     <section className="bg-white dark:bg-gray-950 transition-colors">
@@ -55,13 +23,7 @@ export default function NewsGrid() {
       </div>
 
       <div className="container mx-auto px-6 pb-24">
-        {isError && (
-          <div className="text-center py-10 text-red-500">
-            Có lỗi xảy ra khi tải bài viết. Vui lòng thử lại sau.
-          </div>
-        )}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
           {posts.map((item, idx) => (
             <NewsCard
               key={item.id}
@@ -72,21 +34,10 @@ export default function NewsGrid() {
           ))}
         </div>
 
-        {/* Load More Button */}
-        {hasNextPage && (
-          <div className="mt-20 text-center">
-            <button
-              onClick={() => fetchNextPage()}
-              disabled={isFetchingNextPage}
-              className="px-10 py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-2xl font-black uppercase text-sm tracking-widest transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 mx-auto"
-            >
-              {isFetchingNextPage && (
-                <Loader2 className="w-4 h-4 animate-spin" />
-              )}
-              {t("grid.load_more")}
-            </button>
-          </div>
-        )}
+        <PaginationWrapper 
+          currentPage={currentPage}
+          totalPages={totalPages}
+        />
       </div>
     </section>
   );

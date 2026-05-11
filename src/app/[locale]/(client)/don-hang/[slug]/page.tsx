@@ -1,12 +1,9 @@
-"use client";
-
 import { JsonLd } from "@/components/common/JsonLd";
 import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import { CATEGORY_OPTIONS } from "@/constants/order.constant";
-import { useOrderDetails } from "@/hooks/use-order-details";
-import { Link, useRouter } from "@/i18n/routing";
+import { orderService } from "@/services/order.service";
+import { Link } from "@/i18n/routing";
 import { format, isValid, parseISO } from "date-fns";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -21,9 +18,9 @@ import {
   Share2,
   User,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import { use } from "react";
+import { notFound } from "next/navigation";
 import type { BreadcrumbList, Graph, JobPosting } from "schema-dts";
 
 interface OrderDetailPageProps {
@@ -33,14 +30,21 @@ interface OrderDetailPageProps {
   }>;
 }
 
-export default function OrderDetailPage({ params }: OrderDetailPageProps) {
-  const localeParams = use(params);
-  const { slug, locale } = localeParams;
-  const t = useTranslations("Orders");
-  const tHeader = useTranslations("Header");
-  const router = useRouter();
+export default async function OrderDetailPage({ params }: OrderDetailPageProps) {
+  const { slug, locale } = await params;
+  const t = await getTranslations("Orders");
+  const tHeader = await getTranslations("Header");
 
-  const { order, loading } = useOrderDetails(slug);
+  let order;
+  try {
+    order = await orderService.getOrderBySlug(slug);
+  } catch (error) {
+    notFound();
+  }
+
+  if (!order) {
+    notFound();
+  }
 
   const breadcrumbItems = [
     {
@@ -51,50 +55,8 @@ export default function OrderDetailPage({ params }: OrderDetailPageProps) {
       label: tHeader("nav.donhang"),
       href: "/don-hang",
     },
-    { label: order?.title || "..." },
+    { label: order.title },
   ];
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50/50 dark:bg-black py-12">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <Skeleton className="h-8 w-64 mb-8 rounded-full" />
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 space-y-8">
-              <Skeleton className="h-[400px] w-full rounded-3xl" />
-              <Skeleton className="h-12 w-3/4 rounded-xl" />
-              <div className="space-y-4">
-                <Skeleton className="h-6 w-full" />
-                <Skeleton className="h-6 w-full" />
-                <Skeleton className="h-6 w-2/3" />
-              </div>
-            </div>
-            <div className="space-y-6">
-              <Skeleton className="h-[500px] w-full rounded-3xl" />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (!order) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50/50 dark:bg-black px-6">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          {t("empty")}
-        </h2>
-        <Button
-          onClick={() => router.push("/don-hang")}
-          variant="default"
-          className="rounded-full"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          {tHeader("nav.donhang")}
-        </Button>
-      </div>
-    );
-  }
 
   const categoryLabel =
     CATEGORY_OPTIONS.find((opt) => opt.value === order.category)?.label ||
@@ -256,11 +218,11 @@ export default function OrderDetailPage({ params }: OrderDetailPageProps) {
                 <div className="w-2 h-8 bg-primary rounded-full" />
                 {t("labels.note")}
               </h2>
-                <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-400 leading-relaxed">
-                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                    {order.description || ""}
-                  </ReactMarkdown>
-                </div>
+              <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-400 leading-relaxed">
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                  {order.description || ""}
+                </ReactMarkdown>
+              </div>
 
               <div className="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
