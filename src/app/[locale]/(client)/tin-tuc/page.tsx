@@ -1,8 +1,12 @@
 import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import NewsGrid from "@/components/features/news/NewsGrid";
 import ConsultationForm from "@/components/features/home/ConsultationForm";
-import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
+
+interface NewsPageProps {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ page?: string }>;
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -13,8 +17,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function NewsPage() {
-  const t = useTranslations("News.hero");
+export default async function NewsPage({ params, searchParams }: NewsPageProps) {
+  const { locale } = await params;
+  const sParams = await searchParams;
+  const t = await getTranslations({ locale, namespace: "News.hero" });
+
+  const page = Number(sParams.page) || 1;
 
   const breadcrumbItems = [
     { label: t("breadcrumb"), href: "/" },
@@ -27,7 +35,7 @@ export default function NewsPage() {
         <PageBreadcrumbs items={breadcrumbItems} />
       </div>
 
-      <NewsGrid />
+      <NewsGrid page={page} limit={9} />
 
       <ConsultationForm />
     </main>

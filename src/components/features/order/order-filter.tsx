@@ -13,15 +13,12 @@ import {
   COUNTRY_OPTIONS,
   GENDER_OPTIONS,
 } from "@/constants/order.constant";
+import { usePathname, useRouter } from "@/i18n/routing";
 import { OrderFilterParams } from "@/types/order.type";
 import { Search } from "lucide-react";
 import { useTranslations } from "next-intl";
-
-interface OrderFilterProps {
-  filters: OrderFilterParams;
-  onFilterChange: (key: keyof OrderFilterParams, value: string | null) => void;
-  onSearch: () => void;
-}
+import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 const FilterSelect = ({
   label,
@@ -37,8 +34,8 @@ const FilterSelect = ({
   <div className="flex-1 min-w-[140px]">
     <Select
       value={value || "all"}
-      onValueChange={(val) => onChange(val)}
       items={options}
+      onValueChange={(val) => onChange(val === "all" ? null : val)}
     >
       <SelectTrigger className="w-full h-auto p-0 pb-2 bg-transparent border-0 border-b border-gray-200 dark:border-gray-800 rounded-none shadow-none focus:ring-0 focus:border-primary transition-colors text-sm font-medium text-gray-700 dark:text-gray-300">
         <SelectValue placeholder={label} />
@@ -54,12 +51,43 @@ const FilterSelect = ({
   </div>
 );
 
-export function OrderFilter({
-  filters,
-  onFilterChange,
-  onSearch,
-}: OrderFilterProps) {
+export function OrderFilter() {
   const t = useTranslations("Filters");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  // Khởi tạo state từ URL params
+  const [filters, setFilters] = useState<Partial<OrderFilterParams>>({
+    country: searchParams.get("country") || undefined,
+    category: searchParams.get("category") || undefined,
+    gender: searchParams.get("gender") || undefined,
+  });
+
+  const handleFilterChange = (
+    key: keyof OrderFilterParams,
+    value: string | null,
+  ) => {
+    setFilters((prev) => ({ ...prev, [key]: value || undefined }));
+  };
+
+  const handleSearch = () => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (filters.country) params.set("country", filters.country);
+    else params.delete("country");
+
+    if (filters.category) params.set("category", filters.category);
+    else params.delete("category");
+
+    if (filters.gender) params.set("gender", filters.gender);
+    else params.delete("gender");
+
+    // Khi tìm kiếm mới, luôn reset về trang 1
+    params.set("page", "1");
+
+    router.push(`${pathname}?${params.toString()}`);
+  };
 
   const countryOptions = [
     { value: "all", label: t("country") || "Quốc gia" },
@@ -73,7 +101,7 @@ export function OrderFilter({
 
   const genderOptions = [
     { value: "all", label: t("gender") || "Giới tính" },
-    ...GENDER_OPTIONS.filter((opt) => opt.value !== "both"), // Search usually filters by Nam/Nữ
+    ...GENDER_OPTIONS.filter((opt) => opt.value !== "both"),
   ];
 
   return (
@@ -83,22 +111,22 @@ export function OrderFilter({
           label={t("country")}
           value={filters.country || null}
           options={countryOptions}
-          onChange={(val) => onFilterChange("country", val)}
+          onChange={(val) => handleFilterChange("country", val)}
         />
         <FilterSelect
           label={t("category")}
           value={filters.category || null}
           options={categoryOptions}
-          onChange={(val) => onFilterChange("category", val)}
+          onChange={(val) => handleFilterChange("category", val)}
         />
         <FilterSelect
           label={t("gender")}
           value={filters.gender || null}
           options={genderOptions}
-          onChange={(val) => onFilterChange("gender", val)}
+          onChange={(val) => handleFilterChange("gender", val)}
         />
         <Button
-          onClick={onSearch}
+          onClick={handleSearch}
           className="bg-[#22c55e] hover:bg-[#16a34a] text-white rounded-lg px-8 h-12 flex items-center gap-2 font-bold transition-all shadow-lg shadow-green-200 dark:shadow-none ml-auto"
         >
           <Search className="w-5 h-5" />

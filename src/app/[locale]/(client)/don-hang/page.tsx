@@ -1,43 +1,39 @@
-"use client";
-
 import PageBreadcrumbs from "@/components/common/PageBreadcrumbs";
 import { OrderCard } from "@/components/features/order/order-card";
-import { OrderCardSkeleton } from "@/components/features/order/order-card-skeleton";
 import { OrderFilter } from "@/components/features/order/order-filter";
-import { Pagination } from "@/components/ui/pagination";
 import { SectionHeader } from "@/components/ui/section-header";
-import { useOrders } from "@/hooks/use-orders";
+import { orderService } from "@/services/order.service";
 import { OrderFilterParams } from "@/types/order.type";
-import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { getTranslations } from "next-intl/server";
+import { PaginationWrapper } from "@/components/common/PaginationWrapper";
 
-export default function OrderPage() {
-  const t = useTranslations("Orders");
-  const tHeader = useTranslations("Header");
+interface OrderPageProps {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<Partial<OrderFilterParams>>;
+}
 
-  const {
-    orders,
-    loading,
-    pagination,
-    params,
-    updateParams,
-    handlePageChange,
-  } = useOrders();
+export default async function OrderPage({ params, searchParams }: OrderPageProps) {
+  const { locale } = await params;
+  const sParams = await searchParams;
+  
+  const t = await getTranslations("Orders");
+  const tHeader = await getTranslations("Header");
 
-  // Local state to track filter selections before the user clicks 'Search'
-  const [localFilters, setLocalFilters] = useState<Partial<OrderFilterParams>>(
-    {},
-  );
-
-  const handleFilterChange = (
-    key: keyof OrderFilterParams,
-    value: string | null,
-  ) => {
-    setLocalFilters((prev) => ({ ...prev, [key]: value }));
+  // Xử lý tham số filter từ URL
+  const filterParams: OrderFilterParams = {
+    page: Number(sParams.page) || 1,
+    limit: Number(sParams.limit) || 9,
+    country: sParams.country || undefined,
+    category: sParams.category || undefined,
+    gender: sParams.gender || undefined,
   };
 
-  const handleSearch = () => {
-    updateParams({ ...localFilters, page: 1 });
+  // Fetch dữ liệu trực tiếp trên server
+  const response = await orderService.getOrders(filterParams);
+  const orders = response.data;
+  const pagination = {
+    page: response.page,
+    totalPages: response.totalPages,
   };
 
   const breadcrumbItems = [
@@ -54,26 +50,15 @@ export default function OrderPage() {
         <PageBreadcrumbs items={breadcrumbItems} className="mb-8" />
         <SectionHeader title={t("title")} align="center" className="mb-12" />
 
-        <OrderFilter
-          filters={{ ...params, ...localFilters }}
-          onFilterChange={handleFilterChange}
-          onSearch={handleSearch}
-        />
+        <OrderFilter />
 
-        {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[600px]">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <OrderCardSkeleton key={i} />
-            ))}
-          </div>
-        ) : orders.length > 0 ? (
+        {orders.length > 0 ? (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {orders.map((order, index) => (
                 <div
-                  key={index}
+                  key={order.id || index}
                   className="animate-fade-in transition-all"
-                  style={{ animationDelay: `${orders.indexOf(order) * 100}ms` }}
                 >
                   <OrderCard order={order} />
                 </div>
@@ -82,10 +67,9 @@ export default function OrderPage() {
 
             {/* Pagination Section */}
             <div className="pb-12">
-              <Pagination
+              <PaginationWrapper
                 currentPage={pagination.page}
                 totalPages={pagination.totalPages}
-                onPageChange={handlePageChange}
               />
             </div>
           </>
