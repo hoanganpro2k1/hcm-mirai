@@ -10,6 +10,8 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Graph } from "schema-dts";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 export async function generateMetadata({
   params,
@@ -179,12 +181,11 @@ export default async function NewsDetailPage({
             )}
 
             {/* Summary */}
-            {post.summary && (
-              <div
-                className="mb-12 p-8 bg-slate-50 dark:bg-gray-900 border-l-4 border-[#1c2559] rounded-r-3xl italic text-lg text-gray-600 dark:text-gray-300 leading-relaxed shadow-sm"
-                dangerouslySetInnerHTML={{ __html: post.summary }}
-              />
-            )}
+              <div className="mb-12 p-8 bg-slate-50 dark:bg-gray-900 border-l-4 border-[#1c2559] rounded-r-3xl italic text-lg text-gray-600 dark:text-gray-300 leading-relaxed shadow-sm">
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                  {post.summary || ""}
+                </ReactMarkdown>
+              </div>
 
             {/* Main Content */}
             <div
@@ -194,8 +195,11 @@ export default async function NewsDetailPage({
               prose-img:rounded-3xl prose-img:shadow-xl
               prose-a:text-primary hover:prose-a:text-red-600
               transition-colors"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+            >
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {post.content}
+              </ReactMarkdown>
+            </div>
           </article>
         </div>
 
