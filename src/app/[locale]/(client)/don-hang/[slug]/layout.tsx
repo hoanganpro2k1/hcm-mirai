@@ -12,7 +12,8 @@ interface OrderLayoutProps {
 export async function generateMetadata({
   params,
 }: OrderLayoutProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL!;
 
   try {
     const order = await orderService.getOrderBySlug(slug);
@@ -24,15 +25,21 @@ export async function generateMetadata({
     }
 
     const title = `${order.title} | HCM Mirai`;
-    // Lọc bỏ thẻ HTML từ mô tả để làm metadata description
     const description = order.description
       ?.replace(/<[^>]*>/g, "")
       .slice(0, 160);
-    const image = order.coverImage || "/logo.png";
+    const image = order.coverImage?.startsWith("http")
+      ? order.coverImage
+      : `${SITE_URL}${order.coverImage || "/logo.png"}`;
+    const url = `${SITE_URL}/${locale}/don-hang/${order.slug}`;
 
     return {
+      metadataBase: new URL(SITE_URL),
       title,
       description,
+      alternates: {
+        canonical: url,
+      },
       openGraph: {
         title,
         description,
@@ -45,6 +52,7 @@ export async function generateMetadata({
           },
         ],
         type: "article",
+        url,
       },
       twitter: {
         card: "summary_large_image",
@@ -60,6 +68,10 @@ export async function generateMetadata({
   }
 }
 
-export default function OrderLayout({ children }: { children: React.ReactNode }) {
+export default function OrderLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return <>{children}</>;
 }
