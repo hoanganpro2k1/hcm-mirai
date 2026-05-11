@@ -1,8 +1,6 @@
 import { orderService } from "@/services/order.service";
 import { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
-
 interface OrderLayoutProps {
   children: React.ReactNode;
   params: Promise<{
@@ -38,17 +36,16 @@ export async function generateMetadata({
     return {
       metadataBase: new URL(SITE_URL),
       title,
-      description: "",
+      description,
       alternates: {
         canonical: url,
       },
       openGraph: {
         title,
-        description: "test",
+        description,
         images: [
           {
-            // url: image,
-            url: "https://res.cloudinary.com/dgdrdmgbx/image/upload/v1778492236/orders/mjiqqjqleovp6q7rfgn7.jpg",
+            url: image,
             width: 1200,
             height: 630,
             alt: order.title,
