@@ -1,8 +1,6 @@
 import { orderService } from "@/services/order.service";
 import { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
-
 interface OrderLayoutProps {
   children: React.ReactNode;
   params: Promise<{
@@ -30,38 +28,51 @@ export async function generateMetadata({
     const description = order.description
       ?.replace(/<[^>]*>/g, "")
       .slice(0, 160);
-    const image = order.coverImage?.startsWith("http")
-      ? order.coverImage
-      : `${SITE_URL}${order.coverImage || "/logo.png"}`;
+
+    // Đảm bảo URL ảnh là tuyệt đối và sử dụng https nếu có thể
+    let image = order.coverImage || "/logo.png";
+    if (!image.startsWith("http")) {
+      image = `${SITE_URL}${image.startsWith("/") ? "" : "/"}${image}`;
+    }
+    // Zalo ưu tiên https
+    image = image.replace("http://", "https://");
+
     const url = `${SITE_URL}/${locale}/don-hang/${order.slug}`;
 
     return {
       metadataBase: new URL(SITE_URL),
       title,
-      description: "",
+      description,
       alternates: {
         canonical: url,
       },
       openGraph: {
         title,
-        description: "test",
+        description,
+        url,
+        siteName: "HCM Mirai",
         images: [
           {
-            // url: image,
-            url: "https://res.cloudinary.com/dgdrdmgbx/image/upload/v1778492236/orders/mjiqqjqleovp6q7rfgn7.jpg",
+            url: image,
             width: 1200,
             height: 630,
             alt: order.title,
           },
         ],
         type: "article",
-        url,
+        locale: locale === "vi" ? "vi_VN" : "en_US",
       },
       twitter: {
         card: "summary_large_image",
         title,
         description,
         images: [image],
+      },
+      // Thêm các thẻ này để Zalo chắc chắn nhận được ảnh
+      other: {
+        "og:image:secure_url": image,
+        "og:image:width": "1200",
+        "og:image:height": "630",
       },
     };
   } catch (error) {

@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  serverExternalPackages: ["jsdom"],
 };
 
 const withNextIntl = createNextIntlPlugin();
