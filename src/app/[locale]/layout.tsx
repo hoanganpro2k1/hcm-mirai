@@ -153,6 +153,7 @@ export default async function RootLayout({
                           closes: "17:30",
                         },
                       ],
+                      priceRange: "$$",
                     } as LocalBusiness,
                     {
                       "@type": "WebSite",
