@@ -12,6 +12,7 @@ import { notFound } from "next/navigation";
 import { Graph } from "schema-dts";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import { stripHtml } from "@/lib/utils";
 
 export async function generateMetadata({
   params,
@@ -23,7 +24,7 @@ export async function generateMetadata({
     const post = await postService.getPostBySlug(slug);
     return {
       title: `${post.title} | HCM Mirai`,
-      description: post.summary || post.title,
+      description: stripHtml(post.summary || post.title),
       openGraph: {
         images: post.thumbnail ? [post.thumbnail] : [],
       },
@@ -83,7 +84,7 @@ export default async function NewsDetailPage({
             url: "https://hcmmirai.com/logo.png",
           },
         },
-        description: post.summary || post.title,
+        description: stripHtml(post.summary || post.title),
       } as any,
       {
         "@type": "BreadcrumbList",

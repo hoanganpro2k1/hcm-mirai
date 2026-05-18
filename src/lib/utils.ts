@@ -38,4 +38,10 @@ export const slugify = (str: string) => {
     .replace(/[\s-]+/g, "-")
     .replace(/^-+|-+$/g, "");
 };
-
+export const stripHtml = (html: string) => {
+  if (!html) return "";
+  return html
+    .replace(/<[^>]*>/g, "") // Loại bỏ tất cả thẻ HTML
+    .replace(/\s+/g, " ")     // Rút gọn các khoảng trắng liên tiếp
+    .trim();
+};
